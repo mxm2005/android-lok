@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>   
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:clock="http://schemas.android.com/apk/res/com.genius.demo"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00ff00"
+    >
+
+
+			<LinearLayout 
+		    android:layout_height="wrap_content" 
+		    android:layout_width="match_parent" 
+		    android:orientation="horizontal"
+		    android:gravity = "center_horizontal">
+		    
+		      	<Button 
+				android:text="设置时钟" 
+				android:id="@+id/buttonSetting" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:background="@drawable/shape">
+				</Button>
+				
+				
+				<Button 
+				android:text="保存时间恢复走动" 
+				android:id="@+id/buttonSave" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:background="@drawable/shape">
+				</Button>	
+				
+		   		<Button 
+				android:text="不保存时间恢复走动" 
+				android:id="@+id/buttonNoSave" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:background="@drawable/shape">
+				</Button>	
+		        
+		    </LinearLayout>
+
+
+
+			<LinearLayout 
+		    android:layout_height="wrap_content" 
+		    android:layout_width="match_parent" 
+		    android:orientation="horizontal"
+		    android:gravity = "center_horizontal">
+		    
+		    	<com.genius.demo.clock.CustomClock
+			  	android:layout_height="wrap_content" 
+			    android:layout_width="wrap_content" 
+			    android:id="@+id/clock1"	
+			    android:background="@drawable/clock1"
+			    clock:Circle_Pic="@drawable/point"
+			    clock:Hour_Pic="@drawable/hour"	
+			    clock:Minute_Pic="@drawable/minute"	
+			    clock:Second_Pic="@drawable/second"			    
+			  	/>
+			  	
+			  	
+			  	<com.genius.demo.clock.CustomClock
+			  	android:layout_height="wrap_content" 
+			    android:layout_width="wrap_content" 
+			    android:id="@+id/clock2"	
+			    android:background="@drawable/clock2"
+			    clock:Circle_Color="0x99555555"
+			  	/>		 	    
+			  	
+			  	<com.genius.demo.clock.CustomClock
+			  	android:layout_height="160px" 
+			    android:layout_width="160px" 
+			    android:id="@+id/clock3"	
+			  	/>
+<!--			  	clock:BackGround_Color="0xff00ff00"-->
+<!---->
+<!--			    clock:Circle_Color="0xeedddddd"-->
+		    
+		    </LinearLayout> 
+
+
+</LinearLayout>
+	
