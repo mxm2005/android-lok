@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:snake="http://schemas.android.com/apk/res/com.Snake"
+    android:orientation="vertical" android:background="@drawable/ic_launcher"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.Snake.SnakeLayout android:layout_width="fill_parent" android:layout_weight="1"
+     android:id="@+id/my_snake" android:layout_height="fill_parent"
+     snake:selectImg="7">
+     
+     <LinearLayout android:layout_width="fill_parent" android:orientation="vertical"
+      android:layout_height="wrap_content" android:id="@id/snakeContent">
+      
+      <LinearLayout android:layout_width="fill_parent" android:paddingTop="70dip"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="270dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="40dip" android:id="@id/snakeImg0"
+       android:layout_height="40dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="300dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="60dip" android:id="@id/snakeImg1"
+       android:layout_height="60dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="295dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg2"
+       android:layout_height="50dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="290dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="35dip" android:id="@id/snakeImg3"
+       android:layout_height="35dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="290dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="35dip" android:id="@id/snakeImg4"
+       android:layout_height="35dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="292dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="40dip" android:id="@id/snakeImg5"
+       android:layout_height="40dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="320dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="40dip" android:id="@id/snakeImg6"
+       android:layout_height="40dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg7"
+       android:layout_height="55dip" android:paddingTop="15dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg8"
+       android:layout_height="55dip" android:paddingTop="15dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg9"
+       android:layout_height="55dip" android:paddingTop="15dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg10"
+       android:layout_height="50dip" android:paddingTop="10dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg11"
+       android:layout_height="40dip" android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg12"
+       android:layout_height="40dip" android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg13"
+       android:layout_height="50dip" android:paddingLeft="10dip"
+       android:paddingTop="10dip"/>
+      </LinearLayout>
+      
+      <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       <TextView android:layout_width="260dip"  android:layout_height="1dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg21"
+       android:layout_height="25dip"
+       android:paddingLeft="25dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg20"
+       android:layout_height="55dip" android:paddingTop="20dip" 
+       android:paddingLeft="15dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg19"
+       android:layout_height="65dip" android:paddingTop="25dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg18"
+       android:layout_height="65dip" android:paddingTop="25dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg17"
+       android:layout_height="55dip" android:paddingTop="15dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="50dip" android:id="@id/snakeImg16"
+       android:layout_height="45dip" android:paddingTop="5dip" 
+       android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="45dip" android:id="@id/snakeImg15"
+       android:layout_height="35dip" android:paddingLeft="10dip"/>
+       <ImageView android:layout_width="45dip" android:id="@id/snakeImg14"
+       android:layout_height="35dip" android:paddingLeft="10dip"/>
+      </LinearLayout>
+     
+     </LinearLayout>
+    </com.Snake.SnakeLayout>
+</LinearLayout>
