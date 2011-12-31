@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:id="@id/testGrade" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon" android:background="@android:drawable/btn_star_big_on" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/grade_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="@string/grade_toilet" android:layout_toRightOf="@id/icon" />
+    <ImageView android:id="@id/line" android:background="@android:drawable/divider_horizontal_dim_dark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/icon" />
+    <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/grade_radio" android:background="@drawable/maintab_toolbar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/line">
+        <RadioButton android:id="@id/grade_btn1" android:tag="grade_btn1" android:text="@string/grade_good" android:drawableTop="@drawable/pjgood" android_marginTop="2dip" style="\@style/main_tab_bottom" />
+        <RadioButton android:id="@id/grade_btn2" android:tag="grade_btn2" android:text="@string/grade_better" android:drawableTop="@drawable/pjok" android_marginTop="2dip" style="\@style/main_tab_bottom" />
+        <RadioButton android:id="@id/grade_btn3" android:tag="grade_btn3" android:text="@string/grade_general" android:drawableTop="@drawable/pjsoso" android_marginTop="2dip" style="\@style/main_tab_bottom" />
+        <RadioButton android:id="@id/grade_btn4" android:tag="grade_btn4" android:text="@string/grade_Relative_bad" android:drawableTop="@drawable/pjnogood" android_marginTop="2dip" style="\@style/main_tab_bottom" />
+        <RadioButton android:id="@id/grade_btn5" android:tag="grade_btn5" android:text="@string/grade_very_bad" android:drawableTop="@drawable/pjangry" android_marginTop="2dip" style="\@style/main_tab_bottom" />
+    </RadioGroup>
+    <LinearLayout android:id="@id/linear_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/grade_radio" android:layout_centerHorizontal="true">
+        <Button android:id="@id/OK" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/grade_ok" />
+        <Button android:id="@id/Cancel" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="@string/grade_cancel" />
+    </LinearLayout>
+</RelativeLayout>

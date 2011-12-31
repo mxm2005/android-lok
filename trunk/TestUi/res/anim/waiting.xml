@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="100" android:drawable="@drawable/step1" />
+    <item android:duration="100" android:drawable="@drawable/step2" />
+    <item android:duration="100" android:drawable="@drawable/step3" />
+    <item android:duration="100" android:drawable="@drawable/step4" />
+    <item android:duration="100" android:drawable="@drawable/step5" />
+    <item android:duration="100" android:drawable="@drawable/step6" />
+    <item android:duration="100" android:drawable="@drawable/step7" />
+    <item android:duration="100" android:drawable="@drawable/step8" />
+</animation-list>

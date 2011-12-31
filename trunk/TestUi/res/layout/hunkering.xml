@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/hunkering_relative_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/topLine03" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="24.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/searchResult03" android:background="@drawable/titlebg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/together" />
+        <ImageButton android:id="@id/back_btn03" android:background="@drawable/back_btn_selector" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_centerVertical="true" />
+        <ImageButton android:id="@id/refresh_btn" android:background="@drawable/refresh_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/numofhunkering" android:background="@drawable/list_item_bk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topLine03">
+        <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/tv_hunkering" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/throughout_the_country" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/et_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/tv_hunkering" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/tv_hunkeringpeople" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/the_same_as" android:layout_toRightOf="@id/et_num" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/content" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/numofhunkering">
+        <RelativeLayout android:id="@id/progress03" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/numofhunkering">
+            <ProgressBar android:id="@id/prog03" android:background="@color/gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="\@android:attr/progressBarStyleSmall" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/getCommentContent" android:layout_below="@id/prog03" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <ListView android:id="@id/list_comment03" android:focusable="false" android:focusableInTouchMode="false" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@color/white" android:drawSelectorOnTop="false" android:scrollingCache="false" android:divider="#ffd3d3d3" android:dividerHeight="1.0dip" android:choiceMode="none" android:layout_below="@id/numofhunkering" />
+    </RelativeLayout>
+</RelativeLayout>
