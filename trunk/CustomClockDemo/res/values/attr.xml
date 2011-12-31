@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources> 
+ 
+    <declare-styleable name="CustomClock">  
+        <attr name="BackGround_Color" format="integer"/>
+        <attr name="CenterX" format="integer"/>
+        <attr name="CenterY" format="integer"/>
+        <attr name="Circle_Color" format="integer"/>
+        <attr name="Circle_Pic" format="reference"/>
+        <attr name="Hour_Pic" format="reference"/>      
+        <attr name="Minute_Pic" format="reference"/>      
+        <attr name="Second_Pic" format="reference"/>             
+                       
+    </declare-styleable>  
+    
+</resources> 
+
