@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<RelativeLayout android:id="@id/topLine_list"
+		android:background="@drawable/titlebg" android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<ImageButton android:id="@id/list_back_btn"
+			android:background="@drawable/btnback_selector" android:paddingLeft="10.0dip"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginLeft="3.0dip" android:layout_centerVertical="true" />
+		<LinearLayout android:gravity="center"
+			android:orientation="horizontal" android:id="@id/list_center_btns"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_centerInParent="true">
+			<ImageButton android:id="@id/list_btn"
+				android:background="@drawable/shiftleftclick" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageButton android:id="@id/list_map_btn"
+				android:background="@drawable/shiftright_selector"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</LinearLayout>
+		<ImageButton android:id="@id/list_update_btn"
+			android:background="@drawable/refresh_selector" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_marginRight="10.0dip"
+			android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+	</RelativeLayout>
+	<ImageButton android:id="@id/list_uploading_btn"
+		android:background="@drawable/btitlebk" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:src="@drawable/newt_selector"
+		android:layout_alignParentBottom="true" />
+	<ListView android:id="@id/search_list" android:background="@drawable/listbk"
+		android:focusable="false" android:focusableInTouchMode="false"
+		android:fadingEdge="none" android:clickable="false"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:drawSelectorOnTop="false" android:scrollingCache="false"
+		android:choiceMode="none" android:layout_above="@id/list_uploading_btn"
+		android:layout_below="@id/topLine_list" />
+</RelativeLayout>

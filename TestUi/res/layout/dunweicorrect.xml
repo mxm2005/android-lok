@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/dunweicorrect" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/blue" android:id="@id/et_maledunwei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/man" android:cursorVisible="false" />"
+<EditText android:textStyle="bold" android:textColor="@color/blue" android:id="@id/et_maleofdunwenum" android:layout_width="60.0dip" android:layout_height="wrap_content" android:maxLength="2" android:inputType="number" />
+    <TextView android:textColor="@color/blue" android:id="@id/et_femaledunwei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/woman" android:cursorVisible="false" />
+    <EditText android:textStyle="bold" android:textColor="@color/blue" android:id="@id/et_femaleofdunwenum" android:layout_width="60.0dip" android:layout_height="wrap_content" android:maxLength="2" android:inputType="number" />
+    <TextView android:textColor="@color/blue" android:id="@id/et_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/individual" android:cursorVisible="false" />
+</LinearLayout>

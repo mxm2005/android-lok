@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/routecorrect" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textColor="@color/blue" android:id="@id/et_routecorrect" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/toilet_place_right" />
+</LinearLayout>

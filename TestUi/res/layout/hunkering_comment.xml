@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:divider="#ffd3d3d3"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff00557f" android:id="@id/tv_usernickname" android:background="@drawable/nickbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="3.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/tv_usercomment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_below="@id/tv_usernickname" />
+    <ImageView android:id="@id/imgview_scrawl" android:visibility="gone" android:layout_width="120.0dip" android:layout_height="100.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/tv_usercomment" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@id/tv_toiletname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="3.0dip" android:layout_below="@id/imgview_scrawl" android:layout_centerVertical="true" />
+</RelativeLayout>

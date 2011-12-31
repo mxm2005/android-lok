@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/shutter_relative_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/topLine02" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="24.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/searchResult02" android:background="@drawable/titlebg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/door_plank" />
+        <ImageButton android:id="@id/back_btn02" android:background="@drawable/back_btn_selector" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/titleItem02" android:background="@drawable/list_item_bk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topLine02">
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/black" android:ellipsize="marquee" android:id="@id/place02" android:paddingTop="15.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:scrollHorizontally="true" android:singleLine="true" android:layout_alignParentLeft="true" android:marqueeRepeatLimit="marquee_forever" />
+        <RelativeLayout android:id="@id/relativelayout_declaretext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/place02">
+            <TextView android:textStyle="bold" android:textColor="@color/gray" android:id="@id/tv_reportdeclare" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/scrawl" android:background="@drawable/titlebg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_alignParentBottom="true">
+        <EditText android:textColor="@color/darkorange" android:id="@id/et_comment" android:layout_width="200.0dip" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="50" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageButton android:id="@id/imgbtn_more" android:background="@drawable/more_select" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_centerVertical="true" />
+        <ImageButton android:id="@id/imgbtn_comment" android:background="@drawable/comment_click" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/content" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/scrawl" android:layout_below="@id/titleItem02">
+        <RelativeLayout android:id="@id/progress" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/titleItem02">
+            <ProgressBar android:id="@id/prog" android:background="@color/gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="\@android:attr/progressBarStyleSmall" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/getCommentContent" android:layout_below="@id/prog" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <ListView android:id="@id/list_comment02" android:focusable="false" android:focusableInTouchMode="false" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@color/white" android:drawSelectorOnTop="false" android:scrollingCache="false" android:divider="#ffd3d3d3" android:dividerHeight="1.0dip" android:choiceMode="none" android:layout_below="@id/titleItem02" />
+    </RelativeLayout>
+</RelativeLayout>

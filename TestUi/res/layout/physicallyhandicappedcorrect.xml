@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/linearlayout_physicallyhandicappedcorrect" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:id="@id/radiogroup_whetherhasPhysicallyHandicapped" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+        <RadioButton android:id="@id/radiobtn_hasPhysicallyHandicapped" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/has_hinader" />
+        <RadioButton android:id="@id/radiobtn_hasnotPhysicallyHandicapped" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/not_hinader" />
+    </RadioGroup>
+</LinearLayout>

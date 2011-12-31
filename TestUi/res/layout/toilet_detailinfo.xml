@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/toilet_detailrelativelayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/topLine" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="24.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/searchResult" android:background="@drawable/titlebg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/detailed_information" />
+        <ImageButton android:id="@id/back_btn" android:background="@drawable/btnback_selector" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/titleItem" android:background="@drawable/list_item_bk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topLine">
+        <RelativeLayout android:id="@id/relativelayout_verify" android:paddingTop="15.0dip" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/black" android:ellipsize="marquee" android:id="@id/place" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scrollHorizontally="true" android:layout_alignParentLeft="true" android:marqueeRepeatLimit="marquee_forever" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/tv_verify" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/place" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/relativelayout_declaretext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/relativelayout_verify">
+            <TextView android:textStyle="bold" android:textColor="@color/gray" android:id="@id/reportdeclare" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/report_declaration" />
+            <TextView android:textStyle="bold" android:textColor="@color/gray" android:id="@id/tv_reportdeclare" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/reportdeclare" />
+        </RelativeLayout>
+        <ImageView android:id="@id/imgViewCompass" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="15.0dip" android:layout_toRightOf="@id/relativelayout_verify" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <ScrollView android:id="@id/scroll_layout" android:background="@drawable/list_item_bk" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/titleItem"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:id="@id/scroll_relativelayout" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/evaluate" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_below="@id/place">
+                <ImageView android:id="@id/pic" android:background="#ffcccccc" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+                <RelativeLayout android:id="@id/relativelayout_rate" android:layout_width="169.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/pic" android:layout_centerVertical="true">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff00557f" android:id="@id/tv_rate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/people_assess" android:layout_toRightOf="@id/pic" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/tv_evaluate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/tv_rate" />
+                </RelativeLayout>
+                <ImageButton android:id="@id/grade_btn_info" android:background="@drawable/grade_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_toRightOf="@id/relativelayout_rate" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/routeGuidance" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_centerVertical="true">
+                <ImageView android:id="@id/imgSofa" android:background="@drawable/infoinfo" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+                <RelativeLayout android:id="@id/relativelayout_placedescription" android:layout_width="169.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/imgSofa" android:layout_centerVertical="true">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff00557f" android:id="@id/tvplacedescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/loc_represent" android:layout_toRightOf="@id/imgSofa" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/tvRouteGuidance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_below="@id/tvplacedescription" />
+                </RelativeLayout>
+                <ImageButton android:id="@id/errorCorrect01" android:background="@drawable/correct_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_toRightOf="@id/relativelayout_placedescription" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/whetherHavePaper" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_centerVertical="true">
+                <ImageView android:id="@id/imgwhetherHavePaper" android:background="@drawable/infopaper" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+                <RelativeLayout android:id="@id/relativelayout_whetherhaspaper" android:layout_width="169.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/imgwhetherHavePaper" android:layout_centerVertical="true">
+                    <TextView android:textSize="16.0sp" android:textColor="#ff00557f" android:id="@id/WhetherHavePaper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/toilet_paper" android:layout_toRightOf="@id/imgSofa" />
+                    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/tvWhetherHavePaper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_below="@id/WhetherHavePaper" />
+                </RelativeLayout>
+                <ImageButton android:id="@id/errorCorrect02" android:background="@drawable/correct_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_toRightOf="@id/relativelayout_whetherhaspaper" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/whetherHavePhysicallyHandicapped" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_centerVertical="true">
+                <ImageView android:id="@id/imgChair" android:background="@drawable/infohelp" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+                <RelativeLayout android:id="@id/relativelayout_whetherhasPhysicallyHandicapped" android:layout_width="169.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/imgChair" android:layout_centerVertical="true">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff00557f" android:id="@id/tvWhetherHavePhysicallyHandicapped" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/no_hinder" android:layout_toRightOf="@id/imgSofa" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/tv_chair" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_below="@id/tvWhetherHavePhysicallyHandicapped" />
+                </RelativeLayout>
+                <ImageButton android:id="@id/errorCorrect05" android:background="@drawable/correct_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_toRightOf="@id/relativelayout_whetherhasPhysicallyHandicapped" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/dunwei_relativelayout" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_centerVertical="true">
+                <ImageView android:id="@id/img_has_dunwei" android:background="@drawable/infonumber" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+                <RelativeLayout android:id="@id/relativelayout_dunweidescription" android:layout_width="169.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/img_has_dunwei" android:layout_centerVertical="true">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff00557f" android:id="@id/tvdunweidescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/hun_number" android:layout_toRightOf="@id/imgSofa" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/tv_dunwei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_below="@id/tvdunweidescription" />
+                </RelativeLayout>
+                <ImageButton android:id="@id/errorCorrect04" android:background="@drawable/correct_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_toRightOf="@id/relativelayout_dunweidescription" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/toiletPic" android:background="@color/white" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_centerVertical="true">
+                <ImageView android:id="@id/imgDunmusic" android:background="@drawable/infocamera" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" />
+                <RelativeLayout android:id="@id/relativelayout_toiletpic" android:layout_width="172.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/imgDunmusic" android:layout_centerVertical="true">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff00557f" android:id="@id/tvtoiletpic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/live_action" android:layout_toRightOf="@id/imgSofa" />
+                    <ImageView android:id="@id/imgToiletPicture" android:layout_width="160.0dip" android:layout_height="120.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/tvtoiletpic" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <TextView android:textColor="#ff888888" android:id="@id/noPic" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="@string/no_pic" android:layout_centerVertical="true" />
+                <ImageButton android:id="@id/errorCorrect03" android:background="@drawable/correct_btn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_toRightOf="@id/relativelayout_toiletpic" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
