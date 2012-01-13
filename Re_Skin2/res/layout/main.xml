@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d2d2d2"
+    android:id="@+id/layout">
+    <Button android:text="导入皮肤" android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+	<Button android:text="换肤" android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+	<TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"
+		 android:text="请先点击“导入皮肤”，会将/sdcard/skin.zip导入到/sdcard/Skin_kris目录下，然后点击‘换肤’会将sdcard里面的素材用作皮肤"
+		 android:textColor="#000"></TextView>
+</LinearLayout>
