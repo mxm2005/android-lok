@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_width="260dip"
+	  android:layout_height="40dip"
+	  android:background="#FFCCFF"
+	  android:orientation="horizontal">
+	 <ImageView 
+	 	android:layout_height="wrap_content"
+		android:layout_gravity="center" 
+		android:layout_width="wrap_content"
+		android:id="@+id/imageToast"
+		android:src="@drawable/icon" />
+	 <TextView 
+	 	android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:id="@+id/mytext"
+		android:text="www" />
+	<Button 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/disbutton"
+		android:text="关闭" />
+</AbsoluteLayout>

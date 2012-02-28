@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"  
+   android:layout_height="wrap_content" 
+   android:background="@drawable/back"
+   android:orientation="vertical"
+   android:gravity="bottom"
+   >
+<Button
+   android:id="@+id/toastgo"
+   android:textSize="20sp"
+   android:text="显示Toast提示"
+   android:layout_height="wrap_content"
+   android:layout_width="245dip"
+   android:layout_alignParentRight="true"
+   android:layout_centerVertical="true"
+   />
+   <Button
+   android:id="@+id/activitygo"
+   android:textSize="20sp"
+   android:text="显示Activity提示"
+   android:layout_height="wrap_content"
+   android:layout_width="245dip"
+   android:layout_alignParentRight="true"
+   android:layout_centerVertical="true"
+   />
+   <Button
+   android:id="@+id/activityback"
+   android:textSize="20sp"
+   android:text="关掉提示"
+   android:layout_height="wrap_content"
+   android:layout_width="245dip"
+   android:layout_alignParentRight="true"
+   android:layout_centerVertical="true"
+   />
+</LinearLayout>
+
