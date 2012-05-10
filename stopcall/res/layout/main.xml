@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:Android="http://schemas.android.com/apk/res/android"
+	Android:orientation="vertical" Android:layout_width="fill_parent"
+	Android:layout_height="fill_parent">
+
+	<Button Android:id="@+id/enableCallTransfer" Android:layout_width="wrap_content" Android:layout_height="wrap_content"
+		Android:text="设置呼叫转移" />
+
+	<Button Android:id="@+id/disableCallTransfer" Android:layout_width="wrap_content" Android:layout_height="wrap_content"
+		Android:text="取消呼叫转移" />
+
+</LinearLayout>
+
