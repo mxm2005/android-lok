@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal"
+	android:background="@drawable/white_radius" android:layout_width="wrap_content"
+	android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+	<RelativeLayout android:id="@+id/rlPati" android:padding="5.0dip"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<ImageView android:id="@+id/imgGender" android:background="#00000000" android:src="@drawable/female"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" />
+		<TextView android:textSize="22.0sp" android:textColor="@color/black"
+			android:gravity="center" android:id="@+id/tvBedNO"
+			android:paddingLeft="5.0dip" android:paddingRight="5.0dip"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="301" />
+		<ImageView android:id="@+id/imgNurseGrade" android:src="@drawable/tjhl"
+			android:background="#00000000" android:layout_width="20.0dip"
+			android:layout_height="20.0dip" android:layout_alignParentRight="true" />
+		<TextView android:textSize="22.0sp" android:textColor="@color/black"
+			android:gravity="center" android:id="@+id/tvName"
+			android:layout_width="fill_parent" android:layout_height="25.0dip"
+			android:text="李建飞" android:layout_below="@id/tvBedNO" />
+		<TextView android:textColor="@color/black" android:gravity="center"
+			android:id="@+id/tvAge" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginTop="3.0dip"
+			android:text="3月24天" android:layout_below="@id/tvName" />
+	</RelativeLayout>
+</LinearLayout>
