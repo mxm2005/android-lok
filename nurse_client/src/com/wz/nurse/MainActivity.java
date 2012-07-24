@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
             case R.id.btn_login:
                 intent = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.btn_exit:
                 finish();
