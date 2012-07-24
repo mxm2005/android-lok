@@ -41,7 +41,7 @@ public class WelcomeActivity extends TabHostActivity {
 				"我的病区",
 				R.drawable.icon_selfinfo,
 				R.drawable.example_tab_item_bg,
-				new Intent(this, MainActivity.class));
+				new Intent(this, MyInpatientAreaActivity.class));
 		
 		TabItem msg = new TabItem(
 				"其他病区",
