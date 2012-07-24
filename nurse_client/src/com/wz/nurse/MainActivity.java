@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
     private Button btn_login;
     private Button btn_exit;
+    private Button btn_net_config;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,20 +20,26 @@ public class MainActivity extends Activity {
         btn_login.setOnClickListener(buttonListener);
         btn_exit = (Button) findViewById(R.id.btn_exit);
         btn_exit.setOnClickListener(buttonListener);
+        btn_net_config = (Button) findViewById(R.id.btn_net_config);
+        btn_net_config.setOnClickListener(buttonListener);
     }
     
     private OnClickListener buttonListener = new OnClickListener() {
         
         @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
+            Intent intent = null;
             switch (((Button)v).getId()) {
             case R.id.btn_login:
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                intent = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_exit:
                 finish();
+                break;
+            case R.id.btn_net_config:
+                intent = new Intent(MainActivity.this, NetConfigActivity.class);
+                startActivity(intent);
                 break;
             }
         }
