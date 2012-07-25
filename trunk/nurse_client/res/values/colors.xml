@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+	<color name="mainbg">#D8E1E6</color>
     <color name="popup">#fff3f3f3</color>
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
