@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
@@ -111,7 +113,17 @@ public class WelcomeActivity extends TabHostActivity {
 	/**自定义头部文件*/
 	@Override
 	protected View getTop() {
-		return mLayoutInflater.inflate(R.layout.example_top, null);
+		View view = mLayoutInflater.inflate(R.layout.example_top, null);
+		Button btn_exit = (Button) view.findViewById(R.id.btn_exit);
+		btn_exit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+		return view;
 	}
 
 }
