@@ -6,6 +6,7 @@
     <uses-sdk android:minSdkVersion="8" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Black.NoTitleBar">
+    	<uses-library android:name="android.test.runner" /> 
         <activity android:name=".MainActivity"
                   android:label="@string/app_name">
             <intent-filter>
@@ -20,4 +21,7 @@
 		<activity android:name=".DetailedActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".MyInpatientAreaActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
+    
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+  		android:targetPackage="com.wz.nurse" android:label="Tests for My App" />
 </manifest>
