@@ -8,29 +8,31 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.json.JSONObject;
+
+//import org.json.JSONObject;
+
 import android.test.AndroidTestCase;
 
 public class Test extends AndroidTestCase {
 	@SuppressWarnings("rawtypes")
 	public void test() throws Exception {
 		Map<String, Object> maps = null;
-		JSONObject jo = null;
 		InputStream is = getContext().getAssets().open("patient_list.json");
 		int size = is.available();
 		byte[] buffer = new byte[size];
 		is.read(buffer);
 		is.close();
 		String text = new String(buffer, "utf-8");
-		JSONObject joo = JSONObject.fromObject(text);
+		org.json.JSONObject d = new org.json.JSONObject(text);
 		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
 		for (int i = 1; i < 28; i++) {
 			maps = new HashMap<String, Object>();
-			String str = joo.getString(String.valueOf(i));
-			jo = JSONObject.fromObject(str);
-			for (Iterator iter = jo.keys(); iter.hasNext();) {
+			String str = d.getString(String.valueOf(i));
+			org.json.JSONObject dd = new org.json.JSONObject(str);
+			for (Iterator iter = dd.keys(); iter.hasNext();) {
 				String key = (String) iter.next();
 				if ("VAA05".equals(key) || "ABW02".equals(key) || "Agep".equals(key) || "BCQ04B".equals(key) || "AAG01".equals(key) || "AAG02".equals(key)) {
-					maps.put(key, jo.get(key));
+					maps.put(key, dd.get(key));
 				}
 			}
 			lists.add(maps);
