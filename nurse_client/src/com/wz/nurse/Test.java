@@ -45,4 +45,35 @@ public class Test extends AndroidTestCase {
 						+ "名称：" + lists.get(i).get("AAG02") + "\n");
 		}
 	}
+	
+	@SuppressWarnings("rawtypes")
+	public void test1() throws Exception {
+		Map<String, Object> maps = null;
+		JSONObject jo = null;
+		InputStream is = getContext().getAssets().open("patient_area.json");
+		int size = is.available();
+		byte[] buffer = new byte[size];
+		is.read(buffer);
+		is.close();
+		String text = new String(buffer, "utf-8");
+		JSONObject joo = JSONObject.fromObject(text);
+		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+		for (int i = 1; i < 9; i++) {
+			maps = new HashMap<String, Object>();
+			String str = joo.getString(String.valueOf(i));
+			jo = JSONObject.fromObject(str);
+			for (Iterator iter = jo.keys(); iter.hasNext();) {
+				String key = (String) iter.next();
+				if ("BCK01".equals(key) || "BCK03".equals(key)) {
+					maps.put(key, jo.get(key));
+				}
+			}
+			lists.add(maps);
+		}
+		System.out.println(lists.size() + "oooooooooooooooooooooooooooooooooooooooooooo数量");
+		for (int i = 0; i < lists.size(); i++) {
+			System.out.println("病区编号：" + lists.get(i).get("BCK01") + "\n" 
+						+ "病区名称：" + lists.get(i).get("BCK03") + "\n");
+		}
+	}
 }
