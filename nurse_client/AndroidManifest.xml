@@ -14,12 +14,10 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".NetConfigActivity" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name=".NetConfigActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".WelcomeActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
-		<activity android:name=".MyPatientsActivity"></activity>
-		<activity android:name=".DetailedActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
-			
-		</activity>
-		<activity android:name=".MyInpatientAreaActivity"/>
+		<activity android:name=".MyPatientsActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".DetailedActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".MyInpatientAreaActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
 </manifest>
