@@ -13,7 +13,7 @@
 				android:layout_height="wrap_content" android:text="校验瓶签"
 				android:textSize="22sp" />
 			<Button android:layout_width="wrap_content" android:textColor="@color/white"
-				android:background="@drawable/btn_click_selector"
+				android:background="@drawable/button_selector2"
 				android:layout_alignParentRight="true" android:layout_height="wrap_content"
 				android:text="返回" android:layout_centerVertical="true"
 				android:textSize="19sp" android:layout_marginRight="5dp" />
@@ -25,7 +25,7 @@
 				android:layout_height="wrap_content" android:id="@+id/et_number" />
 			<Button android:layout_width="wrap_content" android:text="搜索"
 				android:textSize="19sp" android:textColor="@color/white"
-				android:background="@drawable/btn_click_selector"
+				android:background="@drawable/button_selector2"
 				android:layout_height="wrap_content" android:layout_weight="0"
 				android:gravity="center" />
 		</LinearLayout>
@@ -48,16 +48,20 @@
 		<LinearLayout android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:gravity="center_vertical">
 			<Button android:layout_width="fill_parent"
+				android:layout_marginTop="4dp" android:layout_marginBottom="4dp"
 				android:layout_weight="1" android:layout_alignParentLeft="true"
-				android:layout_marginLeft="5dp" android:layout_height="wrap_content"
-				android:layout_centerVertical="true" android:text="护士记录录入"
-				android:textSize="19sp" android:gravity="center" android:textColor="@color/white"
+				android:layout_marginRight="4dp" android:layout_marginLeft="5dp"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:text="护士记录录入" android:singleLine="true" android:textSize="19sp"
+				android:gravity="center" android:textColor="@color/white"
 				android:background="@drawable/btn_click_selector" />
 			<Button android:layout_width="fill_parent"
+				android:layout_marginTop="4dp" android:layout_marginBottom="4dp"
 				android:layout_weight="1" android:layout_alignParentRight="true"
-				android:layout_marginRight="5dp" android:layout_height="wrap_content"
-				android:layout_centerVertical="true" android:text="查看医嘱信息"
-				android:textSize="19sp" android:gravity="center" android:textColor="@color/white"
+				android:layout_marginLeft="4dp" android:layout_marginRight="5dp"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:text="查看医嘱信息" android:singleLine="true" android:textSize="19sp"
+				android:gravity="center" android:textColor="@color/white"
 				android:background="@drawable/btn_click_selector" />
 		</LinearLayout>
 	</LinearLayout>

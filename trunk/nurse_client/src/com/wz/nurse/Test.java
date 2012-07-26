@@ -48,6 +48,44 @@ public class Test extends AndroidTestCase {
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
+	public void test2() throws Exception {
+		Map<String, Object> maps = null;
+		InputStream is = getContext().getAssets().open("patient_list.json");
+		int size = is.available();
+		byte[] buffer = new byte[size];
+		is.read(buffer);
+		is.close();
+		String text = new String(buffer, "utf-8");
+		org.json.JSONObject d = new org.json.JSONObject(text);
+		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+		for (Iterator iter = d.keys(); iter.hasNext();) {
+			String key = (String) iter.next();
+			System.out.println("key :" + key);
+			if (isInteger(key)) {
+				maps = new HashMap<String, Object>();
+				String str = d.getString(key);
+				org.json.JSONObject dd = new org.json.JSONObject(str);
+				for (Iterator it = dd.keys(); it.hasNext();) {
+					String keys = (String) it.next();
+					if ("VAA05".equals(keys) || "ABW02".equals(keys) || "Agep".equals(keys) || "BCQ04B".equals(keys) || "AAG01".equals(keys) || "AAG02".equals(keys)) {
+						maps.put(keys, dd.get(keys));
+					}
+				}
+				lists.add(maps);
+			}
+		}
+		System.out.println(lists.size() + "oooooooooooooooooooooooooooooooooooooooooooo数量");
+		for (int i = 0; i < lists.size(); i++) {
+			System.out.println("姓名：" + lists.get(i).get("VAA05") + "\n" 
+						+ "性别：" + lists.get(i).get("ABW02") + "\n" 
+						+ "年龄：" + lists.get(i).get("Agep") + "\n" 
+						+ "床号：" + lists.get(i).get("BCQ04B") + "\n"
+						+ "编号：" + lists.get(i).get("AAG01") + "\n"
+						+ "名称：" + lists.get(i).get("AAG02") + "\n");
+		}
+	}
+	
 	private boolean isInteger(String str) {
 		try {
 			Integer.parseInt(str);
