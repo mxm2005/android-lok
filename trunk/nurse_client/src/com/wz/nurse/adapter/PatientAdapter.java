@@ -76,9 +76,11 @@ public class PatientAdapter extends BaseAdapter {
 		if ("一级护理".equals(lists.get(position).get("AAG02").toString())) {
 			holder.nurseGrade.setBackgroundResource(R.drawable.yjhl);
 		} else if ("二级护理".equals(lists.get(position).get("AAG02").toString())) {
-			holder.nurseGrade.setBackgroundResource(R.drawable.tjhl);
-		} else if ("三级护理".equals(lists.get(position).get("AAG02").toString())) {
 			holder.nurseGrade.setBackgroundResource(R.drawable.ejhl);
+		} else if ("三级护理".equals(lists.get(position).get("AAG02").toString())) {
+			holder.nurseGrade.setBackgroundResource(R.drawable.sjhl);
+		} else if ("特级护理".equals(lists.get(position).get("AAG02").toString())) {
+			holder.nurseGrade.setBackgroundResource(R.drawable.tjhl);
 		}
 		holder.nurseGrade.setOnClickListener(listener);
 		return convertView;
