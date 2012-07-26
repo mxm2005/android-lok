@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.wz.nurse.util.JSONUtil;
+
 import net.sf.json.JSONObject;
 
 //import org.json.JSONObject;
@@ -14,6 +16,20 @@ import net.sf.json.JSONObject;
 import android.test.AndroidTestCase;
 
 public class Test extends AndroidTestCase {
+	public void test3() throws Exception {
+		JSONUtil ju = new JSONUtil();
+		List<Map<String, Object>> lists = ju.getData(getContext(), "patient_list.json");
+		for (int i = 0; i < lists.size(); i++) {
+			System.out.println("姓名：" + lists.get(i).get("VAA05") + "\n" 
+						+ "性别：" + lists.get(i).get("ABW02") + "\n" 
+						+ "年龄：" + lists.get(i).get("Agep") + "\n" 
+						+ "床号：" + lists.get(i).get("BCQ04B") + "\n"
+						+ "编号：" + lists.get(i).get("AAG01") + "\n"
+						+ "名称：" + lists.get(i).get("AAG02") + "\n");
+		}
+	}
+	
+	
 	@SuppressWarnings("rawtypes")
 	public void test() throws Exception {
 		Map<String, Object> maps = null;

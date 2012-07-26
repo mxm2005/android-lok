@@ -63,11 +63,23 @@ public class PatientAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.number.setText(lists.get(position).get("number").toString());
-		holder.name.setText(lists.get(position).get("name").toString());
-		holder.age.setText(lists.get(position).get("age").toString());
-		holder.gender.setBackgroundResource((Integer)lists.get(position).get("gender"));
-		holder.nurseGrade.setBackgroundResource((Integer)lists.get(position).get("nurseGrade"));
+		
+		// lists.get(position).get("BCQ04B").toString()
+		holder.number.setText(String.valueOf(position + 1));
+		holder.name.setText(lists.get(position).get("VAA05").toString());
+		holder.age.setText(lists.get(position).get("Agep").toString());
+		if ("男".equals(lists.get(position).get("ABW02").toString())) {
+			holder.gender.setBackgroundResource(R.drawable.male);
+		} else if ("女".equals(lists.get(position).get("ABW02").toString())) {
+			holder.gender.setBackgroundResource(R.drawable.female);
+		}
+		if ("一级护理".equals(lists.get(position).get("AAG02").toString())) {
+			holder.nurseGrade.setBackgroundResource(R.drawable.yjhl);
+		} else if ("二级护理".equals(lists.get(position).get("AAG02").toString())) {
+			holder.nurseGrade.setBackgroundResource(R.drawable.tjhl);
+		} else if ("三级护理".equals(lists.get(position).get("AAG02").toString())) {
+			holder.nurseGrade.setBackgroundResource(R.drawable.ejhl);
+		}
 		holder.nurseGrade.setOnClickListener(listener);
 		return convertView;
 	}
