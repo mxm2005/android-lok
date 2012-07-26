@@ -35,18 +35,18 @@ public class JSONUtil {
 		is.read(buffer);
 		is.close();
 		String text = new String(buffer, "utf-8");
-		JSONObject d = new JSONObject(text);
+		JSONObject jo = new JSONObject(text);
 		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
-		for (Iterator iter = d.keys(); iter.hasNext();) {
+		for (Iterator iter = jo.keys(); iter.hasNext();) {
 			String key = (String) iter.next();
 			if (isInteger(key)) {
 				maps = new HashMap<String, Object>();
-				String str = d.getString(key);
-				JSONObject dd = new JSONObject(str);
-				for (Iterator it = dd.keys(); it.hasNext();) {
+				String str = jo.getString(key);
+				JSONObject joo = new JSONObject(str);
+				for (Iterator it = joo.keys(); it.hasNext();) {
 					String keys = (String) it.next();
 //					if ("VAA05".equals(keys) || "ABW02".equals(keys) || "Agep".equals(keys) || "BCQ04B".equals(keys) || "AAG01".equals(keys) || "AAG02".equals(keys)) {
-						maps.put(keys, dd.get(keys));
+						maps.put(keys, joo.get(keys));
 //					}
 				}
 				lists.add(maps);
