@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.wz.nurse.bean.TabItem;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -49,7 +52,7 @@ public class WelcomeActivity extends TabHostActivity {
 				"其他病区",
 				R.drawable.icon_meassage,
 				R.drawable.example_tab_item_bg,
-				new Intent(this, MainActivity.class));
+				new Intent(this, FrontierActivity.class));
 		
 //		TabItem square = new TabItem(
 //				"广场",
@@ -61,7 +64,7 @@ public class WelcomeActivity extends TabHostActivity {
 				"更多",
 				R.drawable.icon_more,
 				R.drawable.example_tab_item_bg,
-				new Intent(this, MainActivity.class));
+				new Intent(this, FrontierActivity.class));
 		
 		mItems = new ArrayList<TabItem>();
 		mItems.add(home);
@@ -119,8 +122,29 @@ public class WelcomeActivity extends TabHostActivity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				finish();
+				AlertDialog.Builder builder = new Builder(WelcomeActivity.this);
+				builder.setMessage("确认注销吗？");
+				builder.setTitle("提示");
+				builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+						finish();
+					}
+					
+				});
+				builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+					}
+					
+				});
+				builder.create().show();
 			}
 		});
 		return view;
