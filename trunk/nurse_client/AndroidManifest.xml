@@ -20,6 +20,7 @@
 		<activity android:name=".DetailedActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".MyInpatientAreaActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".FrontierActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".NurseRecordActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
     
     <instrumentation android:name="android.test.InstrumentationTestRunner"

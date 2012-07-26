@@ -14,15 +14,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-//import android.widget.EditText;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class DetailedActivity extends Activity {
-//	private EditText et_number;
+	private EditText et_number;
 	private ListView lv_detailed;
 	private SimpleAdapter adapter;
 	private Button btn_back;
+	private Button btn_record;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class DetailedActivity extends Activity {
     private void initView() {
     	Intent intent = getIntent();
     	String name = intent.getStringExtra("name");
-//    	et_number = (EditText) findViewById(R.id.et_number);
+    	et_number = (EditText) findViewById(R.id.et_number);
     	lv_detailed = (ListView) findViewById(R.id.lv_detailed);
 		adapter = new SimpleAdapter(this, getDetailedData(name),
 				R.layout.detailed_item, new String[] { "tv_detailed" },
@@ -43,6 +44,8 @@ public class DetailedActivity extends Activity {
 		lv_detailed.setAdapter(adapter);
 		btn_back = (Button) findViewById(R.id.btn_back);
 		btn_back.setOnClickListener(buttonListener);
+		btn_record = (Button) findViewById(R.id.btn_record);
+		btn_record.setOnClickListener(buttonListener);
     }
     
     private OnClickListener buttonListener = new OnClickListener() {
@@ -55,6 +58,10 @@ public class DetailedActivity extends Activity {
 			case R.id.btn_back:
 				DetailedActivity.this.setResult(RESULT_OK, intent);
 				DetailedActivity.this.finish();
+				break;
+			case R.id.btn_record:
+				intent = new Intent(DetailedActivity.this, NurseRecordActivity.class);
+				startActivity(intent);
 				break;
 			}
 		}
