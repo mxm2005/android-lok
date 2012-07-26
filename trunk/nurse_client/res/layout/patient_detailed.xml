@@ -20,9 +20,6 @@
 		</RelativeLayout>
 		<LinearLayout android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:gravity="center_vertical">
-			<!-- <EditText android:layout_width="fill_parent" android:hint="请输入药品瓶签"
-				android:drawableLeft="@drawable/search" android:layout_weight="1"
-				android:layout_height="wrap_content" android:id="@+id/et_number" /> -->
 			<EditText android:textSize="14.0sp" android:layout_gravity="center_horizontal"
 				android:drawableLeft="@drawable/search" android:layout_weight="1"
 				android:id="@+id/et_number" android:background="@drawable/msg_border"
