@@ -24,6 +24,7 @@ public class DetailedActivity extends Activity {
 	private SimpleAdapter adapter;
 	private Button btn_back;
 	private Button btn_record;
+	private Button btn_advice;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class DetailedActivity extends Activity {
 		btn_back.setOnClickListener(buttonListener);
 		btn_record = (Button) findViewById(R.id.btn_record);
 		btn_record.setOnClickListener(buttonListener);
+		btn_advice = (Button) findViewById(R.id.btn_advice);
+		btn_advice.setOnClickListener(buttonListener);
     }
     
     private OnClickListener buttonListener = new OnClickListener() {
@@ -61,6 +64,10 @@ public class DetailedActivity extends Activity {
 				break;
 			case R.id.btn_record:
 				intent = new Intent(DetailedActivity.this, NurseRecordActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.btn_advice:
+				intent = new Intent(DetailedActivity.this, AdviceActivity.class);
 				startActivity(intent);
 				break;
 			}
