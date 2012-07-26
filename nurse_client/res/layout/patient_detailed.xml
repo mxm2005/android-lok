@@ -13,7 +13,7 @@
 				android:layout_height="wrap_content" android:text="校验瓶签"
 				android:textSize="22sp" />
 			<Button android:layout_width="wrap_content" android:textColor="@color/white"
-				android:background="@drawable/button_selector2"
+				android:background="@drawable/button_selector2" android:id="@+id/btn_back"
 				android:layout_alignParentRight="true" android:layout_height="wrap_content"
 				android:text="返回" android:layout_centerVertical="true"
 				android:textSize="19sp" android:layout_marginRight="5dp" />

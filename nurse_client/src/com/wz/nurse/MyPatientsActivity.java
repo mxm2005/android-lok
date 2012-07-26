@@ -1,11 +1,10 @@
 package com.wz.nurse;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.wz.nurse.adapter.PatientAdapter;
+import com.wz.nurse.util.JSONUtil;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,22 +33,31 @@ public class MyPatientsActivity extends Activity {
 				long id) {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent(MyPatientsActivity.this, DetailedActivity.class);
+			intent.putExtra("name", "郑孝平");
 			startActivity(intent);
 		}
 	};
     
     private List<Map<String, Object>> getPatientData() {
-    	List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
-    	for (int i = 0; i < 10; i++) {
-    		Map<String, Object> map = new HashMap<String, Object>();
-    		map.put("number", "1");
-    		map.put("age", "23岁");
-    		map.put("name", "李明");
-    		map.put("gender", R.drawable.female);
-    		map.put("nurseGrade", R.drawable.yjhl);
-    		lists.add(map);
-    	}
-    	return lists;
+//    	List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+//    	for (int i = 0; i < 10; i++) {
+//    		Map<String, Object> map = new HashMap<String, Object>();
+//    		map.put("number", "1");
+//    		map.put("age", "23岁");
+//    		map.put("name", "李明");
+//    		map.put("gender", R.drawable.female);
+//    		map.put("nurseGrade", R.drawable.yjhl);
+//    		lists.add(map);
+//    	}
+//    	return lists;
+    	JSONUtil ju = new JSONUtil();
+    	try {
+			return ju.getData(getApplicationContext(), "patient_list.json");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
     }
     
     private void initView() {
