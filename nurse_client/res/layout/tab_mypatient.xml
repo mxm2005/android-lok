@@ -11,7 +11,7 @@
 		<Button android:layout_width="wrap_content" android:text="搜索"
 			android:textSize="19sp" android:layout_height="wrap_content"
 			android:layout_weight="0" android:gravity="center" android:textColor="@color/white"
-			android:background="@drawable/btn_click_selector" />
+			android:background="@drawable/button_selector2" />
 	</LinearLayout>
 	<GridView android:id="@+id/gv_patient" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:verticalSpacing="10dp"

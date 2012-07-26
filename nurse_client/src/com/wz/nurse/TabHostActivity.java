@@ -21,7 +21,7 @@ public abstract class TabHostActivity extends TabActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// set theme because we do not want the shadow
-		setTheme(R.style.Theme_Tabhost);
+		setTheme(android.R.style.Theme_Black_NoTitleBar);
 		setContentView(R.layout.api_tab_host);
 		
 		mLayoutflater = getLayoutInflater();

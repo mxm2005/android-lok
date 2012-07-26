@@ -14,7 +14,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity android:name=".NetConfigActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".WelcomeActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".MyPatientsActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
