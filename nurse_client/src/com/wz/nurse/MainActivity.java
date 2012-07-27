@@ -34,8 +34,8 @@ public class MainActivity extends Activity {
         public void onClick(View v) {
             Intent intent = null;
             switch (((Button)v).getId()) {
-            case R.id.btn_login://登录跳转到MyPatientsActivity界面	登录控制在这里实现
-                intent = new Intent(MainActivity.this, MyPatientsActivity.class);
+            case R.id.btn_login://登录跳转到WelcomeActivity界面	登录控制在这里实现
+                intent = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(intent);
                 finish();
                 break;
