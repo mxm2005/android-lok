@@ -10,12 +10,15 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 public class AdvicewaitActivity extends Activity {
-	private Button btn_advice;
+	private ListView lv_advice;
+	private SimpleAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class AdvicewaitActivity extends Activity {
 		initView();
 	}
 	
-	private List<Map<String, Object>> getData() {
+	private List<Map<String, Object>> getAdviceDate() {
 		JSONUtil ju = new JSONUtil();
 		try {
 			return ju.getData(getApplicationContext(), "doctors_advice.json");
@@ -37,12 +40,15 @@ public class AdvicewaitActivity extends Activity {
 	}
 	
 	private void initView() {
-		btn_advice = (Button) findViewById(R.id.btn_advice);
-		btn_advice.setText((String)getData().get(1).get("VAF22"));
-		btn_advice.setOnClickListener(new OnClickListener() {
-			
+		lv_advice = (ListView) findViewById(R.id.lv_advice);
+		adapter = new SimpleAdapter(this, getAdviceDate(), R.layout.advice_item,
+				new String[] { "VAF22" }, new int[] { R.id.tvAdvice });
+		lv_advice.setAdapter(adapter);
+		lv_advice.setOnItemClickListener(new OnItemClickListener() {
+
 			@Override
-			public void onClick(View v) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
 				// TODO Auto-generated method stub
 				LayoutInflater inflater = LayoutInflater.from(AdvicewaitActivity.this);
 		        View textEntryView = inflater.inflate(R.layout.advice_dialog, null);
@@ -54,13 +60,14 @@ public class AdvicewaitActivity extends Activity {
 		        TextView RouteN = (TextView) textEntryView.findViewById(R.id.RouteN);
 		        TextView VAF26 = (TextView) textEntryView.findViewById(R.id.VAF26);
 		        TextView VAF36 = (TextView) textEntryView.findViewById(R.id.VAF36);
-		        VAF22N.setText((String)getData().get(3).get("VAF22N"));
-		        FGross.setText((String)getData().get(3).get("FGross"));
-		        RouteN.setText((String)getData().get(3).get("RouteN"));
-		        VAF26.setText((String)getData().get(3).get("VAF26"));
-		        VAF36.setText("时间：" + (String)getData().get(0).get("VAF36"));
+		        VAF22N.setText((String)getAdviceDate().get(3).get("VAF22N"));
+		        FGross.setText((String)getAdviceDate().get(3).get("FGross"));
+		        RouteN.setText((String)getAdviceDate().get(3).get("RouteN"));
+		        VAF26.setText((String)getAdviceDate().get(3).get("VAF26"));
+		        VAF36.setText("时间：" + (String)getAdviceDate().get(0).get("VAF36"));
 		        ad.show();
 			}
+			
 		});
 	}
 	
