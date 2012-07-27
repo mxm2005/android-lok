@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.wz.nurse.bean.Record;
 import com.wz.nurse.util.JSONUtil;
 
 import net.sf.json.JSONObject;
@@ -20,6 +21,33 @@ import android.test.AndroidTestCase;
  *
  */
 public class Test extends AndroidTestCase {
+	public void test4() throws Exception {
+		List<Record> records = new ArrayList<Record>();
+		JSONUtil ju = new JSONUtil();
+		List<Map<String, Object>> lists = ju.getData(getContext(), "nurse_input.json");
+		for (int i = 0; i < lists.size(); i++) {
+			Record record = new Record();
+			record.setTitle((String)lists.get(i).get("CBS05"));
+			record.setType(Integer.parseInt((String) lists.get(i).get("CBS07")));
+			record.setAllowLength(Integer.parseInt((String)  lists.get(i).get("CBS08")));
+			record.setPoint(Integer.parseInt((String)  lists.get(i).get("CBS09")));
+			record.setUnit((String) lists.get(i).get("CBS10"));
+			record.setType2(Integer.parseInt((String)  lists.get(i).get("CBS11")));
+			record.setRange((String) lists.get(i).get("CBS12"));
+			record.setSenior((String) lists.get(i).get("CBS13"));
+			records.add(record);
+		}
+		
+		for (Record r : records) {
+//			System.out.println(r.getAllowLength());
+			if (r.getSenior().equals("5)附加项目")) {
+				System.out.println(r.getTitle());
+			}
+		}
+	}
+	
+	
+	
 	public void test3() throws Exception {
 		JSONUtil ju = new JSONUtil();
 		List<Map<String, Object>> lists = ju.getData(getContext(), "patient_list.json");
