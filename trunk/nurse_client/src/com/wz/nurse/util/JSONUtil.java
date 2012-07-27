@@ -1,7 +1,6 @@
 package com.wz.nurse.util;
 
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -11,7 +10,6 @@ import java.util.Map;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.util.Log;
 
 @SuppressWarnings("rawtypes")
 public class JSONUtil {
@@ -55,42 +53,42 @@ public class JSONUtil {
 		return lists;
 	}
 	
-	/**
-	 * 把xml标签的值，转换成对象里属性的值
-	 * @param t 对象
-	 * @param name xml标签名
-	 * @param value xml标签名对应的值
-	 */
-	private void setXmlValue(Object t, String name, String value) {
-		try {
-			Field[] f = t.getClass().getDeclaredFields();
-			for (int i = 0; i < f.length; i++) {
-				if (f[i].getName().equalsIgnoreCase(name)) {
-					f[i].setAccessible(true);
-					// 获得属性类型
-					Class<?> fieldType = f[i].getType();
-					if (fieldType == String.class) {
-						f[i].set(t, value);
-					} else if (fieldType == Integer.TYPE) {
-						f[i].set(t, Integer.parseInt(value));
-					} else if (fieldType == Float.TYPE) {
-						f[i].set(t, Float.parseFloat(value));
-					} else if (fieldType == Double.TYPE) {
-						f[i].set(t, Double.parseDouble(value));
-					} else if (fieldType == Long.TYPE) {
-						f[i].set(t, Long.parseLong(value));
-					} else if (fieldType == Short.TYPE) {
-						f[i].set(t, Short.parseShort(value));
-					} else if (fieldType == Boolean.TYPE) {
-						f[i].set(t, Boolean.parseBoolean(value));
-					} else {
-						f[i].set(t, value);
-					}
-				}
-			}
-		} catch (Exception e) {
-			Log.e("xml error", e.toString());
-			e.printStackTrace();
-		}
-	}
+//	/**
+//	 * 把xml标签的值，转换成对象里属性的值
+//	 * @param t 对象
+//	 * @param name xml标签名
+//	 * @param value xml标签名对应的值
+//	 */
+//	private void setXmlValue(Object t, String name, String value) {
+//		try {
+//			Field[] f = t.getClass().getDeclaredFields();
+//			for (int i = 0; i < f.length; i++) {
+//				if (f[i].getName().equalsIgnoreCase(name)) {
+//					f[i].setAccessible(true);
+//					// 获得属性类型
+//					Class<?> fieldType = f[i].getType();
+//					if (fieldType == String.class) {
+//						f[i].set(t, value);
+//					} else if (fieldType == Integer.TYPE) {
+//						f[i].set(t, Integer.parseInt(value));
+//					} else if (fieldType == Float.TYPE) {
+//						f[i].set(t, Float.parseFloat(value));
+//					} else if (fieldType == Double.TYPE) {
+//						f[i].set(t, Double.parseDouble(value));
+//					} else if (fieldType == Long.TYPE) {
+//						f[i].set(t, Long.parseLong(value));
+//					} else if (fieldType == Short.TYPE) {
+//						f[i].set(t, Short.parseShort(value));
+//					} else if (fieldType == Boolean.TYPE) {
+//						f[i].set(t, Boolean.parseBoolean(value));
+//					} else {
+//						f[i].set(t, value);
+//					}
+//				}
+//			}
+//		} catch (Exception e) {
+//			Log.e("xml error", e.toString());
+//			e.printStackTrace();
+//		}
+//	}
 }
