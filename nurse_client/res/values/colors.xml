@@ -23,4 +23,10 @@
     <color name="splash_text_color">#ff88979c</color>
     <color name="splash_text_bg_color">#ffdfe9ec</color>
     <color name="null_color">#00ffffff</color>
+    
+    <color name="nor_tab">#4D8118</color>
+    <color name="sel_tab">#0C1894</color>
+    
+    <color name="list_nor">#ffffffff</color>
+    <color name="list_sel">#0C1894</color>
 </resources>
