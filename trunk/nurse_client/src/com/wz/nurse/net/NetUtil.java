@@ -20,7 +20,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
-
+/**
+ * 现在的读取本地的json数据，暂时不需要用到
+ * @author Administrator
+ *
+ */
 public class NetUtil {
     private static final String TAG = "NetUtil";
 

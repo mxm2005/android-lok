@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-
+/**
+ * 登录界面
+ * @author Administrator
+ *
+ */
 public class MainActivity extends Activity {
-    private Button btn_login;
-    private Button btn_exit;
-    private Button btn_net_config;
+    private Button btn_login;//登录按钮
+    private Button btn_exit;//退出按钮
+    private Button btn_net_config;//网络配置按钮
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,15 +34,15 @@ public class MainActivity extends Activity {
         public void onClick(View v) {
             Intent intent = null;
             switch (((Button)v).getId()) {
-            case R.id.btn_login:
-                intent = new Intent(MainActivity.this, WelcomeActivity.class);
+            case R.id.btn_login://登录跳转到MyPatientsActivity界面	登录控制在这里实现
+                intent = new Intent(MainActivity.this, MyPatientsActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.btn_exit:
+            case R.id.btn_exit://退出
                 finish();
                 break;
-            case R.id.btn_net_config:
+            case R.id.btn_net_config://跳转到NetConfigActivity界面，网络配置
                 intent = new Intent(MainActivity.this, NetConfigActivity.class);
                 startActivity(intent);
                 break;

@@ -11,9 +11,18 @@ import org.json.JSONObject;
 
 import android.content.Context;
 
+/**
+ * json解析工具类
+ * @author Administrator
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class JSONUtil {
-	
+	/**
+	 * 判断传过来的string值是否可以转为int型
+	 * @param str
+	 * @return
+	 */
 	private boolean isInteger(String str) {
 		try {
 			Integer.parseInt(str);
@@ -25,6 +34,13 @@ public class JSONUtil {
 		}
 	}
 	
+	/**
+	 * 解析json，存储在List<Map<String, Object>>
+	 * @param context
+	 * @param file 存在assets文件夹下的json文件
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Map<String, Object>> getData(Context context, String file) throws Exception {
 		Map<String, Object> maps = null;
 		InputStream is = context.getAssets().open(file);

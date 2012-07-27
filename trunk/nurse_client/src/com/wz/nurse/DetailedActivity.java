@@ -85,7 +85,7 @@ public class DetailedActivity extends Activity {
 			        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(DetailedActivity.this, android.R.layout.simple_list_item_1, convert());
 			        lv_search.setAdapter(arrayAdapter);
 			        AlertDialog.Builder builder = new AlertDialog.Builder(DetailedActivity.this);
-			        builder.setTitle("瓶签/口服单")
+			        builder.setTitle((String)getSearchData().get(0).get("VCM13"))
 			        .setView(view)
 			        .setPositiveButton("执行", new DialogInterface.OnClickListener() {
 			            
