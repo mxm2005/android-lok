@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<color name="mainbg">#D8E1E6</color>
+    <color name="popup">#fff3f3f3</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="red">#fff70707</color>
+    <color name="line">#ff989999</color>
+    <color name="text">#ff296dd3</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="skyblue">#ff6495ed</color>
+    <color name="transparent">#00000000</color>
+    <color name="DarkOrchid">#ff9932cc</color>
+    <color name="patiInfo">#ffeaeaea</color>
+    <color name="DodgerBlue1">#ff1e90ff</color>
+    <color name="pageBack">#ffc8dced</color>
+    <color name="old">#ffffffff</color>
+    <color name="even">#ffe5ffe5</color>
+    <color name="tabMedium">#ff1e90ff</color>
+    <color name="tabDark">#ff000000</color>
+    <color name="tabTransparent">#10ffffff</color>
+    <color name="splash_bg_color">#ffbfd1d7</color>
+    <color name="splash_text_color">#ff88979c</color>
+    <color name="splash_text_bg_color">#ffdfe9ec</color>
+    <color name="null_color">#00ffffff</color>
+    
+    <color name="nor_tab">#4D8118</color>
+    <color name="sel_tab">#0C1894</color>
+    
+    <color name="list_nor">#ffffffff</color>
+    <color name="list_sel">#0C1894</color>
+</resources>

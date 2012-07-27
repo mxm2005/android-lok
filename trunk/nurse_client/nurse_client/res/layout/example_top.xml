@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="40dip"
+	android:background="@drawable/title_bar">
+
+
+	<TextView android:textSize="25sp" android:id="@+id/tv_top_car_number"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginLeft="5dp" android:layout_centerVertical="true"
+		android:text="张萌护士欢迎您！" android:gravity="center_vertical" />
+
+
+	<Button android:id="@+id/btn_exit" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_alignParentRight="true"
+		android:layout_centerVertical="true" android:textSize="19sp"
+		android:background="@drawable/button_selector2"
+		android:layout_marginRight="5dp" android:text="注销" android:gravity="center"
+		android:textColor="@color/white" />
+
+</RelativeLayout>
