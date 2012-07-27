@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" 
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_weight="0" android:background="#4A4D4A"
+		android:layout_height="wrap_content" android:gravity="center_vertical">
+		<TextView android:layout_width="fill_parent" android:gravity="center_horizontal"
+			android:layout_height="wrap_content" android:text="2 扬琴   女   28岁"
+			android:background="#B1CAF2" android:textSize="22.0sp"
+			android:textColor="@color/black" />
+	</LinearLayout>
+	<ListView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_weight="1"
+		android:id="@+id/lv_advice" android:cacheColorHint="#00000000"
+		android:scrollbars="none" android:divider="@drawable/img_listview_linecut_bg"
+		android:dividerHeight="1dip" />
+	<!-- <LinearLayout android:layout_width="fill_parent"
+		android:orientation="vertical" android:layout_height="wrap_content"
+		android:layout_weight="0" android:background="#4A4D4A">
+		<Button android:layout_width="fill_parent" android:gravity="center_vertical"
+			android:layout_height="wrap_content" android:text="2 扬琴   女   28岁" android:paddingLeft="8dip"
+			android:background="@drawable/list_click_selector" android:textSize="22.0sp" android:visibility="gone"
+			android:textColor="@color/black" android:layout_marginBottom="1dip"/>
+		<Button android:layout_width="fill_parent" android:gravity="center_vertical" android:id="@+id/btn_advice"
+			android:layout_height="wrap_content" android:text="2 扬琴   女   28岁" android:paddingLeft="8dip" android:ellipsize="marquee"
+			android:background="@drawable/list_click_selector" android:textSize="22.0sp"
+			android:textColor="@color/black" />
+	</LinearLayout> -->
+</LinearLayout>

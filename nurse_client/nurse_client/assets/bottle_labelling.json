@@ -1,0 +1,99 @@
+{
+  "TableName": {
+    "0": {
+      "FieldName": "aCheck",
+      "FieldType": 3,
+      "FieldSize": 0
+    },
+    "1": {
+      "FieldName": "VAA04",
+      "FieldType": 1,
+      "FieldSize": 20
+    },
+    "2": {
+      "FieldName": "VAA05",
+      "FieldType": 1,
+      "FieldSize": 64
+    },
+    "3": {
+      "FieldName": "VBI21",
+      "FieldType": 1,
+      "FieldSize": 20
+    },
+    "4": {
+      "FieldName": "VAF22",
+      "FieldType": 1,
+      "FieldSize": 1024
+    },
+    "5": {
+      "FieldName": "VCM13",
+      "FieldType": 1,
+      "FieldSize": 20
+    },
+    "6": {
+      "FieldName": "BCQ04B",
+      "FieldType": 1,
+      "FieldSize": 20
+    },
+    "7": {
+      "FieldName": "BCE01",
+      "FieldType": 3,
+      "FieldSize": 0
+    },
+    "8": {
+      "FieldName": "BCE03",
+      "FieldType": 1,
+      "FieldSize": 20
+    },
+    "9": {
+      "FieldName": "VCM16",
+      "FieldType": 11,
+      "FieldSize": 0
+    },
+    "10": {
+      "FieldName": "VCM10",
+      "FieldType": 11,
+      "FieldSize": 0
+    },
+    "11": {
+      "FieldName": "VBI01",
+      "FieldType": 3,
+      "FieldSize": 0
+    },
+    "12": {
+      "FieldName": "VAF01",
+      "FieldType": 3,
+      "FieldSize": 0
+    }
+  },
+  "1": {
+    "aCheck": "1",
+    "VAA04": "201200984",
+    "VAA05": "林树贵",
+    "VBI21": "201200005678",
+    "VAF22": "0.9%氯化钠注射液100ml 100ml:0.9g",
+    "VCM13": "瓶签",
+    "BCQ04B": "209-20",
+    "BCE01": "403",
+    "BCE03": "管理员",
+    "VCM16": "2012-07-26 20:17:07",
+    "VCM10": "2012-06-27",
+    "VBI01": "633827",
+    "VAF01": "488850"
+  },
+  "2": {
+    "aCheck": "1",
+    "VAA04": "201200984",
+    "VAA05": "林树贵",
+    "VBI21": "201200005678",
+    "VAF22": "注射用赖氨匹林 0.9g",
+    "VCM13": "瓶签",
+    "BCQ04B": "209-20",
+    "BCE01": "403",
+    "BCE03": "管理员",
+    "VCM16": "2012-07-26 20:17:07",
+    "VCM10": "2012-06-27",
+    "VBI01": "633828",
+    "VAF01": "488852"
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:textAppearance="?android:textAppearanceLarge" 
+    	android:gravity="center" 
+    	android:id="@+id/empty_ui" 
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent" 
+    	android:layout_marginLeft="20.0dip" 
+    	android:layout_marginRight="20.0dip" 
+    	android:text="待开发功能" />
+</LinearLayout>
