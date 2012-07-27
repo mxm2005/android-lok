@@ -10,7 +10,11 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
-
+/**
+ * 底部选项卡类
+ * @author Administrator
+ *
+ */
 public abstract class TabHostActivity extends TabActivity {
 
 	private TabHost mTabHost;

@@ -1,7 +1,5 @@
 package com.wz.nurse;
 
-
-
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +10,11 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+/**
+ * 医嘱界面
+ * @author Administrator
+ *
+ */
 public class AdviceActivity extends TabActivity {
 	private TabHost tabHost;
 	private TabWidget tabWidget;
@@ -26,17 +29,17 @@ public class AdviceActivity extends TabActivity {
 	}
 	
 	
-	
+	//初始化view，加入“待执行”“皮试观察”两个选项卡
 	private void initView() {
 		tabHost = getTabHost();
 		tabHost.addTab(tabHost.newTabSpec("tab_test1")
-	    		.setIndicator("待执行", null).setContent(new Intent(this, AdvicewaitActivity.class)));
+	    		.setIndicator("待执行", null).setContent(new Intent(this, AdvicewaitActivity.class)));//点击待执行选项卡跳转到AdvicewaitActivity界面
 	    tabHost.addTab(tabHost.newTabSpec("tab_test2")
-	    		.setIndicator("皮试观察", null).setContent(new Intent(this, AdviceSkinTestActivity.class)
+	    		.setIndicator("皮试观察", null).setContent(new Intent(this, AdviceSkinTestActivity.class)//点击皮试观察选项卡跳转到AdviceSkinTestActivity界面
 	    		.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 	    
 		tabWidget = tabHost.getTabWidget();
-		for (int i = 0; i < tabWidget.getChildCount(); i++) {
+		for (int i = 0; i < tabWidget.getChildCount(); i++) {//改变原生控件选项卡的高度。
 			tabWidget.getChildAt(i).getLayoutParams().height = 45;
 			tabWidget.getChildAt(i).getLayoutParams().width = 65;
 			TextView tv = (TextView) tabWidget.getChildAt(i).findViewById(android.R.id.title);
@@ -58,7 +61,7 @@ public class AdviceActivity extends TabActivity {
 //			}
 //		}
 		btn_back = (Button) findViewById(R.id.btn_back);
-		btn_back.setOnClickListener(new OnClickListener() {
+		btn_back.setOnClickListener(new OnClickListener() {//返回按钮事件
 			
 			@Override
 			public void onClick(View v) {

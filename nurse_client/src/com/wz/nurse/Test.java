@@ -14,7 +14,11 @@ import net.sf.json.JSONObject;
 //import org.json.JSONObject;
 
 import android.test.AndroidTestCase;
-
+/**
+ * 开发测试类，可忽略
+ * @author Administrator
+ *
+ */
 public class Test extends AndroidTestCase {
 	public void test3() throws Exception {
 		JSONUtil ju = new JSONUtil();

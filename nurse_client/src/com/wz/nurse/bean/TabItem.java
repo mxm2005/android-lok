@@ -1,12 +1,16 @@
 package com.wz.nurse.bean;
 
 import android.content.Intent;
-
+/**
+ * 底部选项卡bean
+ * @author Administrator
+ *
+ */
 public class TabItem {
-	private String title;		// tab item title
-	private int icon;			// tab item icon
-	private int bg;			// tab item background
-	private Intent intent;	// tab item intent
+	private String title;		// tab名字
+	private int icon;			// tab图片
+	private int bg;			// tab背景
+	private Intent intent;	// tab跳转intent
 	
 	public TabItem(String title, int icon, int bg, Intent intent) {
 		super();

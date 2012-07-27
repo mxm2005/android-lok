@@ -27,6 +27,11 @@ import android.widget.TextView;
  * 可以项目的属性里面找到Android，然后在Library部分添加这个项目(Api)
  * <a href="http://www.cnblogs.com/qianxudetianxia/archive/2011/05/01/2030232.html">如何添加</a></p>
  * */
+/**
+ * 底部选项卡类
+ * @author Administrator
+ *
+ */
 public class WelcomeActivity extends TabHostActivity {
 
 	List<TabItem> mItems;

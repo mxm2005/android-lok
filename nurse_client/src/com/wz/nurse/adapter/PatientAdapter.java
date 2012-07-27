@@ -16,13 +16,13 @@ import android.widget.TextView;
 import com.wz.nurse.R;
 
 /**
- * 我的病人适配器
+ * 我的病人适配器(在MyPatientsActivity中用到的适配器)
  * @author yjh
  *
  */
 public class PatientAdapter extends BaseAdapter {
 	private Context mContext;
-	private List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+	private List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();//用来存数据
 	
 	public PatientAdapter (Context context, List<Map<String, Object>> lists) {
 		this.mContext = context;
@@ -65,15 +65,15 @@ public class PatientAdapter extends BaseAdapter {
 		}
 		
 		// lists.get(position).get("BCQ04B").toString()
-		holder.number.setText(String.valueOf(position + 1));
-		holder.name.setText(lists.get(position).get("VAA05").toString());
-		holder.age.setText(lists.get(position).get("Agep").toString());
-		if ("男".equals(lists.get(position).get("ABW02").toString())) {
+		holder.number.setText(String.valueOf(position + 1));//序列号
+		holder.name.setText(lists.get(position).get("VAA05").toString());//读取VAA05字段的为病人姓名
+		holder.age.setText(lists.get(position).get("Agep").toString());//读取Agep字段的为病人年龄
+		if ("男".equals(lists.get(position).get("ABW02").toString())) {//读取ABW02字段，如果为男就显示男性的图片
 			holder.gender.setBackgroundResource(R.drawable.male);
-		} else if ("女".equals(lists.get(position).get("ABW02").toString())) {
+		} else if ("女".equals(lists.get(position).get("ABW02").toString())) {//为女即显示女性的图片
 			holder.gender.setBackgroundResource(R.drawable.female);
 		}
-		if ("一级护理".equals(lists.get(position).get("AAG02").toString())) {
+		if ("一级护理".equals(lists.get(position).get("AAG02").toString())) {//同上
 			holder.nurseGrade.setBackgroundResource(R.drawable.yjhl);
 		} else if ("二级护理".equals(lists.get(position).get("AAG02").toString())) {
 			holder.nurseGrade.setBackgroundResource(R.drawable.ejhl);
@@ -96,11 +96,11 @@ public class PatientAdapter extends BaseAdapter {
 	};
 
 	static class ViewHolder {
-		TextView number;
-		TextView name;
-		TextView age;
-		ImageView gender;
-		ImageView nurseGrade;
+		TextView number;//序列号
+		TextView name;//病人姓名
+		TextView age;//年龄
+		ImageView gender;//性别
+		ImageView nurseGrade;//护理级别
 	}
 
 }

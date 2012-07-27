@@ -2,7 +2,11 @@ package com.wz.nurse;
 
 import android.app.Activity;
 import android.os.Bundle;
-
+/**
+ * 网络配置
+ * @author Administrator
+ *
+ */
 public class NetConfigActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
