@@ -11,8 +11,11 @@
 			android:textColor="@color/black" />
 	</LinearLayout>
 	<ListView android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:layout_weight="1" />
-	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_weight="1"
+		android:id="@+id/lv_advice" android:cacheColorHint="#00000000"
+		android:scrollbars="none" android:divider="@drawable/img_listview_linecut_bg"
+		android:dividerHeight="1dip" />
+	<!-- <LinearLayout android:layout_width="fill_parent"
 		android:orientation="vertical" android:layout_height="wrap_content"
 		android:layout_weight="0" android:background="#4A4D4A">
 		<Button android:layout_width="fill_parent" android:gravity="center_vertical"
@@ -23,5 +26,5 @@
 			android:layout_height="wrap_content" android:text="2 扬琴   女   28岁" android:paddingLeft="8dip" android:ellipsize="marquee"
 			android:background="@drawable/list_click_selector" android:textSize="22.0sp"
 			android:textColor="@color/black" />
-	</LinearLayout>
+	</LinearLayout> -->
 </LinearLayout>

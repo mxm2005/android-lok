@@ -10,11 +10,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class AdviceSkinTestActivity extends Activity {
-	private Button btn_advice;
+	private ListView lv_advice;
+	private SimpleAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class AdviceSkinTestActivity extends Activity {
 		initView();
 	}
 	
-	private List<Map<String, Object>> getData() {
+	private List<Map<String, Object>> getAdviceDate() {
 		JSONUtil ju = new JSONUtil();
 		try {
 			return ju.getData(getApplicationContext(), "doctors_advice.json");
@@ -36,25 +39,29 @@ public class AdviceSkinTestActivity extends Activity {
 	}
 	
 	private void initView() {
-		btn_advice = (Button) findViewById(R.id.btn_advice);
-		btn_advice.setText((String)getData().get(1).get("VAF22"));
-		btn_advice.setOnClickListener(new OnClickListener() {
-			
+		lv_advice = (ListView) findViewById(R.id.lv_advice);
+		adapter = new SimpleAdapter(this, getAdviceDate(), R.layout.advice_item,
+				new String[] { "VAF22" }, new int[] { R.id.tvAdvice });
+		lv_advice.setAdapter(adapter);
+		lv_advice.setOnItemClickListener(new OnItemClickListener() {
+
 			@Override
-			public void onClick(View v) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
 				// TODO Auto-generated method stub
 				new AlertDialog.Builder(AdviceSkinTestActivity.this)
-						.setTitle("皮试观察")
-						.setIcon(android.R.drawable.ic_dialog_info)
-						.setSingleChoiceItems(
-								new String[] { "阴性", "阳性" }, 0,
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int which) {
-										dialog.dismiss();
-									}
-								}).setNegativeButton("取消", null).show();
+				.setTitle("皮试观察")
+				.setIcon(android.R.drawable.ic_dialog_info)
+				.setSingleChoiceItems(
+						new String[] { "阴性", "阳性" }, 0,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								dialog.dismiss();
+							}
+						}).setNegativeButton("取消", null).show();
 			}
+			
 		});
 	}
 	

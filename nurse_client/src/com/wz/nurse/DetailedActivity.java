@@ -10,10 +10,13 @@ import com.wz.nurse.util.JSONUtil;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -76,16 +79,45 @@ public class DetailedActivity extends Activity {
 				break;
 			case R.id.btn_search:
 				if (!"".equals(et_number.getText().toString().trim()) && et_number.getText().toString().trim() != null) {
-					List<Map<String, Object>> lists = getSearchData();
-					System.out.println((String)lists.get(0).get("VCM13"));
-					new AlertDialog.Builder(DetailedActivity.this).setTitle("列表框").setItems(
-							new String[] { (String)lists.get(0).get("VCM13"), (String)lists.get(0).get("VAF22") }, null).setPositiveButton(
-									"执行", null).setNegativeButton("放弃", null).show();
+					LayoutInflater inflater = getLayoutInflater();
+			        final View view = inflater.inflate(R.layout.list_search, null);
+			        ListView lv_search = (ListView) view.findViewById(R.id.lv_search);
+			        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(DetailedActivity.this, android.R.layout.simple_list_item_1, convert());
+			        lv_search.setAdapter(arrayAdapter);
+			        AlertDialog.Builder builder = new AlertDialog.Builder(DetailedActivity.this);
+			        builder.setTitle("瓶签/口服单")
+			        .setView(view)
+			        .setPositiveButton("执行", new DialogInterface.OnClickListener() {
+			            
+			            public void onClick(DialogInterface dialog, int which) {
+			                // TODO Auto-generated method stub
+			            }
+			        }).setNegativeButton("放弃", new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							
+						}
+			        	
+			        });
+			        builder.create().show();
 				}
 				break;
 			}
 		}
 	};
+	
+	private String[] convert() {
+		List<Map<String, Object>>lists = getSearchData();
+		System.out.println("lists数量" + lists.size());
+		List<String> list = new ArrayList<String>();
+		for (Map<String, Object> map : lists) {
+			list.add((String)map.get("VAF22"));
+		}
+		String[] arr = (String[]) list.toArray(new String[list.size()]);
+		return arr;
+	}
 	
 	private List<Map<String, Object>> getSearchData() {
 		JSONUtil ju = new JSONUtil();
