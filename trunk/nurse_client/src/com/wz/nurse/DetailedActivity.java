@@ -9,6 +9,7 @@ import java.util.Map;
 import com.wz.nurse.util.JSONUtil;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,7 @@ public class DetailedActivity extends Activity {
 	private Button btn_back;
 	private Button btn_record;
 	private Button btn_advice;
+	private Button btn_search;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,8 @@ public class DetailedActivity extends Activity {
 		btn_record.setOnClickListener(buttonListener);
 		btn_advice = (Button) findViewById(R.id.btn_advice);
 		btn_advice.setOnClickListener(buttonListener);
+		btn_search = (Button) findViewById(R.id.btn_search);
+		btn_search.setOnClickListener(buttonListener);
     }
     
     private OnClickListener buttonListener = new OnClickListener() {
@@ -70,9 +74,29 @@ public class DetailedActivity extends Activity {
 				intent = new Intent(DetailedActivity.this, AdviceActivity.class);
 				startActivity(intent);
 				break;
+			case R.id.btn_search:
+				if (!"".equals(et_number.getText().toString().trim()) && et_number.getText().toString().trim() != null) {
+					List<Map<String, Object>> lists = getSearchData();
+					System.out.println((String)lists.get(0).get("VCM13"));
+					new AlertDialog.Builder(DetailedActivity.this).setTitle("列表框").setItems(
+							new String[] { (String)lists.get(0).get("VCM13"), (String)lists.get(0).get("VAF22") }, null).setPositiveButton(
+									"执行", null).setNegativeButton("放弃", null).show();
+				}
+				break;
 			}
 		}
 	};
+	
+	private List<Map<String, Object>> getSearchData() {
+		JSONUtil ju = new JSONUtil();
+		try {
+			return ju.getData(getApplicationContext(), "bottle_labelling.json");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	@SuppressWarnings("rawtypes")
 	private List<Map<String, Object>> getDetailedData(String name) {
