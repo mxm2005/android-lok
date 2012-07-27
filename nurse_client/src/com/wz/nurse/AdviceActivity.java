@@ -1,9 +1,6 @@
 package com.wz.nurse;
 
-import java.util.List;
-import java.util.Map;
 
-import com.wz.nurse.util.JSONUtil;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -11,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -19,6 +15,7 @@ import android.widget.TextView;
 public class AdviceActivity extends TabActivity {
 	private TabHost tabHost;
 	private TabWidget tabWidget;
+	private Button btn_back;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +32,7 @@ public class AdviceActivity extends TabActivity {
 		tabHost.addTab(tabHost.newTabSpec("tab_test1")
 	    		.setIndicator("待执行", null).setContent(new Intent(this, AdvicewaitActivity.class)));
 	    tabHost.addTab(tabHost.newTabSpec("tab_test2")
-	    		.setIndicator("皮调观察", null).setContent(new Intent(this, AdvicewaitActivity.class)
+	    		.setIndicator("皮试观察", null).setContent(new Intent(this, AdviceSkinTestActivity.class)
 	    		.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 	    
 		tabWidget = tabHost.getTabWidget();
@@ -60,6 +57,16 @@ public class AdviceActivity extends TabActivity {
 //				
 //			}
 //		}
-		
+		btn_back = (Button) findViewById(R.id.btn_back);
+		btn_back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = null;
+				AdviceActivity.this.setResult(RESULT_OK, intent);
+				AdviceActivity.this.finish();
+			}
+		});
 	}
 }

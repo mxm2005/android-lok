@@ -23,6 +23,7 @@
 		<activity android:name=".NurseRecordActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".AdviceActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".AdvicewaitActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".AdviceSkinTestActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
     
     <instrumentation android:name="android.test.InstrumentationTestRunner"
