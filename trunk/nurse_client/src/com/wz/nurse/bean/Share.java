@@ -1,13 +1,18 @@
 package com.wz.nurse.bean;
 
-public class Record {
-	private String title;//标题							ooooooooooo
-	private int allowLength;// 表示允许输入文本的长度		ooooooooooo
-	private int point;// 表示文本的小数位数;				xxxx
-	private String unit;// 单位                         				xxxx
-	private int type;// 0文本，3单选 ，4复选			    ooooooooooo
-	private String range;// 值域							lllllllllllllllllllllllllllllllllllllllllll
-	private String senior;// 所属总类					ooooooooooo
+/**
+ * 共同属性
+ * 
+ * @author yjh
+ * 
+ */
+public class Share {
+	protected String title;// 标题 ooooooooooo
+	protected int allowLength;// 表示允许输入文本的长度 ooooooooooo
+	protected int point;// 表示文本的小数位数; xxxx
+	protected String unit;// 单位 xxxx
+	protected int type;// 0文本，3单选 ，4复选 ooooooooooo
+	protected String range;// 值域 lllllllllllllllllllllllllllllllllllllllllll
 
 	public String getTitle() {
 		return title;
@@ -55,14 +60,6 @@ public class Record {
 
 	public void setRange(String range) {
 		this.range = range;
-	}
-
-	public String getSenior() {
-		return senior;
-	}
-
-	public void setSenior(String senior) {
-		this.senior = senior;
 	}
 
 }
