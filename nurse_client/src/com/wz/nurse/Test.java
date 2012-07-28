@@ -7,7 +7,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.wz.nurse.bean.Addition;
+import com.wz.nurse.bean.Curve;
+import com.wz.nurse.bean.Form;
+import com.wz.nurse.bean.Grave;
 import com.wz.nurse.bean.Record;
+import com.wz.nurse.bean.Text;
 import com.wz.nurse.util.JSONUtil;
 
 import net.sf.json.JSONObject;
@@ -23,26 +28,76 @@ import android.test.AndroidTestCase;
 public class Test extends AndroidTestCase {
 	public void test4() throws Exception {
 		List<Record> records = new ArrayList<Record>();
+		List<Curve> curves = new ArrayList<Curve>();
+		List<Form> forms = new ArrayList<Form>();
+		List<Grave> graves = new ArrayList<Grave>();
+		List<Text> texts = new ArrayList<Text>();
+		List<Addition> additions = new ArrayList<Addition>();
 		JSONUtil ju = new JSONUtil();
 		List<Map<String, Object>> lists = ju.getData(getContext(), "nurse_input.json");
 		for (int i = 0; i < lists.size(); i++) {
 			Record record = new Record();
 			record.setTitle((String)lists.get(i).get("CBS05"));
-			record.setType(Integer.parseInt((String) lists.get(i).get("CBS07")));
 			record.setAllowLength(Integer.parseInt((String)  lists.get(i).get("CBS08")));
 			record.setPoint(Integer.parseInt((String)  lists.get(i).get("CBS09")));
 			record.setUnit((String) lists.get(i).get("CBS10"));
-			record.setType2(Integer.parseInt((String)  lists.get(i).get("CBS11")));
+			record.setType(Integer.parseInt((String)  lists.get(i).get("CBS11")));
 			record.setRange((String) lists.get(i).get("CBS12"));
 			record.setSenior((String) lists.get(i).get("CBS13"));
 			records.add(record);
 		}
 		
 		for (Record r : records) {
-//			System.out.println(r.getAllowLength());
-			if (r.getSenior().equals("5)附加项目")) {
-				System.out.println(r.getTitle());
+			if ("1)体温曲线项目".equals(r.getSenior())) {
+				Curve curve = new Curve();
+				curve.setTitle(r.getTitle());
+				curve.setUnit(r.getUnit());
+				curve.setAllowLength(r.getAllowLength());
+				curve.setPoint(r.getPoint());
+				curve.setRange(r.getRange());
+				curve.setType(r.getType());
+				curves.add(curve);
+			} else if ("5)附加项目".equals(r.getSenior())) {
+				Addition addition = new Addition();
+				addition.setTitle(r.getTitle());
+				addition.setUnit(r.getUnit());
+				addition.setAllowLength(r.getAllowLength());
+				addition.setPoint(r.getPoint());
+				addition.setRange(r.getRange());
+				addition.setType(r.getType());
+				additions.add(addition);
+			} else if ("2)体温表格项目".equals(r.getSenior())) {
+				Form form = new Form();
+				form.setTitle(r.getTitle());
+				form.setUnit(r.getUnit());
+				form.setAllowLength(r.getAllowLength());
+				form.setPoint(r.getPoint());
+				form.setRange(r.getRange());
+				form.setType(r.getType());
+				forms.add(form);
+			} else if ("3)危重记录项目".equals(r.getSenior())) {
+				Grave grave = new Grave();
+				grave.setTitle(r.getTitle());
+				grave.setUnit(r.getUnit());
+				grave.setAllowLength(r.getAllowLength());
+				grave.setPoint(r.getPoint());
+				grave.setRange(r.getRange());
+				grave.setType(r.getType());
+				graves.add(grave);
+			} else if ("4)文字记录项目".equals(r.getSenior())) {
+				Text text = new Text();
+				text.setTitle(r.getTitle());
+				text.setUnit(r.getUnit());
+				text.setAllowLength(r.getAllowLength());
+				text.setPoint(r.getPoint());
+				text.setRange(r.getRange());
+				text.setType(r.getType());
+				texts.add(text);
 			}
+		}
+		
+		for (Curve c : curves) {
+			System.out.println(c.getTitle());
 		}
 	}
 	

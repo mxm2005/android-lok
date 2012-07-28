@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/button_style"
+	android:layout_height="wrap_content" android:orientation="vertical"
+	android:layout_margin="5dip">
+	<LinearLayout android:layout_width="fill_parent"
+		android:gravity="center_vertical" android:layout_height="30dip"
+		android:orientation="vertical">
+		<TextView android:layout_width="fill_parent" android:id="@+id/tv_title"
+			android:paddingLeft="5dip" android:background="#B1CAF2"
+			android:gravity="center_vertical" android:textColor="@color/black"
+			android:layout_height="fill_parent" android:text="护理信息"
+			android:textSize="18sp" />
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/lin_item"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="center_vertical">
+	</LinearLayout>
+
+</LinearLayout>
