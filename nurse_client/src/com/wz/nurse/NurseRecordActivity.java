@@ -56,6 +56,7 @@ public class NurseRecordActivity extends Activity {
 			for (int i = 0; i < lists.size(); i++) {
 				Record record = new Record();
 				record.setTitle((String)lists.get(i).get("CBS05"));
+				record.setMode(Integer.parseInt((String) lists.get(i).get("CBS07")));
 				record.setAllowLength(Integer.parseInt((String)  lists.get(i).get("CBS08")));
 				record.setPoint(Integer.parseInt((String)  lists.get(i).get("CBS09")));
 				record.setUnit((String) lists.get(i).get("CBS10"));
@@ -69,6 +70,7 @@ public class NurseRecordActivity extends Activity {
 				if ("1)体温曲线项目".equals(r.getSenior())) {
 					Curve curve = new Curve();
 					curve.setTitle(r.getTitle());
+					curve.setMode(r.getMode());
 					curve.setUnit(r.getUnit());
 					curve.setAllowLength(r.getAllowLength());
 					curve.setPoint(r.getPoint());
@@ -78,6 +80,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("5)附加项目".equals(r.getSenior())) {
 					Addition addition = new Addition();
 					addition.setTitle(r.getTitle());
+					addition.setMode(r.getMode());
 					addition.setUnit(r.getUnit());
 					addition.setAllowLength(r.getAllowLength());
 					addition.setPoint(r.getPoint());
@@ -87,6 +90,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("2)体温表格项目".equals(r.getSenior())) {
 					Form form = new Form();
 					form.setTitle(r.getTitle());
+					form.setMode(r.getMode());
 					form.setUnit(r.getUnit());
 					form.setAllowLength(r.getAllowLength());
 					form.setPoint(r.getPoint());
@@ -96,6 +100,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("3)危重记录项目".equals(r.getSenior())) {
 					Grave grave = new Grave();
 					grave.setTitle(r.getTitle());
+					grave.setMode(r.getMode());
 					grave.setUnit(r.getUnit());
 					grave.setAllowLength(r.getAllowLength());
 					grave.setPoint(r.getPoint());
@@ -105,6 +110,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("4)文字记录项目".equals(r.getSenior())) {
 					Text text = new Text();
 					text.setTitle(r.getTitle());
+					text.setMode(r.getMode());
 					text.setUnit(r.getUnit());
 					text.setAllowLength(r.getAllowLength());
 					text.setPoint(r.getPoint());
@@ -128,7 +134,7 @@ public class NurseRecordActivity extends Activity {
 					//部位+物理降温
 					//（部位为选择：腋温+口温+肛温）（物理降温为checkbox）
 					final String[] m = {"腋温", "口温", "肛温"};
-					ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
+					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
 					TextView tvTitle3 = (TextView) lin_item_sp.findViewById(R.id.tvTitle);
@@ -146,26 +152,24 @@ public class NurseRecordActivity extends Activity {
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(c.getAllowLength())});
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
 					} else {
 						tvTitle2.setText(c.getTitle() + "(" + c.getUnit() + ")");
 					}
-					int count = c.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, c.getPoint());
+					if (c.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(c.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, c.getPoint(), c.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (c.getMode() == 0) {
+						setFilterByText(etSummary, c.getAllowLength());
 					}
-					etSummary.setTag(c.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
 					lin_item.addView(lin_item_ev);
 				} else if ("脉搏".equals(c.getTitle())) {
 					//类型
 					//（类型为选择：自然心率+起搏器+触不清+触不到+脉搏短拙）
 					final String[] m = {"自然心率", "起搏器温", "触不清温", "触不到", "脉搏短拙"};
-					ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
+					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
 					TextView tvTitle3 = (TextView) lin_item_sp.findViewById(R.id.tvTitle);
@@ -179,20 +183,18 @@ public class NurseRecordActivity extends Activity {
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(c.getAllowLength())});
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
 					} else {
 						tvTitle2.setText(c.getTitle() + "(" + c.getUnit() + ")");
 					}
-					int count = c.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, c.getPoint());
+					if (c.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(c.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, c.getPoint(), c.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (c.getMode() == 0) {
+						setFilterByText(etSummary, c.getAllowLength());
 					}
-					etSummary.setTag(c.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
 					lin_item.addView(lin_item_ev);
 				} else if ("呼吸".equals(c.getTitle())) {
 					//呼吸机
@@ -204,20 +206,18 @@ public class NurseRecordActivity extends Activity {
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(c.getAllowLength())});
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
 					} else {
 						tvTitle2.setText(c.getTitle() + "(" + c.getUnit() + ")");
 					}
-					int count = c.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, c.getPoint());
+					if (c.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(c.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, c.getPoint(), c.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (c.getMode() == 0) {
+						setFilterByText(etSummary, c.getAllowLength());
 					}
-					etSummary.setTag(c.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
 					lin_item.addView(lin_item_ev);
 				} else {
 					if (c.getType() == 0) {
@@ -225,20 +225,18 @@ public class NurseRecordActivity extends Activity {
 						View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 						TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 						EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-						etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(c.getAllowLength())});
 						if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 							tvTitle.setText(c.getTitle());
 						} else {
 							tvTitle.setText(c.getTitle() + "(" + c.getUnit() + ")");
 						}
-						int count = c.getPoint();
-						if (count == 0) {
-							etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-						} else {
-							pointset(etSummary, c.getPoint());
+						if (c.getMode() == 1) {//输入类型为数字的时候
+							etSummary.setTag(c.getRange());
+							etSummary.setOnFocusChangeListener(focusListener);//值域
+							setFilterByNumber(etSummary, c.getPoint(), c.getAllowLength());//设置小数位数，c.getPoint()为数字
+						} else if (c.getMode() == 0) {
+							setFilterByText(etSummary, c.getAllowLength());
 						}
-						etSummary.setTag(c.getRange());
-						etSummary.setOnFocusChangeListener(focusListener);
 						lin_item.addView(lin_item_ev);
 					} else if (c.getType() == 3) {
 						//生成单选框
@@ -266,26 +264,24 @@ public class NurseRecordActivity extends Activity {
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(f.getAllowLength())});
 					if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 						tvTitle2.setText(f.getTitle());
 					} else {
 						tvTitle2.setText(f.getTitle() + "(" + f.getUnit() + ")");
 					}
-					int count = f.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, f.getPoint());
+					if (f.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(f.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, f.getPoint(), f.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (f.getMode() == 0) {
+						setFilterByText(etSummary, f.getAllowLength());
 					}
-					etSummary.setTag(f.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
 					lin_item.addView(lin_item_ev);
 				} else if ("大便(次)".equals(f.getTitle())) {
 					//方式
 					//（方式为选择：正常+灌肠+失禁+人工肛门） 
 					final String[] m = { "自正常", "灌肠", "失禁", "人工肛门" };
-					ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
+					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
 					TextView tvTitle3 = (TextView) lin_item_sp.findViewById(R.id.tvTitle);
@@ -299,20 +295,18 @@ public class NurseRecordActivity extends Activity {
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(f.getAllowLength())});
 					if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 						tvTitle2.setText(f.getTitle());
 					} else {
 						tvTitle2.setText(f.getTitle() + "(" + f.getUnit() + ")");
 					}
-					int count = f.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, f.getPoint());
+					if (f.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(f.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, f.getPoint(), f.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (f.getMode() == 0) {
+						setFilterByText(etSummary, f.getAllowLength());
 					}
-					etSummary.setTag(f.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
 					lin_item.addView(lin_item_ev);
 				} else {
 					if (f.getType() == 0) {
@@ -320,20 +314,18 @@ public class NurseRecordActivity extends Activity {
 						View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 						TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 						EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-						etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(f.getAllowLength())});
 						if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 							tvTitle.setText(f.getTitle());
 						} else {
 							tvTitle.setText(f.getTitle() + "(" + f.getUnit() + ")");
 						}
-						int count = f.getPoint();
-						if (count == 0) {
-							etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-						} else {
-							pointset(etSummary, f.getPoint());
+						if (f.getMode() == 1) {//输入类型为数字的时候
+							etSummary.setTag(f.getRange());
+							etSummary.setOnFocusChangeListener(focusListener);//值域
+							setFilterByNumber(etSummary, f.getPoint(), f.getAllowLength());//设置小数位数，c.getPoint()为数字
+						} else if (f.getMode() == 0) {
+							setFilterByText(etSummary, f.getAllowLength());
 						}
-						etSummary.setTag(f.getRange());
-						etSummary.setOnFocusChangeListener(focusListener);
 						lin_item.addView(lin_item_ev);
 					} else if (f.getType() == 3) {
 						//生成单选框
@@ -353,29 +345,26 @@ public class NurseRecordActivity extends Activity {
 			for (Grave g : graves) {
 				if (g.getType() == 0) {
 					//生成文本框
-					System.out.println("-----------" + g.getTitle());
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(g.getAllowLength())});
 					if ("".equals(g.getUnit().trim()) || g.getUnit().trim() == null) {
 						tvTitle.setText(g.getTitle());
 					} else {
 						tvTitle.setText(g.getTitle() + "(" + g.getUnit() + ")");
 					}
-					etSummary.setTag(g.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
-					int count = g.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, g.getPoint());
+					if (g.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(g.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, g.getPoint(), g.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (g.getMode() == 0) {
+						setFilterByText(etSummary, g.getAllowLength());
 					}
 					lin_item.addView(lin_item_ev);
 				} else if (g.getType() == 3) {
 					//生成单选框
 					final String[] m = { "√清楚", "+朦胧", "+嗜睡", "+谵妄", "++半昏迷", "+++昏迷" };
-					ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
+					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
 					TextView tvTitle3 = (TextView) lin_item_sp.findViewById(R.id.tvTitle);
@@ -407,19 +396,17 @@ public class NurseRecordActivity extends Activity {
 					LinearLayout lin_item_ev = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(t.getAllowLength())});
 					if ("".equals(t.getUnit().trim()) || t.getUnit().trim() == null) {
 						tvTitle.setText(t.getTitle());
 					} else {
 						tvTitle.setText(t.getTitle() + "(" + t.getUnit() + ")");
 					}
-					etSummary.setTag(t.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
-					int count = t.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, t.getPoint());
+					if (t.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(t.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, t.getPoint(), t.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (t.getMode() == 0) {
+						setFilterByText(etSummary, t.getAllowLength());
 					}
 					lin_item.addView(lin_item_ev);
 				} else if (t.getType() == 3) {
@@ -441,19 +428,17 @@ public class NurseRecordActivity extends Activity {
 					LinearLayout lin_item_ev= (LinearLayout) layoutInflater.inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
-					etSummary.setFilters(new InputFilter[]{new InputFilter.LengthFilter(a.getAllowLength())});
 					if ("".equals(a.getUnit().trim()) || a.getUnit().trim() == null) {
 						tvTitle.setText(a.getTitle());
 					} else {
 						tvTitle.setText(a.getTitle() + "(" + a.getUnit() + ")");
 					}
-					etSummary.setTag(a.getRange());
-					etSummary.setOnFocusChangeListener(focusListener);
-					int count = a.getPoint();
-					if (count == 0) {
-						etSummary.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-					} else {
-						pointset(etSummary, a.getPoint());
+					if (a.getMode() == 1) {//输入类型为数字的时候
+						etSummary.setTag(a.getRange());
+						etSummary.setOnFocusChangeListener(focusListener);//值域
+						setFilterByNumber(etSummary, a.getPoint(), a.getAllowLength());//设置小数位数，c.getPoint()为数字
+					} else if (a.getMode() == 0) {
+						setFilterByText(etSummary, a.getAllowLength());
 					}
 					lin_item.addView(lin_item_ev);
 				} else if (a.getType() == 3) {
@@ -472,21 +457,11 @@ public class NurseRecordActivity extends Activity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.btn_comfrim:
-				LinearLayout cur = (LinearLayout) lin_cur.getChildAt(1);
-				int count = cur.getChildCount();
-				for (int i = 0; i < count; i++) {
-					LinearLayout cur2 = (LinearLayout) cur.getChildAt(i);
-					TextView tv = (TextView) cur2.findViewById(R.id.tvTitle);
-					View view = cur2.findViewById(R.id.etSummary);
-					if (view instanceof EditText) {
-						System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((EditText)view).getText().toString());
-					} else if (view instanceof CheckBox) {
-						System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((CheckBox)view).isChecked());
-					} else if (view instanceof Spinner) {
-						TextView tvTag = (TextView) cur2.findViewById(R.id.tvTag);
-						System.out.println(tv.getText().toString() + "pppppppppppppppp" + tvTag.getText().toString());
-					}
-				}
+				getDate(lin_cur);
+				getDate(lin_form);
+				getDate(lin_gra);
+				getDate(lin_text);
+				getDate(lin_add);
 				break;
 			case R.id.btn_back:
 				NurseRecordActivity.this.setResult(RESULT_OK);
@@ -496,6 +471,37 @@ public class NurseRecordActivity extends Activity {
 		}
 	};
 	
+	/**
+	 * 读取护理记录填入内容
+	 * @param lin 每个项目的父LinearLayout
+	 */
+	private void getDate (LinearLayout lin) {
+		LinearLayout childLin = (LinearLayout) lin.getChildAt(0);
+		TextView tv_title = (TextView) childLin.findViewById(R.id.tv_title);
+		System.out.println(tv_title.getText().toString() + "pppppppppp标题");
+		LinearLayout childLin2 = (LinearLayout) lin.getChildAt(1);
+		int count = childLin2.getChildCount();
+		for (int i = 0; i < count; i++) {
+			LinearLayout gsLin = (LinearLayout) childLin2.getChildAt(i);
+			TextView tv = (TextView) gsLin.findViewById(R.id.tvTitle);
+			View view = gsLin.findViewById(R.id.etSummary);
+			if (view instanceof EditText) {
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((EditText)view).getText().toString());
+			} else if (view instanceof CheckBox) {
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((CheckBox)view).isChecked());
+			} else if (view instanceof Spinner) {
+				TextView tvTag = (TextView) gsLin.findViewById(R.id.tvTag);
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + tvTag.getText().toString());
+			}
+		}
+	}
+	
+	/**
+	 * 监听下拉选择控件 spinner
+	 * @param sp
+	 * @param tv 预存textview
+	 * @param str spinner的内容数组
+	 */
 	private void spListener(Spinner sp, final TextView tv, final String[]str) {
 		sp.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
 
@@ -516,6 +522,9 @@ public class NurseRecordActivity extends Activity {
 	int min;//值域最小
 	int max;//值域最大
 	
+	/**
+	 * editText监听器
+	 */
 	private View.OnFocusChangeListener focusListener = new OnFocusChangeListener() {
 		@Override
 		public void onFocusChange(View v, boolean hasFocus) {
@@ -525,6 +534,7 @@ public class NurseRecordActivity extends Activity {
 				String range = (String) ((EditText)v).getTag();
 				String[] str = range.split(";");
 				try {
+					((EditText)v).setRawInputType(InputType.TYPE_CLASS_NUMBER);//设为数字键盘
 					min = Integer.parseInt(str[0]);
 					max = Integer.parseInt(str[1]);
 				} catch (Exception e) {
@@ -545,11 +555,12 @@ public class NurseRecordActivity extends Activity {
 		}
 	};
 	
-	InputFilter[] input = new InputFilter[1];
+	InputFilter[] input = new InputFilter[2];//数字editText过滤器
+	InputFilter[] input2 = new InputFilter[1];//文本 editText过滤器
 	
-	private void pointset(EditText et, final int count) {
+	//数字过滤
+	private void setFilterByNumber(EditText et, final int count, int length) {
 		input[0] = new InputFilter() {
-
 			@Override
 			public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
 				// TODO Auto-generated method stub
@@ -569,7 +580,14 @@ public class NurseRecordActivity extends Activity {
 				return null;
 			}
 		};
+		input[1] = new InputFilter.LengthFilter(length);
 		et.setFilters(input);
+	}
+	
+	//文本过滤，只控件文本输入长度
+	private void setFilterByText(EditText et, int length) {
+		input2[0] = new InputFilter.LengthFilter(length);
+		et.setFilters(input2);
 	}
 	
 	private void initView() {

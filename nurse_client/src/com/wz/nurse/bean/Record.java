@@ -1,13 +1,14 @@
 package com.wz.nurse.bean;
 
 public class Record {
-	private String title;//标题							
-	private int allowLength;// 表示允许输入文本的长度		
-	private int point;// 表示文本的小数位数;				xxxx
-	private String unit;// 单位                         			
-	private int type;// 0文本，3单选 ，4复选			    
-	private String range;// 值域							xxxx
-	private String senior;// 所属总类					
+	private String title;// 标题
+	private int mode;// 0为文本 1为数字
+	private int allowLength;// 表示允许输入文本的长度
+	private int point;// 表示文本的小数位数; xxxx
+	private String unit;// 单位
+	private int type;// 0文本，3单选 ，4复选
+	private String range;// 值域 xxxx
+	private String senior;// 所属总类
 
 	public String getTitle() {
 		return title;
@@ -15,6 +16,14 @@ public class Record {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public int getMode() {
+		return mode;
+	}
+
+	public void setMode(int mode) {
+		this.mode = mode;
 	}
 
 	public int getAllowLength() {
