@@ -4,9 +4,9 @@
 	android:layout_height="30dip" android:gravity="center_vertical">
 
 	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="30dip" android:orientation="vertical">
+		android:layout_height="45dip" android:orientation="vertical">
 		<LinearLayout android:layout_width="fill_parent"
-			android:layout_height="29dip" android:gravity="center_vertical">
+			android:layout_height="44dip" android:gravity="center_vertical">
 			<TextView android:id="@+id/tvTitle" android:layout_width="0dip"
 				android:layout_height="wrap_content" android:textColor="#FFFFFFFF"
 				android:gravity="center" android:textSize="18sp" android:text="体温"
@@ -15,9 +15,10 @@
 				android:layout_height="wrap_content" android:layout_weight="40"
 				android:layout_marginRight="5dip" android:layout_marginTop="2dip"
 				android:layout_marginBottom="2dip">
-				<CheckBox android:layout_width="wrap_content" android:id="@+id/etSummary"
+				<Spinner android:layout_width="wrap_content" android:id="@+id/etSummary"
 					android:paddingLeft="5.0dip" android:layout_height="wrap_content"
 					android:layout_weight="3" />
+				<TextView android:layout_width="0dip" android:layout_height="0dip" android:id="@+id/tvTag"/>
 			</LinearLayout>
 		</LinearLayout>
 		<ImageView android:layout_width="fill_parent"

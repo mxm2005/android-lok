@@ -7,17 +7,17 @@
 		android:layout_height="30dip" android:orientation="vertical">
 		<LinearLayout android:layout_width="fill_parent"
 			android:layout_height="29dip" android:gravity="center_vertical">
-			<TextView android:id="@+id/tvTitle" android:layout_width="0dip"
+			<TextView android:id="@+id/tvTitle" android:layout_width="0dip" android:singleLine="true"
 				android:layout_height="wrap_content" android:textColor="#FFFFFFFF"
-				android:gravity="center" android:textSize="20sp" android:text="情况"
-				android:layout_weight="2" android:layout_marginLeft="10dp" />
+				android:gravity="center" android:textSize="18sp" android:text="情况"
+				android:layout_weight="39" />
 			<LinearLayout android:layout_width="0dip"
-				android:layout_height="wrap_content" android:layout_weight="3"
+				android:layout_height="wrap_content" android:layout_weight="40"
 				android:layout_marginRight="5dip" android:layout_marginTop="2dip"
 				android:layout_marginBottom="2dip">
 				<EditText android:textSize="14.0sp" 
 					android:paddingTop="2dip" android:gravity="top" android:background="@drawable/msg_border"
-					android:id="@+id/etSummary" android:paddingLeft="10.0dip"
+					android:id="@+id/etSummary" android:paddingLeft="10.0dip" 
 					android:saveEnabled="true" android:layout_width="200.0dip"
 					android:layout_height="35.0dip" android:singleLine="true">
 				</EditText>

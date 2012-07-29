@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.TextView;
 /**
  * 我的病人界面
  * @author Administrator
@@ -39,6 +40,8 @@ public class MyPatientsActivity extends Activity {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			// TODO Auto-generated method stub
+			TextView tvName = (TextView) view.findViewById(R.id.tvName);
+			String name = tvName.getText().toString();
 			Intent intent = new Intent(MyPatientsActivity.this, DetailedActivity.class);//点击九宫图跳转到DetailedActivity界面
 			intent.putExtra("name", "郑孝平");//如果要控制点击不同的九宫图跳转加载不同的json数据在这里控制
 			startActivity(intent);
