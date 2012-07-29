@@ -8,6 +8,7 @@ package com.wz.nurse.bean;
  */
 public class Share {
 	protected String title;// 标题 ooooooooooo
+	private int mode;// 0为文本 1为数字
 	protected int allowLength;// 表示允许输入文本的长度 ooooooooooo
 	protected int point;// 表示文本的小数位数; xxxx
 	protected String unit;// 单位 xxxx
@@ -20,6 +21,14 @@ public class Share {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public int getMode() {
+		return mode;
+	}
+
+	public void setMode(int mode) {
+		this.mode = mode;
 	}
 
 	public int getAllowLength() {
