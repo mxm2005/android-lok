@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -49,6 +50,16 @@ public class MyInpatientAreaActivity extends Activity {
 		lv_area.setItemsCanFocus(false);
 		lv_area.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		lv_area.setAdapter(a);
+		lv_area.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				CheckedTextView ct = (CheckedTextView) arg1.findViewById(android.R.id.text1);
+				System.out.println(ct.getText().toString() + "这个就是编号和名字");
+			}
+		});
 //		lv_area.setOnItemClickListener(new OnItemClickListener() {
 //
 //			@Override
