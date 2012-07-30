@@ -14,9 +14,10 @@ import android.widget.TextView;
 
 import com.wz.nurse.R;
 
+@SuppressWarnings("unused")
 public class AreaAdapter extends BaseAdapter {
         public static Map<Integer, Boolean> isSelected;  
-        private Context context = null;  
+		private Context context = null;  
         private LayoutInflater inflater = null;  
         private List<Map<String, Object>> list = null;  
         private String keyString[] = null;  

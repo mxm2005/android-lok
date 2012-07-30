@@ -1,4 +1,4 @@
-package com.wz.nurse;
+/*package com.wz.nurse;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,16 +15,14 @@ import com.wz.nurse.bean.Record;
 import com.wz.nurse.bean.Text;
 import com.wz.nurse.util.JSONUtil;
 
-import net.sf.json.JSONObject;
-
 //import org.json.JSONObject;
 
 import android.test.AndroidTestCase;
-/**
+*//**
  * 开发测试类，可忽略
  * @author Administrator
  *
- */
+ *//*
 public class Test extends AndroidTestCase {
 	public void test4() throws Exception {
 		List<Record> records = new ArrayList<Record>();
@@ -235,4 +233,4 @@ public class Test extends AndroidTestCase {
 						+ "病区名称：" + lists.get(i).get("BCK03") + "\n");
 		}
 	}
-}
+}*/
