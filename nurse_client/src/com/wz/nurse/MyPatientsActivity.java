@@ -43,7 +43,7 @@ public class MyPatientsActivity extends Activity {
 			TextView tvName = (TextView) view.findViewById(R.id.tvName);
 			String name = tvName.getText().toString();
 			Intent intent = new Intent(MyPatientsActivity.this, DetailedActivity.class);//点击九宫图跳转到DetailedActivity界面
-			intent.putExtra("name", "郑孝平");//如果要控制点击不同的九宫图跳转加载不同的json数据在这里控制
+			intent.putExtra("name", name);//如果要控制点击不同的九宫图跳转加载不同的json数据在这里控制
 			startActivity(intent);
 		}
 	};
