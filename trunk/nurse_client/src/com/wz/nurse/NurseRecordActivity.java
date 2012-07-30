@@ -63,6 +63,7 @@ public class NurseRecordActivity extends Activity {
 				record.setType(Integer.parseInt((String)  lists.get(i).get("CBS11")));
 				record.setRange((String) lists.get(i).get("CBS12"));
 				record.setSenior((String) lists.get(i).get("CBS13"));
+				record.setName((String) lists.get(i).get("CBS15"));
 				records.add(record);
 			}
 			
@@ -76,6 +77,7 @@ public class NurseRecordActivity extends Activity {
 					curve.setPoint(r.getPoint());
 					curve.setRange(r.getRange());
 					curve.setType(r.getType());
+					curve.setName(r.getName());
 					curves.add(curve);
 				} else if ("5)附加项目".equals(r.getSenior())) {
 					Addition addition = new Addition();
@@ -86,6 +88,7 @@ public class NurseRecordActivity extends Activity {
 					addition.setPoint(r.getPoint());
 					addition.setRange(r.getRange());
 					addition.setType(r.getType());
+					addition.setName(r.getName());
 					additions.add(addition);
 				} else if ("2)体温表格项目".equals(r.getSenior())) {
 					Form form = new Form();
@@ -96,6 +99,7 @@ public class NurseRecordActivity extends Activity {
 					form.setPoint(r.getPoint());
 					form.setRange(r.getRange());
 					form.setType(r.getType());
+					form.setName(r.getName());
 					forms.add(form);
 				} else if ("3)危重记录项目".equals(r.getSenior())) {
 					Grave grave = new Grave();
@@ -106,6 +110,7 @@ public class NurseRecordActivity extends Activity {
 					grave.setPoint(r.getPoint());
 					grave.setRange(r.getRange());
 					grave.setType(r.getType());
+					grave.setName(r.getName());
 					graves.add(grave);
 				} else if ("4)文字记录项目".equals(r.getSenior())) {
 					Text text = new Text();
@@ -116,6 +121,7 @@ public class NurseRecordActivity extends Activity {
 					text.setPoint(r.getPoint());
 					text.setRange(r.getRange());
 					text.setType(r.getType());
+					text.setName(r.getName());
 					texts.add(text);
 				}
 			}
@@ -133,7 +139,7 @@ public class NurseRecordActivity extends Activity {
 				if ("体温".equals(c.getTitle())) {
 					//部位+物理降温
 					//（部位为选择：腋温+口温+肛温）（物理降温为checkbox）
-					final String[] m = {"腋温", "口温", "肛温"};
+					String[] m = {"腋温", "口温", "肛温"};
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
@@ -141,7 +147,7 @@ public class NurseRecordActivity extends Activity {
 					tvTitle3.setText("部位");
 					Spinner spSummary = (Spinner) lin_item_sp.findViewById(R.id.etSummary);
 					spSummary.setAdapter(adapter);
-					final TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
+					TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
 					tvTag.setText(m[0]);
 					spListener(spSummary, tvTag, m);
 					lin_item.addView(lin_item_sp);
@@ -151,6 +157,7 @@ public class NurseRecordActivity extends Activity {
 					lin_item.addView(lin_item_cb);
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle2.setTag(c.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
@@ -168,7 +175,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("脉搏".equals(c.getTitle())) {
 					//类型
 					//（类型为选择：自然心率+起搏器+触不清+触不到+脉搏短拙）
-					final String[] m = {"自然心率", "起搏器温", "触不清温", "触不到", "脉搏短拙"};
+					String[] m = {"自然心率", "起搏器温", "触不清温", "触不到", "脉搏短拙"};
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
@@ -176,12 +183,13 @@ public class NurseRecordActivity extends Activity {
 					tvTitle3.setText("类型");
 					Spinner spSummary = (Spinner) lin_item_sp.findViewById(R.id.etSummary);
 					spSummary.setAdapter(adapter);
-					final TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
+					TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
 					tvTag.setText(m[0]);
 					spListener(spSummary, tvTag, m);
 					lin_item.addView(lin_item_sp);
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle2.setTag(c.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
@@ -205,6 +213,7 @@ public class NurseRecordActivity extends Activity {
 					lin_item.addView(lin_item_cb);
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle2.setTag(c.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 						tvTitle2.setText(c.getTitle());
@@ -224,6 +233,7 @@ public class NurseRecordActivity extends Activity {
 						//生成文本框
 						View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 						TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+						tvTitle.setTag(c.getName());
 						EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 						if ("".equals(c.getUnit().trim()) || c.getUnit().trim() == null) {
 							tvTitle.setText(c.getTitle());
@@ -263,6 +273,7 @@ public class NurseRecordActivity extends Activity {
 					lin_item.addView(lin_item_cb);
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle2.setTag(f.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 						tvTitle2.setText(f.getTitle());
@@ -280,7 +291,7 @@ public class NurseRecordActivity extends Activity {
 				} else if ("大便(次)".equals(f.getTitle())) {
 					//方式
 					//（方式为选择：正常+灌肠+失禁+人工肛门） 
-					final String[] m = { "自正常", "灌肠", "失禁", "人工肛门" };
+					String[] m = { "自正常", "灌肠", "失禁", "人工肛门" };
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
@@ -288,12 +299,13 @@ public class NurseRecordActivity extends Activity {
 					tvTitle3.setText("方式");
 					Spinner spSummary = (Spinner) lin_item_sp.findViewById(R.id.etSummary);
 					spSummary.setAdapter(adapter);
-					final TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
+					TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
 					tvTag.setText(m[0]);
 					spListener(spSummary, tvTag, m);
 					lin_item.addView(lin_item_sp);
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle2 = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle2.setTag(f.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 						tvTitle2.setText(f.getTitle());
@@ -313,6 +325,7 @@ public class NurseRecordActivity extends Activity {
 						//生成文本框
 						View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 						TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+						tvTitle.setTag(f.getName());
 						EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 						if ("".equals(f.getUnit().trim()) || f.getUnit().trim() == null) {
 							tvTitle.setText(f.getTitle());
@@ -347,6 +360,7 @@ public class NurseRecordActivity extends Activity {
 					//生成文本框
 					View lin_item_ev = LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle.setTag(g.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(g.getUnit().trim()) || g.getUnit().trim() == null) {
 						tvTitle.setText(g.getTitle());
@@ -361,13 +375,16 @@ public class NurseRecordActivity extends Activity {
 						setFilterByText(etSummary, g.getAllowLength());
 					}
 					lin_item.addView(lin_item_ev);
-				} else if (g.getType() == 3) {
+				} else if (g.getType() == 3) {//单选框有值域，CBS12
 					//生成单选框
-					final String[] m = { "√清楚", "+朦胧", "+嗜睡", "+谵妄", "++半昏迷", "+++昏迷" };
+//					String[] m = { "√清楚", "+朦胧", "+嗜睡", "+谵妄", "++半昏迷", "+++昏迷" };
+					String range = g.getRange();
+					String[] m = range.split(";");
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					View lin_item_sp = layoutInflater.inflate(R.layout.lin_item_sp, null);
 					TextView tvTitle3 = (TextView) lin_item_sp.findViewById(R.id.tvTitle);
+					tvTitle3.setTag(g.getName());
 					if ("".equals(g.getUnit().trim()) || g.getUnit().trim() == null) {
 						tvTitle3.setText(g.getTitle());
 					} else {
@@ -375,7 +392,7 @@ public class NurseRecordActivity extends Activity {
 					}
 					Spinner spSummary = (Spinner) lin_item_sp.findViewById(R.id.etSummary);
 					spSummary.setAdapter(adapter);
-					final TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
+					TextView tvTag = (TextView) lin_item_sp.findViewById(R.id.tvTag);
 					tvTag.setText(m[0]);
 					spListener(spSummary, tvTag, m);
 					lin_item.addView(lin_item_sp);
@@ -395,6 +412,7 @@ public class NurseRecordActivity extends Activity {
 					//生成文本框
 					LinearLayout lin_item_ev = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle.setTag(t.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(t.getUnit().trim()) || t.getUnit().trim() == null) {
 						tvTitle.setText(t.getTitle());
@@ -427,6 +445,7 @@ public class NurseRecordActivity extends Activity {
 					//生成文本框
 					LinearLayout lin_item_ev= (LinearLayout) layoutInflater.inflate(R.layout.lin_item_ev, null);
 					TextView tvTitle = (TextView) lin_item_ev.findViewById(R.id.tvTitle);
+					tvTitle.setTag(a.getName());
 					EditText etSummary = (EditText) lin_item_ev.findViewById(R.id.etSummary);
 					if ("".equals(a.getUnit().trim()) || a.getUnit().trim() == null) {
 						tvTitle.setText(a.getTitle());
@@ -486,12 +505,12 @@ public class NurseRecordActivity extends Activity {
 			TextView tv = (TextView) gsLin.findViewById(R.id.tvTitle);
 			View view = gsLin.findViewById(R.id.etSummary);
 			if (view instanceof EditText) {
-				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((EditText)view).getText().toString());
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((EditText)view).getText().toString() + "CBS15:" + (String)tv.getTag());
 			} else if (view instanceof CheckBox) {
-				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((CheckBox)view).isChecked());
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + ((CheckBox)view).isChecked() + "CBS15:" + (String)tv.getTag());
 			} else if (view instanceof Spinner) {
 				TextView tvTag = (TextView) gsLin.findViewById(R.id.tvTag);
-				System.out.println(tv.getText().toString() + "pppppppppppppppp" + tvTag.getText().toString());
+				System.out.println(tv.getText().toString() + "pppppppppppppppp" + tvTag.getText().toString() + "CBS15:" + (String)tv.getTag());
 			}
 		}
 	}
