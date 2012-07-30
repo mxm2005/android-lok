@@ -9,6 +9,7 @@ public class Record {
 	private int type;// 0文本，3单选 ，4复选
 	private String range;// 值域 xxxx
 	private String senior;// 所属总类
+	private String name;
 
 	public String getTitle() {
 		return title;
@@ -72,6 +73,14 @@ public class Record {
 
 	public void setSenior(String senior) {
 		this.senior = senior;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

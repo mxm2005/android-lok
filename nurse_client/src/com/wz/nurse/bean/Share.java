@@ -14,6 +14,7 @@ public class Share {
 	protected String unit;// 单位 xxxx
 	protected int type;// 0文本，3单选 ，4复选 ooooooooooo
 	protected String range;// 值域 lllllllllllllllllllllllllllllllllllllllllll
+	protected String name;// CBS15 字段名
 
 	public String getTitle() {
 		return title;
@@ -69,6 +70,14 @@ public class Share {
 
 	public void setRange(String range) {
 		this.range = range;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
