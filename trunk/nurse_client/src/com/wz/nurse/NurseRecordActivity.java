@@ -457,11 +457,11 @@ public class NurseRecordActivity extends Activity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.btn_comfrim:
-				getDate(lin_cur);
-				getDate(lin_form);
-				getDate(lin_gra);
-				getDate(lin_text);
-				getDate(lin_add);
+				if (lin_cur.isShown()) getDate(lin_cur);
+				if (lin_form.isShown()) getDate(lin_form);
+				if (lin_gra.isShown()) getDate(lin_gra);
+				if (lin_text.isShown()) getDate(lin_text);
+				if (lin_add.isShown()) getDate(lin_add);
 				break;
 			case R.id.btn_back:
 				NurseRecordActivity.this.setResult(RESULT_OK);

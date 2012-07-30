@@ -24,6 +24,7 @@ import com.wz.nurse.util.JSONUtil;
  * @author Administrator
  *
  */
+@SuppressWarnings("unused")
 public class MyInpatientAreaActivity extends Activity {
 	private AreaAdapter adapter;//我的病区适配器
 	private ListView lv_area;//我的病区列表控件
@@ -46,7 +47,7 @@ public class MyInpatientAreaActivity extends Activity {
 		sAdapter = new SimpleAdapter(this, getAreaDate(), R.layout.area_item,
 				new String[] { "BCK01", "BCK03" }, new int[] { R.id.tvNumber,
 						R.id.tvArea });
-		ArrayAdapter a = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, convert());
+		ArrayAdapter<String> a = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, convert());
 		lv_area.setItemsCanFocus(false);
 		lv_area.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		lv_area.setAdapter(a);
