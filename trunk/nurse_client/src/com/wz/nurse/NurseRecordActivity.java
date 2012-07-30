@@ -99,17 +99,6 @@ public class NurseRecordActivity extends Activity {
 					curve.setType(r.getType());
 					curve.setName(r.getName());
 					curves.add(curve);
-				} else if ("5)附加项目".equals(r.getSenior())) {
-					Addition addition = new Addition();
-					addition.setTitle(r.getTitle());
-					addition.setMode(r.getMode());
-					addition.setUnit(r.getUnit());
-					addition.setAllowLength(r.getAllowLength());
-					addition.setPoint(r.getPoint());
-					addition.setRange(r.getRange());
-					addition.setType(r.getType());
-					addition.setName(r.getName());
-					additions.add(addition);
 				} else if ("2)体温表格项目".equals(r.getSenior())) {
 					Form form = new Form();
 					form.setTitle(r.getTitle());
@@ -143,7 +132,18 @@ public class NurseRecordActivity extends Activity {
 					text.setType(r.getType());
 					text.setName(r.getName());
 					texts.add(text);
-				}
+				} else if ("5)附加项目".equals(r.getSenior())) {
+					Addition addition = new Addition();
+					addition.setTitle(r.getTitle());
+					addition.setMode(r.getMode());
+					addition.setUnit(r.getUnit());
+					addition.setAllowLength(r.getAllowLength());
+					addition.setPoint(r.getPoint());
+					addition.setRange(r.getRange());
+					addition.setType(r.getType());
+					addition.setName(r.getName());
+					additions.add(addition);
+				} 
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
