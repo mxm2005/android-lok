@@ -70,6 +70,13 @@ public class AdviceSkinTestActivity extends Activity {
 									//点击阳性时要实现的功能
 									break;
 								}
+							}
+						}).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								//确定事件
 								dialog.dismiss();
 							}
 						}).setNegativeButton("取消", null).show();
