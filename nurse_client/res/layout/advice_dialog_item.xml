@@ -3,6 +3,12 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:gravity="center_vertical">
+	<TextView android:textSize="20.0sp" android:textColor="@color/white"
+			android:layout_width="260dip" android:layout_height="50dip" android:layout_alignParentTop="true"
+			android:id="@+id/tv_mode" android:paddingLeft="10.0dip"
+			android:gravity="center_vertical" android:layout_marginTop="5.0dip"
+			android:text="执行方式" android:layout_marginLeft="10.0dip"
+			android:layout_marginRight="10.0dip" />
 	<TextView android:layout_gravity="center"
 		android:layout_width="fill_parent" android:textColor="@color/white"
 		android:layout_height="wrap_content" android:paddingLeft="5.0dip"
