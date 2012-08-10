@@ -10,12 +10,14 @@
 			android:textSize="40sp" />
 	</LinearLayout>
 
-	<LinearLayout android:layout_width="fill_parent" android:gravity="center"
-		android:paddingTop="50dp" android:layout_height="wrap_content"
-		android:orientation="vertical" android:layout_weight="1">
+	<LinearLayout android:layout_width="fill_parent"
+		android:gravity="center" android:paddingTop="50dp"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_weight="1">
 		<LinearLayout android:layout_width="fill_parent"
 			android:gravity="center" android:layout_height="wrap_content">
 			<TextView android:layout_width="wrap_content"
+				android:focusable="true" android:focusableInTouchMode="true"
 				android:layout_height="wrap_content" android:gravity="center"
 				android:text="用户名" android:textSize="19sp" android:paddingLeft="15dp"
 				android:paddingRight="25dp" />
@@ -25,7 +27,6 @@
 				android:layout_width="200.0dip" android:layout_height="39.0dip"
 				android:layout_marginLeft="-5.0dip" android:text="ZLHIS"
 				android:hint="请输入用户名" android:singleLine="true">
-				<requestFocus />
 			</EditText>
 		</LinearLayout>
 		<LinearLayout android:layout_width="fill_parent"
