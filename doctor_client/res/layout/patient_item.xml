@@ -65,7 +65,7 @@
 		<TextView android:textColor="@color/black" android:gravity="left"
 			android:layout_alignParentBottom="true" android:id="@+id/tvAge"
 			android:layout_width="fill_parent" android:paddingLeft="20dip"
-			android:text="诊断：(S62.5051)拇指骨折" android:layout_height="18.0dip"
+			android:text="诊断:(S62.5051)拇指骨折" android:layout_height="18.0dip"
 			android:textSize="16.0sp" android:layout_marginTop="3.0dip"
 			android:layout_marginBottom="20dip" />
 	</RelativeLayout>
