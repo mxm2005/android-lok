@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="stock_code">代码</string>
+	<string name="stock_symbol">名称</string>
+	<string name="stock_last_price">现价</string>
+	<string name="stock_price_change">涨跌</string>
+	<string name="stock_price_change_percent">涨跌(%)</string>
+
+    <!-- the string resource for settings -->
+    <string name="preference">设置</string>
+
+    <!-- the string resource for display settings begin ...... -->
+    <string name="pref_display_title">显示设置</string>
+
+    <!-- string resources for text size setting begin ...... -->
+    <string name="pref_text_size_dialogtitle">字体大小</string>
+    <string name="pref_text_size">字体大小</string>
+    <string name="pref_text_size_small">较小</string>
+    <string name="pref_text_size_normal">正常</string>
+    <string name="pref_text_size_large">较大</string>
+    <!-- string resources for text size setting end ...... -->
+
+    <!-- string resources for bg color setting begin ...... -->
+    <string name="pref_bg_color">背景颜色</string>
+    <string name="pref_bg_color_black">黑色</string>
+    <string name="pref_bg_color_white">白色</string>
+
+    <string name="pref_bg_color_dialogtitle">背景颜色</string>
+
+	<!-- the string resource for up and down color ......-->
+	<string name="pref_up_down_color">涨跌颜色</string>
+	<string name="pref_up_down_color_red_green">红绿</string>
+	<string name="pref_up_down_color_green_red">绿红</string>
+	<string name="pref_up_down_color_dialogtitle">涨跌颜色</string>
+    <!-- the string resource for display settings end ......-->
+
+    <!-- the string resources for country and region begin-->
+    <string name="pref_country_region_title">国家和地区</string>
+    <string name="pref_country_region_cn">中国</string>
+	<string name="pref_country_region_hk">香港</string>
+	<string name="pref_country_region_tw">台湾</string>
+	<string name="pref_country_region_us">美国</string>
+	<!-- the string resources for country and region end-->
+
+    <!-- the string resources for data downloading speed begin -->
+    <string name="pref_data_scanning_speed_title">股票数据更新速度</string>
+    <string name="pref_real_time_data_scanning_speed_title">股票实时数据</string>
+    <string name="pref_real_time_data_scannint_speed_1s">1秒</string>
+	<string name="pref_real_time_data_scannint_speed_5s">5秒</string>
+	<string name="pref_real_time_data_scannint_speed_10s">10秒</string>
+	<string name="pref_real_time_data_scannint_speed_30s">30秒</string>
+	<string name="pref_real_time_data_scannint_speed_1min">1分钟</string>
+    <!-- the string resources for data downloading speed end -->
+</resources>

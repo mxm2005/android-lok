@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class HomeActivity extends Activity {
@@ -37,7 +38,7 @@ public class HomeActivity extends Activity {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
     	lin_summary.removeAllViews();
     	lin_summary.addView(gv_patient);
-    	adapter = new SimpleAdapter(getApplicationContext(), getDate(), R.layout.patient_item, new String[]{"tvBedNO"}, new int[]{R.id.tvBedNO});
+    	adapter = new SimpleAdapter(getApplicationContext(), getData(), R.layout.patient_item, new String[]{"tvBedNO"}, new int[]{R.id.tvBedNO});
 		gv_patient.setAdapter(adapter);
     }
     
@@ -45,12 +46,16 @@ public class HomeActivity extends Activity {
     	tab_advice_list = (LinearLayout) layoutInflater.inflate(R.layout.tab_advice_list, null);
     	lin_summary.removeAllViews();
     	lin_summary.addView(tab_advice_list);
+    	ListView lv_advice = (ListView) tab_advice_list.findViewById(R.id.lv_advice);
+    	SimpleAdapter sAdapter = new SimpleAdapter(getApplicationContext(), getData(), R.layout.advice_list_item, new String[]{"tvBedNO"}, new int[]{R.id.stock_change_percentage});
+    	lv_advice.setAdapter(sAdapter);
     }
     
-    private List<? extends Map<String, ?>> getDate() {
+
+	private List<? extends Map<String, ?>> getData() {
 		// TODO Auto-generated method stub
 		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
-		for (int i = 1; i < 26; i++) {
+		for (int i = 1; i < 50; i++) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("tvBedNO", i);
 			lists.add(map);

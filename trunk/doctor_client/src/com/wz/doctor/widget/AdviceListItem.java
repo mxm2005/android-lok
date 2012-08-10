@@ -1,4 +1,4 @@
-package com.wz.doctor.widget;
+/*package com.wz.doctor.widget;
 
 import com.wz.doctor.HomeActivity;
 import com.wz.doctor.R;
@@ -61,3 +61,4 @@ public class AdviceListItem extends LinearLayout {
 	}
 
 }
+*/
