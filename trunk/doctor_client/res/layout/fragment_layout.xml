@@ -3,11 +3,11 @@
 	android:layout_height="fill_parent" android:background="@drawable/main_bg">
 
 
-	<LinearLayout android:layout_width="0px"
+	<LinearLayout android:layout_width="0px" android:background="@drawable/main_toolbar_bg"
 		android:orientation="vertical" android:layout_height="fill_parent"
 		android:layout_weight="1">
 		<TextView android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:text="你好吗" />
+			android:layout_height="wrap_content" android:text="张丽娟" />
 		<LinearLayout android:layout_width="wrap_content"
 			android:layout_height="fill_parent">
 			<fragment class="com.wz.doctor.widget.TitleFragment"
@@ -19,11 +19,11 @@
 		</LinearLayout>
 	</LinearLayout>
 
-	<LinearLayout android:layout_width="0px"
+	<LinearLayout android:layout_width="0px" android:id="@+id/lin_summary"
 		android:layout_height="fill_parent" android:layout_weight="2">
-		<GridView android:id="@+id/gv_patient" android:layout_width="0dip"
-			android:layout_weight="2" android:layout_height="wrap_content"
-			android:verticalSpacing="1dp" android:horizontalSpacing="1dp"
-			android:numColumns="3" android:scrollbars="none" />
+		<!-- <GridView android:id="@+id/gv_patient" android:layout_width="0dip" 
+			android:layout_weight="2" android:layout_height="wrap_content" android:verticalSpacing="1dp" 
+			android:horizontalSpacing="1dp" android:numColumns="3" android:scrollbars="none" 
+			/> -->
 	</LinearLayout>
 </LinearLayout>
