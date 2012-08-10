@@ -3,12 +3,12 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/main_advice_list_bg">
 	<RelativeLayout android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_weight="0" android:layout_height="wrap_content">
 		<Button android:layout_width="wrap_content" android:id="@+id/btn_add"
-			android:background="@drawable/button_selector2" android:layout_marginLeft="6dip"
-			android:layout_height="wrap_content" android:textSize="19sp"
-			android:layout_alignParentLeft="true" android:textColor="@color/white"
-			android:text="新开" android:gravity="center" />
+			android:background="@drawable/button_selector2"
+			android:layout_marginLeft="6dip" android:layout_height="wrap_content"
+			android:textSize="19sp" android:layout_alignParentLeft="true"
+			android:textColor="@color/white" android:text="新开" android:gravity="center" />
 		<Button android:layout_width="wrap_content" android:id="@+id/btn_merge"
 			android:background="@drawable/button_selector2"
 			android:layout_height="wrap_content" android:textSize="19sp"
@@ -24,12 +24,21 @@
 			android:layout_height="wrap_content" android:textSize="19sp"
 			android:layout_toRightOf="@id/btn_stop" android:textColor="@color/white"
 			android:text="删除" android:gravity="center" />
-		<TextView android:layout_width="fill_parent" android:textSize="22sp" android:textColor="@color/black" android:layout_marginTop="7dip"
-			android:layout_height="wrap_content" android:text="全部临时医嘱" android:gravity="center"/>
+		<TextView android:layout_width="fill_parent"
+			android:textSize="22sp" android:textColor="@color/black"
+			android:layout_marginTop="7dip" android:layout_height="wrap_content"
+			android:text="全部临时医嘱" android:gravity="center" />
 		<Button android:layout_width="wrap_content" android:id="@+id/btn_confirm"
-			android:background="@drawable/button_selector2" android:layout_marginRight="6dip"
-			android:layout_height="wrap_content" android:textSize="19sp"
-			android:layout_alignParentRight="true" android:textColor="@color/white"
-			android:text="完成" android:gravity="center" />
+			android:background="@drawable/button_selector2"
+			android:layout_marginRight="6dip" android:layout_height="wrap_content"
+			android:textSize="19sp" android:layout_alignParentRight="true"
+			android:textColor="@color/white" android:text="完成" android:gravity="center" />
 	</RelativeLayout>
+	<View style="@style/list_item_seperator_layout"/>
+    <include layout="@layout/advice_list_header"/>
+    <View style="@style/list_item_seperator_layout"/>
+	<ListView android:layout_width="fill_parent"
+		android:layout_weight="1" android:layout_height="wrap_content"
+		android:id="@+id/lv_advice" android:scrollbars="none"
+		android:dividerHeight="1dip" />
 </LinearLayout>
