@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.wz.doctor.util.JSONUtil;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -42,8 +44,53 @@ public class HomeActivity extends Activity {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
     	lin_summary.removeAllViews();
     	lin_summary.addView(gv_patient);
-    	adapter = new SimpleAdapter(getApplicationContext(), getData(), R.layout.patient_item, new String[]{"tvBedNO"}, new int[]{R.id.tvBedNO});
+    	adapter = new SimpleAdapter(getApplicationContext(), 
+    			getPatientData(), 
+    			R.layout.patient_item, 
+    			new String[] { "BCQ04B", "VAA05", "VAA04", "Agep", "ABW02", "ABJ02", "VAE11" }, 
+				new int[] { R.id.tvBedNO, R.id.tvName, R.id.tvHosNO, R.id.tvAge, R.id.tvGender, R.id.tvCost, R.id.tvTime });
 		gv_patient.setAdapter(adapter);
+		gv_patient.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+    }
+	
+	/**
+	 * 为PatientAdapter适配器提醒数据
+	 * @return
+	 */
+    private List<Map<String, Object>> getPatientData() {
+    	JSONUtil ju = new JSONUtil();//解析json类
+    	List<Map<String, Object>> patients = new ArrayList<Map<String,Object>>();
+    	Map<String, Object> maps = null;
+    	try {
+//			return ju.getData(getApplicationContext(), "patient_list.json");//解析我的病人这个json
+    		List<Map<String, Object>> lists = ju.getData(getApplicationContext(), "patient_list.json");//解析我的病人这个json
+    		for (Map<String, Object> map : lists) {
+    			 maps = new HashMap<String, Object>();
+//    			 maps.put("BCQO4B", map.get("BCQO4B"));
+    			 System.out.println((String)map.get("BCQ04B") + "-----------");
+    			 maps.put("BCQ04B", (String)map.get("BCQ04B"));
+    			 maps.put("VAA05", (String)map.get("VAA05"));
+    			 maps.put("VAA04", (String)map.get("VAA04"));
+    			 maps.put("Agep", (String)map.get("Agep"));
+    			 maps.put("ABW02", (String)map.get("ABW02"));
+    			 maps.put("ABJ02", (String)map.get("ABJ02"));
+    			 maps.put("VAE11", (String)map.get("VAE11"));
+    			 patients.add(maps);
+    		}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		return patients;
     }
     
     private void adviceList() {
