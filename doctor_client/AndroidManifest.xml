@@ -12,5 +12,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".HomeActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".NetConfigActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 	</application>
 </manifest>
