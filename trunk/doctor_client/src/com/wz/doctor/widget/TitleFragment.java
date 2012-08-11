@@ -25,7 +25,7 @@ public class TitleFragment extends ListFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
-				android.R.layout.simple_list_item_activated_1, TITLES));
+				R.layout.simple_list_item_activated_1, TITLES));
 		View detailsFrame = getActivity().findViewById(R.id.details);
 		mDualPane = detailsFrame != null
 				&& detailsFrame.getVisibility() == View.VISIBLE;
@@ -68,7 +68,7 @@ public class TitleFragment extends ListFragment {
 		}
 	}
 
-	public static final String[] TITLES = { "Henry IV (1)", "Henry V",
+	public static final String[] TITLES = { "病人列表", "医嘱",
 			"Henry VIII", "Richard II", "Richard III", "Merchant of Venice",
 			"Othello", "King Lear" };
 }
