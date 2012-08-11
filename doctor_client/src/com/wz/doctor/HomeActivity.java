@@ -8,11 +8,15 @@ import java.util.Map;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+@SuppressWarnings("unused")
 public class HomeActivity extends Activity {
 	private GridView gv_patient;
 	private SimpleAdapter adapter;
@@ -25,8 +29,8 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_layout);
         initView();
-//        patientList();//加载病人列表
-        adviceList();//加载医嘱
+        patientList();//加载病人列表
+//        adviceList();//加载医嘱
     }
     
     private void initView() {
@@ -34,7 +38,7 @@ public class HomeActivity extends Activity {
     	lin_summary = (LinearLayout) findViewById(R.id.lin_summary);
     }
     
-    private void patientList() {
+	private void patientList() {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
     	lin_summary.removeAllViews();
     	lin_summary.addView(gv_patient);
@@ -49,6 +53,15 @@ public class HomeActivity extends Activity {
     	ListView lv_advice = (ListView) tab_advice_list.findViewById(R.id.lv_advice);
     	SimpleAdapter sAdapter = new SimpleAdapter(getApplicationContext(), getData(), R.layout.advice_list_item, new String[]{"tvBedNO"}, new int[]{R.id.stock_change_percentage});
     	lv_advice.setAdapter(sAdapter);
+    	lv_advice.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
     }
     
 
