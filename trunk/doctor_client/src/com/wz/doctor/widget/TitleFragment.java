@@ -1,4 +1,4 @@
-package com.wz.doctor.widget;
+/*package com.wz.doctor.widget;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -113,3 +113,4 @@ public class TitleFragment extends ListFragment implements OnItemClickListener {
 		System.out.println("--------------");
 	}
 }
+*/

@@ -29,6 +29,7 @@ public class HomeActivity extends Activity {
 	private LayoutInflater layoutInflater;
 	private LinearLayout tab_advice_list;
 	private ImageView imgGender;
+	private ListView lv_titles;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,39 @@ public class HomeActivity extends Activity {
     private void initView() {
     	layoutInflater = getLayoutInflater();
     	lin_summary = (LinearLayout) findViewById(R.id.lin_summary);
+    	lv_titles = (ListView) findViewById(R.id.lv_titles);
+    	SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), getButtons(), R.layout.simple_list_item_activated_1, 
+				new String[]{ "text1" }, 
+				new int[]{ android.R.id.text1 });
+    	lv_titles.setAdapter(adapter);
     }
+    
+	private List<? extends Map<String, ?>> getButtons() {
+		// TODO Auto-generated method stub
+		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("text1", R.drawable.main_toolbar_homepage);
+		Map<String, Object> map1 = new HashMap<String, Object>();
+		map1.put("text1", R.drawable.main_toolbar_pathway);
+		Map<String, Object> map2 = new HashMap<String, Object>();
+		map2.put("text1", R.drawable.main_toolbar_report);
+		Map<String, Object> map3 = new HashMap<String, Object>();
+		map3.put("text1", R.drawable.main_toolbar_advice);
+		Map<String, Object> map4 = new HashMap<String, Object>();
+		map4.put("text1", R.drawable.main_toolbar_memo);
+		Map<String, Object> map5 = new HashMap<String, Object>();
+		map5.put("text1", R.drawable.main_toolbar_nurse);
+		Map<String, Object> map6 = new HashMap<String, Object>();
+		map6.put("text1", R.drawable.main_toolbar_emr);
+		lists.add(map);
+		lists.add(map1);
+		lists.add(map2);
+		lists.add(map3);
+		lists.add(map4);
+		lists.add(map5);
+		lists.add(map6);
+		return lists;
+	}
     
 	private void patientList() {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
