@@ -7,7 +7,7 @@
 		android:layout_height="fill_parent">
 		<ImageView android:id="@+id/imgLevelName" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
-			android:background="@drawable/patient_nurse2" />
+			android:background="@drawable/yjhl" />
 		<LinearLayout android:layout_width="fill_parent"
 			android:gravity="center" android:layout_marginTop="6dip"
 			android:layout_height="wrap_content" android:paddingLeft="5.0dip"

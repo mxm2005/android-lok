@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.wz.doctor.adapter.PatientAdapter;
 import com.wz.doctor.util.JSONUtil;
 
 import android.app.Activity;
@@ -114,12 +115,13 @@ public class HomeActivity extends Activity {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
     	lin_summary.removeAllViews();
     	lin_summary.addView(gv_patient);
-    	adapter = new SimpleAdapter(getApplicationContext(), 
-    			getPatientData(), 
-    			R.layout.patient_item, 
-    			new String[] { "BCQ04B", "VAA05", "VAA04", "Agep", "ABW02", "ABJ02", "VAE11" }, 
-				new int[] { R.id.tvBedNO, R.id.tvName, R.id.tvHosNO, R.id.tvAge, R.id.tvGender, R.id.tvCost, R.id.tvTime });
-		gv_patient.setAdapter(adapter);
+    	PatientAdapter pAdapter = new PatientAdapter(getApplicationContext(), getPatientData());
+//    	adapter = new SimpleAdapter(getApplicationContext(), 
+//    			getPatientData(), 
+//    			R.layout.patient_item, 
+//    			new String[] { "BCQ04B", "VAA05", "VAA04", "Agep", "ABW02", "ABJ02", "VAE11" }, 
+//				new int[] { R.id.tvBedNO, R.id.tvName, R.id.tvHosNO, R.id.tvAge, R.id.tvGender, R.id.tvCost, R.id.tvTime });
+		gv_patient.setAdapter(pAdapter);
 		gv_patient.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -158,7 +160,7 @@ public class HomeActivity extends Activity {
     		for (Map<String, Object> map : lists) {
     			 maps = new HashMap<String, Object>();
 //    			 maps.put("BCQO4B", map.get("BCQO4B"));
-    			 System.out.println((String)map.get("BCQ04B") + "-----------");
+    			 System.out.println((String)map.get("Agep") + "-----------");
     			 maps.put("BCQ04B", (String)map.get("BCQ04B"));
     			 maps.put("VAA05", (String)map.get("VAA05"));
     			 maps.put("VAA04", (String)map.get("VAA04"));
@@ -166,6 +168,7 @@ public class HomeActivity extends Activity {
     			 maps.put("ABW02", (String)map.get("ABW02"));
     			 maps.put("ABJ02", (String)map.get("ABJ02"));
     			 maps.put("VAE11", (String)map.get("VAE11"));
+    			 maps.put("AAG02", (String)map.get("AAG02"));
     			 patients.add(maps);
     		}
 		} catch (Exception e) {
