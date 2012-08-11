@@ -6,7 +6,7 @@
 		android:layout_weight="1" android:layout_height="wrap_content"
 		android:paddingTop="50dp">
 		<TextView android:layout_width="fill_parent" android:gravity="center"
-			android:layout_height="wrap_content" android:text="中联移动护士工作站"
+			android:layout_height="wrap_content" android:text="中联移动医生工作站"
 			android:textSize="40sp" />
 	</LinearLayout>
 

@@ -25,30 +25,30 @@
 
 		<LinearLayout android:layout_width="160dip" android:layout_below="@id/ll" android:paddingRight="30dip"
 			android:layout_height="wrap_content" android:layout_alignParentRight="true"
-			android:orientation="vertical" android:layout_marginTop="16dip" android:gravity="center">
+			android:orientation="vertical" android:layout_marginTop="16dip" >
 			<TextView android:textSize="16.0sp" android:textColor="@color/black"
 				android:paddingLeft="13dip" android:gravity="center" android:id="@+id/tvll"
 				android:text="201100024" android:layout_width="fill_parent"
 				android:layout_height="18.0dip" android:layout_above="@+id/tvName" />
-			<LinearLayout android:layout_width="fill_parent" android:gravity="center_vertical" android:orientation="horizontal"
+			<LinearLayout android:layout_width="fill_parent" android:orientation="horizontal"
 				android:layout_height="18.0dip" android:layout_above="@+id/tvAge"
 				android:id="@+id/tvName" android:layout_marginTop="3.0dip">
-				<TextView android:textSize="16.0sp" android:textColor="@color/black" android:layout_weight="1"
-					android:gravity="right" android:text="29岁" android:layout_width="0dip" android:layout_marginLeft="20dip"
-					android:layout_height="18.0dip" android:layout_above="@+id/tvAge" />
+				<TextView android:textSize="16.0sp" android:textColor="@color/black" android:layout_weight="3"
+					android:gravity="center" android:text="29岁" android:layout_width="0dip" android:layout_marginLeft="14dip"
+					android:layout_height="18.0dip" android:layout_above="@+id/tvAge" android:paddingLeft="13dip"/>
 				<TextView android:textSize="16.0sp" android:textColor="@color/black"
 					android:text="男" android:layout_width="0dip" android:layout_weight="1"
 					android:layout_height="18.0dip" android:gravity="center" />
 				<TextView android:textSize="16.0sp" android:textColor="@color/black"
-					android:text="一般" android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="18.0dip" android:gravity="right" />
+					android:text="一般" android:layout_width="0dip" android:layout_weight="2"
+					android:layout_height="18.0dip" android:gravity="left" />
 			</LinearLayout>
-			<TextView android:textColor="@color/black" android:gravity="center"
+			<TextView android:textColor="@color/black" android:gravity="left"
 				android:layout_alignParentBottom="true" android:id="@+id/tvAge"
-				android:layout_width="fill_parent" android:paddingLeft="13dip"
+				android:layout_width="fill_parent"
 				android:text="善食" android:layout_height="18.0dip"
 				android:textSize="16.0sp" android:layout_marginTop="3.0dip"
-				android:layout_marginBottom="20dip" />
+				android:layout_marginBottom="20dip" android:layout_marginLeft="30dip"/>
 		</LinearLayout>
 
 		<ImageView android:id="@+id/imgNurseGrade"
