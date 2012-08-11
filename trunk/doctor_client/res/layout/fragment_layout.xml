@@ -14,7 +14,7 @@
 				android:layout_marginLeft="20dip" android:layout_marginTop="20dip" />
 			<ImageView android:id="@+id/imgGender2" android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:layout_alignParentLeft="true"
-				android:background="@drawable/patient_nurse2" />
+				android:background="@drawable/tjhl" />
 			<TextView android:layout_width="wrap_content" android:layout_marginBottom="8dip"  android:layout_marginLeft="12dip"
 				android:layout_height="wrap_content" android:text="张丽娟"
 				android:textSize="22.0sp" android:textColor="@color/white"
@@ -38,7 +38,7 @@
 					<TextView android:textSize="16.0sp" android:textColor="@color/white"
 						android:layout_weight="1" android:gravity="left" android:text="29岁"
 						android:layout_width="0dip" android:layout_marginLeft="18dip"
-						android:layout_height="18.0dip" android:layout_above="@+id/tvAge" />
+						android:layout_height="18.0dip" android:layout_above="@+id/tvAge2" />
 					<TextView android:textSize="16.0sp" android:textColor="@color/white"
 						android:text="男" android:layout_width="0dip" android:layout_weight="1"
 						android:layout_height="18.0dip" android:gravity="left"/>
