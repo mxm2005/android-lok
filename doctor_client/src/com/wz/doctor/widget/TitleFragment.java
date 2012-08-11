@@ -1,5 +1,10 @@
 package com.wz.doctor.widget;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.wz.doctor.MyFragmentActivity.DetailsActivity;
 import com.wz.doctor.R;
 
@@ -8,10 +13,13 @@ import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-public class TitleFragment extends ListFragment {
+public class TitleFragment extends ListFragment implements OnItemClickListener {
 	boolean mDualPane; // 检验是否有DetailFragment，没有就另起一个activity
 	int mCurCheckPosition;
 
@@ -24,8 +32,20 @@ public class TitleFragment extends ListFragment {
 	// 初始化TitleFragment
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(getActivity(),
-				R.layout.simple_list_item_activated_1, TITLES));
+//		ArrayAdapter<String> a = new ArrayAdapter<String>(getActivity(), R.layout.simple_list_item_activated_1, TITLES);
+		SimpleAdapter adapter = new SimpleAdapter(getActivity(), getData(), R.layout.simple_list_item_activated_1, 
+				new String[]{ "text1" }, 
+				new int[]{ android.R.id.text1 });
+		setListAdapter(adapter);
+		getListView().setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				System.out.println("00000000000000000000");
+			}
+		});
 		View detailsFrame = getActivity().findViewById(R.id.details);
 		mDualPane = detailsFrame != null
 				&& detailsFrame.getVisibility() == View.VISIBLE;
@@ -36,6 +56,21 @@ public class TitleFragment extends ListFragment {
 			getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			showDetails(mCurCheckPosition);
 		}
+	}
+
+	private List<? extends Map<String, ?>> getData() {
+		// TODO Auto-generated method stub
+		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("text1", R.drawable.main_toolbar_homepage);
+		Map<String, Object> map1 = new HashMap<String, Object>();
+		map1.put("text1", R.drawable.main_toolbar_pathway);
+		Map<String, Object> map2 = new HashMap<String, Object>();
+		map2.put("text1", R.drawable.main_toolbar_report);
+		lists.add(map);
+		lists.add(map1);
+		lists.add(map2);
+		return lists;
 	}
 
 	public void onListItemClick(ListView l, View v, int position, long id) {
@@ -71,4 +106,10 @@ public class TitleFragment extends ListFragment {
 	public static final String[] TITLES = { "病人列表", "医嘱",
 			"Henry VIII", "Richard II", "Richard III", "Merchant of Venice",
 			"Othello", "King Lear" };
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		System.out.println("--------------");
+	}
 }

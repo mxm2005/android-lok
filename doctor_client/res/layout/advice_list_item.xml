@@ -3,37 +3,37 @@
 	android:orientation="horizontal" android:layout_width="fill_parent"
 	android:layout_height="wrap_content">
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_code" android:layout_width="0dip"
+	<TextView android:id="@+id/tvType" android:layout_width="0dip"
 		android:layout_height="wrap_content" android:layout_weight="3"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" android:text="临嘱" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_symbol" android:layout_width="0dip"
+	<TextView android:id="@+id/tvTime" android:layout_width="0dip"
 		android:layout_height="wrap_content" android:layout_weight="3"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" android:text="05-1017:36" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_last_price"
+	<TextView android:id="@+id/tvDetail"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="20" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" android:text="0.0" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_change_price"
+	<TextView android:id="@+id/tvUsage"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="5" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" android:text="1.05" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_change_percentage"
+	<TextView android:id="@+id/tvScheme"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="5" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_change_percentage" android:text="开嘱人"
+	<TextView android:id="@+id/tvPeople" android:text="开嘱人"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="4" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_change_percentage" android:text="执行科室"
+	<TextView android:id="@+id/tvOffices" android:text="执行科室"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="5" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />
