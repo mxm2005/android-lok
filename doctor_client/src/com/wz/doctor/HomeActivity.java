@@ -36,8 +36,8 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_layout);
         initView();
-//        patientList();//加载病人列表
-        adviceList();//加载医嘱
+        patientList();//加载病人列表
+//        adviceList();//加载医嘱
         imgGender = (ImageView) findViewById(R.id.imgGender);
         imgGender.setOnClickListener(new OnClickListener() {
 			
@@ -53,12 +53,32 @@ public class HomeActivity extends Activity {
     	layoutInflater = getLayoutInflater();
     	lin_summary = (LinearLayout) findViewById(R.id.lin_summary);
     	lv_titles = (ListView) findViewById(R.id.lv_titles);
-    	SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), getButtons(), R.layout.simple_list_item_activated_1, 
+    	SimpleAdapter adapter = new SimpleAdapter(this, getButtons(), R.layout.simple_list_item_activated_1, 
 				new String[]{ "text1" }, 
-				new int[]{ android.R.id.text1 });
+				new int[]{ R.id.ibTitle });
     	lv_titles.setAdapter(adapter);
+    	lv_titles.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long position) {
+				// TODO Auto-generated method stub
+				switch ((int)position) {
+				case 0:
+					patientList();//加载病人列表
+					break;
+				case 2:
+					adviceList();//加载医嘱
+					break;
+				}
+			}
+		});
     }
     
+    /**
+     * 左边列表功能按钮
+     * @return
+     */
 	private List<? extends Map<String, ?>> getButtons() {
 		// TODO Auto-generated method stub
 		List<Map<String, Object>> lists = new ArrayList<Map<String,Object>>();
@@ -78,14 +98,18 @@ public class HomeActivity extends Activity {
 		map6.put("text1", R.drawable.main_toolbar_emr);
 		lists.add(map);
 		lists.add(map1);
-		lists.add(map2);
 		lists.add(map3);
-		lists.add(map4);
-		lists.add(map5);
 		lists.add(map6);
+		lists.add(map5);
+		lists.add(map2);
+		lists.add(map4);
+		
 		return lists;
 	}
     
+	/**
+	 * 加载所有病人列表
+	 */
 	private void patientList() {
     	gv_patient= (GridView) layoutInflater.inflate(R.layout.tab_patient_list, null);
     	lin_summary.removeAllViews();
@@ -107,6 +131,9 @@ public class HomeActivity extends Activity {
 		});
     }
 	
+	/**
+	 * 加载单个病人详细列表
+	 */
 	private void patientItem() {
 		LinearLayout patient_detailed = (LinearLayout) layoutInflater.inflate(R.layout.patient_detailed, null);
 		ListView lv_detailed = (ListView) patient_detailed.findViewById(R.id.lv_detailed);
@@ -119,7 +146,7 @@ public class HomeActivity extends Activity {
 	}
 	
 	/**
-	 * 为PatientAdapter适配器提醒数据
+	 * 为病人列表适配器数据
 	 * @return
 	 */
     private List<Map<String, Object>> getPatientData() {
@@ -127,7 +154,6 @@ public class HomeActivity extends Activity {
     	List<Map<String, Object>> patients = new ArrayList<Map<String,Object>>();
     	Map<String, Object> maps = null;
     	try {
-//			return ju.getData(getApplicationContext(), "patient_list.json");//解析我的病人这个json
     		List<Map<String, Object>> lists = ju.getData(getApplicationContext(), "patient_list.json");//解析我的病人这个json
     		for (Map<String, Object> map : lists) {
     			 maps = new HashMap<String, Object>();
@@ -150,6 +176,9 @@ public class HomeActivity extends Activity {
 		return patients;
     }
     
+    /**
+     * 加载医嘱界面
+     */
     private void adviceList() {
     	tab_advice_list = (LinearLayout) layoutInflater.inflate(R.layout.tab_advice_list, null);
     	lin_summary.removeAllViews();

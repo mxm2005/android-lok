@@ -59,19 +59,20 @@
 		</RelativeLayout>
 		<LinearLayout android:layout_width="wrap_content"
 			android:layout_height="fill_parent">
-			<!-- <fragment class="com.wz.doctor.widget.TitleFragment"
-				android:id="@+id/titles" android:layout_weight="5"
-				android:layout_width="0px" android:layout_height="fill_parent" />
-			<FrameLayout android:id="@+id/details"
-				android:layout_weight="2" android:layout_width="0px"
-				android:layout_height="fill_parent" android:background="?android:attr/detailsElementBackground" /> -->
+			<!-- <fragment class="com.wz.doctor.widget.TitleFragment" android:id="@+id/titles" 
+				android:layout_weight="5" android:layout_width="0px" android:layout_height="fill_parent" 
+				/> <FrameLayout android:id="@+id/details" android:layout_weight="2" android:layout_width="0px" 
+				android:layout_height="fill_parent" android:background="?android:attr/detailsElementBackground" 
+				/> -->
 			<ListView android:layout_width="0dip" android:layout_height="fill_parent"
 				android:layout_weight="6" android:id="@+id/lv_titles"
-				android:background="@drawable/main_toolbar_bg" android:dividerHeight="0dip"
-				android:divider="@null" />
+				android:cacheColorHint="#00000000" android:background="@drawable/main_toolbar_bg"
+				android:dividerHeight="0dip" android:divider="@null" />
 			<ListView android:layout_width="0dip" android:layout_height="fill_parent"
-				android:layout_weight="2" android:id="@+id/lv_details" />
-				</LinearLayout>
+				android:layout_weight="2" android:id="@+id/lv_details"
+				android:cacheColorHint="#00000000" android:dividerHeight="0dip"
+				android:divider="@null" />
+		</LinearLayout>
 	</LinearLayout>
 
 	<LinearLayout android:layout_width="0px" android:id="@+id/lin_summary"
