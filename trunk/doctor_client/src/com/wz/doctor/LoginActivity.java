@@ -15,7 +15,7 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.main);
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_login.setOnClickListener(buttonListener);
         btn_exit = (Button) findViewById(R.id.btn_exit);
@@ -37,6 +37,10 @@ public class LoginActivity extends Activity {
                 break;
             case R.id.btn_exit://退出
                 finish();
+                break;
+            case R.id.btn_net_config://跳转到NetConfigActivity界面，网络配置
+                intent = new Intent(LoginActivity.this, NetConfigActivity.class);
+                startActivity(intent);
                 break;
             }
         }
