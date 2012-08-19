@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<!-- 医嘱期效start -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="医嘱期效" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/patient_btn_refresh" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="全部" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:visibility="invisible" android:layout_height="wrap_content"
+			android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="长期医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:visibility="invisible" android:layout_height="wrap_content"
+			android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="临时医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+	<!-- 医嘱期效end -->
+
+	<!-- 医嘱分类tart -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_marginTop="20dip">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="医嘱分类" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content"
+				android:visibility="gone" android:layout_height="wrap_content"
+				android:background="@drawable/patient_btn_refresh" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="当前医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="今日医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="昨日医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="最近一周的医师" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="全部医嘱" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+	<!-- 医嘱分类end -->
+
+</LinearLayout>

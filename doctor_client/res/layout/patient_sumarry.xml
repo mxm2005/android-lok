@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<EditText android:textSize="14.0sp" android:layout_gravity="center_horizontal"
+		android:drawableLeft="@android:drawable/ic_search_category_default"
+		android:id="@+id/et_number" android:background="@drawable/msg_border"
+		android:layout_width="fill_parent" android:layout_height="39.0dip"
+		android:hint="请输入姓名或住院号" />
+
+	<!-- 是否我的病人start -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_marginTop="20dip">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="是否我的病人" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/patient_btn_refresh" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true" android:id="@+id/lin_patient_all"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content" android:id="@+id/cb_all" android:visibility="invisible"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="所有病人(11人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true" android:id="@+id/lin_patient_my"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content" android:id="@+id/cb_my" android:visibility="invisible"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="我的病人(8人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+	<!-- 是否我的病人end -->
+
+	<!-- 是否在院start -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_marginTop="20dip">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="是否在院" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content"
+				android:visibility="invisible" android:layout_height="wrap_content"
+				android:background="@drawable/patient_btn_refresh" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="在院病人(11人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="出院病人(0人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+	<!-- 是否在院end -->
+
+
+	<!-- 科室start -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_marginTop="20dip">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="科室" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content"
+				android:visibility="invisible" android:layout_height="wrap_content"
+				android:background="@drawable/patient_btn_refresh" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="住院外三(6人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="妇产二科(5人)" android:textSize="18sp" android:textColor="@color/white" />
+	</LinearLayout>
+	<!-- 科室end -->
+</LinearLayout>

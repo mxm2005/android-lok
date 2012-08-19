@@ -4,43 +4,43 @@
 	android:orientation="horizontal"  android:layout_marginLeft="6dip" android:layout_marginRight="6dip">
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_code"
-		android:text="期效" android:layout_width="0dip"
+		android:text="期效" android:layout_width="0dip" android:textColor="@color/blue"
 		android:layout_height="wrap_content" android:layout_weight="3"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
-	<TextView android:id="@+id/stock_list_header_symbol"
-		android:text="时间" android:layout_width="0dip"
+	<TextView android:id="@+id/stock_list_header_symbol" 
+		android:text="时间" android:layout_width="0dip" android:textColor="@color/blue"
 		android:layout_height="wrap_content" android:layout_weight="3"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_last_price"
-		android:text="内容" android:layout_width="0dip"
+		android:text="内容" android:layout_width="0dip" android:textColor="@color/blue"
 		android:layout_height="wrap_content" android:layout_weight="20"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_price_change"
-		android:text="用法" android:layout_width="0dip"
+		android:text="用法" android:layout_width="0dip" android:textColor="@color/blue"
 		android:layout_height="wrap_content" android:layout_weight="5"
 		android:layout_gravity="center" android:gravity="center"
 		android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_price_change_percentage"
-		android:text="时间方案"
+		android:text="时间方案" android:textColor="@color/blue"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="5" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_price_change_percentage"
-		android:text="开嘱人"
+		android:text="开嘱人" android:textColor="@color/blue"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="4" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />
 	<View style="@style/list_item_cell_seperator_layout" />
 	<TextView android:id="@+id/stock_list_header_price_change_percentage"
-		android:text="执行科室"
+		android:text="执行科室" android:textColor="@color/blue"
 		android:layout_width="0dip" android:layout_height="wrap_content"
 		android:layout_weight="5" android:layout_gravity="center"
 		android:gravity="center" android:padding="2dip" />

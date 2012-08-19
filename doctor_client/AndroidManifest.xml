@@ -4,14 +4,15 @@
 	<uses-sdk android:minSdkVersion="11" />
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".LoginActivity"
+		<activity android:name=".HomeActivity" android:screenOrientation="landscape"
 			android:theme="@android:style/Theme.Black.NoTitleBar" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".HomeActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
-		<activity android:name=".NetConfigActivity" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<!-- <activity android:name=".HomeActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+		<activity android:name=".NetConfigActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+		<activity android:name=".AddAdviceActivity" android:screenOrientation="landscape" android:theme="@style/bklistDialog"></activity>
 	</application>
 </manifest>

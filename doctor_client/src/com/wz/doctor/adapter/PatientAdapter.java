@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class PatientAdapter extends BaseAdapter {
@@ -47,6 +48,7 @@ public class PatientAdapter extends BaseAdapter {
 		if (convertView == null) {
 			convertView = LayoutInflater.from(mContext).inflate(R.layout.patient_item, null);
 			holder = new ViewHolder();
+			holder.lin_patient = (LinearLayout) convertView.findViewById(R.id.lin_patient);
 			holder.nurseGrade = (ImageView) convertView.findViewById(R.id.imgLevelName);
 			holder.number = (TextView) convertView.findViewById(R.id.tvBedNO);
 			holder.name = (TextView) convertView.findViewById(R.id.tvName);
@@ -60,6 +62,11 @@ public class PatientAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
+		if ("男".equals(lists.get(position).get("ABW02").toString())) {
+			holder.lin_patient.setBackgroundResource(R.drawable.patient_itemselbg_m);
+		} else if ("女".equals(lists.get(position).get("ABW02").toString())) {
+			holder.lin_patient.setBackgroundResource(R.drawable.patient_itemselbg_f);
+		}
 		if ("一级护理".equals(lists.get(position).get("AAG02").toString())) {//同上
 			holder.nurseGrade.setBackgroundResource(R.drawable.yjhl);
 		} else if ("二级护理".equals(lists.get(position).get("AAG02").toString())) {
@@ -82,6 +89,7 @@ public class PatientAdapter extends BaseAdapter {
 	}
 	
 	static class ViewHolder {
+		LinearLayout lin_patient;
 		ImageView nurseGrade;//护理级别
 		TextView number;//序列号
 		TextView name;//病人姓名

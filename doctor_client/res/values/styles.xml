@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Define the list items style begin -->
-    <style name="list_item_seperator_layout">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1dip</item>
-        <item name="android:background">@color/color_dark_grey</item>
-    </style>
+	<!-- Define the list items style begin -->
+	<style name="list_item_seperator_layout">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">1dip</item>
+		<item name="android:background">@color/color_dark_grey</item>
+	</style>
 
-    <style name="list_item_cell_seperator_layout">
-        <item name="android:layout_width">1dip</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:background">@color/color_dark_grey</item>
-    </style>
+	<style name="list_item_cell_seperator_layout">
+		<item name="android:layout_width">1dip</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:background">@color/color_dark_grey</item>
+	</style>
 
-    <!-- Define the list items style end -->
+	<style name="bklistDialog" parent="@android:style/Theme.Dialog">
+		<item name="android:windowBackground">@drawable/setting_bg</item>
+		//设置背景
+		<item name="android:windowFrame">@null</item>
+		//设置边框
+		<item name="android:backgroundDimEnabled">true</item>
+		//设置是否背景模糊
+		<item name="android:windowIsTranslucent">true</item>
+		//设置半透明
+		<item name="android:windowNoTitle">true</item>
+		//设置无标题
+		<item name="android:windowFullscreen">false</item>
+		//设置全屏
+	</style>
+
+	<!-- Define the list items style end -->
 </resources>
