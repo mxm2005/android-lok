@@ -6,17 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -45,6 +52,9 @@ public class AdviceHandler {
 	private LinearLayout lin_advice_yesterday;
 	private LinearLayout lin_advice_week;
 	private LinearLayout lin_advices_all;
+	private PopupWindow popupWindow;
+	private boolean flag = false;
+	private View layout;
 
 	public AdviceHandler(HomeActivity mHomeActivity) {
 		this.mHomeActivity = mHomeActivity;
@@ -87,6 +97,7 @@ public class AdviceHandler {
 				R.layout.tab_advice_list, null);
 		ListView lv_advice = (ListView) tab_advice_list
 				.findViewById(R.id.lv_advice);
+//		btn_implement = (Button) tab_advice_list.findViewById(R.id.btn_implement);
 		SimpleAdapter sAdapter = new SimpleAdapter(mHomeActivity, getData(),
 				R.layout.advice_list_item, new String[] { "NVAF11", "VAF45",
 						"VAF22N", "VAF26", "BCE03A", "NBCK03" }, new int[] {
@@ -106,6 +117,8 @@ public class AdviceHandler {
 		btn_add.setOnClickListener(buttonListener);
 		Button btn_del = (Button) tab_advice_list.findViewById(R.id.btn_del);
 		btn_del.setOnClickListener(buttonListener);
+		Button btn_merge = (Button) tab_advice_list.findViewById(R.id.btn_merge);
+		btn_merge.setOnClickListener(buttonListener);
 		return tab_advice_list;
 	}
 
@@ -133,20 +146,32 @@ public class AdviceHandler {
 		}
 		return advices;
 	}
-
 	private OnClickListener buttonListener = new OnClickListener() {
 
+		@SuppressWarnings("static-access")
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			Intent intent = null;
 			switch (v.getId()) {
 			case R.id.btn_add:
-				Intent intent = new Intent(mHomeActivity,
+				intent = new Intent(mHomeActivity,
 						AddAdviceActivity.class);
 				mHomeActivity.startActivity(intent);
 				break;
 			case R.id.btn_del:
 				dialog();
+				break;
+			case R.id.btn_merge:
+				LayoutInflater inflater = LayoutInflater.from(mHomeActivity);
+		        layout = inflater.inflate(R.layout.toast, null);
+				popupWindow = new PopupWindow(layout, LayoutParams.WRAP_CONTENT,
+		                LayoutParams.WRAP_CONTENT);
+				Button btn_implement = (Button) layout.findViewById(R.id.btn_implement);
+				Button btn_cancel = (Button) layout.findViewById(R.id.btn_cancel);
+				btn_implement.setOnClickListener(buttonListener);
+				btn_cancel.setOnClickListener(buttonListener);
+				openMenu();
 				break;
 			case R.id.lin_advice_all://选择全部
 				lin_advice_all.setBackgroundResource(R.drawable.word_list_selector_selected);
@@ -207,10 +232,43 @@ public class AdviceHandler {
 				lin_advice_week.setBackgroundDrawable(null);
 				lin_advice_current.setBackgroundDrawable(null);
 				break;
+			case R.id.btn_implement://跳转到执行医嘱界面
+//				intent = new Intent(mHomeActivity, null);
+//				mHomeActivity.startActivity(intent);
+				break;
+			case R.id.btn_cancel:
+				openMenu();
+				NotificationManager manager = (NotificationManager) mHomeActivity.getSystemService(Context.NOTIFICATION_SERVICE);  
+                Notification notification = new Notification(R.drawable.icon, "新医嘱", System.currentTimeMillis());
+                notification.flags = Notification.FLAG_AUTO_CANCEL;
+                notification.defaults = notification.DEFAULT_SOUND;
+                notification.setLatestEventInfo(mHomeActivity, "执行新医嘱", "点击执行", PendingIntent.getActivity(mHomeActivity, 0, intent, 0));  
+                manager.notify(0, notification);
+				break;
 			}
 		}
 	};
 	
+	/**
+	 * 新的医嘱提醒
+	 */
+	public void openMenu() {
+        if (!flag) {
+            popupWindow.setAnimationStyle(R.style.PopupAnimation);
+            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
+            popupWindow.setFocusable(true);
+            popupWindow.update();
+            flag = true;
+        } else {
+            popupWindow.dismiss();
+            popupWindow.setFocusable(true);
+            flag = false;
+        }
+    }
+	
+	/**
+	 * 退出的提醒
+	 */
 	protected void dialog() {
 		AlertDialog.Builder builder = new Builder(mHomeActivity);
 		builder.setMessage("确认要删除吗？");

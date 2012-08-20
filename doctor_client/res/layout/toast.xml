@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/img_toast_bg" android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+			<ImageView android:id="@+id/icon" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:src="@drawable/img_toast_ok">
+			</ImageView>
+			<TextView android:textSize="23.0sp" android:layout_gravity="center_vertical"
+				android:id="@+id/message" android:paddingLeft="6.0dip" android:text="您有新的医嘱"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+			</TextView>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+			<Button android:layout_width="0dip" android:layout_height="wrap_content"  android:id="@+id/btn_implement"
+				android:text="执行" android:layout_weight="1" android:background="@drawable/btn_click_selector" android:textSize="18sp"/>
+			<Button android:layout_width="0dip" android:layout_height="wrap_content" android:layout_marginLeft="10dip" android:id="@+id/btn_cancel"
+				android:text="取消" android:layout_weight="1" android:background="@drawable/btn_click_selector" android:textSize="18sp"/>
+		</LinearLayout>
+	</LinearLayout>
+</FrameLayout>

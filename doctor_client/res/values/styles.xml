@@ -28,6 +28,11 @@
 		<item name="android:windowFullscreen">false</item>
 		//设置全屏
 	</style>
+	
+	<style name="PopupAnimation" parent="android:Animation" mce_bogus="1">      
+         <item name="android:windowEnterAnimation">@anim/push_up_in</item>  
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>  
+    </style>
 
 	<!-- Define the list items style end -->
 </resources>
