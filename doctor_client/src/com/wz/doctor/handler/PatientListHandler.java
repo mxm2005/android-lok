@@ -18,7 +18,11 @@ import com.wz.doctor.HomeActivity;
 import com.wz.doctor.R;
 import com.wz.doctor.adapter.PatientAdapter;
 import com.wz.doctor.util.JSONUtil;
-
+/**
+ * 病人列表
+ * @author yjh
+ *
+ */
 public class PatientListHandler {
 	private HomeActivity mHomeActivity;
 	private LayoutInflater layoutInflater;
@@ -28,6 +32,12 @@ public class PatientListHandler {
 	private LinearLayout lin_patient_my;//我的病人
 	private ImageButton cb_all;
 	private ImageButton cb_my;
+	private LinearLayout lin_patient_on;//在院病人
+	private LinearLayout lin_patient_off;//出院病人
+	private ImageButton cb_on;
+	private ImageButton cb_off;
+	private LinearLayout lin_offices_surgery;
+	private LinearLayout lin_offices_gynaecology;
 	
 	public PatientListHandler(HomeActivity mHomeActivity) {
 		this.mHomeActivity = mHomeActivity;
@@ -46,6 +56,16 @@ public class PatientListHandler {
 		cb_my = (ImageButton) patient_sumarry.findViewById(R.id.cb_my);
 		lin_patient_all.setOnClickListener(buttonListener);
 		lin_patient_my.setOnClickListener(buttonListener);
+		lin_patient_on = (LinearLayout) patient_sumarry.findViewById(R.id.lin_patient_on);
+		lin_patient_off = (LinearLayout) patient_sumarry.findViewById(R.id.lin_patient_off);
+		cb_on = (ImageButton) patient_sumarry.findViewById(R.id.cb_on);
+		cb_off = (ImageButton) patient_sumarry.findViewById(R.id.cb_off);
+		lin_patient_on.setOnClickListener(buttonListener);
+		lin_patient_off.setOnClickListener(buttonListener);
+		lin_offices_surgery = (LinearLayout) patient_sumarry.findViewById(R.id.lin_offices_surgery);
+		lin_offices_gynaecology = (LinearLayout) patient_sumarry.findViewById(R.id.lin_offices_gynaecology);
+		lin_offices_surgery.setOnClickListener(buttonListener);
+		lin_offices_gynaecology.setOnClickListener(buttonListener);
 		return patient_sumarry;
 	}
 	
@@ -67,6 +87,30 @@ public class PatientListHandler {
 				lin_patient_all.setBackgroundDrawable(null);
 				cb_my.setVisibility(View.VISIBLE);
 				cb_all.setVisibility(View.INVISIBLE);
+				break;
+				
+			case R.id.lin_patient_on:
+				lin_patient_on.setBackgroundResource(R.drawable.word_list_selector_selected);
+				lin_patient_off.setBackgroundDrawable(null);
+				cb_on.setVisibility(View.VISIBLE);
+				cb_off.setVisibility(View.INVISIBLE);
+				break;
+				
+			case R.id.lin_patient_off:
+				lin_patient_off.setBackgroundResource(R.drawable.word_list_selector_selected);
+				lin_patient_on.setBackgroundDrawable(null);
+				cb_off.setVisibility(View.VISIBLE);
+				cb_on.setVisibility(View.INVISIBLE);
+				break;
+				
+			case R.id.lin_offices_surgery:
+				lin_offices_surgery.setBackgroundResource(R.drawable.word_list_selector_selected);
+				lin_offices_gynaecology.setBackgroundDrawable(null);
+				break;
+				
+			case R.id.lin_offices_gynaecology:
+				lin_offices_gynaecology.setBackgroundResource(R.drawable.word_list_selector_selected);
+				lin_offices_surgery.setBackgroundDrawable(null);
 				break;
 			}
 		}

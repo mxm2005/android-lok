@@ -14,7 +14,11 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
+/**
+ * 病人详情
+ * @author yjh
+ *
+ */
 public class DetailedPatientHandler {
 	private HomeActivity mHomeActivity;
 	private LayoutInflater layoutInflater;

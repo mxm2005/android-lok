@@ -66,8 +66,8 @@
 
 	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
 		android:layout_marginTop="3dip" android:layout_height="wrap_content"
-		android:gravity="center_horizontal">
-		<ImageButton android:layout_width="wrap_content"
+		android:gravity="center_horizontal" android:id="@+id/lin_patient_on">
+		<ImageButton android:layout_width="wrap_content" android:visibility="invisible" android:id="@+id/cb_on"
 			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
 		<TextView android:layout_width="fill_parent"
 			android:layout_weight="1" android:layout_height="wrap_content"
@@ -76,8 +76,8 @@
 
 	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
 		android:layout_marginTop="3dip" android:layout_height="wrap_content"
-		android:gravity="center_horizontal">
-		<ImageButton android:layout_width="wrap_content"
+		android:gravity="center_horizontal" android:id="@+id/lin_patient_off">
+		<ImageButton android:layout_width="wrap_content" android:visibility="invisible" android:id="@+id/cb_off"
 			android:layout_height="wrap_content" android:background="@drawable/list_icon_check" />
 		<TextView android:layout_width="fill_parent"
 			android:layout_weight="1" android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
 
 	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
 		android:layout_marginTop="3dip" android:layout_height="wrap_content"
-		android:gravity="center_horizontal">
+		android:gravity="center_horizontal" android:id="@+id/lin_offices_surgery">
 		<ImageButton android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
 		<TextView android:layout_width="fill_parent"
@@ -116,7 +116,7 @@
 
 	<LinearLayout android:layout_width="fill_parent" android:clickable="true"
 		android:layout_marginTop="3dip" android:layout_height="wrap_content"
-		android:gravity="center_horizontal">
+		android:gravity="center_horizontal" android:id="@+id/lin_offices_gynaecology">
 		<ImageButton android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:background="@drawable/list_icon_bookmark" />
 		<TextView android:layout_width="fill_parent"
