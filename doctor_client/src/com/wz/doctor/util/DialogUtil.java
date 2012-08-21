@@ -1,21 +1,21 @@
 package com.wz.doctor.util;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class DialogUtil {
-	private Context context;
+	private Activity context;
 	
-	public DialogUtil(Context context) {
+	public DialogUtil(Activity context) {
 		this.context = context;
 	}
 	
-	protected void dialog() {
+	public void dialog() {
 		AlertDialog.Builder builder = new Builder(context);
 		builder.setMessage("确认退出吗？");
 		builder.setTitle("提示");
@@ -34,7 +34,7 @@ public class DialogUtil {
 		builder.create().show();
 	}
 
-	protected void dialog2() {
+	public void dialog2() {
 		Dialog dialog = new AlertDialog.Builder(context)
 				.setIcon(android.R.drawable.btn_star)
 				.setTitle("喜好调查")
@@ -70,14 +70,14 @@ public class DialogUtil {
 		dialog.show();
 	}
 	
-	protected void dialog3() {
+	public void dialog3() {
 		new AlertDialog.Builder(context).setTitle("请输入")
 				.setIcon(android.R.drawable.ic_dialog_info)
 				.setView(new EditText(context)).setPositiveButton("确定", null)
 				.setNegativeButton("取消", null).show();
 	}
 	
-	protected void dialog4() {
+	public void dialog4() {
 		new AlertDialog.Builder(context)
 				.setTitle("复选框")
 				.setMultiChoiceItems(new String[] { "Item1", "Item2" }, null,
@@ -85,7 +85,7 @@ public class DialogUtil {
 				.setNegativeButton("取消", null).show();
 	}
 	
-	protected void dialog5() {
+	public void dialog5() {
 		new AlertDialog.Builder(context)
 				.setTitle("单选框")
 				.setIcon(android.R.drawable.ic_dialog_info)
@@ -95,10 +95,11 @@ public class DialogUtil {
 									int which) {
 								dialog.dismiss();
 							}
-						}).setNegativeButton("取消", null).show();
+						}).setNeutralButton("确定", null)
+				.setNegativeButton("取消", null).show();
 	}
 	
-	protected void dialog6() {
+	public void dialog6() {
 		new AlertDialog.Builder(context).setTitle("列表框")
 				.setItems(new String[] { "Item1", "Item2" }, null)
 				.setNegativeButton("确定", null).show();
