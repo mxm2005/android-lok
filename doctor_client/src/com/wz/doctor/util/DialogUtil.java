@@ -7,7 +7,11 @@ import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.widget.EditText;
 import android.widget.Toast;
-
+/**
+ * 多点样式的dialog
+ * @author yjh
+ *
+ */
 public class DialogUtil {
 	private Activity context;
 	
