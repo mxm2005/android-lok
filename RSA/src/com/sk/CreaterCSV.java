@@ -70,43 +70,43 @@ public class  CreaterCSV {
         }
 	}
 	
-//	public static void CreateCsvfiles(String targetPath, String filename,
-//            String title[], List<JobBean> list) throws Exception {
-//        File file = null;
-//        OutputStream out = null;
-//        PrintWriter pw = null;
-//        try {
-//            file = new File(targetPath + filename + ".csv");
-//            out = new FileOutputStream(file);
-//            pw = new PrintWriter(out);
-//            for (int j = 0; j < title.length; j++) {
-//                pw.append(title[j] + ",");
-//            }
-//            for (int i = 0; i < list.size(); i++) {
-//                String operationname = (list.get(i).getPaerationname());
-//                String operationresult = (list.get(i).getOperationresult());
-//                String username = (list.get(i).getUsername());
-//                String userip = (list.get(i).getUereip());
-//                String operationtime = (list.get(i).getOperationtime());
-//                String operationdetail = (list.get(i).getOperationdetil());
-//                pw.append("\n");
-//                pw.append(operationname + ",");
-//                pw.append(operationresult + ",");
-//                pw.append(username + ",");
-//                pw.append(userip + ",");
-//                pw.append(operationtime + ",");
-//                pw.append(operationdetail + ",");
-//            }
-//        } catch (Exception e) {
-//            // TODO: handle exception
-//        } finally {
-//        	System.out.println(targetPath + filename + ".csv生成成功");
-//            pw.flush();
-//            pw.close();
-//            out.flush();
-//            out.close();
-//        }
-//    }
+	public static void CreateCsvfiles(String targetPath, String filename,
+            String title[], List<JobBean> list) throws Exception {
+        File file = null;
+        OutputStream out = null;
+        PrintWriter pw = null;
+        try {
+            file = new File(targetPath + filename + ".csv");
+            out = new FileOutputStream(file);
+            pw = new PrintWriter(out);
+            for (int j = 0; j < title.length; j++) {
+                pw.append(title[j] + ",");
+            }
+            for (int i = 0; i < list.size(); i++) {
+                String operationname = (list.get(i).getPaerationname());
+                String operationresult = (list.get(i).getOperationresult());
+                String username = (list.get(i).getUsername());
+                String userip = (list.get(i).getUereip());
+                String operationtime = (list.get(i).getOperationtime());
+                String operationdetail = (list.get(i).getOperationdetil());
+                pw.append("\n");
+                pw.append(operationname + ",");
+                pw.append(operationresult + ",");
+                pw.append(username + ",");
+                pw.append(userip + ",");
+                pw.append(operationtime + ",");
+                pw.append(operationdetail + ",");
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally {
+        	System.out.println(targetPath + filename + ".csv生成成功");
+            pw.flush();
+            pw.close();
+            out.flush();
+            out.close();
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         try {
@@ -118,16 +118,16 @@ public class  CreaterCSV {
             List<JobBean> list = new ArrayList<JobBean>();
             for (int i = 0; i < 5; i++) {
                 JobBean job = new JobBean();
-                job.setPaerationname("备份静态数据");
-                job.setOperationresult("成功");
+                job.setPaerationname("beifen jin tai shu ju");
+                job.setOperationresult("success");
                 job.setUsername("admin");
                 job.setOperationtime("20101-11-11 11:11:11");
-                job.setOperationdetil("备份单板");
                 job.setUereip("10.71.138.167");
+                job.setOperationdetil("danban");
                 list.add(job);
             }
-            //CreaterCSV.CreateCsvfiles(path, filename, title, list);
-            CreaterCSV.CreateCsvfiles(path, filename, JobBean.getList(), list);
+            CreaterCSV.CreateCsvfiles(path, filename, new String[]{"","","","","",""}, list);
+//            CreaterCSV.CreateCsvfiles(path, filename, JobBean.getList(), list);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
