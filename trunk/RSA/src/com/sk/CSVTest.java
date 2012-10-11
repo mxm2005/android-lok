@@ -11,12 +11,15 @@ import com.csvreader.CsvReader;
 public class CSVTest {
 	public static void main(String[] args) {
 		try {
-			File file = new File("e://job_dump_20121010194700.csv");
+			File file = new File("e://sms_20121010143330.csv");
 			InputStream is = new FileInputStream(file);
-			System.out.println(inputStream2String(is));
-			CsvReader reader = new CsvReader("e://job_dump_20121010194700.csv");
-//			String[] str = reader.getValues();
-			System.out.println(reader.get(1));
+//			System.out.println(inputStream2String(is));
+			CsvReader reader = new CsvReader("e://sms_20121010143330.csv");
+			System.out.println(reader.getColumnCount());
+			String[] str = reader.getValues();
+			for (int i = 0; i < str.length; i++) {
+				System.out.println(str[i]);
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
