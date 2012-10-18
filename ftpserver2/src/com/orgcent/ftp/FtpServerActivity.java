@@ -133,33 +133,7 @@ public class FtpServerActivity extends Activity {
 		String path = Environment.getExternalStorageDirectory().getAbsolutePath();
 		System.out.println(path);
 		formatSD(path);
-//		formatSD();
 		
-	}
-	
-	public void formatSD() {
-		String SDstatus = Environment.getExternalStorageState();
-		 try
-	        {
-	         Method method = Class.forName("android.os.ServiceManager").getMethod("getService", String.class);//利用反射得到ServiceManager类中的getService方法
-	         IBinder binder = (IBinder) method.invoke(null, "mount");
-	         Class<?> mIMountService = Class.forName("android.os.storage.IMountService");
-	         Class<?>[] classes = mIMountService.getClasses();//获取IMountService的所有内部类
-	         Class<?> mStub = classes[0];//获取IMountService的内部类Stub
-	         Method asInterface = mStub.getMethod("asInterface", new Class[]{IBinder.class});//获取Stub的asInterface(IBinder binder)方法，
-	         Object iMountService = asInterface.invoke(classes[0], new Object[]{binder});//通过asInterface(IBinder binder)方法获得IMountService类的一个实例对象mIMountService
-	         Class<?> mIMountService1 = iMountService.getClass();//通过实例对象获取Class对象
-	         Method unmountVolume = mIMountService1.getMethod("unmountVolume", new Class[]{String.class, boolean.class});//获取反挂载方法
-	         Method formatVolume = mIMountService1.getMethod("formatVolume", new Class[]{String.class});//获取格卡方法
-	         Object result = formatVolume.invoke(iMountService, SDstatus);//格卡
-	         //调试时发现格卡这条代码没有执行，直接报异常了；
-	         System.out.println((Integer)result);
-	         
-	        }
-	        catch(Exception e)
-	        {
-	         e.printStackTrace();
-	        }                         
 	}
 	
 	
