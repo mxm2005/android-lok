@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.os.storage.IMountService;
 import android.widget.Button;
 import android.widget.TextView;
@@ -130,10 +131,14 @@ public class FtpServerActivity extends Activity {
 //			}
 //		});
 		
-		String path = Environment.getExternalStorageDirectory().getAbsolutePath();
-		System.out.println(path);
-		formatSD(path);
+//		String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+//		System.out.println(path);
+//		formatSD(path);
 		
+//		for(;;){
+//			SystemClock.sleep(5000);
+//			System.out.println("---------------");
+//		}
 	}
 	
 	
