@@ -13,6 +13,7 @@ public class MyService extends Service {
 		return null;
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void onCreate() {
 		IntentFilter localIntentFilter = new IntentFilter(
