@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<!-- 患者备忘start -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal">
+			<TextView android:layout_width="fill_parent" android:paddingLeft="10dp"
+				android:layout_weight="1" android:layout_height="wrap_content"
+				android:text="患者备忘" android:textSize="18sp" android:textColor="@color/white" />
+			<ImageButton android:layout_width="wrap_content" android:paddingRight="10dp" android:id="@+id/btn_record_add"
+				android:layout_height="wrap_content" android:background="@drawable/record_btn_add" />
+		</LinearLayout>
+		<ImageView android:layout_width="fill_parent"
+			android:layout_marginTop="3dip" android:layout_height="2dip"
+			android:background="@drawable/list_split" />
+	</LinearLayout>
+	<!-- 患者备忘end -->
+	
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_marginTop="3dip" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" android:id="@+id/lin_record_all">
+		<ListView android:layout_width="fill_parent" android:layout_height="wrap_content" android:cacheColorHint="#00000000"
+		    android:divider="@null" android:fadingEdge="none" android:scrollbars="none" android:id="@+id/list_record">
+		</ListView>
+	</LinearLayout>
+
+</LinearLayout>
