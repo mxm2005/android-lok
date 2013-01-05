@@ -3,7 +3,7 @@
 	package="com.wz.doctor" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="11" />
 
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".MyApplication">
 		<activity android:name=".LoginActivity" android:screenOrientation="landscape"
 			android:theme="@android:style/Theme.Black.NoTitleBar" android:label="@string/app_name">
 			<intent-filter>
@@ -14,5 +14,7 @@
 		<activity android:name=".HomeActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".NetConfigActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
 		<activity android:name=".AddAdviceActivity" android:screenOrientation="landscape" android:theme="@style/bklistDialog"></activity>
+		
+		<service android:name=".service.UpdateService"></service>
 	</application>
 </manifest>

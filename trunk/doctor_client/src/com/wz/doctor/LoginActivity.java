@@ -1,6 +1,10 @@
 package com.wz.doctor;
 
+import com.wz.doctor.service.UpdateService;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +15,7 @@ public class LoginActivity extends Activity {
 	private Button btn_login;//登录按钮
     private Button btn_exit;//退出按钮
     private Button btn_net_config;//网络配置按钮
+    private MyApplication myApplication;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,39 @@ public class LoginActivity extends Activity {
         btn_exit.setOnClickListener(buttonListener);
         btn_net_config = (Button) findViewById(R.id.btn_net_config);
         btn_net_config.setOnClickListener(buttonListener);
+        
+        checkVersion();
     }
+    
+    @SuppressWarnings("static-access")
+	public void checkVersion() {
+		myApplication = (MyApplication) getApplication();
+		if (myApplication.localVersion < myApplication.serverVersion) {
+
+			// 发现新版本，提示用户更新
+			AlertDialog.Builder alert = new AlertDialog.Builder(this);
+			alert.setTitle("软件升级")
+					.setMessage("发现新版本,建议立即更新使用.")
+					.setPositiveButton("更新",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									Intent updateIntent = new Intent(LoginActivity.this, UpdateService.class);
+									updateIntent.putExtra("app_name", getResources().getString(R.string.app_name));
+									startService(updateIntent);
+								}
+							})
+					.setNegativeButton("取消",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									dialog.dismiss();
+								}
+							});
+			alert.create().show();
+
+		}
+	}
     
     private OnClickListener buttonListener = new OnClickListener() {
         
