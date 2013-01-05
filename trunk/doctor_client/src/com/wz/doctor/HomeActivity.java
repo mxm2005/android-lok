@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.wz.doctor.handler.AdviceHandler;
 import com.wz.doctor.handler.PatientListHandler;
+import com.wz.doctor.handler.RecordHandler;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class HomeActivity extends Activity {
 	private ListView lv_titles;
 	private PatientListHandler patientListHandler = null;
 	private AdviceHandler adviceHandler = null;
+	private RecordHandler recordHandler = null;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,8 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.fragment_layout);
         patientListHandler = new PatientListHandler(this);
 		adviceHandler = new AdviceHandler(this);
-        initView();
+		recordHandler = new RecordHandler(this);
+		initView();
         lin_summary.removeAllViews();
 		lin_summary.addView(patientListHandler.patientList());
 		lin_lv_tab.removeAllViews();
@@ -79,6 +82,12 @@ public class HomeActivity extends Activity {
 					lin_summary.addView(adviceHandler.adviceList());
 					lin_lv_tab.removeAllViews();
 					lin_lv_tab.addView(adviceHandler.adviceSummary());
+					break;
+				case 6:
+					lin_summary.removeAllViews();
+					lin_summary.addView(recordHandler.recordDetail());
+					lin_lv_tab.removeAllViews();
+					lin_lv_tab.addView(recordHandler.recordSummary());
 					break;
 				}
 			}
