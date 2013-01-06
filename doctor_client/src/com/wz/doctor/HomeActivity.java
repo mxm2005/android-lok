@@ -33,10 +33,10 @@ public class HomeActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_layout);
+		initView();
         patientListHandler = new PatientListHandler(this);
 		adviceHandler = new AdviceHandler(this);
-		recordHandler = new RecordHandler(this);
-		initView();
+		recordHandler = new RecordHandler(this, lin_summary);
         lin_summary.removeAllViews();
 		lin_summary.addView(patientListHandler.patientList());
 		lin_lv_tab.removeAllViews();
@@ -84,8 +84,8 @@ public class HomeActivity extends Activity {
 					lin_lv_tab.addView(adviceHandler.adviceSummary());
 					break;
 				case 6:
-					lin_summary.removeAllViews();
-					lin_summary.addView(recordHandler.recordDetail());
+//					lin_summary.removeAllViews();
+//					lin_summary.addView(recordHandler.recordingDetail());
 					lin_lv_tab.removeAllViews();
 					lin_lv_tab.addView(recordHandler.recordSummary());
 					break;
