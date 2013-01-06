@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_record_all"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/main_advice_list_bg"
@@ -8,6 +9,9 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
         android:background="@drawable/img_title_bg"
         android:gravity="center_vertical" >
 
@@ -16,8 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/btn_click_nor"
-            android:text="取消" />
+            android:background="@drawable/btn_record_selector"
+            android:text="取消"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -32,8 +37,66 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_click_nor"
-            android:text="存储" />
+            android:background="@drawable/btn_record_selector"
+            android:text="存储"
+            android:textColor="#ffffff" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:text="主题： "
+            android:textColor="#BFBFBF"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_theme"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_toRightOf="@id/tv_theme"
+            android:background="@null"
+            android:gravity="left"
+            android:textColor="#202020"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_record_start_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/btn_start_bg" />
+
+        <TextView
+            android:id="@+id/tv_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btn_record_start_pause"
+            android:background="@drawable/tv_size_bg"
+            android:gravity="right|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="00:00"
+            android:textColor="#31B8F8"
+            android:textSize="23sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/list_split" />
 
 </LinearLayout>
