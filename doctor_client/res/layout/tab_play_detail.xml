@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_record_all"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_advice_list_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/img_title_bg"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_title_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="我的备忘录1"
+            android:textColor="#242424"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_edit_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_record_selector"
+            android:text="编辑"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_delete_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toLeftOf="@id/btn_edit_record"
+            android:background="@drawable/btn_delete_bg" />
+
+        <TextView
+            android:id="@+id/tv_save_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@id/btn_delete_record"
+            android:text="2013-01-04 12:57:51"
+            android:textColor="#72BED1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@id/tv_save_date"
+            android:text="保存于 "
+            android:textColor="#72BED1"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/img_summary_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:gravity="center_vertical" >
+
+                <SeekBar
+                    android:id="@+id/seek"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/img_volume_bg"
+                    android:max="15"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/seekbar_img"
+                    android:thumb="@drawable/thumb" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:background="@drawable/img_already_size_bg" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical"
+                        android:text="00:00"
+                        android:textColor="#31B8F8"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="2dp"
+                        android:text="00:10"
+                        android:textColor="#31B8F8"
+                        android:textSize="23sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="450dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/img_progress_bg"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_img"
+                android:thumb="@drawable/thumb2" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/ib_memo_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/memo_play" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/ib_memo_play"
+            android:background="@drawable/btn_upload_bg" />
+    </RelativeLayout>
+
+</LinearLayout>

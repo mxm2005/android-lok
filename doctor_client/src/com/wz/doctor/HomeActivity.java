@@ -36,7 +36,7 @@ public class HomeActivity extends Activity {
 		initView();
         patientListHandler = new PatientListHandler(this);
 		adviceHandler = new AdviceHandler(this);
-		recordHandler = new RecordHandler(this, lin_summary);
+		recordHandler = new RecordHandler(this, lin_lv_tab, lin_summary);
         lin_summary.removeAllViews();
 		lin_summary.addView(patientListHandler.patientList());
 		lin_lv_tab.removeAllViews();
@@ -86,7 +86,7 @@ public class HomeActivity extends Activity {
 					lin_lv_tab.addView(adviceHandler.adviceSummary());
 					break;
 				case 6:
-//					lin_summary.removeAllViews();
+					lin_summary.removeAllViews();
 //					lin_summary.addView(recordHandler.recordingDetail());
 //					recordSummary = recordHandler.recordSummary();
 					lin_lv_tab.removeAllViews();
