@@ -17,7 +17,7 @@ public class DBOpenHelper extends SQLiteOpenHelper
 	@Override
 	public void onCreate(SQLiteDatabase db)
 	{
-		db.execSQL("CREATE TABLE IF NOT EXISTS record(recordid INTEGER PRIMARY KEY autoincrement, name text, lenght INTEGER, date text)");
+		db.execSQL("CREATE TABLE IF NOT EXISTS record(recordid INTEGER PRIMARY KEY autoincrement, name text, lenght INTEGER, date text, UNIQUE(name))");
 	}
 
 	@Override

@@ -49,6 +49,12 @@
                 android:textColor="#E3EFF7"
                 android:textSize="10sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
     </LinearLayout>
 
 </RelativeLayout>

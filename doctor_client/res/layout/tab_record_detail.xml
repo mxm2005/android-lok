@@ -69,6 +69,8 @@
             android:layout_toRightOf="@id/tv_theme"
             android:background="@null"
             android:gravity="left"
+            android:hint="请输入备忘录主题"
+            android:singleLine="true"
             android:textColor="#202020"
             android:textSize="20sp" />
 
