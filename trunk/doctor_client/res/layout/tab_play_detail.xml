@@ -15,12 +15,14 @@
         android:background="@drawable/img_title_bg"
         android:gravity="center_vertical" >
 
-        <TextView
+        <EditText
             android:id="@+id/tv_title_record"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:enabled="false"
             android:gravity="center"
             android:text="我的备忘录1"
             android:textColor="#242424"
@@ -87,12 +89,11 @@
                 android:gravity="center_vertical" >
 
                 <SeekBar
-                    android:id="@+id/seek"
+                    android:id="@+id/seek_volume"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/img_volume_bg"
-                    android:max="15"
                     android:progress="0"
                     android:progressDrawable="@drawable/seekbar_img"
                     android:thumb="@drawable/thumb" />
@@ -104,6 +105,7 @@
                     android:background="@drawable/img_already_size_bg" >
 
                     <TextView
+                        android:id="@+id/tv_seekTo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -113,6 +115,7 @@
                         android:textSize="23sp" />
 
                     <TextView
+                        android:id="@+id/tv_size_record"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
@@ -125,14 +128,13 @@
             </LinearLayout>
 
             <SeekBar
-                android:id="@+id/seek"
+                android:id="@+id/seek_progress"
                 android:layout_width="450dp"
                 android:layout_height="0dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/img_progress_bg"
-                android:max="100"
                 android:progress="0"
                 android:progressDrawable="@drawable/seekbar_img"
                 android:thumb="@drawable/thumb2" />
