@@ -81,6 +81,7 @@ public class RecordHandler {
 	private boolean editFlag = false;
 	private boolean playFlag = false;
 	private boolean timeFlag = false;
+	private boolean pauseFlag = false;
 	private AudioManager mAudioManager;
 	
 	private TextView tv_seekTo;
@@ -120,12 +121,13 @@ public class RecordHandler {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int id, long position) {
+				String tv_name = ((TextView)view.findViewById(R.id.tv_name)).getText().toString().trim();
+				playFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + tv_name + ".3gp";
 				String tv_id = ((TextView)view.findViewById(R.id.tv_id)).getText().toString().trim();
 				item_id = Integer.parseInt(tv_id);
 				tv_title_record = (EditText) tab_play_list.findViewById(R.id.tv_title_record);
 				tv_size_record = (TextView) tab_play_list.findViewById(R.id.tv_size_record);
 				tv_save_date = (TextView) tab_play_list.findViewById(R.id.tv_save_date);
-				String tv_name = ((TextView)view.findViewById(R.id.tv_name)).getText().toString().trim();
 				String tv_size = ((TextView)view.findViewById(R.id.tv_size)).getText().toString().trim();
 				String tv_date = ((TextView)view.findViewById(R.id.tv_date)).getText().toString().trim();
 				tv_title_record.setText(tv_name);
@@ -149,13 +151,14 @@ public class RecordHandler {
 				seek_volume.setOnSeekBarChangeListener(seekBarListener);
 				
 				seek_progress = (SeekBar) tab_play_list.findViewById(R.id.seek_progress);
+				duration = string2Time(tv_size);
+				System.out.println("duration: " + duration);
 				seek_progress.setMax(duration);
+				
 				seek_progress.setOnSeekBarChangeListener(seekBarListener);
 				
 				tv_seekTo = (TextView) tab_play_list.findViewById(R.id.tv_seekTo);
-				
-				playFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + tv_name + ".3gp";
-				
+
 				lin_summary.removeAllViews();
 				lin_summary.addView(tab_play_list);
 			}
@@ -261,10 +264,8 @@ public class RecordHandler {
 			mPlayer.setDataSource(playFile);
 			mPlayer.prepare();
 			mPlayer.start();
-			duration = mPlayer.getDuration();
 			mPlayer.setOnCompletionListener(new OnCompletionListener()
 			{
-				
 				@Override
 				public void onCompletion(MediaPlayer mp)
 				{
@@ -272,8 +273,12 @@ public class RecordHandler {
 					stopPlaying();
 					playTimer.cancel();
 					timeFlag = true;
+					playFlag = false;
+					ib_memo_play.setBackgroundResource(R.drawable.memo_play);
 					Toast.makeText(mHomeActivity, "播放完毕", Toast.LENGTH_SHORT).show();
 					tv_seekTo.setText("00:00");
+					seek_progress.setProgress(0);
+					stopPlaying();
 				}
 			});
 		} catch (IOException e) {
@@ -307,6 +312,7 @@ public class RecordHandler {
 	private void pausePlaying()
 	{
 		mPlayer.pause();
+		mPlayer.seekTo(play);
 	}
 
 	private void stopPlaying() {
@@ -315,6 +321,7 @@ public class RecordHandler {
 	}
 	
 	final Timer playTimer = new Timer();
+	final Timer recordTimer = new Timer();
 	
 	private OnClickListener buttonListener = new OnClickListener()
 	{
@@ -330,20 +337,69 @@ public class RecordHandler {
 				break;
 
 			case R.id.btn_record_start_pause:
-				onClickRecordButton();
+				Log.i("", "button on click");
+				String title = et_theme.getText().toString().trim();
+				fileName = title;
+				if (!"".equals(title) && title != null) {
+					onRecord(!recordFlag);
+					if(!recordFlag)
+					{
+						record = 1;//暂停后设为初始值
+						Log.i("", "recordFlag..");
+						timeFlag = false;
+						recordFlag = true;
+						btn_record_start_pause.setBackgroundResource(R.drawable.btn_pause_bg);
+						recordTimer.schedule(new RecordTask(), 0, 1000);// 在0秒后执行此任务,每次间隔1秒,如果传递一个Data参数,就可以在某个固定的时间执行这个任务.
+					}
+					else
+					{
+						timeFlag = true;
+						recordFlag = false;
+						btn_record_start_pause.setBackgroundResource(R.drawable.btn_start_bg);
+						recordTimer.cancel();
+						Toast.makeText(mHomeActivity, "请存储备忘录，否则可能丢失", Toast.LENGTH_SHORT).show();
+					}
+					new Thread()
+					{
+						public void run()
+						{
+							while(!timeFlag)
+							{// 这个是用来停止此任务的,否则就一直循环执行此任务了
+								Log.i("", "I am a record thread");
+								if(!recordFlag)
+								{
+									recordTimer.cancel();// 使用这个方法退出任务
+									timeFlag = true;
+								}
+								try
+								{
+									sleep(1000);
+								}
+								catch (InterruptedException e)
+								{
+									e.printStackTrace();
+								}
+							}
+						};
+					}.start();
+				} else {
+					Toast.makeText(mHomeActivity, "请输入备忘主题", Toast.LENGTH_SHORT).show();
+				}
 				break;
 			case R.id.btn_save_record:
 				String fileName = et_theme.getText().toString().trim();
 				if(record > 1) {
 					//存储音频文件
+					timeFlag = true;
 					Date now = new Date();
 					DateFormat df = DateFormat.getDateTimeInstance();
 					String date = df.format(now);
 					rService.saveRecord(new Record(fileName, record, date));
 					Toast.makeText(mHomeActivity, "备忘录保存成功", Toast.LENGTH_SHORT).show();
-//					onClickRecordButton();
 					lin_lv_tab.removeAllViews();
 					lin_lv_tab.addView(recordSummary());
+					lin_summary.removeAllViews();
+					recordTimer.cancel();
 				} else {
 					Toast.makeText(mHomeActivity, "您还没开始录音，请录音后再存储", Toast.LENGTH_SHORT).show();
 				}
@@ -409,6 +465,11 @@ public class RecordHandler {
 				break;
 			case R.id.ib_memo_play:
 				//播放备忘录
+				Log.i("", "ib_memo...............");
+//				pauseFlag = false;
+//				if(!pauseFlag){
+//					ib_memo_play.setBackgroundResource(R.drawable.btn_pause_bg);
+//				}
 				onPlay(!playFlag);
 				if(!playFlag)
 				{
@@ -419,6 +480,7 @@ public class RecordHandler {
 				}
 				else
 				{
+//					pauseFlag = true;
 					playFlag = false;
 					ib_memo_play.setBackgroundResource(R.drawable.memo_play);
 				}
@@ -426,55 +488,6 @@ public class RecordHandler {
 			}
 		}
 	};
-	
-	private void onClickRecordButton()
-	{
-		Log.i("", "button on click");
-		String title = et_theme.getText().toString().trim();
-		fileName = title;
-		if (!"".equals(title) && title != null) {
-			onRecord(!recordFlag);
-			final Timer timer = new Timer();
-			if(!recordFlag)
-			{
-				Log.i("", "recordFlag..");
-				timeFlag = false;
-				recordFlag = !recordFlag;
-				btn_record_start_pause.setBackgroundResource(R.drawable.btn_pause_bg);
-				timer.schedule(new RecordTask(), 0, 1000);// 在0秒后执行此任务,每次间隔1秒,如果传递一个Data参数,就可以在某个固定的时间执行这个任务.
-			}
-			else
-			{
-				recordFlag = !recordFlag;
-				btn_record_start_pause.setBackgroundResource(R.drawable.btn_start_bg);
-			}
-			new Thread()
-			{
-				public void run()
-				{
-					while(!timeFlag)
-					{// 这个是用来停止此任务的,否则就一直循环执行此任务了
-						Log.i("", "I am a record thread");
-						if(!recordFlag)
-						{
-							timer.cancel();// 使用这个方法退出任务
-							timeFlag = true;
-						}
-						try
-						{
-							sleep(1000);
-						}
-						catch (InterruptedException e)
-						{
-							e.printStackTrace();
-						}
-					}
-				};
-			}.start();
-		} else {
-			Toast.makeText(mHomeActivity, "请输入备忘主题", Toast.LENGTH_SHORT).show();
-		}
-	}
 	
 	class RecordTask extends TimerTask
 	{
@@ -511,13 +524,15 @@ public class RecordHandler {
 		public void handleMessage(Message msg)
 		{
 			Log.i("", "play: " + play);
-			tv_seekTo.setText(timeSystem(play++));
-			seek_progress.setProgress(play * 1000);
+			seek_progress.setProgress(play);
+			if(!pauseFlag)
+				tv_seekTo.setText(timeSystem(play++));
+			System.out.println("play++++++++++++++++++++++++++++++++++++++++++++: " + play);
 			super.handleMessage(msg);
 		};
 	};
 	
-	private static String timeSystem(int time)
+	private String timeSystem(int time)
 	{
 		int minute = time / 60;
 		int second = time % 60;
@@ -532,6 +547,15 @@ public class RecordHandler {
 		else
 			sb.append(second);
 		return sb.toString();
+	}
+	
+	private int string2Time(String str) {
+		int time = 0;
+		if (str.indexOf(":") > -1) {
+			String[] strs = str.split(":");
+			time = Integer.parseInt(strs[0]) * 60 + Integer.parseInt(strs[1]);
+		}
+		return time;
 	}
 	
 	private List<? extends Map<String, ?>> getData() {
