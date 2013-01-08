@@ -341,7 +341,7 @@ public class RecordHandler {
 					String date = df.format(now);
 					rService.saveRecord(new Record(fileName, record, date));
 					Toast.makeText(mHomeActivity, "备忘录保存成功", Toast.LENGTH_SHORT).show();
-					onClickRecordButton();
+//					onClickRecordButton();
 					lin_lv_tab.removeAllViews();
 					lin_lv_tab.addView(recordSummary());
 				} else {
