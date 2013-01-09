@@ -20,14 +20,9 @@ public class MyApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		if(android.os.Environment.MEDIA_MOUNTED.equals(android.os.Environment
-				.getExternalStorageState()))
+		if(android.os.Environment.MEDIA_MOUNTED.equals(android.os.Environment.getExternalStorageState()))
 		{
-			File cache = new File(Environment.getExternalStorageDirectory() + "/"
-					+ MyApplication.downloadDir + "/memo");
-			if (!cache.exists()) {
-				cache.mkdir();
-		     }
+			FileUtil.addFile(Environment.getExternalStorageDirectory() + "/" + MyApplication.downloadDir + "/memo");
 		}
 		try {
 			PackageInfo packageInfo = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0);

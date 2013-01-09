@@ -11,6 +11,13 @@ public class FileUtil
 {
 	public static File updateDir = null;
 	public static File updateFile = null;
+	
+    public static void addFile(String sDir) {
+        File destDir = new File(sDir);
+        if (!destDir.exists()) {
+            destDir.mkdirs();
+        }
+    }
 
 	/***
 	 * 创建文件
