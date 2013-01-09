@@ -45,7 +45,7 @@ public class LoginActivity extends Activity {
 								public void onClick(DialogInterface dialog,
 										int which) {
 									Intent updateIntent = new Intent(LoginActivity.this, UpdateService.class);
-									updateIntent.putExtra("app_name", getResources().getString(R.string.app_name));
+									updateIntent.putExtra("app_name", "doctor_client");
 									startService(updateIntent);
 								}
 							})
