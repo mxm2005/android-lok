@@ -95,6 +95,18 @@ public class RecordHandler {
 
 	private int record = 1;//初始值
 	
+	private boolean isFinish = true;
+	private Handler mHandler = null;
+	private Timer mTimer = null;
+	private TimerTask mTimerTask = null;
+	private static final int UPDATE_TEXTVIEW = 0;
+	private static final int PLAY_END = 1;
+	private static int count = 0;
+	private boolean isPause = false;
+	private boolean isStop = true;
+	private static int delay = 1000; // 1s
+	private static int period = 1000; // 1s
+	
 	public RecordHandler(HomeActivity mHomeActivity, LinearLayout lin_lv_tab, LinearLayout lin_summary) {
 		this.lin_lv_tab = lin_lv_tab;
 		this.lin_summary = lin_summary;
@@ -300,7 +312,7 @@ public class RecordHandler {
 		}
 	}
 	
-	final Timer recordTimer = new Timer();
+	Timer recordTimer = null;
 	
 	private OnClickListener buttonListener = new OnClickListener()
 	{
@@ -321,6 +333,7 @@ public class RecordHandler {
 				recordFile = mFileName + "/" + title + ".3gp";
 				if (!"".equals(title) && title != null) {
 					onRecord(!recordFlag);
+					recordTimer = new Timer();
 					if(!recordFlag)
 					{
 						record = 1;//暂停后设为初始值
@@ -373,20 +386,10 @@ public class RecordHandler {
 					Date now = new Date();
 					DateFormat df = DateFormat.getDateTimeInstance();
 					String date = df.format(now);
-//					MediaPlayer mPlayer = new MediaPlayer();
-//					try
-//					{
-//						mPlayer.setDataSource(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + fileName + ".3gp");
-//						rService.saveRecord(new Record(fileName, mPlayer.getDuration() / 1000, date));
-//						mPlayer.release();
-//						mPlayer = null;
-//					}
-//					catch (Exception e)
-//					{
-//						e.printStackTrace();
-//					}
 					int length = ((int) ((endRecord - startRecord) / 1000));
 					System.out.println("length: " + length + "\n" + "startRecord: " + startRecord + "\n" + "endRecord: " + endRecord);
+					if(length < 1)
+						length = 1;
 					rService.saveRecord(new Record(fileName, length, date));
 					Toast.makeText(mHomeActivity, "备忘录保存成功", Toast.LENGTH_SHORT).show();
 					lin_lv_tab.removeAllViews();
@@ -459,24 +462,6 @@ public class RecordHandler {
 				break;
 			case R.id.ib_memo_play:
 				//播放备忘录
-//				pauseFlag = false;
-//				if(!pauseFlag){
-//					ib_memo_play.setBackgroundResource(R.drawable.btn_pause_bg);
-//				}
-//				onPlay(!playFlag);
-//				if(!playFlag)
-//				{
-//					playFlag = true;
-//					timeFlag = false;
-//					ib_memo_play.setBackgroundResource(R.drawable.btn_pause_bg);
-//					playTimer.schedule(new PlayTask(), 0, 1000);// 在0秒后执行此任务,每次间隔1秒,如果传递一个Data参数,就可以在某个固定的时间执行这个任务.
-//				}
-//				else
-//				{
-////					pauseFlag = true;
-//					playFlag = false;
-//					ib_memo_play.setBackgroundResource(R.drawable.memo_play);
-//				}
 				playFile = mFileName + "/" + tv_name + ".3gp";
 				System.out.println("playFile: " + playFile);
 				System.out.println("isStop1: " + isStop);
@@ -515,17 +500,6 @@ public class RecordHandler {
 		}
 	};
 
-	private boolean isFinish = true;
-	private Handler mHandler = null;
-	private Timer mTimer = null;
-	private TimerTask mTimerTask = null;
-	private static final int UPDATE_TEXTVIEW = 0;
-	private static final int PLAY_END = 1;
-	private static int count = 0;
-	private boolean isPause = false;
-	private boolean isStop = true;
-	private static int delay = 1000; // 1s
-	private static int period = 1000; // 1s
 	private void updateTextView()
 	{
 		tv_seekTo.setText(timeSystem(count));
@@ -607,17 +581,6 @@ public class RecordHandler {
 		}
 	}
 	
-//	class PlayTask extends TimerTask
-//	{
-//
-//		@Override
-//		public void run()
-//		{
-//			mHandler2.sendEmptyMessage(play);
-//		}
-//		
-//	}
-	
 	Handler mHandler1 = new Handler()
 	{
 		@Override
@@ -627,20 +590,7 @@ public class RecordHandler {
 			super.handleMessage(msg);
 		}
 	};
-	
-//	Handler mHandler2 = new Handler()
-//	{
-//		public void handleMessage(Message msg)
-//		{
-//			Log.i("", "play: " + play);
-//			seek_progress.setProgress(play);
-//			if(!pauseFlag)
-//				tv_seekTo.setText(timeSystem(play++));
-//			System.out.println("play++++++++++++++++++++++++++++++++++++++++++++: " + play);
-//			super.handleMessage(msg);
-//		};
-//	};
-	
+
 	private String timeSystem(int time)
 	{
 		int minute = time / 60;
