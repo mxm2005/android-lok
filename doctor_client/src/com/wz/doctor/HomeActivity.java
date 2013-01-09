@@ -11,6 +11,7 @@ import com.wz.doctor.handler.RecordHandler;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -105,6 +106,16 @@ public class HomeActivity extends Activity {
 				}
 			}
 		});
+    }
+    
+    @Override
+    protected void onDestroy()
+    {
+    	Log.d("", "onDestroy...");
+    	recordHandler.stopRecording();
+    	recordHandler.stopPlaying();
+    	recordHandler.stopTimer();
+    	super.onDestroy();
     }
     
     /**
