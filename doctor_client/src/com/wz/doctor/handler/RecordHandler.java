@@ -66,7 +66,7 @@ public class RecordHandler {
 	private Button btn_cancel_record;
 	private EditText et_theme;
 	private RecordService rService;
-	private String fileName;//录音带文件名.3gp路径
+	private String recordFile;//录音带文件名.3gp路径
 	
 	private LinearLayout tab_play_list;
 	
@@ -252,7 +252,8 @@ public class RecordHandler {
 		mRecorder = new MediaRecorder();
 		mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 		mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-		mRecorder.setOutputFile(fileName);
+		System.out.println("recordFile: " + recordFile);
+		mRecorder.setOutputFile(recordFile);
 		mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 		try
 		{
@@ -280,6 +281,7 @@ public class RecordHandler {
 	}
 	
 	private void startPlaying() {
+		mPlayer = new MediaPlayer();
 		playFile = mFileName + "/" + tv_name + ".3gp";
 		try {
 			System.out.println("playFile:::" + playFile);
@@ -316,7 +318,7 @@ public class RecordHandler {
 			case R.id.btn_record_start_pause:
 				Log.i("", "button on click");
 				String title = et_theme.getText().toString().trim();
-				fileName = mFileName + title + ".3gp";
+				recordFile = mFileName + "/" + title + ".3gp";
 				if (!"".equals(title) && title != null) {
 					onRecord(!recordFlag);
 					if(!recordFlag)

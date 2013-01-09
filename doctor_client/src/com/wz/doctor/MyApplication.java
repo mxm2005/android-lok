@@ -13,7 +13,7 @@ public class MyApplication extends Application {
 
 	public static int localVersion = 0;// 本地安装版本
 
-	public static int serverVersion = 0;// 服务器版本，从服务器获取版本号
+	public static int serverVersion = 2;// 服务器版本，从服务器获取版本号
 
 	public static String downloadDir = "doctor/";// 安装目录
 
