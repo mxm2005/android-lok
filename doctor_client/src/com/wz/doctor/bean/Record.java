@@ -8,6 +8,11 @@ public class Record {
 
 	public Record() {
 	}
+	
+	public Record(int id, String name)	{
+		this.id = id;
+		this.name = name;
+	}
 
 	public Record(String name, int lenght, String date) {
 		this.name = name;
