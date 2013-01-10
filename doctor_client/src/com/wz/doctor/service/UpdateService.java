@@ -24,7 +24,7 @@ import android.widget.RemoteViews;
 
 public class UpdateService extends Service {
 	private static final int TIMEOUT = 10 * 1000;
-	private static final String down_url = "http://gdown.baidu.com/data/wisegame/9348d8a0d80b9f28/Where.apk";
+	private static final String down_url = "http://mk.cdn.jccjd.com/cms/prod/upload/apks/48d/smart_52_3e55d32c5d211b70.apk";//你的apk下载地址
 	private static final int DOWN_OK = 1;
 	private static final int DOWN_ERROR = 0;
 	private String app_name;
