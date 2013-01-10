@@ -155,7 +155,48 @@ public class RecordHandler
 				tv_save_date.setText(tv_date);
 
 				btn_edit_record = (Button) tab_play_list.findViewById(R.id.btn_edit_record);
-				btn_edit_record.setOnClickListener(buttonListener);
+				btn_edit_record.setOnClickListener(new OnClickListener()
+				{
+					
+					@Override
+					public void onClick(View v)
+					{
+						if(playFlag)
+						{
+							Toast.makeText(mHomeActivity, "播放备忘录状态下不可编辑", Toast.LENGTH_SHORT).show();
+						}
+						else
+						{
+							if(!editFlag)
+							{
+								btn_edit_record.setText("完成");
+								tv_title_record.setEnabled(true);
+								tv_title_record.setFocusable(true);
+								tv_title_record.clearFocus();
+								tv_title_record.setSelection(tv_title_record.getText().toString().length());
+								editFlag = true;
+							}
+							else
+							{
+								// 更新数据库
+								// 更新左边listview
+								btn_edit_record.setText("编辑");
+								editFlag = false;
+								boolean isUpdate = rService.updateRecord(new Record(item_id, tv_title_record.getText().toString().trim()));
+								if(isUpdate)
+								{
+									Toast.makeText(mHomeActivity, "更新成功", Toast.LENGTH_SHORT).show();
+									lin_lv_tab.removeAllViews();
+									lin_lv_tab.addView(recordSummary());
+								}
+								else
+								{
+									Toast.makeText(mHomeActivity, "更新失败", Toast.LENGTH_SHORT).show();
+								}
+							}
+						}
+					}
+				});
 
 				btn_delete_record = (Button) tab_play_list.findViewById(R.id.btn_delete_record);
 				btn_delete_record.setOnClickListener(buttonListener);
@@ -190,6 +231,7 @@ public class RecordHandler
 							updateTextView();
 							break;
 						case PLAY_END:
+							playFlag = false;
 							isFinish = true;
 							isPause = false;
 							isStop = true;
@@ -432,29 +474,7 @@ public class RecordHandler
 				break;
 
 			case R.id.btn_edit_record:
-				if(playFlag)
-				{
-					Toast.makeText(mHomeActivity, "播放备忘录状态下不可编辑", Toast.LENGTH_SHORT).show();
-				}
-				else
-				{
-					if(!editFlag)
-					{
-						btn_edit_record.setText("完成");
-						tv_title_record.setEnabled(true);
-						tv_title_record.setFocusable(true);
-						tv_title_record.clearFocus();
-						tv_title_record.setSelection(tv_title_record.getText().toString().length());
-						editFlag = true;
-					}
-					else
-					{
-						// 更新数据库
-						// 更新左边listview
-						btn_edit_record.setText("编辑");
-						editFlag = false;
-					}
-				}
+				
 				break;
 			case R.id.btn_delete_record:
 				// 更新数据库
@@ -491,6 +511,7 @@ public class RecordHandler
 				playFile = mFileName + "/" + tv_name + ".3gp";
 				System.out.println("playFile: " + playFile);
 				System.out.println("isStop1: " + isStop);
+				playFlag = true;
 				if(isFinish)
 				{// 第一次点击
 					Log.i("", "on start.................first....");
