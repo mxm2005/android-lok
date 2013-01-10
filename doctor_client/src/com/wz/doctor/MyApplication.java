@@ -1,7 +1,5 @@
 package com.wz.doctor;
 
-import java.io.File;
-
 import com.wz.doctor.util.FileUtil;
 
 import android.app.Application;

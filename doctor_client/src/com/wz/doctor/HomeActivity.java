@@ -53,8 +53,6 @@ public class HomeActivity extends Activity {
 		});
     }
     
-    private LinearLayout recordSummary;
-    
     private void initView() {
     	lin_lv_tab = (LinearLayout) findViewById(R.id.lin_lv_tab);
     	lin_summary = (LinearLayout) findViewById(R.id.lin_summary);
@@ -88,20 +86,8 @@ public class HomeActivity extends Activity {
 					break;
 				case 6:
 					lin_summary.removeAllViews();
-//					lin_summary.addView(recordHandler.recordingDetail());
-//					recordSummary = recordHandler.recordSummary();
 					lin_lv_tab.removeAllViews();
 					lin_lv_tab.addView(recordHandler.recordSummary());
-//					recordSummary.findViewById(R.id.btn_record_add).setOnClickListener(new OnClickListener()
-//					{
-//						
-//						@Override
-//						public void onClick(View v)
-//						{
-//							lin_summary.removeAllViews();
-//							lin_summary.addView(recordHandler.recordingDetail());
-//						}
-//					});
 					break;
 				}
 			}
