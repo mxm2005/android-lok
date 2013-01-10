@@ -43,7 +43,8 @@ import com.wz.doctor.R;
 import com.wz.doctor.bean.Record;
 import com.wz.doctor.db.RecordService;
 
-public class RecordHandler {
+public class RecordHandler
+{
 	private HomeActivity mHomeActivity;
 	private LayoutInflater layoutInflater;
 	private LinearLayout tab_record_list;
@@ -58,18 +59,18 @@ public class RecordHandler {
 
 	private MediaRecorder mRecorder = null;
 	private MediaPlayer mPlayer = null;
-	
-	private static String mFileName = null;//文件夹路径
+
+	private static String mFileName = null;// 文件夹路径
 	private boolean recordFlag = false;
-	
+
 	private Button btn_save_record;
 	private Button btn_cancel_record;
 	private EditText et_theme;
 	private RecordService rService;
-	private String recordFile;//录音带文件名.3gp路径
-	
+	private String recordFile;// 录音带文件名.3gp路径
+
 	private LinearLayout tab_play_list;
-	
+
 	private EditText tv_title_record;
 	private TextView tv_size_record;
 	private TextView tv_save_date;
@@ -82,19 +83,19 @@ public class RecordHandler {
 	private boolean playFlag = false;
 	private boolean timeFlag = false;
 	private AudioManager mAudioManager;
-	
+
 	private String tv_name;
-	
+
 	private TextView tv_seekTo;
 	private int duration;
 	private String playFile;
 	private int item_id;
-	
-	long startRecord;
-	long endRecord;
 
-	private int record = 1;//初始值
-	
+	// long startRecord;
+	// long endRecord;
+
+	private int record = 1;// 初始值
+
 	private boolean isFinish = true;
 	private Handler mHandler = null;
 	private Timer mTimer = null;
@@ -106,18 +107,23 @@ public class RecordHandler {
 	private boolean isStop = true;
 	private static int delay = 1000; // 1s
 	private static int period = 1000; // 1s
-	
-	public RecordHandler(HomeActivity mHomeActivity, LinearLayout lin_lv_tab, LinearLayout lin_summary) {
+	private Timer recordTimer = null;
+
+	public RecordHandler(HomeActivity mHomeActivity, LinearLayout lin_lv_tab,
+			LinearLayout lin_summary)
+	{
 		this.lin_lv_tab = lin_lv_tab;
 		this.lin_summary = lin_summary;
 		this.mHomeActivity = mHomeActivity;
 		layoutInflater = mHomeActivity.getLayoutInflater();
-		mFileName = Environment.getExternalStorageDirectory() + "/"	+ MyApplication.downloadDir + "memo";
+		mFileName = Environment.getExternalStorageDirectory() + "/" + MyApplication.downloadDir
+				+ "memo";
 		rService = new RecordService(mHomeActivity);
 		mAudioManager = (AudioManager) mHomeActivity.getSystemService(Service.AUDIO_SERVICE);
 	}
-	
-	public LinearLayout recordSummary() {
+
+	public LinearLayout recordSummary()
+	{
 		record_sumarry = (LinearLayout) layoutInflater.inflate(R.layout.record_sumarry, null);
 		tab_play_list = (LinearLayout) layoutInflater.inflate(R.layout.tab_play_detail, null);
 		btn_record_add = (ImageButton) record_sumarry.findViewById(R.id.btn_record_add);
@@ -125,57 +131,61 @@ public class RecordHandler {
 		list_record = (ListView) record_sumarry.findViewById(R.id.list_record);
 		mSimpleAdapter = new SimpleAdapter(mHomeActivity, 
 				getData(), 
-				R.layout.list_record_summary, 
-				new String[]{"tv_id", "tv_name", "tv_size", "tv_date" }, 
-				new int[]{ R.id.tv_id, R.id.tv_name, R.id.tv_size, R.id.tv_date });
+				R.layout.list_record_summary,
+				new String[] { "tv_id", "tv_name", "tv_size", "tv_date" }, 
+				new int[] { R.id.tv_id, R.id.tv_name, R.id.tv_size, R.id.tv_date });
 		list_record.setAdapter(mSimpleAdapter);
 		list_record.setSelector(R.drawable.btn_locallist_p);
-		list_record.setOnItemClickListener(new OnItemClickListener() {
+		list_record.setOnItemClickListener(new OnItemClickListener()
+		{
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View view, int id, long position) {
-				tv_name = ((TextView)view.findViewById(R.id.tv_name)).getText().toString().trim();
-				String tv_id = ((TextView)view.findViewById(R.id.tv_id)).getText().toString().trim();
+			public void onItemClick(AdapterView<?> arg0, View view, int id, long position)
+			{
+				tv_name = ((TextView) view.findViewById(R.id.tv_name)).getText().toString().trim();
+				String tv_id = ((TextView) view.findViewById(R.id.tv_id)).getText().toString().trim();
 				item_id = Integer.parseInt(tv_id);
 				tv_title_record = (EditText) tab_play_list.findViewById(R.id.tv_title_record);
 				tv_size_record = (TextView) tab_play_list.findViewById(R.id.tv_size_record);
 				tv_save_date = (TextView) tab_play_list.findViewById(R.id.tv_save_date);
-				String tv_size = ((TextView)view.findViewById(R.id.tv_size)).getText().toString().trim();
-				String tv_date = ((TextView)view.findViewById(R.id.tv_date)).getText().toString().trim();
+				String tv_size = ((TextView) view.findViewById(R.id.tv_size)).getText().toString().trim();
+				String tv_date = ((TextView) view.findViewById(R.id.tv_date)).getText().toString().trim();
 				tv_title_record.setText(tv_name);
 				tv_size_record.setText(tv_size);
 				tv_save_date.setText(tv_date);
-				
+
 				btn_edit_record = (Button) tab_play_list.findViewById(R.id.btn_edit_record);
 				btn_edit_record.setOnClickListener(buttonListener);
-				
+
 				btn_delete_record = (Button) tab_play_list.findViewById(R.id.btn_delete_record);
 				btn_delete_record.setOnClickListener(buttonListener);
-				
+
 				ib_memo_play = (ImageButton) tab_play_list.findViewById(R.id.ib_memo_play);
 				ib_memo_play.setOnClickListener(buttonListener);
-				
+
 				seek_volume = (SeekBar) tab_play_list.findViewById(R.id.seek_volume);
 				int maxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-				int currentVolume = mAudioManager.getStreamVolume (AudioManager.STREAM_MUSIC);
+				int currentVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 				seek_volume.setMax(maxVolume);
 				seek_volume.setProgress(currentVolume);
 				seek_volume.setOnSeekBarChangeListener(seekBarListener);
-				
+
 				seek_progress = (SeekBar) tab_play_list.findViewById(R.id.seek_progress);
 				duration = string2Time(tv_size);
 				System.out.println("duration: " + duration);
 				seek_progress.setMax(duration);
-				
+
 				seek_progress.setOnSeekBarChangeListener(seekBarListener);
-				
+
 				tv_seekTo = (TextView) tab_play_list.findViewById(R.id.tv_seekTo);
-				
-				mHandler = new Handler(){
-					
+
+				mHandler = new Handler()
+				{
 					@Override
-					public void handleMessage(Message msg) {
-						switch (msg.what) {
+					public void handleMessage(Message msg)
+					{
+						switch (msg.what)
+						{
 						case UPDATE_TEXTVIEW:
 							updateTextView();
 							break;
@@ -200,8 +210,9 @@ public class RecordHandler {
 		});
 		return record_sumarry;
 	}
-	
-	public LinearLayout recordingDetail() {
+
+	public LinearLayout recordingDetail()
+	{
 		tab_record_list = (LinearLayout) layoutInflater.inflate(R.layout.tab_record_detail, null);
 		tv_size_time = (TextView) tab_record_list.findViewById(R.id.tv_size_time);
 		btn_record_start_pause = (ImageButton) tab_record_list.findViewById(R.id.btn_record_start_pause);
@@ -214,7 +225,7 @@ public class RecordHandler {
 		btn_cancel_record.setOnClickListener(buttonListener);
 		return tab_record_list;
 	}
-	
+
 	private OnSeekBarChangeListener seekBarListener = new OnSeekBarChangeListener()
 	{
 
@@ -228,7 +239,7 @@ public class RecordHandler {
 				break;
 
 			case R.id.seek_progress:
-				
+
 				break;
 			}
 		}
@@ -236,17 +247,17 @@ public class RecordHandler {
 		@Override
 		public void onStartTrackingTouch(SeekBar seekBar)
 		{
-			
+
 		}
 
 		@Override
 		public void onStopTrackingTouch(SeekBar seekBar)
 		{
-			
+
 		}
-		
+
 	};
-	
+
 	private void onRecord(boolean start)
 	{
 		if(start)
@@ -276,47 +287,50 @@ public class RecordHandler {
 			Log.e("", "prepare() failed");
 		}
 		mRecorder.start();
-		startRecord = System.currentTimeMillis();
+		// startRecord = System.currentTimeMillis();
 	}
-	
-	
+
 	public void stopRecording()
 	{
 		if(mRecorder != null)
 		{
 			mRecorder.stop();
-			endRecord = System.currentTimeMillis();
+			// endRecord = System.currentTimeMillis();
 			mRecorder.release();
 			mRecorder = null;
 			recordTimer.cancel();
 		}
 	}
-	
-	private void startPlaying() {
+
+	private void startPlaying()
+	{
 		mPlayer = new MediaPlayer();
 		playFile = mFileName + "/" + tv_name + ".3gp";
-		try {
+		try
+		{
 			System.out.println("playFile:::" + playFile);
 			mPlayer.setDataSource(playFile);
 			mPlayer.prepare();
 			mPlayer.start();
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			Log.e("", "prepare() failed");
 		}
 	}
-	
-	public void stopPlaying() {
-		if(mPlayer != null) {
+
+	public void stopPlaying()
+	{
+		if(mPlayer != null)
+		{
 			mPlayer.release();
 			mPlayer = null;
 		}
 	}
-	
-	Timer recordTimer = null;
-	
+
 	private OnClickListener buttonListener = new OnClickListener()
 	{
-		
+
 		@Override
 		public void onClick(View v)
 		{
@@ -331,12 +345,13 @@ public class RecordHandler {
 				Log.i("", "button on click");
 				String title = et_theme.getText().toString().trim();
 				recordFile = mFileName + "/" + title + ".3gp";
-				if (!"".equals(title) && title != null) {
+				if(!"".equals(title) && title != null)
+				{
 					onRecord(!recordFlag);
 					recordTimer = new Timer();
 					if(!recordFlag)
 					{
-						record = 1;//暂停后设为初始值
+						record = 1;// 暂停后设为初始值
 						Log.i("", "recordFlag..");
 						timeFlag = false;
 						recordFlag = true;
@@ -374,36 +389,48 @@ public class RecordHandler {
 							}
 						};
 					}.start();
-				} else {
+				}
+				else
+				{
 					Toast.makeText(mHomeActivity, "请输入备忘主题", Toast.LENGTH_SHORT).show();
 				}
 				break;
 			case R.id.btn_save_record:
 				String fileName = et_theme.getText().toString().trim();
-				if(record > 1) {
-					//存储音频文件
-					timeFlag = true;
-					Date now = new Date();
-					DateFormat df = DateFormat.getDateTimeInstance();
-					String date = df.format(now);
-					int length = ((int) ((endRecord - startRecord) / 1000));
-					System.out.println("length: " + length + "\n" + "startRecord: " + startRecord + "\n" + "endRecord: " + endRecord);
-					if(length < 1)
-						length = 1;
-					rService.saveRecord(new Record(fileName, length, date));
-					Toast.makeText(mHomeActivity, "备忘录保存成功", Toast.LENGTH_SHORT).show();
-					lin_lv_tab.removeAllViews();
-					lin_lv_tab.addView(recordSummary());
-					lin_summary.removeAllViews();
-					recordTimer.cancel();
-				} else {
+				if(record > 1)
+				{
+					if(!recordFlag)
+					{
+						// 存储音频文件
+						timeFlag = true;
+						Date now = new Date();
+						DateFormat df = DateFormat.getDateTimeInstance();
+						String date = df.format(now);
+//						int length = ((int) ((endRecord - startRecord) / 1000));
+//						System.out.println("length: " + length + "\n" + "startRecord: "	+ startRecord + "\n" + "endRecord: " + endRecord);
+//						if(length < 1)
+//							length = 1;
+						rService.saveRecord(new Record(fileName, record, date));
+						Toast.makeText(mHomeActivity, "备忘录保存成功", Toast.LENGTH_SHORT).show();
+						lin_lv_tab.removeAllViews();
+						lin_lv_tab.addView(recordSummary());
+						lin_summary.removeAllViews();
+						recordTimer.cancel();
+					}
+					else
+					{
+						Toast.makeText(mHomeActivity, "请先暂停录音再存储", Toast.LENGTH_SHORT).show();
+					}
+				}
+				else
+				{
 					Toast.makeText(mHomeActivity, "您还没开始录音，请录音后再存储", Toast.LENGTH_SHORT).show();
 				}
 				break;
 			case R.id.btn_cancel_record:
 				lin_summary.removeAllViews();
 				break;
-				
+
 			case R.id.btn_edit_record:
 				if(playFlag)
 				{
@@ -422,76 +449,82 @@ public class RecordHandler {
 					}
 					else
 					{
-						//更新数据库
-						//更新左边listview
+						// 更新数据库
+						// 更新左边listview
 						btn_edit_record.setText("编辑");
 						editFlag = false;
 					}
 				}
 				break;
 			case R.id.btn_delete_record:
-				//更新数据库
-				//更新左边listView 
-				//更新右边
-				//删除源文件
+				// 更新数据库
+				// 更新左边listView
+				// 更新右边
+				// 删除源文件
 				playFile = mFileName + "/" + tv_name + ".3gp";
-				new AlertDialog.Builder(mHomeActivity).setTitle("提示")
-				.setMessage("确定删除该备忘记录吗？")
-				.setPositiveButton("确定", new DialogInterface.OnClickListener()
-				{
+				new AlertDialog.Builder(mHomeActivity).setTitle("提示").setMessage("确定删除该备忘记录吗？")
+						.setPositiveButton("确定", new DialogInterface.OnClickListener()
+						{
 
-					@Override
-					public void onClick(DialogInterface dialog, int which)
-					{
-						rService.deleteRecord(item_id);
-						File fileDel = new File(new File(playFile).getAbsolutePath());
-						if(fileDel.exists())
-							fileDel.delete();
-						lin_summary.removeAllViews();
-						lin_lv_tab.removeAllViews();
-						lin_lv_tab.addView(recordSummary());
-					}
-				}).setNegativeButton("取消", new DialogInterface.OnClickListener()
-				{
-					@Override
-					public void onClick(DialogInterface dialog, int which)
-					{
-						dialog.cancel();
-					}
-				}).show();
+							@Override
+							public void onClick(DialogInterface dialog, int which)
+							{
+								rService.deleteRecord(item_id);
+								File fileDel = new File(new File(playFile).getAbsolutePath());
+								if(fileDel.exists())
+									fileDel.delete();
+								lin_summary.removeAllViews();
+								lin_lv_tab.removeAllViews();
+								lin_lv_tab.addView(recordSummary());
+							}
+						}).setNegativeButton("取消", new DialogInterface.OnClickListener()
+						{
+							@Override
+							public void onClick(DialogInterface dialog, int which)
+							{
+								dialog.cancel();
+							}
+						}).show();
 				break;
 			case R.id.ib_memo_play:
-				//播放备忘录
+				// 播放备忘录
 				playFile = mFileName + "/" + tv_name + ".3gp";
 				System.out.println("playFile: " + playFile);
 				System.out.println("isStop1: " + isStop);
-				if(isFinish){//第一次点击
+				if(isFinish)
+				{// 第一次点击
 					Log.i("", "on start.................first....");
 					startTimer(duration);
 					startPlaying();
 				}
-				else//以后点击
+				else
+				// 以后点击
 				{
-					if(isPause)//点击后暂停
+					if(isPause)// 点击后暂停
 					{
 						Log.i("", "isPause true....");
 						mPlayer.start();
 					}
-					else//恢复
+					else
+					// 恢复
 					{
 						Log.i("", "isPause false....");
 						mPlayer.pause();
 					}
 				}
-				if(!isStop){
+				if(!isStop)
+				{
 					Log.i("", "on Pause....");
 					isPause = !isPause;
 					isStop = !isStop;
 				}
 				isStop = !isStop;
-				if (isPause) {
+				if(isPause)
+				{
 					ib_memo_play.setBackgroundResource(R.drawable.memo_play);
-				} else {
+				}
+				else
+				{
 					ib_memo_play.setBackgroundResource(R.drawable.btn_pause_bg);
 				}
 				System.out.println("isStop2: " + isStop);
@@ -505,7 +538,7 @@ public class RecordHandler {
 		tv_seekTo.setText(timeSystem(count));
 		seek_progress.setProgress(count);
 	}
-	
+
 	private void startTimer(final int size)
 	{
 		isFinish = false;
@@ -521,7 +554,7 @@ public class RecordHandler {
 				@Override
 				public void run()
 				{
-//					Log.i("", "count: " + String.valueOf(count));
+					// Log.i("", "count: " + String.valueOf(count));
 					sendMessage(UPDATE_TEXTVIEW);
 					do
 					{
@@ -531,7 +564,7 @@ public class RecordHandler {
 						}
 						try
 						{
-//							Log.i("", "sleep(1000)...");
+							// Log.i("", "sleep(1000)...");
 							Thread.sleep(1000);
 						}
 						catch (InterruptedException e)
@@ -543,7 +576,8 @@ public class RecordHandler {
 				}
 			};
 		}
-		if(mTimer != null && mTimerTask != null){
+		if(mTimer != null && mTimerTask != null)
+		{
 			mTimer.schedule(mTimerTask, delay, period);
 		}
 	}
@@ -571,7 +605,7 @@ public class RecordHandler {
 			mHandler.sendMessage(message);
 		}
 	}
-	
+
 	class RecordTask extends TimerTask
 	{
 		@Override
@@ -580,7 +614,7 @@ public class RecordHandler {
 			mHandler1.sendEmptyMessage(record);
 		}
 	}
-	
+
 	Handler mHandler1 = new Handler()
 	{
 		@Override
@@ -607,22 +641,26 @@ public class RecordHandler {
 			sb.append(second);
 		return sb.toString();
 	}
-	
-	private int string2Time(String str) {
+
+	private int string2Time(String str)
+	{
 		int time = 0;
-		if (str.indexOf(":") > -1) {
+		if(str.indexOf(":") > -1)
+		{
 			String[] strs = str.split(":");
 			time = Integer.parseInt(strs[0]) * 60 + Integer.parseInt(strs[1]);
 		}
 		return time;
 	}
-	
-	private List<? extends Map<String, ?>> getData() {
-		List<Map<String, Object>> lists = new ArrayList<Map<String, Object>>();
+
+	private List<? extends Map<String,?>> getData()
+	{
+		List<Map<String,Object>> lists = new ArrayList<Map<String,Object>>();
 		List<Record> records = rService.findAllRecord();
-		Map<String, Object> maps = null;
-		for (Record r : records) {
-			maps = new HashMap<String, Object>();
+		Map<String,Object> maps = null;
+		for(Record r : records)
+		{
+			maps = new HashMap<String,Object>();
 			maps.put("tv_id", String.valueOf(r.getId()));
 			maps.put("tv_name", r.getName());
 			maps.put("tv_size", timeSystem(r.getLenght()));
@@ -631,5 +669,5 @@ public class RecordHandler {
 		}
 		return lists;
 	}
-	
+
 }
