@@ -42,6 +42,7 @@ import com.wz.doctor.MyApplication;
 import com.wz.doctor.R;
 import com.wz.doctor.bean.Record;
 import com.wz.doctor.db.RecordService;
+import com.wz.doctor.util.FileUtil;
 
 public class RecordHandler
 {
@@ -79,7 +80,6 @@ public class RecordHandler
 	private ImageButton ib_memo_play;
 	private SeekBar seek_volume;
 	private SeekBar seek_progress;
-	private boolean editFlag = false;
 	private boolean playFlag = false;
 	private boolean timeFlag = false;
 	private AudioManager mAudioManager;
@@ -120,6 +120,7 @@ public class RecordHandler
 				+ "memo";
 		rService = new RecordService(mHomeActivity);
 		mAudioManager = (AudioManager) mHomeActivity.getSystemService(Service.AUDIO_SERVICE);
+		
 	}
 
 	public LinearLayout recordSummary()
@@ -161,40 +162,56 @@ public class RecordHandler
 					@Override
 					public void onClick(View v)
 					{
+
+
 						if(playFlag)
 						{
 							Toast.makeText(mHomeActivity, "播放备忘录状态下不可编辑", Toast.LENGTH_SHORT).show();
 						}
 						else
 						{
-							if(!editFlag)
-							{
-								btn_edit_record.setText("完成");
-								tv_title_record.setEnabled(true);
-								tv_title_record.setFocusable(true);
-								tv_title_record.clearFocus();
-								tv_title_record.setSelection(tv_title_record.getText().toString().length());
-								editFlag = true;
-							}
-							else
-							{
-								// 更新数据库
-								// 更新左边listview
-								btn_edit_record.setText("编辑");
-								editFlag = false;
-								boolean isUpdate = rService.updateRecord(new Record(item_id, tv_title_record.getText().toString().trim()));
-								if(isUpdate)
-								{
-									Toast.makeText(mHomeActivity, "更新成功", Toast.LENGTH_SHORT).show();
-									lin_lv_tab.removeAllViews();
-									lin_lv_tab.addView(recordSummary());
-								}
-								else
-								{
-									Toast.makeText(mHomeActivity, "更新失败", Toast.LENGTH_SHORT).show();
-								}
-							}
+							final String old = tv_title_record.getText().toString().trim();
+							final EditText et = new EditText(mHomeActivity);
+							et.setHint(old);
+							new AlertDialog.Builder(mHomeActivity)
+									.setTitle("请输入新主题")
+									.setIcon(android.R.drawable.ic_dialog_info)
+									.setView(et).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+										
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											
+											if(!"".equals(et.getText().toString().trim()))
+											{
+												boolean isUpdate = rService.updateRecord(new Record(item_id, et.getText().toString().trim()));
+												if(isUpdate)
+												{
+													FileUtil.renameFile(mFileName + "/" + tv_name + ".3gp", mFileName + "/" + et.getText().toString().trim() + ".3gp");
+													Toast.makeText(mHomeActivity, "更新成功", Toast.LENGTH_SHORT).show();
+													lin_lv_tab.removeAllViews();
+													lin_lv_tab.addView(recordSummary());
+													tv_title_record.setText(et.getText().toString().trim());
+												}
+												else
+												{
+													Toast.makeText(mHomeActivity, "更新失败", Toast.LENGTH_SHORT).show();
+												}
+											}
+//											}
+										
+										}
+									})
+									.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+										
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											dialog.dismiss();
+										}
+									}).show();
 						}
+					
+					
+						
 					}
 				});
 

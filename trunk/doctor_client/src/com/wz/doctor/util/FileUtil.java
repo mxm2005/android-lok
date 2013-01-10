@@ -12,6 +12,12 @@ public class FileUtil
 	public static File updateDir = null;
 	public static File updateFile = null;
 	
+	public static void renameFile(String oldPath, String newPath)
+	{
+		File file = new File(oldPath);
+		file.renameTo(new File(newPath));
+	}
+	
     public static void addFile(String sDir) {
         File destDir = new File(sDir);
         if (!destDir.exists()) {
