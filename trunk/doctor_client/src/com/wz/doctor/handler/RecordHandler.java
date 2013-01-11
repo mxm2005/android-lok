@@ -156,64 +156,7 @@ public class RecordHandler
 				tv_save_date.setText(tv_date);
 
 				btn_edit_record = (Button) tab_play_list.findViewById(R.id.btn_edit_record);
-				btn_edit_record.setOnClickListener(new OnClickListener()
-				{
-					
-					@Override
-					public void onClick(View v)
-					{
-
-
-						if(playFlag)
-						{
-							Toast.makeText(mHomeActivity, "播放备忘录状态下不可编辑", Toast.LENGTH_SHORT).show();
-						}
-						else
-						{
-							final String old = tv_title_record.getText().toString().trim();
-							final EditText et = new EditText(mHomeActivity);
-							et.setHint(old);
-							new AlertDialog.Builder(mHomeActivity)
-									.setTitle("请输入新主题")
-									.setIcon(android.R.drawable.ic_dialog_info)
-									.setView(et).setPositiveButton("确定", new DialogInterface.OnClickListener() {
-										
-										@Override
-										public void onClick(DialogInterface dialog, int which) {
-											
-											if(!"".equals(et.getText().toString().trim()))
-											{
-												boolean isUpdate = rService.updateRecord(new Record(item_id, et.getText().toString().trim()));
-												if(isUpdate)
-												{
-													FileUtil.renameFile(mFileName + "/" + tv_name + ".3gp", mFileName + "/" + et.getText().toString().trim() + ".3gp");
-													Toast.makeText(mHomeActivity, "更新成功", Toast.LENGTH_SHORT).show();
-													lin_lv_tab.removeAllViews();
-													lin_lv_tab.addView(recordSummary());
-													tv_title_record.setText(et.getText().toString().trim());
-												}
-												else
-												{
-													Toast.makeText(mHomeActivity, "更新失败", Toast.LENGTH_SHORT).show();
-												}
-											}
-//											}
-										
-										}
-									})
-									.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-										
-										@Override
-										public void onClick(DialogInterface dialog, int which) {
-											dialog.dismiss();
-										}
-									}).show();
-						}
-					
-					
-						
-					}
-				});
+				btn_edit_record.setOnClickListener(buttonListener);
 
 				btn_delete_record = (Button) tab_play_list.findViewById(R.id.btn_delete_record);
 				btn_delete_record.setOnClickListener(buttonListener);
@@ -491,7 +434,57 @@ public class RecordHandler
 				break;
 
 			case R.id.btn_edit_record:
+
+
+
+				if(playFlag)
+				{
+					Toast.makeText(mHomeActivity, "播放备忘录状态下不可编辑", Toast.LENGTH_SHORT).show();
+				}
+				else
+				{
+					final String old = tv_title_record.getText().toString().trim();
+					final EditText et = new EditText(mHomeActivity);
+					et.setHint(old);
+					new AlertDialog.Builder(mHomeActivity)
+							.setTitle("请输入新主题")
+							.setIcon(android.R.drawable.ic_dialog_info)
+							.setView(et).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									
+									if(!"".equals(et.getText().toString().trim()))
+									{
+										boolean isUpdate = rService.updateRecord(new Record(item_id, et.getText().toString().trim()));
+										if(isUpdate)
+										{
+											FileUtil.renameFile(mFileName + "/" + tv_name + ".3gp", mFileName + "/" + et.getText().toString().trim() + ".3gp");
+											Toast.makeText(mHomeActivity, "更新成功", Toast.LENGTH_SHORT).show();
+											lin_lv_tab.removeAllViews();
+											lin_lv_tab.addView(recordSummary());
+											tv_title_record.setText(et.getText().toString().trim());
+										}
+										else
+										{
+											Toast.makeText(mHomeActivity, "更新失败", Toast.LENGTH_SHORT).show();
+										}
+									}
+								
+								}
+							})
+							.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									dialog.dismiss();
+								}
+							}).show();
+				}
+			
+			
 				
+			
 				break;
 			case R.id.btn_delete_record:
 				// 更新数据库
