@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">进度条对话框</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_upload_test">UploadTestActivity</string>
+    <string name="upload">上传</string>
+    <string name="title_activity_test">TestActivity</string>
+
+</resources>
