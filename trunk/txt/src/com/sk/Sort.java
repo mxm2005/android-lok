@@ -8,7 +8,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
@@ -57,97 +56,90 @@ public class Sort
 					try
 					{
 						fr = new FileReader(savedFile);
+						String str = "";
+						StringBuffer mSb = new StringBuffer();
+						StringBuffer lSb = new StringBuffer();
+						StringBuffer tSb = new StringBuffer();
+						StringBuffer xSb = new StringBuffer();
+						List<String> ms = new ArrayList<String>();// 移动
+						List<String> ls = new ArrayList<String>();// 联通
+						List<String> ts = new ArrayList<String>();// 电信
+						List<String> xs = new ArrayList<String>();// 非号码
+						BufferedReader br = new BufferedReader(fr);
+						LineNumberReader input = new LineNumberReader(br);
+						for(;;)
+						{
+							str = input.readLine();
+							if(str != null)
+							{
+								switch (sortNumber(str))
+								{
+								case 1:
+									ts.add(str);
+									break;
+								case 2:
+									ls.add(str);
+									break;
+								case 3:
+									ms.add(str);
+									break;
+								case 4:
+									xs.add(str);
+									break;
+								}
+							}
+							else
+							{
+								mSb.append("移动号码： " + "\n");
+								lSb.append("联通号码： " + "\n");
+								tSb.append("电信号码： " + "\n");
+								xSb.append("非手机号码： " + "\n");
+								for(String m : ms)
+								{
+									System.out.println("移动号码：" + m + ", ");
+									mSb.append(m + "," + "\n");
+								}
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								for(String l : ls)
+								{
+									System.out.println("联通号码：" + l + ", ");
+									lSb.append(l + "," + "\n");
+								}
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								for(String t : ts)
+								{
+									System.out.println("电信号码：" + t + ", ");
+									tSb.append(t + "," + "\n");
+								}
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								System.out.println();
+								for(String x : xs)
+								{
+									System.out.println("非手机号码：" + x + ", ");
+									xSb.append(x + "," + "\n");
+								}
+								mSb.deleteCharAt(mSb.length() - 2);
+								lSb.deleteCharAt(lSb.length() - 2);
+								tSb.deleteCharAt(tSb.length() - 2);
+								xSb.deleteCharAt(xSb.length() - 2);
+								ta.setText(mSb.toString() + "\n" + lSb.toString() + "\n"
+										+ tSb.toString() + "\n" + xSb.toString());
+								break;
+							}
+						}
 					}
-					catch (FileNotFoundException ex)
+					catch (Exception ex)
 					{
 						ex.printStackTrace();
 					}
-				}
-				try
-				{
-					String str = "";
-					StringBuffer mSb = new StringBuffer();
-					StringBuffer lSb = new StringBuffer();
-					StringBuffer tSb = new StringBuffer();
-					StringBuffer xSb = new StringBuffer();
-					List<String> ms = new ArrayList<String>();// 移动
-					List<String> ls = new ArrayList<String>();// 联通
-					List<String> ts = new ArrayList<String>();// 电信
-					List<String> xs = new ArrayList<String>();// 非号码
-					BufferedReader br = new BufferedReader(fr);
-					LineNumberReader input = new LineNumberReader(br);
-					for(;;)
-					{
-						str = input.readLine();
-						if(str != null)
-						{
-							switch (sortNumber(str))
-							{
-							case 1:
-								ts.add(str);
-								break;
-							case 2:
-								ls.add(str);
-								break;
-							case 3:
-								ms.add(str);
-								break;
-							case 4:
-								xs.add(str);
-								break;
-							}
-						}
-						else
-						{
-							mSb.append("移动号码： " + "\n");
-							lSb.append("联通号码： " + "\n");
-							tSb.append("电信号码： " + "\n");
-							xSb.append("非手机号码： " + "\n");
-							for(String m : ms)
-							{
-								System.out.println("移动号码：" + m + ", ");
-								mSb.append(m + "," + "\n");
-							}
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							for(String l : ls)
-							{
-								System.out.println("联通号码：" + l + ", ");
-								lSb.append(l + "," + "\n");
-							}
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							for(String t : ts)
-							{
-								System.out.println("电信号码：" + t + ", ");
-								tSb.append(t + "," + "\n");
-							}
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							for(String x : xs)
-							{
-								System.out.println("非手机号码：" + x + ", ");
-								xSb.append(x + "," + "\n");
-							}
-							mSb.deleteCharAt(mSb.length() - 2);
-							lSb.deleteCharAt(lSb.length() - 2);
-							tSb.deleteCharAt(tSb.length() - 2);
-							xSb.deleteCharAt(xSb.length() - 2);
-							ta.setText(mSb.toString() + "\n" + lSb.toString() + "\n"
-									+ tSb.toString() + "\n" + xSb.toString());
-							break;
-						}
-					}
-				}
-				catch (Exception exx)
-				{
-					exx.printStackTrace();
 				}
 			}
 		});
