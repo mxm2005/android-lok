@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item type="id" name="slide_navibar_fg" />
+    <item type="id" name="frame_activity" />
+    <item type="id" name="content_fg" />
+    <item type="id" name="changesize_layout" />
+    <item type="id" name="first_in_help" />
+    <item type="id" name="flow" />
+    <item type="id" name="framework_help_btn_start" />
+    <item type="id" name="framework_help_btn_jump" />
+    <item type="id" name="list_top_ad" />
+    <item type="id" name="list_bottom_ad" />
+    <item type="id" name="page_bottom_ad" />
+    <item type="id" name="list_details_one_ad" />
+    <item type="id" name="list_details_two_ad" />
+    <item type="id" name="ad_item_empty" />
+    <item type="id" name="title" />
+    <item type="id" name="title_right_button" />
+    <item type="id" name="prompt_framelayout" />
+    <item type="id" name="prompt_framelayout1" />
+    <item type="id" name="loading" />
+    <item type="id" name="loading1" />
+    <item type="id" name="empty" />
+    <item type="id" name="empty1" />
+    <item type="id" name="empty_icon" />
+    <item type="id" name="empty_text" />
+    <item type="id" name="empty_text1" />
+    <item type="id" name="error" />
+    <item type="id" name="error1" />
+    <item type="id" name="error_text" />
+    <item type="id" name="framelayout_baffle" />
+    <item type="id" name="dialog_icon" />
+    <item type="id" name="dialog_title" />
+    <item type="id" name="dialog_message" />
+    <item type="id" name="dialog_button_confirm" />
+    <item type="id" name="dialog_buttom_cancel" />
+    <item type="id" name="dialog_checkbox" />
+    <item type="id" name="bottom_bar" />
+    <item type="id" name="bottom_progress_bar" />
+    <item type="id" name="button_bottom_left" />
+    <item type="id" name="button_bottom_middle" />
+    <item type="id" name="button_bottom_right" />
+    <item type="id" name="bottom_progress" />
+    <item type="id" name="request_focus_layout" />
+    <item type="id" name="foot_view_pps_logo" />
+    <item type="id" name="ipd_listview" />
+    <item type="id" name="ipd_scrollview" />
+    <item type="id" name="ipd_search_linearlayout" />
+    <item type="id" name="ipd_edittext" />
+    <item type="id" name="ipd_imageview_clear" />
+    <item type="id" name="ipd_arrow_left" />
+    <item type="id" name="ipd_arrow_right" />
+    <item type="id" name="ipd_search_button" />
+    <item type="id" name="ipd_empty_layout" />
+    <item type="id" name="ipd_textview_title" />
+    <item type="id" name="ipd_my_ipd" />
+    <item type="id" name="ipd_my_ipd_text" />
+    <item type="id" name="ipd_viewswitcher" />
+    <item type="id" name="ipd_horizontalscrollview" />
+    <item type="id" name="ipd_linearlayout_bottom" />
+    <item type="id" name="ipd_detail_image" />
+    <item type="id" name="ipd_detail_name" />
+    <item type="id" name="ipd_detail_play_count_all" />
+    <item type="id" name="ipd_detail_movie_count_all" />
+    <item type="id" name="ipd_detail_share_count_all" />
+    <item type="id" name="ipd_detail_imageview_rss" />
+    <item type="id" name="ipd_detail_textview_rss" />
+    <item type="id" name="ipd_detail_imageview_share" />
+    <item type="id" name="ipd_detail_textview_share" />
+    <item type="id" name="ipd_detail_linear_evaluate" />
+    <item type="id" name="ipd_detail_score" />
+    <item type="id" name="ipd_detail_listview" />
+    <item type="id" name="ipd_detail_listview_imageview" />
+    <item type="id" name="ipd_detail_listview_name" />
+    <item type="id" name="ipd_detail_listview_playtimes" />
+    <item type="id" name="ipd_detail_listview_time" />
+    <item type="id" name="ipd_detail_listview_share" />
+    <item type="id" name="ipd_detail_listview_review" />
+    <item type="id" name="ipd_detail_soon_update" />
+    <item type="id" name="ipd_detail_relativelayout_soon1" />
+    <item type="id" name="ipd_detail_soon_image1" />
+    <item type="id" name="ipd_detail_soon_name1" />
+    <item type="id" name="ipd_detail_soon_content1" />
+    <item type="id" name="ipd_detail_soon_line" />
+    <item type="id" name="ipd_detail_relativelayout_soon2" />
+    <item type="id" name="ipd_detail_soon_image2" />
+    <item type="id" name="ipd_detail_soon_name2" />
+    <item type="id" name="ipd_detail_soon_content2" />
+    <item type="id" name="ipd_detail_linear_rss" />
+    <item type="id" name="ipd_detail_linear_share" />
+    <item type="id" name="ipd_imageview_bottom" />
+    <item type="id" name="ipd_textview_bottom" />
+    <item type="id" name="ipd_search_listview" />
+    <item type="id" name="game_bottom_linearlayout" />
+    <item type="id" name="head_view" />
+    <item type="id" name="left_imageview_homepage" />
+    <item type="id" name="left_imageview_vip" />
+    <item type="id" name="left_imageview_search" />
+    <item type="id" name="left_imageview_fav_his" />
+    <item type="id" name="left_imageview_download" />
+    <item type="id" name="left_imageview_ipd" />
+    <item type="id" name="left_imageview_setting" />
+    <item type="id" name="left_imageview_game" />
+    <item type="id" name="top_imagebtn_change" />
+    <item type="id" name="listview_channel" />
+    <item type="id" name="left_bar" />
+    <item type="id" name="listview_textview_channel_name" />
+    <item type="id" name="listview_textview_channel_count" />
+    <item type="id" name="homepage_image_gallery" />
+    <item type="id" name="homepage_gallery_text" />
+    <item type="id" name="homepage_circle_indicator" />
+    <item type="id" name="homepage_gallery_imageview" />
+    <item type="id" name="homepage_title_linearlayout" />
+    <item type="id" name="listview_imageview_new" />
+    <item type="id" name="welcome_poster" />
+    <item type="id" name="update_image" />
+    <item type="id" name="update_title_text" />
+    <item type="id" name="update_notification_progressblock" />
+    <item type="id" name="update_notification_progressbar" />
+    <item type="id" name="update_notification_progresstext" />
+    <item type="id" name="share_image" />
+    <item type="id" name="share_edittext" />
+    <item type="id" name="share_textview_remain" />
+    <item type="id" name="share_imageview_clear" />
+    <item type="id" name="share_imageview_sina" />
+    <item type="id" name="share_imageview_txweibo" />
+    <item type="id" name="share_imageview_kaixin" />
+    <item type="id" name="share_imageview_renren" />
+    <item type="id" name="search_edittext" />
+    <item type="id" name="search_imageview_clear" />
+    <item type="id" name="search_button" />
+    <item type="id" name="search_textview_title" />
+    <item type="id" name="search_gridview" />
+    <item type="id" name="search_listview" />
+    <item type="id" name="search_key_layout" />
+    <item type="id" name="search_result_layout" />
+    <item type="id" name="search_clean_history" />
+    <item type="id" name="search_movie" />
+    <item type="id" name="search_ugc" />
+    <item type="id" name="search_ipd" />
+    <item type="id" name="search_slide_result" />
+    <item type="id" name="search_movie_text" />
+    <item type="id" name="search_ugc_text" />
+    <item type="id" name="search_ipd_text" />
+    <item type="id" name="search_key" />
+    <item type="id" name="search_history" />
+    <item type="id" name="search_key_text" />
+    <item type="id" name="search_history_text" />
+    <item type="id" name="search_slide_key" />
+    <item type="id" name="search_empty_view" />
+    <item type="id" name="original_listview_imageview" />
+    <item type="id" name="original_listview_name" />
+    <item type="id" name="original_listview_count" />
+    <item type="id" name="original_details_listview" />
+    <item type="id" name="original_details_listview_imageview" />
+    <item type="id" name="original_details_listview_name" />
+    <item type="id" name="original_details_listview_time" />
+    <item type="id" name="original_details_listview_playtimes" />
+    <item type="id" name="original_listview" />
+    <item type="id" name="favourite_textview_title" />
+    <item type="id" name="favourite_listview" />
+    <item type="id" name="favourite_relativelayout_ugc" />
+    <item type="id" name="favourite_frameLayout_movie" />
+    <item type="id" name="favourite_imageview_selector_ugc" />
+    <item type="id" name="favourite_imageview_selector_movie" />
+    <item type="id" name="history_textview_title" />
+    <item type="id" name="history_listview" />
+    <item type="id" name="history_relativelayout_ugc" />
+    <item type="id" name="history_frameLayout_movie" />
+    <item type="id" name="history_imageview_selector_ugc" />
+    <item type="id" name="history_imageview_selector_movie" />
+    <item type="id" name="favourite_textview_layout" />
+    <item type="id" name="history_textview_layout" />
+    <item type="id" name="movie_imageview" />
+    <item type="id" name="movie_name" />
+    <item type="id" name="movie_on_number_layout" />
+    <item type="id" name="movie_on_number_textview" />
+    <item type="id" name="movie_flag_imageview" />
+    <item type="id" name="movie_type_textview" />
+    <item type="id" name="movie_read_time_textview" />
+    <item type="id" name="movie_ratingbar" />
+    <item type="id" name="movie_vote_textview" />
+    <item type="id" name="channel_second_five_text_layout" />
+    <item type="id" name="channel_second_new" />
+    <item type="id" name="channel_linearlayout_second_new" />
+    <item type="id" name="channel_linearlayout_second_hot" />
+    <item type="id" name="channel_linearlayout_second_vote" />
+    <item type="id" name="channel_linearlayout_second_letter" />
+    <item type="id" name="channel_linearlayout_second_sift" />
+    <item type="id" name="channel_second_hot" />
+    <item type="id" name="channel_second_vote" />
+    <item type="id" name="channel_second_letter" />
+    <item type="id" name="channel_second_sift" />
+    <item type="id" name="channel_second_slider_image" />
+    <item type="id" name="channel_ico_vip" />
+    <item type="id" name="channel_ico_new" />
+    <item type="id" name="channel_ico_bp" />
+    <item type="id" name="sift_listview_text" />
+    <item type="id" name="sift_listview_image" />
+    <item type="id" name="sift_popwindow_left_scrollview" />
+    <item type="id" name="sift_popwindow_left_layout" />
+    <item type="id" name="sift_popwindow_listview" />
+    <item type="id" name="sift_left_text" />
+    <item type="id" name="channel_sift_layout" />
+    <item type="id" name="channel_middler_layout" />
+    <item type="id" name="channel_main" />
+    <item type="id" name="channel_listview" />
+    <item type="id" name="channel_down_loading" />
+    <item type="id" name="channel_letter_view" />
+    <item type="id" name="channel_letter_overlay" />
+    <item type="id" name="sift_container" />
+    <item type="id" name="sift_layout_textview" />
+    <item type="id" name="sift_layout_imageview" />
+    <item type="id" name="details_coderate_language_imageview" />
+    <item type="id" name="details_coderate_textview" />
+    <item type="id" name="details_language_textview" />
+    <item type="id" name="details_image" />
+    <item type="id" name="detail_score" />
+    <item type="id" name="details_area_textview" />
+    <item type="id" name="details_dir_textview" />
+    <item type="id" name="details_actor_textview" />
+    <item type="id" name="details_play_button" />
+    <item type="id" name="details_download_button" />
+    <item type="id" name="details_plot_summary_textview" />
+    <item type="id" name="details_left_button" />
+    <item type="id" name="details_right_button" />
+    <item type="id" name="details_episode_gridview" />
+    <item type="id" name="details_linear_favour" />
+    <item type="id" name="details_linear_recommend" />
+    <item type="id" name="details_linear_comment" />
+    <item type="id" name="details_linear_share" />
+    <item type="id" name="details_episode_textview" />
+    <item type="id" name="details_review_count" />
+    <item type="id" name="details_review_listview" />
+    <item type="id" name="details_review_edittext" />
+    <item type="id" name="details_review_button_submit" />
+    <item type="id" name="details_review_listview_item_imageview" />
+    <item type="id" name="details_review_listview_item_textview_title" />
+    <item type="id" name="details_review_listview_item_textview_time" />
+    <item type="id" name="details_review_listview_item_textview_info" />
+    <item type="id" name="details_linear_evaluate" />
+    <item type="id" name="details_coderate_language_container" />
+    <item type="id" name="details_download_episode_textview" />
+    <item type="id" name="details_download_gougou_imageview" />
+    <item type="id" name="details_download_number_textview" />
+    <item type="id" name="details_download_volume_progressbar" />
+    <item type="id" name="details_download_store_path_textview" />
+    <item type="id" name="details_download_all_volume_textview" />
+    <item type="id" name="details_download_other_volume_textview" />
+    <item type="id" name="details_download_local_volume_textview" />
+    <item type="id" name="details_download_residue_volume_textview" />
+    <item type="id" name="details_recommend_listview" />
+    <item type="id" name="details_scrollview" />
+    <item type="id" name="details_download_scrollview" />
+    <item type="id" name="details_share_webview" />
+    <item type="id" name="detail_coderate_line" />
+    <item type="id" name="detail_imagview_favourite" />
+    <item type="id" name="details_slide_layout" />
+    <item type="id" name="details_horizontalscrollview" />
+    <item type="id" name="details_error_episode" />
+    <item type="id" name="details_third_title_layout" />
+    <item type="id" name="details_third_content_layout" />
+    <item type="id" name="details_third_title_image" />
+    <item type="id" name="details_third_item_image" />
+    <item type="id" name="details_third_item_name" />
+    <item type="id" name="details_third_gridview" />
+    <item type="id" name="details_third_zhishi_image" />
+    <item type="id" name="imageView_name_clear" />
+    <item type="id" name="imageView_password_clear" />
+    <item type="id" name="imageView_confirm_password_clear" />
+    <item type="id" name="imageView_email_clear" />
+    <item type="id" name="textview_login_name" />
+    <item type="id" name="textview_login_password" />
+    <item type="id" name="textview_login_confirm_password" />
+    <item type="id" name="textview_login_email" />
+    <item type="id" name="edittext_login_name" />
+    <item type="id" name="edittext_login_password" />
+    <item type="id" name="edittext_login_confirm_password" />
+    <item type="id" name="edittext_login_email" />
+    <item type="id" name="checkBox_remember_password" />
+    <item type="id" name="checkBox_auto_login" />
+    <item type="id" name="button_login" />
+    <item type="id" name="imageView_avatar" />
+    <item type="id" name="textView_username" />
+    <item type="id" name="textView_level" />
+    <item type="id" name="textView_status" />
+    <item type="id" name="set_image_item" />
+    <item type="id" name="set_textview_item" />
+    <item type="id" name="linearlayout_download_dir" />
+    <item type="id" name="dir_title" />
+    <item type="id" name="download_set_list" />
+    <item type="id" name="download_movie_imageview" />
+    <item type="id" name="movie_name_text" />
+    <item type="id" name="movie_malv_text" />
+    <item type="id" name="img_bp" />
+    <item type="id" name="movie_size_text" />
+    <item type="id" name="movie_state_img" />
+    <item type="id" name="movie_state_text" />
+    <item type="id" name="right_img" />
+    <item type="id" name="buttonbar" />
+    <item type="id" name="buttonbar_left_button" />
+    <item type="id" name="buttonbar_right_button" />
+    <item type="id" name="channel_first_prompt_framelayout" />
+    <item type="id" name="download_listview" />
+    <item type="id" name="right_img_edit" />
+    <item type="id" name="movie_count_text" />
+    <item type="id" name="download_linearlayout_right_button" />
+    <item type="id" name="download_linearlayout_left_button" />
+    <item type="id" name="download_help_setting_path" />
+    <item type="id" name="download_help_textview_set_path" />
+    <item type="id" name="ppsplayer_activity_framelayout" />
+    <item type="id" name="ppsplayer_activity_video_layer" />
+    <item type="id" name="ppsvideoview_fragment" />
+    <item type="id" name="ppsplayer_bufferinfo_view_layer" />
+    <item type="id" name="ppsplayer_title_controler_fragment" />
+    <item type="id" name="ppsplayer_lock_slidebar_view_layer" />
+    <item type="id" name="ppsplayer_activity_buffer_layer" />
+    <item type="id" name="ppsplayer_activity_advertisement_layer" />
+    <item type="id" name="ppsplayer_bufferinfo_view_layout" />
+    <item type="id" name="ppsplayer_lock_sliderbar_layout" />
+    <item type="id" name="ppsplayer_activity_buffer_layout" />
+    <item type="id" name="ppsplayer_bphp_help" />
+    <item type="id" name="ppsplayer_ppsvideoview" />
+    <item type="id" name="ppsplayer_activity_buffer_willplay" />
+    <item type="id" name="ppsplayer_activity_buffer_tvname" />
+    <item type="id" name="ppsplayer_activity_buffer_imageprocess" />
+    <item type="id" name="ppsplayer_activity_buffer_state" />
+    <item type="id" name="ppsplayer_bufferinfo_percent_text" />
+    <item type="id" name="ppsplayer_activity_buffer_download_speed" />
+    <item type="id" name="ppsplayer_bufferstate_view_layout" />
+    <item type="id" name="ppsplayer_bufferstate_sound_off" />
+    <item type="id" name="ppsplayer_bufferstate_no_wifi" />
+    <item type="id" name="ppsplayer_bufferstate_stop" />
+    <item type="id" name="ppsplayer_ppsvideoad_view" />
+    <item type="id" name="ppsplayer_ppsvideoad_textview" />
+    <item type="id" name="ppsplayer_ppsvideoad_text_after_remaindertime" />
+    <item type="id" name="ppsplayer_ppsvideoad_text_remaindertime" />
+    <item type="id" name="ppsplayer_ppsvideoad_text_pre_remaindertime" />
+    <item type="id" name="ppsplayer_ad_linear_volumn" />
+    <item type="id" name="ppsplayer_ad_imageview_volumn" />
+    <item type="id" name="ppsplayer_ad_volumn" />
+    <item type="id" name="ppsplayer_ad_linear_jump" />
+    <item type="id" name="ppsplayer_ad_imageview_jump" />
+    <item type="id" name="ppsplayer_ad_jump" />
+    <item type="id" name="ppsplayer_sliderbar" />
+    <item type="id" name="ppsplayer_lock_btn" />
+    <item type="id" name="ppsplayer_sliderbar_content" />
+    <item type="id" name="ppsplayer_sliderbar_selector" />
+    <item type="id" name="ppsplayer_sliderbar_btn" />
+    <item type="id" name="ppsplayer_sliderbar_content_interval_btn" />
+    <item type="id" name="ppsplayer_sliderbar_content_listimg" />
+    <item type="id" name="ppsplayer_sliderbar_content_listtext" />
+    <item type="id" name="player_linearlayout_left_item1" />
+    <item type="id" name="ppsplayer_sliderbar_selector_filmlist_btn" />
+    <item type="id" name="player_linearlayout_left_item2" />
+    <item type="id" name="ppsplayer_sliderbar_selector_downloadlist_btn" />
+    <item type="id" name="ppsplayer_sliderbar_content_downloadlist_interval" />
+    <item type="id" name="ppsplayer_sliderbar_content_downloadlist_bottom" />
+    <item type="id" name="ppsplayer_sliderbar_content_downloadlist_selectall" />
+    <item type="id" name="ppsplayer_sliderbar_content_downloadlist_confirm" />
+    <item type="id" name="ppsplayer_sliderbar_content_downloadlist" />
+    <item type="id" name="ppsplayer_sliderbar_content_filmlist_interval" />
+    <item type="id" name="ppsplayer_sliderbar_content_filmlist" />
+    <item type="id" name="ppsplayer_title_controler_layout" />
+    <item type="id" name="ppsplayer_title" />
+    <item type="id" name="ppsplayer_controler" />
+    <item type="id" name="ppsplayer_title_above_view" />
+    <item type="id" name="ppsplayer_title_battery_state_img" />
+    <item type="id" name="ppsplayer_title_current_time" />
+    <item type="id" name="ppsplayer_title_movie_name" />
+    <item type="id" name="ppsplayer_title_below_view_volume" />
+    <item type="id" name="ppsplayer_title_volume_text" />
+    <item type="id" name="ppsplayer_title_volume_seekbar" />
+    <item type="id" name="ppsplayer_title_volume_add_img" />
+    <item type="id" name="ppsplayer_title_volume_dec_img" />
+    <item type="id" name="ppsplayer_title_below_view_brightness" />
+    <item type="id" name="ppsplayer_title_brightness_text" />
+    <item type="id" name="ppsplayer_title_brightness_seekbar" />
+    <item type="id" name="ppsplayer_title_brightness_add_img" />
+    <item type="id" name="ppsplayer_title_brightness_dec_img" />
+    <item type="id" name="ppsplayer_title_charge_progress" />
+    <item type="id" name="ppsplayer_controler_above_view" />
+    <item type="id" name="ppsplayer_controler_has_played" />
+    <item type="id" name="ppsplayer_controler_downloadspeed" />
+    <item type="id" name="ppsplayer_controler_duration" />
+    <item type="id" name="ppsplayer_controler_seekbar" />
+    <item type="id" name="ppsplayer_controler_below_view" />
+    <item type="id" name="ppsplayer_controler_btn_http_switch" />
+    <item type="id" name="ppsplayer_controler_btn_fullscreen" />
+    <item type="id" name="ppsplayer_controler_btn_sound" />
+    <item type="id" name="ppsplayer_controler_btn_brightness" />
+    <item type="id" name="ppsplayer_controler_playerbtn_view" />
+    <item type="id" name="ppsplayer_controler_btn_play_pause" />
+    <item type="id" name="ppsplayer_controler_btn_pre" />
+    <item type="id" name="ppsplayer_controler_btn_next" />
+    <item type="id" name="ppsplayer_controler_tv_http_switch" />
+    <item type="id" name="ppsplayer_controler_btn_fav" />
+    <item type="id" name="ppsplayer_controler_relativelayout_http_switch" />
+    <item type="id" name="setting_textview_system_setting" />
+    <item type="id" name="setting_textview_recommend" />
+    <item type="id" name="setting_textview_help" />
+    <item type="id" name="setting_textview_feedback" />
+    <item type="id" name="setting_textview_fight" />
+    <item type="id" name="setting_textview_about" />
+    <item type="id" name="setting_linearlayout_dir" />
+    <item type="id" name="setting_textview_dir" />
+    <item type="id" name="setting_linearlayout_clear_cache" />
+    <item type="id" name="setting_textview_cache_size" />
+    <item type="id" name="setting_textview_play_type" />
+    <item type="id" name="setting_checkbox_3g_remind" />
+    <item type="id" name="setting_checkbox_wifi_remind" />
+    <item type="id" name="setting_radio_feedback1" />
+    <item type="id" name="setting_radio_feedback2" />
+    <item type="id" name="setting_radio_feedback3" />
+    <item type="id" name="setting_radio_feedback4" />
+    <item type="id" name="setting_radio_feedback5" />
+    <item type="id" name="setting_editText_suggest" />
+    <item type="id" name="setting_editText_contact" />
+    <item type="id" name="setting_about_listview_textview_title" />
+    <item type="id" name="setting_about_listview_textview_info" />
+    <item type="id" name="setting_about_listView" />
+    <item type="id" name="setting_recommend_imageView" />
+    <item type="id" name="setting_recommend_textView_title" />
+    <item type="id" name="setting_recommend_textView_info" />
+    <item type="id" name="setting_textview_authorization" />
+    <item type="id" name="setting_authorization_imageview_sina" />
+    <item type="id" name="setting_authorization_imageview_kaixin" />
+    <item type="id" name="setting_authorization_imageview_renren" />
+    <item type="id" name="setting_authorization_imageview_txweibo" />
+    <item type="id" name="setting_authorization_checkbox_sina" />
+    <item type="id" name="setting_authorization_checkbox_txweibo" />
+    <item type="id" name="setting_authorization_checkbox_kaixin" />
+    <item type="id" name="setting_authorization_checkbox_renren" />
+    <item type="id" name="setting_play_type_linearlayout_radiobutton" />
+    <item type="id" name="setting_checkBox_bp" />
+    <item type="id" name="moreinfo_setting_highline_or_baseline_rg" />
+    <item type="id" name="setting_checkBox_hp" />
+    <item type="id" name="setting_linearlayout_bp_type" />
+    <item type="id" name="setting_linearlayout_hp_type" />
+    <item type="id" name="setting_relativelayout_bp_or_hp" />
+    <item type="id" name="setting_ic_bp_or_hp" />
+    <item type="id" name="setting_checkbox_movie_push" />
+    <item type="id" name="action_user_id" />
+    <item type="id" name="action_video_id" />
+    <item type="id" name="camera_textview_shoot">false</item>
+    <item type="id" name="camera_textview_uploading">false</item>
+    <item type="id" name="camera_textview_list">false</item>
+    <item type="id" name="edit_item_text">false</item>
+    <item type="id" name="edit_item_iv">false</item>
+    <item type="id" name="camera_main_title">false</item>
+    <item type="id" name="camera_main_floodlight">false</item>
+    <item type="id" name="camera_main_front">false</item>
+    <item type="id" name="camerapre_main_fl">false</item>
+    <item type="id" name="camera_main_bottom">false</item>
+    <item type="id" name="camera_main_bottom_left">false</item>
+    <item type="id" name="camera_main_capture">false</item>
+    <item type="id" name="camera_main_bottom_right">false</item>
+    <item type="id" name="btn_mediaRecorder">false</item>
+    <item type="id" name="btn_localUpload">false</item>
+    <item type="id" name="btn_uploadList">false</item>
+    <item type="id" name="camerapre_top">false</item>
+    <item type="id" name="camerapre_upload">false</item>
+    <item type="id" name="camerapre_save">false</item>
+    <item type="id" name="camerapre_sv">false</item>
+    <item type="id" name="camerapre_detail">false</item>
+    <item type="id" name="camerapre_detail_name">false</item>
+    <item type="id" name="camerapre_detail_time">false</item>
+    <item type="id" name="camerapre_play">false</item>
+    <item type="id" name="camerapre_seekBar">false</item>
+    <item type="id" name="camerapre_bottom">false</item>
+    <item type="id" name="evaluate_textview_score">false</item>
+    <item type="id" name="evaluate_ratingbar">false</item>
+    <item type="id" name="evaluate_textview_info">false</item>
+    <item type="id" name="evaluate_button_submit">false</item>
+    <item type="id" name="detail_bottom_layout">false</item>
+    <item type="id" name="detail_line">false</item>
+    <item type="id" name="detail_relativelayout_top">false</item>
+    <item type="id" name="details_linearlayout_name">false</item>
+    <item type="id" name="details_linearlayout_dir">false</item>
+    <item type="id" name="details_linearlayout_actor">false</item>
+    <item type="id" name="linearLayout1">false</item>
+    <item type="id" name="details_review_foot_progressbar">false</item>
+    <item type="id" name="details_review_foot_textview">false</item>
+    <item type="id" name="share_imageview_sina_selector">false</item>
+    <item type="id" name="share_imageview_txweibo_selector">false</item>
+    <item type="id" name="dialog_linear_1">false</item>
+    <item type="id" name="dialog_linear_2">false</item>
+    <item type="id" name="dialog_linear_3">false</item>
+    <item type="id" name="dialog_v_line">false</item>
+    <item type="id" name="movie_rss_time">false</item>
+    <item type="id" name="movie_play_time">false</item>
+    <item type="id" name="no_ad">false</item>
+    <item type="id" name="download_contant_listview">false</item>
+    <item type="id" name="edit_video_listview">false</item>
+    <item type="id" name="edit_video_bottom">false</item>
+    <item type="id" name="edit_video_edit">false</item>
+    <item type="id" name="edit_video_button">false</item>
+    <item type="id" name="game_detail_top">false</item>
+    <item type="id" name="game_detail_image">false</item>
+    <item type="id" name="game_detail_name">false</item>
+    <item type="id" name="game_detail_vesion">false</item>
+    <item type="id" name="game_detail_size">false</item>
+    <item type="id" name="game_detail_update_time">false</item>
+    <item type="id" name="game_detail_rating">false</item>
+    <item type="id" name="game_download">false</item>
+    <item type="id" name="game_detail_relativelayout">false</item>
+    <item type="id" name="game_detail_linear">false</item>
+    <item type="id" name="game_detail_arrow">false</item>
+    <item type="id" name="game_detail">false</item>
+    <item type="id" name="game_copyright">false</item>
+    <item type="id" name="game_gallery">false</item>
+    <item type="id" name="game_download_listview_image">false</item>
+    <item type="id" name="game_download_listview_size">false</item>
+    <item type="id" name="game_download_listview_name">false</item>
+    <item type="id" name="game_download_listview_state">false</item>
+    <item type="id" name="game_download_listview_download">false</item>
+    <item type="id" name="game_download_listview_download_ed">false</item>
+    <item type="id" name="game_download_listview_progress">false</item>
+    <item type="id" name="game_download_listview_progress_ed">false</item>
+    <item type="id" name="game_imageview_selector">false</item>
+    <item type="id" name="game_relative_download">false</item>
+    <item type="id" name="game_viewswitcher">false</item>
+    <item type="id" name="game_center_listview">false</item>
+    <item type="id" name="game_download_listview">false</item>
+    <item type="id" name="game_imageview_bottom">false</item>
+    <item type="id" name="game_textview_bottom">false</item>
+    <item type="id" name="game_bottom_count">false</item>
+    <item type="id" name="game_gallery_image">false</item>
+    <item type="id" name="game_listview_image">false</item>
+    <item type="id" name="game_listview_size">false</item>
+    <item type="id" name="game_listview_name">false</item>
+    <item type="id" name="game_listview_ratingbar">false</item>
+    <item type="id" name="game_listview_hasupdate">false</item>
+    <item type="id" name="actionbar_left">false</item>
+    <item type="id" name="actionbar_title">false</item>
+    <item type="id" name="actionbar_right">false</item>
+    <item type="id" name="game_listviewtips">false</item>
+    <item type="id" name="game_detail_icon_layout">false</item>
+    <item type="id" name="game_detail_icon">false</item>
+    <item type="id" name="game_detail_version">false</item>
+    <item type="id" name="game_detail_publishDate">false</item>
+    <item type="id" name="game_detail_downloadNum">false</item>
+    <item type="id" name="game_detail_platform">false</item>
+    <item type="id" name="game_detail_operator">false</item>
+    <item type="id" name="game_detail_rating_layout">false</item>
+    <item type="id" name="game_detail_download">false</item>
+    <item type="id" name="game_detail_desc_anchor">false</item>
+    <item type="id" name="game_detail_desc">false</item>
+    <item type="id" name="game_detail_images">false</item>
+    <item type="id" name="game_detail_recommend_gallery">false</item>
+    <item type="id" name="gamecenter_gallery_imageview">false</item>
+    <item type="id" name="down_radiogroup">false</item>
+    <item type="id" name="game_status_downloading">false</item>
+    <item type="id" name="game_status_downloaded">false</item>
+    <item type="id" name="down_center_container">false</item>
+    <item type="id" name="game_listview">false</item>
+    <item type="id" name="game_edit_bar">false</item>
+    <item type="id" name="game_edit_select">false</item>
+    <item type="id" name="game_edit_invert">false</item>
+    <item type="id" name="game_edit_delete">false</item>
+    <item type="id" name="game_center_container">false</item>
+    <item type="id" name="pager">false</item>
+    <item type="id" name="game_item_image">false</item>
+    <item type="id" name="game_item_name">false</item>
+    <item type="id" name="emptt_progressbar">false</item>
+    <item type="id" name="emptt_text">false</item>
+    <item type="id" name="game_listview_head">false</item>
+    <item type="id" name="game_ad_gallery">false</item>
+    <item type="id" name="download_item_image">false</item>
+    <item type="id" name="game_item_mark">false</item>
+    <item type="id" name="download_item_name">false</item>
+    <item type="id" name="download_item_size">false</item>
+    <item type="id" name="download_item_status">false</item>
+    <item type="id" name="download_item_percent">false</item>
+    <item type="id" name="download_item_speed">false</item>
+    <item type="id" name="download_item_select">false</item>
+    <item type="id" name="game_item_type">false</item>
+    <item type="id" name="game_item_rating">false</item>
+    <item type="id" name="game_item_state">false</item>
+    <item type="id" name="game_item_score">false</item>
+    <item type="id" name="game_item_layout">false</item>
+    <item type="id" name="game_item_desc">false</item>
+    <item type="id" name="game_list_popup_list">false</item>
+    <item type="id" name="game_list_popup_text">false</item>
+    <item type="id" name="game_radiogroup">false</item>
+    <item type="id" name="game_class_new">false</item>
+    <item type="id" name="game_class_upline">false</item>
+    <item type="id" name="game_class_hot">false</item>
+    <item type="id" name="game_class_all">false</item>
+    <item type="id" name="error_icon">false</item>
+    <item type="id" name="loading_progressbar">false</item>
+    <item type="id" name="loading_text">false</item>
+    <item type="id" name="list_view_error">false</item>
+    <item type="id" name="list_view_loading">false</item>
+    <item type="id" name="list_view_empty">false</item>
+    <item type="id" name="game_bottom_layout">false</item>
+    <item type="id" name="game_bottom_icon">false</item>
+    <item type="id" name="game_bottom_label">false</item>
+    <item type="id" name="game_bottom_num">false</item>
+    <item type="id" name="tab_item_name">false</item>
+    <item type="id" name="tab_item_separator">false</item>
+    <item type="id" name="ipd_detail_top">false</item>
+    <item type="id" name="ipd_detail_introduce">false</item>
+    <item type="id" name="ipd_detail_movie_relativelayoout">false</item>
+    <item type="id" name="ipd_review_play">false</item>
+    <item type="id" name="ipd_relative_scrollview">false</item>
+    <item type="id" name="ipd_all_channel">false</item>
+    <item type="id" name="ipd_linearlayout_horizontalscrollview">false</item>
+    <item type="id" name="ipd_myipd_channel">false</item>
+    <item type="id" name="ipd_listview_index">false</item>
+    <item type="id" name="ipd_listview_myipd">false</item>
+    <item type="id" name="ipd_movie_relativelayoout">false</item>
+    <item type="id" name="ipd_imageview">false</item>
+    <item type="id" name="ipd_movie_count">false</item>
+    <item type="id" name="ipd_movie_name">false</item>
+    <item type="id" name="ipd_movie_play_count">false</item>
+    <item type="id" name="ipd_movie_rss_count">false</item>
+    <item type="id" name="ipd_movie_vote">false</item>
+    <item type="id" name="ipd_soon_update">false</item>
+    <item type="id" name="ipd_relativelayout_soon1">false</item>
+    <item type="id" name="ipd_soon_image1">false</item>
+    <item type="id" name="ipd_soon_name1">false</item>
+    <item type="id" name="ipd_soon_time1">false</item>
+    <item type="id" name="ipd_soon_line">false</item>
+    <item type="id" name="ipd_relativelayout_soon2">false</item>
+    <item type="id" name="ipd_soon_image2">false</item>
+    <item type="id" name="ipd_soon_name2">false</item>
+    <item type="id" name="ipd_soon_time2">false</item>
+    <item type="id" name="ipd_rss_movie">false</item>
+    <item type="id" name="ipd_textview_rss_movie">false</item>
+    <item type="id" name="ipd_rss_channel">false</item>
+    <item type="id" name="ipd_textview_rss_channel">false</item>
+    <item type="id" name="ipd_myipd">false</item>
+    <item type="id" name="ipd_textview_myipd">false</item>
+    <item type="id" name="ipd_slider_image">false</item>
+    <item type="id" name="ipd_review_imageview_relative">false</item>
+    <item type="id" name="ipd_review_imageview">false</item>
+    <item type="id" name="ipd_review_detail_info">false</item>
+    <item type="id" name="ipd_review_detail_play_time">false</item>
+    <item type="id" name="ipd_review_detail_upload_time">false</item>
+    <item type="id" name="ipd_review_detail_movie_time">false</item>
+    <item type="id" name="ipd_review_detail_review_count">false</item>
+    <item type="id" name="ipd_review_detail_bottom">false</item>
+    <item type="id" name="ipd_review_edittext">false</item>
+    <item type="id" name="ipd_review_button_submit">false</item>
+    <item type="id" name="ipd_review_detail_listview">false</item>
+    <item type="id" name="ipd_type_name">false</item>
+    <item type="id" name="ipd_type_line">false</item>
+    <item type="id" name="ipd_type_right_line">false</item>
+    <item type="id" name="local_image">false</item>
+    <item type="id" name="local_text">false</item>
+    <item type="id" name="local_listview">false</item>
+    <item type="id" name="new_channel_ll">false</item>
+    <item type="id" name="new_channel_spinner">false</item>
+    <item type="id" name="nc_et_name">false</item>
+    <item type="id" name="nc_et_resume">false</item>
+    <item type="id" name="ppsadview_image">false</item>
+    <item type="id" name="ppsadview_cancel">false</item>
+    <item type="id" name="ppsplayer_activity_ad_webpage_layer">false</item>
+    <item type="id" name="ppsplayer_ad_whole_webpage">false</item>
+    <item type="id" name="ppsplayer_ad_webpage">false</item>
+    <item type="id" name="ppsplayer_ad_webcontroler">false</item>
+    <item type="id" name="ppsplayer_ad_webpage_back">false</item>
+    <item type="id" name="ppsplayer_ad_webpage_forward">false</item>
+    <item type="id" name="ppsplayer_ad_webpage_refresh">false</item>
+    <item type="id" name="ppsplayer_ad_webpage_off">false</item>
+    <item type="id" name="ppsplayer_controler_btn_rss">false</item>
+    <item type="id" name="ppsplayer_controler_btn_dlna">false</item>
+    <item type="id" name="dlna_controller_dmr_title">false</item>
+    <item type="id" name="dlna_controller_dmr_name">false</item>
+    <item type="id" name="ppsplayer_activity_dlna_loading">false</item>
+    <item type="id" name="dlna_controller_dmr_status_pre_text">false</item>
+    <item type="id" name="dlna_controller_dmr_status_text">false</item>
+    <item type="id" name="dlna_controller_dmr_tvname">false</item>
+    <item type="id" name="dlna_controller_dmr_play_or_pause_btn">false</item>
+    <item type="id" name="dlna_controller_dmr_playtime">false</item>
+    <item type="id" name="dlna_controller_dmr_total_tvtime">false</item>
+    <item type="id" name="dlna_controller_dmr_tv_seekbar">false</item>
+    <item type="id" name="dlna_controller_dmr_volume_title">false</item>
+    <item type="id" name="dlna_controller_dmr_volume_dec">false</item>
+    <item type="id" name="dlna_controller_dmr_volume_add">false</item>
+    <item type="id" name="dlna_controller_dmr_volume_seekbar">false</item>
+    <item type="id" name="ppsplayer_dlna_dmrlistview_item_text">false</item>
+    <item type="id" name="dlna_dmr_list">false</item>
+    <item type="id" name="ppsplayer_drag_pos_tv">false</item>
+    <item type="id" name="ppsplayer_httpswitch_listview">false</item>
+    <item type="id" name="ppsplayer_httpswitch_listview_item_text">false</item>
+    <item type="id" name="ppsplayer_sliderbar_selector_layout">false</item>
+    <item type="id" name="progress_textview_info">false</item>
+    <item type="id" name="recommend_title_linearlayout">false</item>
+    <item type="id" name="recommend_image_gallery">false</item>
+    <item type="id" name="recommend_circle_indicator">false</item>
+    <item type="id" name="recommend_gallery_imageview_left">false</item>
+    <item type="id" name="recommend_gallery_imageview_right">false</item>
+    <item type="id" name="recommend_gallery_linear">false</item>
+    <item type="id" name="recommend_arrow_left">false</item>
+    <item type="id" name="recommend_arrow_right">false</item>
+    <item type="id" name="recommend_scrollview">false</item>
+    <item type="id" name="recommend_linear_type">false</item>
+    <item type="id" name="setting_commend_listView">false</item>
+    <item type="id" name="recommend_type_name">false</item>
+    <item type="id" name="recommend_type_line">false</item>
+    <item type="id" name="recommend_type_right_line">false</item>
+    <item type="id" name="search_gridview_item_textview">false</item>
+    <item type="id" name="left_game_number">false</item>
+    <item type="id" name="title_upload_button">false</item>
+    <item type="id" name="title_ysq_button">false</item>
+    <item type="id" name="upload_item_iv">false</item>
+    <item type="id" name="upload_item_name">false</item>
+    <item type="id" name="check">false</item>
+    <item type="id" name="check_progressbar">false</item>
+    <item type="id" name="uploadlist">false</item>
+    <item type="id" name="info_sv">false</item>
+    <item type="id" name="info_main_rl">false</item>
+    <item type="id" name="video_info_1_line">false</item>
+    <item type="id" name="video_info_2_line">false</item>
+    <item type="id" name="info_add">false</item>
+    <item type="id" name="video_info_spinner">false</item>
+    <item type="id" name="info_type">false</item>
+    <item type="id" name="video_type_spinner">false</item>
+    <item type="id" name="info_edit_intro">false</item>
+    <item type="id" name="video_info_3_line">false</item>
+    <item type="id" name="video_info_4_line">false</item>
+    <item type="id" name="video_info_add">false</item>
+    <item type="id" name="video_info_grid">false</item>
+    <item type="id" name="camera_bottom">false</item>
+    <item type="id" name="info_checkbox">false</item>
+    <item type="id" name="info_agree">false</item>
+    <item type="id" name="video_text">false</item>
+    <item type="id" name="spinner_text">false</item>
+    <item type="id" name="empty_view">false</item>
+    <item type="id" name="vip_info_top">false</item>
+    <item type="id" name="ysq_register_relativelayout">false</item>
+    <item type="id" name="ysq_register_btn">false</item>
+    <item type="id" name="ysq_register_txt">false</item>
+    <item type="id" name="ysq_register_img_rotate">false</item>
+    <item type="id" name="button_register">false</item>
+    <item type="id" name="widget_text_view_into_app">false</item>
+    <item type="id" name="widget_text_view_tvname">false</item>
+    <item type="id" name="widget_image_view_mid">false</item>
+    <item type="id" name="widget_text_view_imagecount">false</item>
+    <item type="id" name="widget_image_view_logo">false</item>
+    <item type="id" name="widget_imageview_refresh_linear">false</item>
+    <item type="id" name="widget_image_view_refresh">false</item>
+    <item type="id" name="widget_progressbar_refresh">false</item>
+    <item type="id" name="widget_imageview_right_linear">false</item>
+    <item type="id" name="widget_imageview_right">false</item>
+    <item type="id" name="widget_image_view_left">false</item>
+    <item type="id" name="ysq_main_listview">false</item>
+    <item type="id" name="ysq_add_friends_listview">false</item>
+    <item type="id" name="relativelayout_none_fans">false</item>
+    <item type="id" name="none">false</item>
+    <item type="id" name="ysq_add_friend_photo">false</item>
+    <item type="id" name="ysq_add_friend_name">false</item>
+    <item type="id" name="ysq_add_friend_button">false</item>
+    <item type="id" name="ysq_add_ylq_ralativelayout">false</item>
+    <item type="id" name="ysq_add_ylq_icon">false</item>
+    <item type="id" name="ysq_add_sina_ralativelayout">false</item>
+    <item type="id" name="ysq_add_sina_icon">false</item>
+    <item type="id" name="ysq_add_qq_ralativelayout">false</item>
+    <item type="id" name="ysq_add_qq_icon">false</item>
+    <item type="id" name="ysq_add_nearby_ralativelayout">false</item>
+    <item type="id" name="ysq_add_nearby_icon">false</item>
+    <item type="id" name="ysq_add_contants_ralativelayout">false</item>
+    <item type="id" name="ysq_add_contants_icon">false</item>
+    <item type="id" name="ysq_attention_and_fans_listview">false</item>
+    <item type="id" name="ysq_comment_title">false</item>
+    <item type="id" name="ysq_comment_detail_user_photo_img">false</item>
+    <item type="id" name="ysq_comment_detail_kind_img">false</item>
+    <item type="id" name="ysq_comment_detail_title">false</item>
+    <item type="id" name="ysq_comment_detail_commit_time">false</item>
+    <item type="id" name="ysq_comment_detail_commit_location">false</item>
+    <item type="id" name="ysq_comment_face">false</item>
+    <item type="id" name="ysq_comment_detail_face_hscrollview">false</item>
+    <item type="id" name="ysq_comment_detail_face_relativelayout">false</item>
+    <item type="id" name="ysq_comment_detail_face_linearlayout">false</item>
+    <item type="id" name="ysq_comment_detail_face_button">false</item>
+    <item type="id" name="line_ysq">false</item>
+    <item type="id" name="ysq_comment_detail_bottom">false</item>
+    <item type="id" name="ysq_comment_detail_edittext">false</item>
+    <item type="id" name="ysq_comment_detail_button_submit">false</item>
+    <item type="id" name="ysq_comment_detail_listview">false</item>
+    <item type="id" name="detail_comment_ysq_love_icon">false</item>
+    <item type="id" name="detail_comment_ysq_amaze_icon">false</item>
+    <item type="id" name="detail_comment_ysq_move_icon">false</item>
+    <item type="id" name="detail_comment_ysq_silen_icon">false</item>
+    <item type="id" name="detail_comment_ysq_smile_icon">false</item>
+    <item type="id" name="comment_face">false</item>
+    <item type="id" name="comment_ysq_love_icon">false</item>
+    <item type="id" name="comment_ysq_amaze_icon">false</item>
+    <item type="id" name="comment_ysq_move_icon">false</item>
+    <item type="id" name="comment_ysq_silen_icon">false</item>
+    <item type="id" name="comment_ysq_smile_icon">false</item>
+    <item type="id" name="edittext_add_comment">false</item>
+    <item type="id" name="fav_image">false</item>
+    <item type="id" name="ysq_main_foot_progressbar">false</item>
+    <item type="id" name="ysq_main_foot_textview">false</item>
+    <item type="id" name="ysq_user_photo_rl">false</item>
+    <item type="id" name="ysq_user_photo_img">false</item>
+    <item type="id" name="ysq_user_setting_img">false</item>
+    <item type="id" name="ysq_user_sex_img">false</item>
+    <item type="id" name="ysq_user_nickname_txt">false</item>
+    <item type="id" name="ysq_user_add_btn">false</item>
+    <item type="id" name="ysq_main_relativelayout_attention">false</item>
+    <item type="id" name="ysq_attentioned_value_txt">false</item>
+    <item type="id" name="ysq_main_relativelayout_fans">false</item>
+    <item type="id" name="ysq_fans_value_txt">false</item>
+    <item type="id" name="ysq_main_relativelayout_comment">false</item>
+    <item type="id" name="ysq_comment_value_txt">false</item>
+    <item type="id" name="hs_ysq_main_favourite">false</item>
+    <item type="id" name="ysq_main_favourite_linearlayout">false</item>
+    <item type="id" name="ysq_fav_none">false</item>
+    <item type="id" name="ysq_dynamic_none">false</item>
+    <item type="id" name="ysq_dynamic_timeline">false</item>
+    <item type="id" name="ysq_main_relativelayout_refresh">false</item>
+    <item type="id" name="ysq_main_refresh_btn">false</item>
+    <item type="id" name="ysq_main_refresh_img">false</item>
+    <item type="id" name="ysq_main_timepoint">false</item>
+    <item type="id" name="ysq_main_refresh_text">false</item>
+    <item type="id" name="ysq_main_refresh_time">false</item>
+    <item type="id" name="ysq_dynamic_friends_photo">false</item>
+    <item type="id" name="ysq_dynamic_relativelayout">false</item>
+    <item type="id" name="ysq_dynamic_timeline_kind_img">false</item>
+    <item type="id" name="ysq_dynamic_kind_text">false</item>
+    <item type="id" name="ysq_dynamic_comment_title">false</item>
+    <item type="id" name="ysq_btn_add_comment">false</item>
+    <item type="id" name="ysq_timeAndLocation">false</item>
+    <item type="id" name="ysq_dynamic_commit_time">false</item>
+    <item type="id" name="ysq_dynamic_commit_location">false</item>
+    <item type="id" name="ysq_movie">false</item>
+    <item type="id" name="ysq_dynamic_discuss_movie">false</item>
+    <item type="id" name="ysq_ugc">false</item>
+    <item type="id" name="ysq_dynamic_ugc">false</item>
+    <item type="id" name="ysq_ugc_play">false</item>
+    <item type="id" name="ysq_ipd">false</item>
+    <item type="id" name="ysq_dynamic_ipd">false</item>
+    <item type="id" name="ysq_ipd_play">false</item>
+    <item type="id" name="ysq_comment_linearlayout">false</item>
+    <item type="id" name="ysq_soon_face_hscrollview">false</item>
+    <item type="id" name="ysq_soon_face_linearlayout">false</item>
+    <item type="id" name="ysq_soon_line">false</item>
+    <item type="id" name="ysq_list_item_comment_all">false</item>
+    <item type="id" name="ysq_main_comment1">false</item>
+    <item type="id" name="ysq_main_comment2">false</item>
+    <item type="id" name="ysq_main_comment3">false</item>
+    <item type="id" name="ysq_main_comment4">false</item>
+    <item type="id" name="ysq_soon_line2">false</item>
+    <item type="id" name="ysq_relativelayout_soon3">false</item>
+    <item type="id" name="ysq_soon_total3">false</item>
+    <item type="id" name="ysq_main_comment_framelayout">false</item>
+    <item type="id" name="ysq_relativelayout_soon2">false</item>
+    <item type="id" name="ysq_main_comment_photo">false</item>
+    <item type="id" name="ysq_main_comment_relativelayout">false</item>
+    <item type="id" name="ysq_main_comment_username">false</item>
+    <item type="id" name="ysq_main_comment_time">false</item>
+    <item type="id" name="ysq_main_comment_content">false</item>
+    <item type="id" name="ysq_commment_topline">false</item>
+    <item type="id" name="hscrollview_photo_img">false</item>
+    <item type="id" name="hscrollview_face_img">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_photo">false</item>
+    <item type="id" name="ysq_uer_info_head_photo">false</item>
+    <item type="id" name="ysq_user_info_right_mark">false</item>
+    <item type="id" name="ysq_user_info_photo">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_nick_name">false</item>
+    <item type="id" name="ysq_user_info_nick_name">false</item>
+    <item type="id" name="ysq_user_info_sex_right_mark">false</item>
+    <item type="id" name="ysq_user_info_nick_name_value">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_sex">false</item>
+    <item type="id" name="ysq_user_info_sex">false</item>
+    <item type="id" name="ysq_user_info_nick_name_right_mark">false</item>
+    <item type="id" name="ysq_user_info_sex_value">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_birthday">false</item>
+    <item type="id" name="ysq_user_info_birthday">false</item>
+    <item type="id" name="ysq_user_info_birthday_right_mark">false</item>
+    <item type="id" name="ysq_user_info_birthday_value">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_profession">false</item>
+    <item type="id" name="ysq_user_info_profession">false</item>
+    <item type="id" name="ysq_user_info_profession_right_mark">false</item>
+    <item type="id" name="ysq_user_info_profession_value">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_income">false</item>
+    <item type="id" name="ysq_user_info_income">false</item>
+    <item type="id" name="ysq_user_info_income_right_mark">false</item>
+    <item type="id" name="ysq_user_info_income_value">false</item>
+    <item type="id" name="ysq_user_info_relativelayout_singnatrue">false</item>
+    <item type="id" name="ysq_user_info_singnatrue">false</item>
+    <item type="id" name="ysq_user_info_singnatrue_right_mark">false</item>
+    <item type="id" name="ysq_user_info_singnatrue_value">false</item>
+</resources>
