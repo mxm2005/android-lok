@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@id/dialog_linear_1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dialog_title_height"
+        android:background="@drawable/dialog_title"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dialog_linearlayout_padding_left" >
+
+        <ImageView
+            android:id="@id/dialog_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_warning"
+            android:visibility="visible" />
+
+        <TextView
+            android:text="软件更新"
+            android:id="@id/dialog_title"
+            style="@style/textview_dialog_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dialog_textview_title_margin_left"
+            android:gravity="center_vertical"
+            android:shadowColor="#4c000000"
+            android:shadowDy="-1.0"
+            android:shadowRadius="1.0" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_linear_1"
+        android:background="@drawable/dialog_infor"
+        android:minHeight="164.0dip" >
+
+        <LinearLayout
+            android:id="@id/dialog_linear_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="120.0dip"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dialog_info_padding_topAndbottom"
+            android:paddingLeft="@dimen/dialog_linearlayout_padding_left"
+            android:paddingRight="@dimen/dialog_linearlayout_padding_left"
+            android:paddingTop="@dimen/dialog_info_padding_topAndbottom" >
+
+            <TextView
+                android:text="互动电子书和其他APP特别是游戏APP是有本质区别的，其本质和前提还是书，是一种增强的阅读体验，和一些其它的互动体验比较，其它APP的互动性表现在菜单的导航以及通过链接打开一个图片、地址、EMAIL等等互动接口，而互动电电子书的互动表现在读者和内容、情节和人物的互动，每次互动都是一次完全不同的体验形态。"
+                android:id="@id/dialog_message"
+                style="@style/textview_dialog_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:visibility="visible"
+                android:id="@id/dialog_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dialog_checkbox_margin_top"
+                android:background="@drawable/transparent_background"
+                android:button="@drawable/dialog_checkbox_selector"
+                android:paddingLeft="@dimen/dialog_checkbox_padding_left"
+                android:text="@string/broadcast_network_noprompt"
+                android:textColor="#ff777777" />
+        </LinearLayout>
+        
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_above="@id/dialog_linear_3"
+            android:background="#ffc8c8c8"
+            android:contentDescription="@string/app_name" />
+
+        <LinearLayout
+            android:id="@id/dialog_linear_3"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dialog_bottom_height"
+            android:layout_below="@id/dialog_linear_2"
+            android:gravity="center" >
+
+            <Button
+                android:id="@id/dialog_button_confirm"
+                android:layout_width="@dimen/dialog_button_width"
+                android:layout_height="36.0dip"
+                android:background="@drawable/dialog_button_selector"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#ff777777" />
+
+            <ImageView
+                android:id="@id/dialog_v_line"
+                android:layout_width="1.0px"
+                android:layout_height="35.0dip"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:background="#ffc8c8c8" />
+
+            <Button
+                android:id="@+id/dialog_button_cancel"
+                android:layout_width="@dimen/dialog_button_width"
+                android:layout_height="36.0dip"
+                android:background="@drawable/dialog_button_selector"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#ff777777" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
