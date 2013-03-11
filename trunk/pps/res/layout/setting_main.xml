@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="712.0" >
+
+            <include layout="@layout/title_bar" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="88.0" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/linearlayout_height"
+                    android:layout_marginBottom="@dimen/linearlayout_margin_topAndbottom"
+                    android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright"
+                    android:layout_marginRight="@dimen/linearlayout_margin_leftAndright"
+                    android:layout_marginTop="@dimen/linearlayout_margin_topAndbottom"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@id/setting_textview_recommend"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/setting_item_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_pps_recommend" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/linearlayout_margin_topAndbottom"
+                    android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright"
+                    android:layout_marginRight="@dimen/linearlayout_margin_leftAndright"
+                    android:background="@drawable/setting_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@id/setting_textview_system_setting"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/setting_item_top_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/system_setting" />
+
+                    <RelativeLayout
+                        android:id="@id/setting_relativelayout_bp_or_hp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_marginTop="@dimen/revise"
+                        android:background="@drawable/setting_item_middle_selector"
+                        android:clickable="true"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright" >
+
+                        <TextView
+                            android:id="@id/setting_textview_play_type"
+                            style="@style/textview_common"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/linearlayout_height"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:text="@string/setting_play_type" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/linearlayout_height"
+                            android:drawableRight="@drawable/ic_right_mark" />
+
+                        <ImageView
+                            android:id="@id/setting_ic_bp_or_hp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/setting_relativelayout_bp_or_hp_margin_top"
+                            android:layout_toRightOf="@id/setting_textview_play_type"
+                            android:background="@drawable/setting_ic_hp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@id/setting_textview_authorization"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/revise"
+                        android:background="@drawable/setting_item_bottom_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_authorization" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/setting_linearlayout_margin_bottom"
+                    android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright"
+                    android:layout_marginRight="@dimen/linearlayout_margin_leftAndright"
+                    android:background="@drawable/setting_item_bg"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@id/setting_textview_help"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/setting_item_top_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_help" />
+
+                    <TextView
+                        android:id="@id/setting_textview_feedback"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/revise"
+                        android:background="@drawable/setting_item_middle_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_feedback" />
+
+                    <TextView
+                        android:id="@id/setting_textview_fight"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/revise"
+                        android:background="@drawable/setting_item_middle_selector"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_pps_fight"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@id/setting_textview_about"
+                        style="@style/textview_common"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/linearlayout_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/revise"
+                        android:background="@drawable/setting_item_bottom_selector"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/ic_right_mark"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/textview_padding_leftAndright"
+                        android:paddingRight="@dimen/textview_padding_leftAndright"
+                        android:text="@string/setting_about" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

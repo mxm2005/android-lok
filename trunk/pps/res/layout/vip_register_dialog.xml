@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="300.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/request_focus_layout" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+    <LinearLayout android:gravity="center" android:background="@drawable/vdialog_title" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_log_in" android:shadowColor="#4c000000" android:shadowDy="-1.0" android:shadowRadius="1.0" style="\@style/textview_dialog_tittle" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/vdialog_infor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/setting_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginTop="@dimen/linearlayout_margin_topAndbottom" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_marginBottom="@dimen/linearlayout_margin_topAndbottom">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/relativelayout_height">
+                <TextView android:id="@id/textview_login_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_login_margin_left" android:text="@string/vip_login_name" android:layout_centerVertical="true" style="\@style/textview_common" />
+                <EditText android:id="@id/edittext_login_name" android:background="@null" android:layout_width="@dimen/edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_margin_left" android:hint="@string/vip_login_name_hint" android:singleLine="true" android:layout_toRightOf="@id/textview_login_name" android:layout_centerVertical="true" style="\@style/textview_vip_edittext" />
+                <ImageView android:id="@id/imageView_name_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/imageview_clear_margin_right_dialog" android:src="@drawable/ic_clear_entry" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/line" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/relativelayout_height">
+                <TextView android:id="@id/textview_login_password" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_login_margin_left" android:text="@string/vip_login_password" android:layout_centerVertical="true" style="\@style/textview_common" />
+                <EditText android:id="@id/edittext_login_password" android:background="@null" android:layout_width="@dimen/edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_margin_left" android:hint="@string/vip_login_password_hint" android:singleLine="true" android:layout_toRightOf="@id/textview_login_password" android:layout_centerVertical="true" android:inputType="textPassword" style="\@style/textview_vip_edittext" />
+                <ImageView android:id="@id/imageView_password_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/imageview_clear_margin_right_dialog" android:src="@drawable/ic_clear_entry" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/line" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/relativelayout_height">
+                <TextView android:id="@id/textview_login_confirm_password" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_login_margin_left" android:text="@string/vip_login_confirm_password" android:layout_centerVertical="true" style="\@style/textview_common" />
+                <EditText android:id="@id/edittext_login_confirm_password" android:background="@null" android:paddingRight="@dimen/edittext_register_padding_right" android:layout_width="@dimen/edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_margin_left" android:hint="@string/vip_login_password_hint" android:singleLine="true" android:layout_toRightOf="@id/textview_login_confirm_password" android:layout_centerVertical="true" android:inputType="textPassword" style="\@style/textview_vip_edittext" />
+                <ImageView android:id="@id/imageView_confirm_password_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/imageview_clear_margin_right_dialog" android:src="@drawable/ic_clear_entry" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/line" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/relativelayout_height">
+                <TextView android:id="@id/textview_login_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_login_margin_left" android:text="@string/vip_email" android:layout_centerVertical="true" style="\@style/textview_common" />
+                <EditText android:id="@id/edittext_login_email" android:background="@null" android:paddingRight="@dimen/edittext_register_padding_right" android:layout_width="@dimen/edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_margin_left" android:hint="@string/vip_login_email_hint" android:singleLine="true" android:layout_toRightOf="@id/textview_login_email" android:layout_centerVertical="true" style="\@style/textview_vip_edittext" />
+                <ImageView android:id="@id/imageView_email_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/imageview_clear_margin_right_dialog" android:src="@drawable/ic_clear_entry" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView android:background="#ffc8c8c8" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="8.0dip" android:contentDescription="@string/app_name" />
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_bottom_height">
+            <Button android:textColor="#ff777777" android:gravity="center" android:id="@id/button_register" android:background="@drawable/dialog_button_selector" android:layout_width="@dimen/dialog_button_width" android:layout_height="36.0dip" android:text="@string/vip_login" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

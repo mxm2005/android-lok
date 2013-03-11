@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/setting_about_listview_item_minheight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/setting_about_listview_textview_title" android:paddingLeft="@dimen/setting_about_listview_item_textview_title_padding_left" android:paddingRight="@dimen/setting_about_listview_item_textview_title_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/setting_about_listview_item_textview_title_margin_top" style="\@style/textview_vip_edittext" />
+    <TextView android:id="@id/setting_about_listview_textview_info" android:paddingLeft="@dimen/setting_about_listview_item_textview_info_padding_leftAndright" android:paddingRight="@dimen/setting_about_listview_item_textview_info_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/setting_about_listview_item_textview_info_margin_top" android:layout_marginBottom="@dimen/setting_about_listview_item_textview_info_margin_top" style="\@style/textview_setting_about_info" />
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/ysq_dynamic_friends_photo" android:background="@drawable/ic_default_review" android:layout_width="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:layout_height="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:layout_marginLeft="@dimen/ysq_main_dynamic_photo_margin_left" android:layout_marginTop="@dimen/ysq_main_dynamic_photo_margin_top" android:src="@drawable/ic_default_review" android:scaleType="fitXY" android:contentDescription="@drawable/ic_ysq_friends" />
+        <RelativeLayout android:id="@id/ysq_dynamic_relativelayout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/ysq_main_middle_relativelayout_margin_top">
+            <ImageView android:id="@id/ysq_dynamic_timeline" android:background="@drawable/ic_ysq_timeline" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerHorizontal="true" android:contentDescription="@drawable/ic_ysq_timeline" />
+            <ImageView android:id="@id/ysq_dynamic_timeline_kind_img" android:background="@drawable/ic_ysq_discuss" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ysq_main_dynamic_photo_margin_top" android:layout_centerHorizontal="true" android:contentDescription="@drawable/ic_ysq_discuss" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/ysq_dynamic_kind_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_middle_relativelayout_margin_top" android:layout_marginTop="@dimen/ysq_main_dynamic_photo_margin_left">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright">
+                    <TextView android:id="@id/ysq_dynamic_comment_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ysq_btn_add_comment" android:layout_alignParentLeft="true" android:lineSpacingExtra="6.0dip" style="\@style/textview_ysq_comment_video" />
+                    <Button android:id="@id/ysq_btn_add_comment" android:background="@drawable/ysq_main_discuss_button_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:contentDescription="@drawable/ysq_main_discuss_button_selector" />
+                    <RelativeLayout android:id="@id/ysq_timeAndLocation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_below="@id/ysq_dynamic_comment_title">
+                        <TextView android:id="@id/ysq_dynamic_commit_time" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_ysq_timeAndLocation" />
+                        <TextView android:id="@id/ysq_dynamic_commit_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" style="\@style/textview_ysq_timeAndLocation" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/ysq_movie" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ysq_timeAndLocation">
+                        <ImageView android:id="@id/ysq_dynamic_discuss_movie" android:background="@drawable/bkg_ipd2l_poster" android:layout_width="@dimen/ysq_main_dynamic_movie_width" android:layout_height="@dimen/ysq_main_dynamic_movie_height" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@drawable/bkg_ipd2l_poster" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/ysq_ugc" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ysq_timeAndLocation">
+                        <ImageView android:id="@id/ysq_dynamic_ugc" android:background="@drawable/bkg_ipd2l_poster" android:layout_width="@dimen/ysq_main_dynamic_ugc_width" android:layout_height="@dimen/ysq_main_dynamic_ugc_height" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@drawable/bkg_ipd2l_poster" />
+                        <ImageView android:id="@id/ysq_ugc_play" android:background="@drawable/ic_ipd_detail_play" android:layout_width="@dimen/ysq_main_dynamic_ugc_play_widthAndHeight" android:layout_height="@dimen/ysq_main_dynamic_ugc_play_widthAndHeight" android:layout_centerInParent="true" android:contentDescription="@string/app_name" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/ysq_ipd" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ysq_timeAndLocation">
+                        <ImageView android:id="@id/ysq_dynamic_ipd" android:background="@drawable/ic_ipd_poster" android:layout_width="@dimen/ysq_main_dynamic_ugc_width" android:layout_height="@dimen/ysq_main_dynamic_ugc_height" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@drawable/bkg_ipd2l_poster" />
+                        <ImageView android:id="@id/ysq_ipd_play" android:background="@drawable/ic_ipd_detail_play" android:layout_width="@dimen/ysq_main_dynamic_ugc_play_widthAndHeight" android:layout_height="@dimen/ysq_main_dynamic_ugc_play_widthAndHeight" android:layout_centerInParent="true" android:contentDescription="@string/app_name" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/ysq_comment_linearlayout" android:background="@drawable/bkg_ysq_discussarea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/ysq_main_dynamic_photo_margin_left">
+                    <HorizontalScrollView android:id="@id/ysq_soon_face_hscrollview" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <LinearLayout android:orientation="horizontal" android:id="@id/ysq_soon_face_linearlayout" android:paddingLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:paddingRight="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:layout_width="wrap_content" android:layout_height="@dimen/ysq_main_dynamic_comment_list_height" android:layout_marginTop="@dimen/ysq_main_top_fav_margin_top" />
+                    </HorizontalScrollView>
+                    <ImageView android:id="@id/ysq_soon_line" android:background="@drawable/line_ysq" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+                    <LinearLayout android:orientation="vertical" android:id="@id/ysq_list_item_comment_all" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <include android:id="@id/ysq_main_comment1" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="\@layout/ysq_main_list_item_comment" />
+                        <include android:id="@id/ysq_main_comment2" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="\@layout/ysq_main_list_item_comment" />
+                        <include android:id="@id/ysq_main_comment3" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="\@layout/ysq_main_list_item_comment" />
+                        <include android:id="@id/ysq_main_comment4" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="\@layout/ysq_main_list_item_comment" />
+                    </LinearLayout>
+                    <ImageView android:id="@id/ysq_soon_line2" android:background="@drawable/line_ysq" android:paddingLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:paddingRight="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@drawable/line_ysq" />
+                    <RelativeLayout android:id="@id/ysq_relativelayout_soon3" android:paddingLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:paddingRight="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/ysq_main_dynamic_comment_list_height">
+                        <TextView android:textSize="10.699982sp" android:textColor="#ff222222" android:id="@id/ysq_soon_total3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerInParent="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@id/ysq_main_comment_framelayout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_dynamic_face_mragin_leftAndRight" android:layout_marginRight="@dimen/ysq_main_dynamic_face_mragin_leftAndRight">
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="\@layout/ysq_main_add_comment" />
+    </FrameLayout>
+</RelativeLayout>

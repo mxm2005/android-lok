@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <dimen name="head_gallery_item_width">350.0dip</dimen>
+    <dimen name="head_gallery_item_height">210.0dip</dimen>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <include layout="\@layout/title_bar" />
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <RelativeLayout android:id="@id/game_relative_download" android:background="@drawable/tab_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="36.0dip">
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="\@layout/download_middle" />
+        </RelativeLayout>
+        <ViewSwitcher android:id="@id/game_viewswitcher" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/game_bottom_linearlayout" android:layout_below="@id/game_relative_download">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:id="@id/prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="\@layout/loading" />
+                    <include layout="\@layout/empty" />
+                    <include layout="\@layout/error" />
+                </FrameLayout>
+                <ListView android:id="@id/game_center_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/listview_item_selector" style="\@style/list_style" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:id="@id/prompt_framelayout1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="\@layout/loading1" />
+                    <include layout="\@layout/empty1" />
+                    <include layout="\@layout/error1" />
+                </FrameLayout>
+                <ListView android:id="@id/game_download_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" style="\@style/list_style" />
+            </LinearLayout>
+        </ViewSwitcher>
+        <LinearLayout android:gravity="center" android:id="@id/game_bottom_linearlayout" android:background="@drawable/ipd_bottom_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/game_imageview_bottom" android:layout_width="@dimen/game_image_width" android:layout_height="@dimen/game_image_height" android:src="@drawable/ic_game_gamecenter" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff555555" android:id="@id/game_textview_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_center" android:shadowColor="#bfffffff" android:shadowDy="-1.0" android:shadowRadius="1.0" />
+            <TextView android:textSize="10.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_horizontal" android:layout_gravity="top" android:id="@id/game_bottom_count" android:background="@drawable/bkg_number_downloadmana" android:layout_width="wrap_content" android:layout_height="16.0dip" android:layout_marginTop="3.0dip" android:minWidth="24.0dip" android:shadowColor="#4c000000" android:shadowDy="1.0" android:shadowRadius="1.0" />
+        </LinearLayout>
+        <include android:layout_width="fill_parent" android:layout_height="62.0dip" android:layout_alignParentBottom="true" layout="\@layout/bottom_bar" />
+    </RelativeLayout>
+</LinearLayout>

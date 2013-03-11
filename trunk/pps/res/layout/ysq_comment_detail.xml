@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <include layout="\@layout/title_bar" />
+    </LinearLayout>
+    <RelativeLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ysq_comment_title" android:background="@drawable/bkg_ysq_discusinfor" android:layout_width="fill_parent" android:layout_height="@dimen/ysq_comment_detail_lineralayout_height">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/ysq_comment_detail_user_photo_img" android:background="@drawable/bkg_ysq_vipphoto" android:layout_width="@dimen/ysq_comment_detail_user_photo_widthAndHeight" android:layout_height="@dimen/ysq_comment_detail_user_photo_widthAndHeight" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:src="@drawable/ic_default_review" android:scaleType="fitXY" android:contentDescription="@drawable/bkg_ysq_vipphoto" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/ysq_comment_detail_kind_img" android:background="@drawable/ic_ysq_discuss" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_comment_detail_kind_image_margin_left" android:contentDescription="@drawable/ic_ysq_discuss" />
+            <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_middle_relativelayout_margin_top" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright">
+                <TextView android:ellipsize="end" android:id="@id/ysq_comment_detail_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_alignParentLeft="true" style="\@style/textview_ysq_comment_video" />
+                <TextView android:id="@id/ysq_comment_detail_commit_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ysq_comment_detail_comment_time_margin_top" android:layout_below="@id/ysq_comment_detail_title" style="\@style/textview_ysq_timeAndLocation" />
+                <TextView android:id="@id/ysq_comment_detail_commit_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ysq_comment_detail_comment_time_margin_top" android:layout_below="@id/ysq_comment_detail_title" android:layout_alignParentRight="true" style="\@style/textview_ysq_timeAndLocation" />
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout android:gravity="center" android:id="@id/ysq_comment_face" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ysq_comment_title">
+            <HorizontalScrollView android:id="@id/ysq_comment_detail_face_hscrollview" android:visibility="visible" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_toLeftOf="@id/ysq_comment_detail_face_relativelayout" android:layout_centerVertical="true">
+                <LinearLayout android:orientation="horizontal" android:id="@id/ysq_comment_detail_face_linearlayout" android:paddingRight="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:layout_width="wrap_content" android:layout_height="@dimen/ysq_main_dynamic_comment_list_height" />
+            </HorizontalScrollView>
+            <RelativeLayout android:id="@id/ysq_comment_detail_face_relativelayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <Button android:id="@id/ysq_comment_detail_face_button" android:background="@drawable/ysq_comment_detail_face_button_selector" android:layout_width="@dimen/ysq_comment_detail_comment_face_relativelayout_width" android:layout_height="@dimen/ysq_comment_detail_comment_face_relativelayout_height" android:layout_centerVertical="true" android:contentDescription="@drawable/ysq_comment_detail_face_button_selector" />
+                <ImageView android:background="@drawable/ic_ysq_discus_face" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerVertical="true" android:contentDescription="@drawable/ic_ysq_discus_face" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ysq_comment_face">
+            <ImageView android:id="@id/line_ysq" android:background="@drawable/line_ysq" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@drawable/line_ysq" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ysq_comment_detail_bottom" android:background="@drawable/tab_detail_send_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <EditText android:id="@id/ysq_comment_detail_edittext" android:background="@drawable/dailog_detail_send" android:paddingLeft="8.0dip" android:layout_width="@dimen/details_editview_review_width" android:layout_height="wrap_content" android:hint="@string/details_review_hint" android:maxLength="200" android:imeOptions="flagNoExtractUi" />
+                <Button android:id="@id/ysq_comment_detail_button_submit" android:background="@drawable/details_review_button_selector" android:layout_width="@dimen/details_button_review_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_button_review_margin_left" android:text="@string/details_review_submit" style="\@style/textview_details_review_button" />
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ysq_comment_detail_bottom" android:layout_below="@id/line_ysq">
+                <ListView android:id="@id/ysq_comment_detail_listview" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffafafaf" style="\@style/list_style_c" />
+                <FrameLayout android:id="@id/prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="\@layout/loading" />
+                    <include layout="\@layout/empty" />
+                    <include layout="\@layout/error" />
+                </FrameLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

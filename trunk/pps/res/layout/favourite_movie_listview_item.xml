@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout android:id="@id/favourite_frameLayout_movie" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="@dimen/channel_listview_item_height">
+        <ImageView android:id="@id/movie_imageview" android:background="@drawable/pic_poser_background" android:layout_width="@dimen/channel_image_width" android:layout_height="@dimen/channel_image_height" android:layout_marginLeft="@dimen/channel_image_margin_left" android:layout_marginRight="@dimen/channel_image_margin_right" android:scaleType="fitXY" android:contentDescription="@string/app_name" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/favourite_relativelayout_margin_bottom">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/movie_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/favourite_listview_item_textview_name_maxwidth" android:singleLine="true" style="\@style/textview_common" />
+                <ImageView android:layout_gravity="right|center" android:id="@id/img_bp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/favourite_imageview_flag_margin_right" android:src="@drawable/ic_s_bp_f" android:contentDescription="@string/app_name" />
+            </FrameLayout>
+            <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/movie_type_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/favourite_textview_type_margin_top" android:maxWidth="@dimen/channel_textview_type_maxwidth" android:singleLine="true" style="\@style/textview_channel_type" />
+            <RatingBar android:id="@id/movie_ratingbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/favourite_ratingbar_margin_top" style="\@style/ratingbar_style" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:layout_gravity="bottom|right|center" android:id="@id/movie_vote_textview" android:paddingBottom="@dimen/favourite_textview_score_margin_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/favourite_textview_score_margin_right" style="\@style/textview_channel_vote" />
+    <ImageView android:layout_gravity="right|center" android:id="@id/favourite_imageview_selector_movie" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/favourite_imageview_selector_margin_right" android:src="@drawable/ic_new_select" android:contentDescription="@string/app_name" />
+</FrameLayout>

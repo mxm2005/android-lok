@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0" layout="\@layout/title_bar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/linearlayout_download_dir" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_download_dir_height">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/download_set_textview_margin_left" android:text="@string/download_dir_now" style="\@style/textview_common" />
+            <TextView android:id="@id/dir_title" android:paddingRight="@dimen/download_set_textview_dir_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/download_set_textview_dir_margin_left" style="\@style/textview_download_dir" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/list_line_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="92.0">
+                <ListView android:id="@id/download_set_list" android:layout_width="fill_parent" android:layout_height="fill_parent" style="\@style/list_style" />
+                <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="\@layout/empty" />
+            </RelativeLayout>
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="545.0" layout="\@layout/bottom_bar" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

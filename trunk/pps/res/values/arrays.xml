@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="evatuate">
+        <item>差劲，不值得一看</item>
+        <item>一般，普普通通</item>
+        <item>不错，值得一看</item>
+        <item>神作，不看后悔</item>
+    </string-array>
+</resources>

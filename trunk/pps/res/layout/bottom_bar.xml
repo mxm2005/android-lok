@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/bottom_bar" android:background="@drawable/button_area_balck" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/button_bottom_left" android:background="@drawable/bottom_bar_btn_left_selector" android:layout_width="@dimen/button_bottom_bar_width" android:layout_height="wrap_content" style="\@style/button_bottombar_left" />
+    <Button android:id="@id/button_bottom_middle" android:background="@drawable/bottom_bar_btn_middle_selector" android:layout_width="@dimen/button_bottom_bar_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/button_bottom_bar_margin_left" style="\@style/button_bottombar_left" />
+    <Button android:id="@id/button_bottom_right" android:background="@drawable/bottom_bar_btn_right_selector" android:layout_width="@dimen/button_bottom_bar_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/button_bottom_bar_margin_left" style="\@style/button_bottombar_right" />
+</LinearLayout>

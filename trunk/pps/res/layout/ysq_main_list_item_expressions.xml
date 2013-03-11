@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/ysq_main_top_fav_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/hscrollview_photo_img" android:background="@drawable/ic_default_review" android:layout_width="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:layout_height="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:scaleType="fitXY" android:layout_centerVertical="true" android:contentDescription="@drawable/ic_default_review" />
+    <ImageView android:id="@id/hscrollview_face_img" android:layout_width="@dimen/ysq_main_comment_face_widthAndHeight" android:layout_height="@dimen/ysq_main_comment_face_widthAndHeight" android:layout_marginLeft="@dimen/ysq_main_dynamic_photo_margin_top" android:src="@drawable/ic_s_ysq_smile" android:layout_alignParentBottom="true" android:contentDescription="@drawable/ic_s_ysq_smile" />
+</RelativeLayout>

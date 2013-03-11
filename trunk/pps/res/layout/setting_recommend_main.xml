@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0" layout="\@layout/title_bar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <FrameLayout android:id="@id/prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="\@layout/loading" />
+            <include layout="\@layout/error" />
+        </FrameLayout>
+        <ListView android:id="@id/setting_commend_listView" android:layout_width="fill_parent" android:layout_height="fill_parent" style="\@style/list_style" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/channel_main" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0" layout="\@layout/title_bar" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <TextView android:id="@id/evaluate_textview_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_evaluate_textview_score_margin_top" style="\@style/textview_evaluate_score" />
+        <RatingBar android:id="@id/evaluate_ratingbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_evaluate_rating_margin_top" style="\@style/ratingbar_l_style" />
+        <TextView android:id="@id/evaluate_textview_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_evaluate_textview_info_margin_top" style="\@style/textview_evaluate_info" />
+        <Button android:id="@id/evaluate_button_submit" android:background="@drawable/vip_login_button_selector" android:layout_width="@dimen/channel_evaluate_button_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_evaluate_button_margin_top" android:text="@string/setting_submit_score" style="\@style/button_vip" />
+    </LinearLayout>
+</LinearLayout>

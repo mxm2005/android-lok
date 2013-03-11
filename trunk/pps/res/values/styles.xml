@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="ratingbar_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxWidth">20.0dip</item>
+        <item name="android:maxHeight">12.0dip</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_style</item>
+        <item name="android:minWidth">20.0dip</item>
+        <item name="android:minHeight">12.0dip</item>
+        <item name="android:numStars">10</item>
+        <item name="android:stepSize">0.1</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="ratingbar_l_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxWidth">28.699982dip</item>
+        <item name="android:maxHeight">21.299988dip</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_l_style</item>
+        <item name="android:minWidth">28.699982dip</item>
+        <item name="android:minHeight">21.299988dip</item>
+        <item name="android:numStars">10</item>
+        <item name="android:stepSize">0.1</item>
+    </style>
+    <style name="ratingbar_5_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxWidth">20.0dip</item>
+        <item name="android:maxHeight">12.0dip</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_style</item>
+        <item name="android:minWidth">20.0dip</item>
+        <item name="android:minHeight">12.0dip</item>
+        <item name="android:numStars">5</item>
+        <item name="android:stepSize">1.0</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="textview_title">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/title_color</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="button_bottombar_left">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:shadowColor">#80ffffff</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="button_bottombar_right">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="textview_channel">
+        <item name="android:textSize">12.5sp</item>
+        <item name="android:textColor">@color/channel_second_channel_type_textcolor</item>
+    </style>
+    <style name="textview_channel_type">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/channel_second_channel_type_textcolor</item>
+    </style>
+    <style name="textview_channel_vote">
+        <item name="android:textSize">24.0sp</item>
+        <item name="android:textColor">@color/orange</item>
+    </style>
+    <style name="textview_channel_letter">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">@color/gray_kesou</item>
+    </style>
+    <style name="textview_channel_pop_left">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_channel_pop_right">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="textview_channel_overlay">
+        <item name="android:textSize">60.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_details_type">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_details_button">
+        <item name="android:textSize">17.299988sp</item>
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:shadowColor">#80ffffff</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="textview_details_review_button">
+        <item name="android:textSize">17.299988sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_details_introduce">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_baka</item>
+        <item name="android:paddingLeft">10.0px</item>
+        <item name="android:paddingRight">10.0px</item>
+        <item name="android:lineSpacingExtra">9.0px</item>
+    </style>
+    <style name="textview_details_resouce">
+        <item name="android:textSize">10.599976sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_details_grade">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/orange</item>
+    </style>
+    <style name="textview_details_grade_text">
+        <item name="android:textSize">8.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_details_name">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/gray_shit</item>
+    </style>
+    <style name="textview_details_name_detail">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_details_download_item_title">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_bottom_textview">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/bottom_text</item>
+    </style>
+    <style name="textview_details_download_dir">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_share_edittext">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/black_gray</item>
+    </style>
+    <style name="button_search">
+        <item name="android:textSize">15.299988sp</item>
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:shadowColor">#80ffffff</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="textview_vip_edittext">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_vip_checkbox">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_vipinfo">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="button_vip">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:shadowColor">#80ffffff</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="textview_download_dir">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_setting_about_info">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_setting_authorization">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_download_listview_item_movie_size">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+    <style name="textview_download_listview_item_movie_state">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff585858</item>
+    </style>
+    <style name="list_style">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:cacheColorHint">@color/transparent</item>
+        <item name="android:divider">@drawable/list_line_gray</item>
+    </style>
+    <style name="list_style_c">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:cacheColorHint">@color/transparent</item>
+        <item name="android:divider">@drawable/list_line_c</item>
+    </style>
+    <style name="textview_common">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="listview_textview_count">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/textview_radius_style</item>
+    </style>
+    <style name="textview_setting_dir">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/silver</item>
+    </style>
+    <style name="textview_evaluate_score">
+        <item name="android:textSize">80.0sp</item>
+        <item name="android:textColor">@color/orange</item>
+    </style>
+    <style name="textview_evaluate_info">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/silver</item>
+    </style>
+    <style name="textview_recommend_name">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textview_recommend_info">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_player_buffer_small">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_player_buffer_big">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_player_buffer_little">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="button_player_left_bar">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_buffer_player_view">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_player_ad">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_player_ad_red">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="ppsplayer_activity_buffer_animstyle">
+        <item name="android:indeterminateDrawable">@anim/ppsplayer_buffer_anim</item>
+    </style>
+    <style name="textview_dialog_tittle">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textview_dialog_info">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ff777777</item>
+    </style>
+    <style name="textview_notification_title">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="textview_notification_info">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="textview_ysq_user_info_setting">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/silver</item>
+    </style>
+    <style name="textview_ysq_username">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ff222222</item>
+    </style>
+    <style name="textview_ysq_top_value">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+    <style name="textview_ysq_top">
+        <item name="android:textSize">10.699982sp</item>
+        <item name="android:textColor">#ff999999</item>
+    </style>
+    <style name="textview_ysq_middle">
+        <item name="android:textSize">10.699982sp</item>
+        <item name="android:textColor">#ff989898</item>
+    </style>
+    <style name="textview_ysq_fav">
+        <item name="android:textSize">10.699982sp</item>
+        <item name="android:textColor">#ffb9b9b9</item>
+    </style>
+    <style name="textview_ysq_comment_video">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">#ff6d6d6d</item>
+    </style>
+    <style name="textview_ysq_comment">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">#ff5a5a5a</item>
+    </style>
+    <style name="textview_ysq_comment_name">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">#ff2897ff</item>
+    </style>
+    <style name="textview_ysq_timeAndLocation">
+        <item name="android:textSize">10.699982sp</item>
+        <item name="android:textColor">#ff9f9f9f</item>
+    </style>
+    <style name="textview_ysq_face_comment">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">#ff9f9f9f</item>
+    </style>
+    <style name="button_ysq_user_add">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#66000000</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="button_ysq_add_friend">
+        <item name="android:textSize">10.699982sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#66000000</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="textview_details_third">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff777777</item>
+    </style>
+    <style name="AppTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="style_wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="style_fill_fill">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="style_wrap_fill">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="style_fill_wrap">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="style_font_list_item_title">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <style name="style_font_list_subitem_title">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff6d6d6d</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="style_font_list_item_content">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff6d6d6d</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="style_font_list_item_green">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="markRatingBar" parent="@style/style_wrap_wrap">
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:maxHeight">14.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_style</item>
+        <item name="android:minHeight">14.0dip</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:numStars">5</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="game_item_bg_style" parent="@style/style_fill_wrap">
+        <item name="android:background">@drawable/gamecenter_list_selector</item>
+    </style>
+    <style name="game_item_btn_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">5.0dip</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="listview_style" parent="@style/style_fill_wrap">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@drawable/list_line_gray</item>
+        <item name="android:dividerHeight">1.0px</item>
+    </style>
+    <style name="tab_item_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@drawable/gamecenter_tab_item_text_checker</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/gamecenter_tab_item</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="Theme.Background" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="Theme.VipDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/game_edit_bar" android:background="@drawable/button_area_balck" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/game_edit_select" android:background="@drawable/bottom_bar_btn_right_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/game_edit_select" android:layout_weight="1.0" style="\@style/button_bottombar_right" />
+    <Button android:id="@id/game_edit_invert" android:background="@drawable/bottom_bar_btn_middle_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/game_edit_invert" android:layout_weight="1.0" style="\@style/button_bottombar_left" />
+    <Button android:id="@id/game_edit_delete" android:background="@drawable/bottom_bar_btn_left_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/game_edit_delete" android:layout_weight="1.0" style="\@style/button_bottombar_left" />
+</LinearLayout>

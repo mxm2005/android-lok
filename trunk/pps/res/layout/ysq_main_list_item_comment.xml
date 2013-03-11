@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:id="@id/ysq_relativelayout_soon2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ysq_main_comment_photo" android:background="@drawable/ic_default_review" android:layout_width="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:layout_height="@dimen/ysq_main_dynamic_photo_widthAndHeight" android:layout_marginLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:scaleType="fitXY" android:layout_centerVertical="true" android:contentDescription="@drawable/ic_ysq_friends" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:layout_toRightOf="@id/ysq_main_comment_photo" android:layout_centerVertical="true">
+        <RelativeLayout android:id="@id/ysq_main_comment_relativelayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ysq_main_dynamic_movie_margin_top">
+            <TextView android:id="@id/ysq_main_comment_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:singleLine="true" style="\@style/textview_ysq_comment_name" />
+            <TextView android:id="@id/ysq_main_comment_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:layout_toRightOf="@id/ysq_main_comment_username" style="\@style/textview_ysq_timeAndLocation" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_below="@id/ysq_main_comment_relativelayout">
+            <TextView android:id="@id/ysq_main_comment_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ysq_main_dynamic_comment_spacing_leftAndRight" android:lineSpacingExtra="6.0dip" style="\@style/textview_ysq_comment" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/ysq_commment_topline" android:background="@drawable/line_ysq" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@drawable/line_ysq" />
+</RelativeLayout>

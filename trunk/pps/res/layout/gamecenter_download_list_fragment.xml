@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <tv.pps.mobile.gamecenter.widget.ListViewTips android:id="@id/game_listviewtips" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ListView android:id="@id/game_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="\@style/listview_style" />
+</LinearLayout>

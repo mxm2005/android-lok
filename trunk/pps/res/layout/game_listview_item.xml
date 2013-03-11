@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="92.0dip">
+        <ImageView android:id="@id/game_listview_image" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="12.0dip" android:scaleType="fitXY" />
+        <TextView android:id="@id/game_listview_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_toRightOf="@id/game_listview_image" android:layout_centerVertical="true" style="\@style/textview_channel_type" />
+        <TextView android:id="@id/game_listview_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/game_listview_image" android:layout_above="@id/game_listview_size" style="\@style/textview_common" />
+        <RatingBar android:id="@id/game_listview_ratingbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/game_listview_image" android:layout_below="@id/game_listview_size" style="\@style/ratingbar_5_style" />
+        <ImageView android:id="@id/game_listview_hasupdate" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/pic_game_new" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="15.0dip" android:src="@drawable/ic_game_free" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

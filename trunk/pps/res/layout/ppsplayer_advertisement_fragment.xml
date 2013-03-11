@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <tv.pps.mobile.player.PPSVideoView android:layout_gravity="center" android:id="@id/ppsplayer_ppsvideoad_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true" />
+    <RelativeLayout android:id="@id/ppsplayer_ppsvideoad_textview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ppsplayer_ad_linearlayout_time_margin_left" android:layout_marginTop="@dimen/ppsplayer_ad_linearlayout_time_margin_top">
+            <TextView android:id="@id/ppsplayer_ppsvideoad_text_pre_remaindertime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ppsplayer_remaining_time" style="\@style/textview_player_ad" />
+            <TextView android:id="@id/ppsplayer_ppsvideoad_text_remaindertime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ppsplayer_advertisement_textview_remaindertime_margin_leftAndright" android:layout_marginRight="@dimen/ppsplayer_advertisement_textview_remaindertime_margin_leftAndright" android:text="@string/ppsplayer_default_second_text" style="\@style/textview_player_ad_red" />
+            <TextView android:id="@id/ppsplayer_ppsvideoad_text_after_remaindertime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ppsplayer_second" style="\@style/textview_player_ad" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/ppsplayer_ad_linearlayout_margin_right" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <LinearLayout android:id="@id/ppsplayer_ad_linear_jump" android:background="@drawable/button_ad" android:paddingRight="@dimen/ppsplayer_advertisement_linearlayout_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ppsplayer_ad_imageview_jump" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/player_ad_jump_selector" android:contentDescription="@string/app_name" />
+                <TextView android:gravity="center" android:id="@id/ppsplayer_ad_jump" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/ppsplayer_ad_textview_margin_left" android:text="@string/ad_skip" style="\@style/textview_player_ad" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ppsplayer_ad_linear_volumn" android:background="@drawable/button_ad" android:paddingRight="@dimen/ppsplayer_advertisement_linearlayout_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ppsplayer_ad_linearlayout_margin_left">
+                <ImageView android:id="@id/ppsplayer_ad_imageview_volumn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ad_sound" android:contentDescription="@string/app_name" />
+                <TextView android:gravity="center" android:id="@id/ppsplayer_ad_volumn" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/ppsplayer_ad_textview_margin_left" android:text="@string/ad_close_volumn" style="\@style/textview_player_ad" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

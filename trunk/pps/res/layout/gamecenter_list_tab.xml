@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadioGroup android:orientation="horizontal" android:id="@id/game_radiogroup" android:background="@drawable/tab_bar" android:layout_width="fill_parent" android:layout_height="@dimen/channel_tab_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:id="@id/game_class_new" android:layout_width="wrap_content" android:layout_height="fill_parent" android:checked="true" android:text="@string/game_class_new" android:layout_weight="1.0" style="\@style/tab_item_style" />
+    <TextView android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <RadioButton android:id="@id/game_class_upline" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_class_upline" android:layout_weight="1.0" style="\@style/tab_item_style" />
+    <TextView android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <RadioButton android:id="@id/game_class_hot" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_class_hot" android:layout_weight="1.0" style="\@style/tab_item_style" />
+    <Button android:id="@id/game_class_all" android:background="@drawable/gamecenter_tab_item_bg_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_class_all" android:layout_weight="1.0" style="\@style/tab_item_style" />
+</RadioGroup>

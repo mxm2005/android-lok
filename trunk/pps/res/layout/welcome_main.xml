@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/welcome_poster" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:contentDescription="@string/app_name" />
+    <tv.pps.mobile.framework.ViewFlow android:id="@id/flow" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:background="@drawable/welcome_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/welcome_icon" android:layout_centerInParent="true" android:contentDescription="@string/app_name" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/welcome_bottom" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:contentDescription="@string/app_name" />
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/welcom_loading_margin_bottom" android:indeterminate="false" android:indeterminateDrawable="@drawable/loading" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

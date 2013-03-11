@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/tab_bar" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:textColor="@drawable/gamecenter_tab_item_text_selector" android:gravity="center" android:id="@id/tab_item_name" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <TextView android:id="@id/tab_item_separator" android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:layout_gravity="bottom" android:background="@drawable/gamecenter_tab_item_line_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:height="1.1999817dip" />
+</LinearLayout>

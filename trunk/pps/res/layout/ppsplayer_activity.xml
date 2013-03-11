@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout android:id="@id/ppsplayer_activity_framelayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/ppsplayer_activity_video_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <fragment android:id="@id/ppsvideoview_fragment" android:tag="ppsvideoview_fragment" android:layout_width="fill_parent" android:layout_height="fill_parent" class="tv.pps.mobile.player.PPSVideoViewFragment" />
+        <fragment android:id="@id/ppsplayer_title_controler_fragment" android:tag="ppsplayer_title_controler_fragment" android:layout_width="fill_parent" android:layout_height="fill_parent" class="tv.pps.mobile.player.PPSPlayerTitleControlerFragment" />
+        <FrameLayout android:id="@id/ppsplayer_bufferinfo_view_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:layout_gravity="top" android:id="@id/ppsplayer_bufferinfo_view_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ppsplayer_buffer_info_view_margin_left" android:layout_marginTop="@dimen/ppsplayer_buffer_info_view_margin_top" layout="\@layout/ppsplayer_bufferinfo_view" />
+            <include android:layout_gravity="top" android:id="@id/ppsplayer_bufferstate_view_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ppsplayer_buffer_info_view_margin_left" android:layout_marginTop="@dimen/ppsplayer_buffer_state_view_margin_top" layout="\@layout/ppsplayer_bufferstate_view" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/ppsplayer_lock_slidebar_view_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:id="@id/ppsplayer_lock_sliderbar_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="\@layout/ppsplayer_lock_sliderbar_view" />
+        </FrameLayout>
+    </FrameLayout>
+    <LinearLayout android:id="@id/ppsplayer_bphp_help" android:background="@drawable/area_help_bphp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/ppsplayer_activity_buffer_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/ppsplayer_activity_buffer_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="\@layout/ppsplayer_activity_buffer_view" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/ppsplayer_activity_advertisement_layer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/ppsplayer_activity_ad_webpage_layer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

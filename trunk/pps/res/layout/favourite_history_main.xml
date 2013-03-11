@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+            <include layout="\@layout/title_bar" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginTop="@dimen/linearlayout_margin_topAndbottom" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_marginBottom="@dimen/linearlayout_margin_topAndbottom" android:layout_weight="88.0">
+            <TextView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/history_textview_layout" android:background="@drawable/setting_item_top_selector" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:text="@string/playhistory" android:drawableLeft="@drawable/ic_mine_histry" android:drawablePadding="16.0dip" style="\@style/textview_common" />
+            <TextView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/favourite_textview_layout" android:background="@drawable/setting_item_bottom_selector" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:layout_marginTop="@dimen/revise" android:text="@string/myfavorites" android:drawableLeft="@drawable/ic_mine_fav" android:drawablePadding="16.0dip" style="\@style/textview_common" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

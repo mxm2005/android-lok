@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center" android:id="@id/game_bottom_layout" android:background="@drawable/ipd_bottom_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/game_bottom_icon" android:layout_width="@dimen/game_image_width" android:layout_height="@dimen/game_image_height" android:src="@drawable/ic_game_gamecenter" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff555555" android:id="@id/game_bottom_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_download_center" android:shadowColor="#bfffffff" android:shadowDy="-1.0" android:shadowRadius="1.0" />
+    <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/game_bottom_num" android:background="@drawable/bkg_number_downloadmana" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

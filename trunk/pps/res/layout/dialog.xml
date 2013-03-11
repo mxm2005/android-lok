@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="@dimen/dialog_width" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:id="@id/dialog_linear_1" android:background="@drawable/dialog_title" android:paddingLeft="@dimen/dialog_linearlayout_padding_left" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_title_height">
+        <ImageView android:id="@id/dialog_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_warning" android:contentDescription="@string/app_name" />
+        <TextView android:gravity="center_vertical" android:id="@id/dialog_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dialog_textview_title_margin_left" android:shadowColor="#4c000000" android:shadowDy="-1.0" android:shadowRadius="1.0" style="\@style/textview_dialog_tittle" />
+    </LinearLayout>
+    <RelativeLayout android:background="@drawable/dialog_infor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="164.0dip" android:layout_below="@id/dialog_linear_1">
+        <LinearLayout android:orientation="vertical" android:id="@id/dialog_linear_2" android:paddingLeft="@dimen/dialog_linearlayout_padding_left" android:paddingTop="@dimen/dialog_info_padding_topAndbottom" android:paddingRight="@dimen/dialog_linearlayout_padding_left" android:paddingBottom="@dimen/dialog_info_padding_topAndbottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="120.0dip">
+            <TextView android:id="@id/dialog_message" android:layout_width="fill_parent" android:layout_height="wrap_content" style="\@style/textview_dialog_info" />
+            <CheckBox android:textColor="#ff777777" android:id="@id/dialog_checkbox" android:background="@drawable/transparent_background" android:paddingLeft="@dimen/dialog_checkbox_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_checkbox_margin_top" android:button="@drawable/dialog_checkbox_selector" android:text="@string/broadcast_network_noprompt" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/dialog_linear_3" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_bottom_height" android:layout_below="@id/dialog_linear_2">
+            <Button android:textColor="#ff777777" android:gravity="center" android:id="@id/dialog_button_confirm" android:background="@drawable/dialog_button_selector" android:layout_width="@dimen/dialog_button_width" android:layout_height="36.0dip" />
+            <ImageView android:id="@id/dialog_v_line" android:background="#ffc8c8c8" android:layout_width="1.0px" android:layout_height="35.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+            <Button android:textColor="#ff777777" android:gravity="center" android:id="@id/dialog_buttom_cancel" android:background="@drawable/dialog_button_selector" android:layout_width="@dimen/dialog_button_width" android:layout_height="36.0dip" />
+        </LinearLayout>
+        <ImageView android:background="#ffc8c8c8" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/dialog_linear_3" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+</RelativeLayout>

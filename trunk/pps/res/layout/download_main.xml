@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/no_ad" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/page_bottom_ad">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+            <include layout="\@layout/title_bar" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="88.0">
+            <include android:layout_width="fill_parent" android:layout_height="@dimen/download_tab_height" layout="\@layout/download_middle" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:id="@id/channel_first_prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="\@layout/loading" />
+                    <include layout="\@layout/empty" />
+                    <include layout="\@layout/error" />
+                </FrameLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/download_contant_listview" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ListView android:id="@id/download_listview" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="@drawable/list_line_gray" android:layout_weight="92.0" />
+                    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="554.0" layout="\@layout/bottom_bar" />
+                    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="554.0" layout="\@layout/bottom_progress" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/download_help_setting_path" android:background="@color/black_half_seven" android:padding="@dimen/download_help_relativelayout_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/download_help_relativelayout_textview_textsize" android:id="@id/download_help_textview_set_path" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <include android:id="@id/page_bottom_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="\@layout/ad_item_empty" />
+</RelativeLayout>

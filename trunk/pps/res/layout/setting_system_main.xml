@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <include layout="\@layout/title_bar" />
+    </LinearLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginTop="@dimen/linearlayout_margin_topAndbottom" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_marginBottom="@dimen/linearlayout_margin_topAndbottom">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/setting_linearlayout_dir" android:background="@drawable/setting_item_top_selector" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height">
+                    <TextView android:gravity="center_vertical" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="wrap_content" android:layout_height="@dimen/linearlayout_height" android:text="@string/setting_set_dir" style="\@style/textview_common" />
+                    <TextView android:gravity="center_vertical" android:id="@id/setting_textview_dir" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawableRight="@drawable/ic_right_mark" style="\@style/textview_setting_dir" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/setting_linearlayout_clear_cache" android:background="@drawable/setting_item_bottom_selector" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:layout_marginTop="@dimen/revise">
+                    <TextView android:gravity="center_vertical" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="wrap_content" android:layout_height="@dimen/linearlayout_height" android:text="@string/setting_clear_cache" style="\@style/textview_common" />
+                    <TextView android:id="@id/setting_textview_cache_size" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawableRight="@drawable/ic_right_mark" style="\@style/textview_setting_dir" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/setting_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright">
+                <RelativeLayout android:gravity="center_vertical" android:background="@drawable/setting_item_top_selector" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:drawableRight="@drawable/ic_right_mark">
+                    <TextView android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/linearlayout_height" android:text="@string/setting_3g_remind" style="\@style/textview_common" />
+                    <CheckBox android:id="@id/setting_checkbox_3g_remind" android:layout_width="@dimen/checkbox_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/checkbox_margin_right" android:button="@drawable/setting_checkbox_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center_vertical" android:background="@drawable/setting_item_middle_selector" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:layout_marginTop="@dimen/revise" android:drawableRight="@drawable/ic_right_mark">
+                    <TextView android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/linearlayout_height" android:text="@string/setting_wifi_remind" style="\@style/textview_common" />
+                    <CheckBox android:id="@id/setting_checkbox_wifi_remind" android:layout_width="@dimen/checkbox_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/checkbox_margin_right" android:button="@drawable/setting_checkbox_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center_vertical" android:background="@drawable/setting_item_bottom_selector" android:paddingLeft="@dimen/textview_padding_leftAndright" android:paddingRight="@dimen/textview_padding_leftAndright" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_height" android:layout_marginTop="@dimen/revise" android:drawableRight="@drawable/ic_right_mark">
+                    <TextView android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/linearlayout_height" android:text="@string/setting_movie_push" style="\@style/textview_common" />
+                    <CheckBox android:id="@id/setting_checkbox_movie_push" android:layout_width="@dimen/checkbox_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/checkbox_margin_right" android:button="@drawable/setting_checkbox_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:padding="@dimen/update_notification_linearlayout_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/update_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/icon" android:scaleType="fitCenter" android:layout_weight="8.0" android:contentDescription="@string/app_name" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/update_notification_linearlayout_padding" android:layout_weight="2.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:ellipsize="end" android:gravity="center" android:id="@id/update_title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/app_name" android:singleLine="true" style="\@style/textview_notification_title" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/update_notification_relativelayout_margin_top">
+                <LinearLayout android:id="@id/update_notification_progressblock" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/update_notification_progressbar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="\?android:attr/progressBarStyleHorizontal" />
+                </LinearLayout>
+                <TextView android:id="@id/update_notification_progresstext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="\@style/textview_notification_info" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

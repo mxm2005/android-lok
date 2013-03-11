@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:background="#ff171820" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/help_1" android:layout_centerHorizontal="true" />
+    <Button android:id="@id/framework_help_btn_jump" android:background="@drawable/help_jump" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" style="\@style/button_bottombar_right" />
+</RelativeLayout>

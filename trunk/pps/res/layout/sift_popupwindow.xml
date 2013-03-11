@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/area_sift" android:layout_width="@dimen/pop_width" android:layout_height="fill_parent" android:minHeight="@dimen/pop_height">
+        <ScrollView android:id="@id/sift_popwindow_left_scrollview" android:background="@drawable/area_screen_left" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/sift_popwindow_left_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        </ScrollView>
+        <ListView android:id="@id/sift_popwindow_listview" android:scrollbars="none" android:fadingEdge="none" android:layout_width="@dimen/pop_listview_width" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="#00000000" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

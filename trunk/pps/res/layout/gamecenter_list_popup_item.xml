@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/game_list_popup_text" android:layout_width="fill_parent" android:layout_height="38.599976dip" style="\@style/textview_channel_pop_right" />
+    <ImageView android:id="@id/sift_listview_image" android:background="@drawable/line" android:layout_width="@dimen/pop_litview_item_imageview_width" android:layout_height="@dimen/pop_litview_item_imageview_height" android:contentDescription="@string/app_name" />
+</LinearLayout>

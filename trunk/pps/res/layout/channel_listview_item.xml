@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="@dimen/channel_listview_item_height">
+        <ImageView android:id="@id/movie_imageview" android:background="@drawable/pic_poser_background" android:layout_width="@dimen/channel_image_width" android:layout_height="@dimen/channel_image_height" android:layout_marginLeft="@dimen/channel_image_margin_left" android:layout_marginRight="@dimen/channel_image_margin_right" android:scaleType="fitXY" android:contentDescription="@string/app_name" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/channel_ico_vip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/channel_imageview_vip_margin_right" android:src="@drawable/ic_s_vip" android:contentDescription="@string/app_name" />
+                    <TextView android:ellipsize="end" android:id="@id/movie_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/channel_textview_name_maxwidth" android:singleLine="true" style="\@style/textview_common" />
+                </LinearLayout>
+                <LinearLayout android:gravity="right|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/channel_linearlayout_margin_right">
+                    <ImageView android:id="@id/channel_ico_new" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_s_new" android:contentDescription="@string/app_name" />
+                    <ImageView android:id="@id/channel_ico_bp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/channel_imageview_vip_margin_right" android:src="@drawable/ic_s_bp_f" android:contentDescription="@string/app_name" />
+                </LinearLayout>
+                <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/movie_type_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_textview_margin_top" android:maxWidth="@dimen/channel_textview_type_maxwidth" android:singleLine="true" style="\@style/textview_channel_type" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/movie_on_number_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/channel_relativelayout_margin_top">
+                    <ImageView android:paddingRight="@dimen/channel_image_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ss_online" android:contentDescription="@string/app_name" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_online_count" style="\@style/textview_channel_type" />
+                    <TextView android:id="@id/movie_on_number_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_channel" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:layout_gravity="bottom|right|center" android:id="@id/movie_vote_textview" android:paddingRight="@dimen/channel_textview_score_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/channel_textview_score_margin_bottom" style="\@style/textview_channel_vote" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
