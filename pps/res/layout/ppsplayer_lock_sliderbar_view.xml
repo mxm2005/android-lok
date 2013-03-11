@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/ppsplayer_lock_btn" android:background="@drawable/player_unlocker_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <FrameLayout android:id="@id/ppsplayer_sliderbar_content" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <FrameLayout android:id="@id/ppsplayer_sliderbar_selector" android:background="@drawable/background_playlist" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toLeftOf="@id/ppsplayer_sliderbar_content" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" />
+    <Button android:id="@id/ppsplayer_sliderbar_btn" android:background="@drawable/player_open_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ppsplayer_sliderbar_selector" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" />
+</RelativeLayout>

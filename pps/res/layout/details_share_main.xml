@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/request_focus_layout" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <include layout="\@layout/title_bar" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/share_retivelayout_margin_top" android:layout_weight="88.0">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/share_image" android:background="@drawable/pic_poser_background" android:layout_width="@dimen/details_imageview_movie_width" android:layout_height="@dimen/details_imageview_movie_height" android:layout_marginLeft="@dimen/channel_image_margin_left" android:src="@drawable/default_image_bg_small" android:scaleType="fitXY" android:layout_alignParentBottom="true" />
+            <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:gravity="top" android:id="@id/share_edittext" android:background="@drawable/ic_share_dailog" android:paddingLeft="@dimen/share_edittext_padding_left" android:paddingTop="@dimen/share_edittext_padding_top" android:paddingRight="@dimen/share_edittext_padding_right" android:paddingBottom="@dimen/share_edittext_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/share_edittext_margin_left" android:layout_marginTop="@dimen/share_edittext_margin_top" android:layout_marginRight="@dimen/share_edittext_margin_right" android:hint="@string/share_hint" android:lineSpacingExtra="@dimen/share_edittext_line_spacing" style="\@style/textview_share_edittext" />
+                <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/share_imageview_margin_left" android:layout_alignBottom="@id/share_edittext" android:layout_alignParentRight="true">
+                    <TextView android:id="@id/share_textview_remain" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <ImageView android:id="@id/share_imageview_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/share_imageview_margin" android:src="@drawable/ic_clear_entry_s" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:background="@drawable/share_icon_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/share_imageview_margin_left">
+                <ImageView android:id="@id/share_imageview_sina" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_sinaweibo" />
+                <ImageView android:id="@id/share_imageview_sina_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/share_icon_margin_topAndbottom" android:layout_marginBottom="@dimen/share_icon_margin_topAndbottom" android:src="@drawable/ic_new_select" android:layout_alignRight="@id/share_imageview_sina" android:layout_alignBottom="@id/share_imageview_sina" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/share_imageview_margin_left">
+                <ImageView android:id="@id/share_imageview_txweibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_txweibo" />
+                <ImageView android:id="@id/share_imageview_txweibo_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/share_icon_margin_topAndbottom" android:layout_marginBottom="@dimen/share_icon_margin_topAndbottom" android:src="@drawable/ic_new_select" android:layout_alignRight="@id/share_imageview_txweibo" android:layout_alignBottom="@id/share_imageview_txweibo" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

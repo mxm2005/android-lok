@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/details_download_scrollview" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="86.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:background="@drawable/tab_short_setting" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/details_download_number_textview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_download_textview_number_margin_left" style="\@style/textview_common" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/details_download_linearlayout_margin_top">
+                    <ProgressBar android:id="@id/details_download_volume_progressbar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/details_download_progressbar_margin_leftAndright" android:layout_marginRight="@dimen/details_download_progressbar_margin_leftAndright" android:indeterminate="false" android:progressDrawable="@drawable/details_download_progress_bg" style="\@android:style/Widget.ProgressBar.Horizontal" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/details_download_linearlayout_middle_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/details_download_linearlayout_middle_margin_top">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_download_path" style="\@style/textview_details_download_item_title" />
+                    <TextView android:id="@id/details_download_store_path_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/mnt/sdcard" style="\@style/textview_details_download_dir" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingLeft="@dimen/details_download_linearlayout_bottom_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/details_download_linearlayout_bottom_margin_top" android:layout_marginBottom="@dimen/details_download_linearlayout_bottom_margin_bottom">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_download_all_volume" style="\@style/textview_details_download_item_title" />
+                        <TextView android:id="@id/details_download_all_volume_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_details_download_item_title" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <View android:background="@drawable/details_download_color_purple" android:layout_width="@dimen/details_download_view_widthAndheight" android:layout_height="@dimen/details_download_view_widthAndheight" android:layout_marginRight="@dimen/details_download_view_margin_right" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_download_other_volume" style="\@style/textview_details_download_item_title" />
+                        <TextView android:id="@id/details_download_other_volume_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_details_download_item_title" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <View android:background="@drawable/details_download_color_blue" android:layout_width="@dimen/details_download_view_widthAndheight" android:layout_height="@dimen/details_download_view_widthAndheight" android:layout_marginRight="@dimen/details_download_view_margin_right" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_download_local_volume" style="\@style/textview_details_download_item_title" />
+                        <TextView android:id="@id/details_download_local_volume_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_details_download_item_title" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <View android:background="@drawable/details_download_color_white" android:layout_width="@dimen/details_download_view_widthAndheight" android:layout_height="@dimen/details_download_view_widthAndheight" android:layout_marginRight="@dimen/details_download_view_margin_right" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_download_residue_volume" style="\@style/textview_details_download_item_title" />
+                        <TextView android:id="@id/details_download_residue_volume_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_details_download_item_title" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <include layout="\@layout/details_middle" />
+        </LinearLayout>
+    </ScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="626.0" layout="\@layout/bottom_bar" />
+</LinearLayout>

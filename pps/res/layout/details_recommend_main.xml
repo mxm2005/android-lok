@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0" layout="\@layout/title_bar" />
+    <ListView android:id="@id/details_recommend_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0" style="\@style/list_style" />
+</LinearLayout>

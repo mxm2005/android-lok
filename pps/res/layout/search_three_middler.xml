@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/tab_search" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:id="@id/search_movie" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textColor="@color/orange" android:gravity="center" android:id="@id/search_movie_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_movie" style="\@style/textview_common" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="@dimen/channel_textview_divide_height" android:contentDescription="@string/app_name" />
+        <LinearLayout android:gravity="center" android:id="@id/search_ugc" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:gravity="center" android:id="@id/search_ugc_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_ugc" style="\@style/textview_common" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="@dimen/channel_textview_divide_height" android:contentDescription="@string/app_name" />
+        <LinearLayout android:gravity="center" android:id="@id/search_ipd" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:gravity="center" android:id="@id/search_ipd_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_ipd" style="\@style/textview_common" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:layout_gravity="left|center" android:id="@id/search_slide_result" android:layout_width="105.0dip" android:layout_height="@dimen/channel_imageview_line_heught" android:src="@drawable/orange_line" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+</RelativeLayout>

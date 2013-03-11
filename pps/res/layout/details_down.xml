@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/detail_bottom_layout" android:background="@drawable/button_area_balck" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="56.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/details_linear_favour" android:background="@drawable/homepage_left_btn_selector" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/detail_imagview_favourite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_details_favour" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_collect_text" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:background="@drawable/line_under_b" android:layout_width="wrap_content" android:layout_height="@dimen/details_bottom_line_height" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/details_linear_share" android:background="@drawable/homepage_left_btn_selector" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_details_share" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_share_text" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:background="@drawable/line_under_b" android:layout_width="wrap_content" android:layout_height="@dimen/details_bottom_line_height" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/details_linear_comment" android:background="@drawable/homepage_left_btn_selector" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_details_comment" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_comment_text" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:id="@id/detail_line" android:background="@drawable/line_under_b" android:layout_width="wrap_content" android:layout_height="@dimen/details_bottom_line_height" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/details_linear_recommend" android:background="@drawable/homepage_left_btn_selector" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_details_storyline" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_recommend_text" />
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView android:id="@id/details_scrollview" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/detail_bottom_layout">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:id="@id/list_top_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="\@layout/ad_item_empty" />
+            <RelativeLayout android:id="@id/detail_relativelayout_top" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/details_image" android:background="@drawable/pic_poser_background" android:layout_width="@dimen/details_imageview_movie_width" android:layout_height="@dimen/details_imageview_movie_height" android:layout_marginLeft="@dimen/channel_image_margin_left" android:layout_marginTop="@dimen/channel_image_margin_top" android:src="@drawable/default_image_bg_small" android:scaleType="fitXY" android:layout_alignParentBottom="true" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/details_linear_evaluate" android:background="@drawable/grade_bg" android:layout_width="@dimen/details_linearlayout_right_score_width" android:layout_height="@dimen/details_linearlayout_right_score_height" android:layout_marginTop="@dimen/details_linearlayout_right_score_margin_top" android:layout_marginRight="@dimen/details_linearlayout_right_score_margin_right" android:layout_alignParentRight="true">
+                    <TextView android:gravity="center" android:id="@id/detail_score" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="18.0" style="\@style/textview_details_grade" />
+                    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/details_grade" android:layout_weight="38.0" style="\@style/textview_details_grade_text" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/details_linearlayout_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_linearlayout_margin_left" android:layout_marginTop="@dimen/details_linearlayout_middle_msg_margin_top" android:layout_toRightOf="@id/details_image">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_area_text" style="\@style/textview_details_name" />
+                    <TextView android:ellipsize="end" android:id="@id/details_area_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_textview_middle_msg_margin_left" android:maxWidth="@dimen/details_area_textview_maxwidth" android:singleLine="true" style="\@style/textview_details_name_detail" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/details_linearlayout_dir" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_linearlayout_margin_left" android:layout_marginTop="@dimen/details_linearlayout_middle_name_margin_top" android:layout_toRightOf="@id/details_image" android:layout_below="@id/details_linearlayout_name">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_dir_text" style="\@style/textview_details_name" />
+                    <TextView android:ellipsize="end" android:id="@id/details_dir_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_textview_middle_msg_margin_left" android:maxWidth="@dimen/details_area_textview_maxwidth" android:singleLine="true" style="\@style/textview_details_name_detail" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/details_linearlayout_actor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_linearlayout_margin_left" android:layout_marginTop="@dimen/details_linearlayout_middle_name_margin_top" android:layout_toRightOf="@id/details_image" android:layout_below="@id/details_linearlayout_dir">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_actor_text" style="\@style/textview_details_name" />
+                    <TextView android:ellipsize="end" android:id="@id/details_actor_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_textview_middle_msg_margin_left" android:maxWidth="@dimen/details_area_textview_maxwidth" android:singleLine="true" style="\@style/textview_details_name_detail" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_linearlayout_margin_left" android:layout_marginTop="@dimen/details_linearlayout_middle_name_margin_top" android:layout_toRightOf="@id/details_image" android:layout_below="@id/details_linearlayout_actor">
+                    <Button android:id="@id/details_play_button" android:background="@drawable/vip_login_button_selector" android:paddingLeft="@dimen/details_button_width_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/details_play_text" android:drawableRight="@drawable/ic_details_play" android:drawablePadding="@dimen/details_button_play_drawable_padding" style="\@style/textview_details_button" />
+                    <Button android:id="@id/details_download_button" android:background="@drawable/vip_login_button_selector" android:paddingLeft="@dimen/details_button_width_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/details_button_download_margin_left" android:text="@string/details_download_text" android:drawableRight="@drawable/ic_details_download" android:drawablePadding="@dimen/details_button_play_drawable_padding" style="\@style/textview_details_button" />
+                </LinearLayout>
+            </RelativeLayout>
+            <include android:id="@id/list_details_one_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="\@layout/ad_item_empty" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/details_third_title_layout" android:background="@color/background_white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/details_third_title_height">
+                <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/channel_image_margin_left" android:text="@string/details_third_title" style="\@style/textview_details_third" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/details_third_title_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_third_default" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/details_third_zhishi_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_third_shouqi" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/details_third_content_layout" android:background="@color/background_white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/details_third_hor_height">
+                <HorizontalScrollView android:background="@drawable/ic_third_gridview" android:paddingTop="@dimen/details_third_gridview_margin_bottom" android:paddingBottom="@dimen/details_third_gridview_margin_top" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <tv.pps.mobile.common.MultiGridView android:id="@id/details_third_gridview" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:horizontalSpacing="0.0dip" android:verticalSpacing="0.0dip" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@color/background_white" android:padding="@dimen/details_linearlayout_plot_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/details_plot_summary_textview" android:background="@drawable/ic_details_story_introduce" android:layout_width="fill_parent" android:layout_height="wrap_content" style="\@style/textview_details_introduce" />
+            </LinearLayout>
+            <include android:id="@id/list_details_one_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="\@layout/ad_item_empty" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:id="@id/details_error_episode" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/channel_image_margin_left" android:layout_marginTop="@dimen/channel_image_margin_left" android:layout_marginRight="@dimen/channel_image_margin_left" />
+                <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/details_error_episode" layout="\@layout/details_middle" />
+            </RelativeLayout>
+            <include android:id="@id/list_bottom_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="\@layout/ad_item_empty" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

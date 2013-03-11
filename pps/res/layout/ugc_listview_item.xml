@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:gravity="center_vertical" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="@dimen/listview_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/original_listview_imageview" android:layout_width="@dimen/original_listview_imageview_width" android:layout_height="@dimen/original_listview_imageview_height" android:layout_marginLeft="@dimen/original_listview_imageview_margin_left" android:scaleType="fitXY" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+    <TextView android:id="@id/original_listview_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/listview_textview_name_margin_left" android:layout_toRightOf="@id/original_listview_imageview" android:layout_centerVertical="true" style="\@style/textview_common" />
+    <TextView android:id="@id/original_listview_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/listview_textview_count_margin_left" android:layout_marginRight="@dimen/listview_imageview_arrow_margin_right" android:layout_toRightOf="@id/original_listview_name" android:layout_centerVertical="true" style="\@style/listview_textview_count" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/listview_imageview_arrow_margin_right" android:src="@drawable/ic_right_mark" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+</RelativeLayout>

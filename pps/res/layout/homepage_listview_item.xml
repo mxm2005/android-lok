@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/listview_item_height">
+        <TextView android:id="@id/listview_textview_channel_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/listview_textview_name_margin_left" android:layout_centerVertical="true" style="\@style/textview_common" />
+        <ImageView android:id="@id/listview_imageview_new" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_new" android:contentDescription="@string/app_name" />
+        <TextView android:gravity="center" android:id="@id/listview_textview_channel_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/listview_textview_count_margin_left" android:layout_toRightOf="@id/listview_textview_channel_name" android:layout_centerVertical="true" style="\@style/listview_textview_count" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/listview_imageview_arrow_margin_right" android:src="@drawable/ic_right_mark" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+</LinearLayout>

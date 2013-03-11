@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:background="@drawable/area_sift" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="110.0dip" android:layout_height="fill_parent">
+        <tv.pps.mobile.gamecenter.widget.MyListView android:id="@id/game_list_popup_list" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="1.0dip" android:layout_marginBottom="1.0dip" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="#00000000" />
+    </LinearLayout>
+</LinearLayout>

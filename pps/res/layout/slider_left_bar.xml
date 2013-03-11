@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/left_area_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_homepage" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_home" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_search" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_search" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_ipd" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_ipd" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_vip" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_vip" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_fav_his" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_fav_his" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_download" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_download" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_game" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_game" android:layout_centerInParent="true" android:contentDescription="@string/app_name" />
+                    <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/left_game_number" android:background="@drawable/bkg_number_downloadmana" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="15.0dip" android:layout_marginTop="7.299988dip" android:layout_marginRight="6.6999817dip" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/left_imageview_setting" android:background="@drawable/homepage_left_btn_selector" android:layout_width="@dimen/leftbar_item_widthAndheight" android:layout_height="@dimen/leftbar_item_widthAndheight">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_left_setting" android:contentDescription="@string/app_name" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/left_area_line" android:layout_width="@dimen/left_imageview_line_width" android:layout_height="wrap_content" android:contentDescription="@string/app_name" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

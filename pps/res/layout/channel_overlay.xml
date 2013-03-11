@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextView android:gravity="center" android:background="@drawable/dialog" android:visibility="invisible" android:height="@dimen/channel_overlay_widthAndheight" android:width="@dimen/channel_overlay_widthAndheight" style="\@style/textview_channel_overlay"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

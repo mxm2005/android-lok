@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/setting_recommend_listview_item_height">
+        <ImageView android:id="@id/setting_recommend_imageView" android:background="@drawable/empty" android:layout_width="@dimen/setting_recommend_listview_item_imageview_widthAndheight" android:layout_height="@dimen/setting_recommend_listview_item_imageview_widthAndheight" android:layout_marginLeft="@dimen/setting_recommend_listview_imageview_margin_left" android:src="@drawable/sfg" android:contentDescription="@string/app_name" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/setting_recommend_listview_linearlayout_margin_left" android:layout_marginRight="@dimen/setting_recommend_listview_item_margin_right">
+            <TextView android:id="@id/setting_recommend_textView_title" android:layout_width="wrap_content" android:layout_height="wrap_content" style="\@style/textview_recommend_name" />
+            <TextView android:id="@id/setting_recommend_textView_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/setting_recommend_listview_item_textview_margin_top" android:maxLines="2" style="\@style/textview_recommend_info" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

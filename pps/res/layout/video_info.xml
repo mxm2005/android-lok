@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0" layout="\@layout/title_bar_camera" />
+    <RelativeLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <FrameLayout android:id="@id/prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="\@layout/loading" />
+            <include layout="\@layout/empty" />
+            <include layout="\@layout/error" />
+        </FrameLayout>
+        <ScrollView android:id="@id/info_sv" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/info_main_rl" android:background="@color/background_white" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/video_info_1_line" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/camera_video_name" />
+                    <View android:background="#ffa9a9a9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="2.0dip" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+                        <EditText android:textColor="@color/orange" android:id="@id/edittext_login_name" android:background="@drawable/camera_edittext_selector" android:paddingLeft="5.0dip" android:paddingRight="@dimen/edittext_login_padding_right" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_centerVertical="true" style="\@style/textview_vip_edittext" />
+                        <ImageView android:id="@id/imageView_name_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/imageview_clear_margin_right" android:src="@drawable/ic_clear_entry" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/video_info_2_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_below="@id/video_info_1_line">
+                    <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_video_channel" />
+                    <View android:background="#ffa9a9a9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="2.0dip" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+                        <ImageButton android:id="@id/info_add" android:background="@drawable/camera_add_selector" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="11.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_paike_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <Spinner android:id="@id/video_info_spinner" android:background="@drawable/bkg_more_normal" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_toLeftOf="@id/info_add" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/ic_s_paike_more" android:layout_alignRight="@id/video_info_spinner" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/info_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                        <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_video_channel_type" />
+                        <View android:background="#ffa9a9a9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="2.0dip" />
+                        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+                            <Spinner android:id="@id/video_type_spinner" android:background="@drawable/bkg_more_normal" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+                            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/ic_s_paike_more" android:layout_alignRight="@id/video_type_spinner" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/camera_video_edit_channel" />
+                    <View android:background="#ffa9a9a9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="2.0dip" />
+                    <EditText android:textSize="15.0sp" android:textColor="#ff999999" android:textColorHint="#ff999999" android:id="@id/info_edit_intro" android:background="@drawable/camera_edittext_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="5.0dip" android:hint="@string/camera_video_edit_intro_hint" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/video_info_3_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_below="@id/video_info_2_line">
+                    <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_video_mark" />
+                    <View android:background="#ffa9a9a9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="2.0dip" />
+                </LinearLayout>
+                <RelativeLayout android:id="@id/video_info_4_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/video_info_3_line">
+                    <ImageButton android:id="@id/video_info_add" android:background="@drawable/camera_add_selector" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="11.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_paike_add" android:layout_alignParentRight="true" />
+                    <GridView android:gravity="top" android:id="@id/video_info_grid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:layout_marginBottom="30.0dip" android:listSelector="#00000000" android:numColumns="3" android:layout_toLeftOf="@id/video_info_add" />
+                </RelativeLayout>
+                <View android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_below="@id/video_info_4_line" />
+            </RelativeLayout>
+        </ScrollView>
+        <RelativeLayout android:id="@id/camera_bottom" android:background="@drawable/bkg_ipd2l_pdinfor_noalpha" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_alignParentBottom="true">
+            <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+                <ImageView android:id="@id/info_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="13.299988sp" android:textColor="#ff999999" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/info_agree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/camera_video_provision" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

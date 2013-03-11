@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/pps_title" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/top_textview_maxwidth" android:scrollHorizontally="true" android:singleLine="true" android:layout_centerInParent="true" android:marqueeRepeatLimit="1" style="\@style/textview_title" />
+        <Button android:id="@id/title_right_button" android:background="@drawable/homepage_top_btn_selector" android:layout_width="@dimen/title_right_button_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/title_right_button_margin_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="\@style/textview_title" />
+    </RelativeLayout>
+</LinearLayout>

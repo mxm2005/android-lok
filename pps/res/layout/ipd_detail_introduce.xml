@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/bkg_ipd2l_pdinfor" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/ipd_detail_introduce" android:layout_width="fill_parent" android:layout_height="wrap_content" style="\@style/textview_channel_type" />
+    </LinearLayout>
+</LinearLayout>

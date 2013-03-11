@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/camera_main_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <ImageButton android:id="@id/camera_main_floodlight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+        <ImageButton android:id="@id/camera_main_front" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/camerapre_main_fl" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/camera_main_bottom" android:layout_below="@id/camera_main_title" />
+    <RelativeLayout android:id="@id/camera_main_bottom" android:background="@color/black_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ImageButton android:id="@id/camera_main_bottom_left" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageButton android:id="@id/camera_main_capture" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+        <TextView android:id="@id/camera_main_bottom_right" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上传" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

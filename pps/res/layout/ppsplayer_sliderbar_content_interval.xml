@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="right|center" android:id="@id/ppsplayer_sliderbar_content_interval_btn" android:background="@drawable/player_sliderbar_button_selector" android:layout_width="@dimen/ppsplayer_sliderbar_content_interval_button_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/ppsplayer_sliderbar_content_interval_button_margin_right" android:text="@string/ppsplayer_interval" style="\@style/textview_player_buffer_small" />
+</LinearLayout>

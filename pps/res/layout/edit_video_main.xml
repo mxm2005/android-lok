@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="56.0dip" layout="\@layout/title_bar_camera" />
+    <RelativeLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/edit_video_listview" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/edit_video_bottom" style="\@style/list_style" />
+        <RelativeLayout android:id="@id/edit_video_bottom" android:background="@drawable/tab_detail_send_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+            <EditText android:id="@id/edit_video_edit" android:background="@drawable/dailog_detail_send" android:paddingLeft="8.0dip" android:layout_width="@dimen/details_editview_review_width" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:hint="@string/camera_add_mark" android:singleLine="true" android:layout_centerVertical="true" style="\@style/textview_vip_edittext" />
+            <Button android:id="@id/edit_video_button" android:background="@drawable/details_review_button_selector" android:layout_width="@dimen/details_button_review_width" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/camera_add" android:layout_toRightOf="@id/edit_video_edit" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="\@style/textview_details_review_button" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

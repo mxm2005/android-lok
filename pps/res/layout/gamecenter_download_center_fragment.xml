@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/down_radiogroup" android:background="@drawable/tab_bar" android:layout_width="fill_parent" android:layout_height="@dimen/channel_tab_height">
+        <RadioButton android:id="@id/game_status_downloading" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_tab_downloading" android:layout_weight="1.0" style="\@style/tab_item_style" />
+        <TextView android:background="@drawable/tab_line" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <RadioButton android:id="@id/game_status_downloaded" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_tab_downloaded" android:layout_weight="1.0" style="\@style/tab_item_style" />
+    </RadioGroup>
+    <FrameLayout android:id="@id/down_center_container" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:id="@id/game_item_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/gamecenter_top_listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="@drawable/bkg_game_fire" android:layout_width="fill_parent" android:layout_height="120.0dip">
+            <ImageView android:id="@id/game_item_image" android:background="@drawable/bkg_gameicon" android:layout_width="90.0dip" android:layout_height="90.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/sfg" />
+            <RatingBar android:id="@id/game_item_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_marginBottom="10.0dip" android:layout_toRightOf="@id/game_item_image" android:layout_centerVertical="true" style="\@style/ratingbar_5_style" />
+            <TextView android:id="@id/game_item_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_toRightOf="@id/game_item_image" android:layout_above="@id/game_item_rating" style="\@style/textview_channel_type" />
+            <TextView android:gravity="center" android:id="@id/game_item_state" android:background="@drawable/gamecenter_btn_gc_list_download" android:layout_width="72.0dip" android:layout_height="28.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" style="\@style/game_item_btn_style" />
+            <TextView android:ellipsize="end" android:id="@id/game_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/game_item_state" android:layout_toRightOf="@id/game_item_image" android:layout_above="@id/game_item_type" style="\@style/textview_common" />
+            <TextView android:gravity="center" android:id="@id/game_item_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="25.0dip" android:layout_alignParentRight="true" style="\@style/textview_channel_vote" />
+            <TextView android:textSize="10.0sp" android:textColor="#ff868686" android:ellipsize="end" android:id="@id/game_item_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:lines="3" android:singleLine="false" android:layout_toLeftOf="@id/game_item_state" android:layout_toRightOf="@id/game_item_image" android:layout_below="@id/game_item_rating" />
+            <ImageView android:id="@id/game_item_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mark_tuijian" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

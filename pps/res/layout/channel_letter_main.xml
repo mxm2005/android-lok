@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:paddingRight="@dimen/channel_letter_main_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_A" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_B" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_C" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_D" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_E" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_F" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_G" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_H" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_I" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_J" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_K" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_L" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_M" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_N" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_O" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_P" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_Q" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_R" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_S" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_T" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_U" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_V" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_W" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_X" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_Y" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/channel_letter_Z" android:layout_weight="1.0" style="\@style/textview_channel_letter" />
+</LinearLayout>

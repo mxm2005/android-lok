@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="150" android:drawable="@drawable/ppsplayer_buffer01" />
+    <item android:duration="150" android:drawable="@drawable/ppsplayer_buffer02" />
+    <item android:duration="150" android:drawable="@drawable/ppsplayer_buffer03" />
+    <item android:duration="150" android:drawable="@drawable/ppsplayer_buffer04" />
+    <item android:duration="150" android:drawable="@drawable/ppsplayer_buffer05" />
+</animation-list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="center_vertical" android:background="@drawable/tab_search_up" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <EditText android:textSize="15.0sp" android:textColor="@color/black" android:id="@id/ipd_edittext" android:background="@drawable/search_area" android:paddingLeft="12.0dip" android:paddingRight="@dimen/search_edittext_padding_right" android:layout_width="@dimen/search_edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_edittext_margin_left" android:hint="@string/search_hint" android:singleLine="true" android:drawablePadding="@dimen/search_edittext_drawable_padding" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/ipd_imageview_clear" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/search_imageview_margin_right" android:src="@drawable/ic_clear_entry" android:layout_alignRight="@id/ipd_edittext" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageButton android:id="@id/ipd_search_button" android:background="@drawable/search_btn_selector" android:layout_width="@dimen/search_button_width" android:layout_height="@dimen/search_button_height" android:layout_marginLeft="@dimen/search_button_margin_left" android:src="@drawable/ic_search_voice" style="\@style/button_search" />
+</LinearLayout>

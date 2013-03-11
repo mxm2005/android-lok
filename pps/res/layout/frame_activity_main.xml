@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:id="@id/frame_activity" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <fragment android:id="@id/slide_navibar_fg" android:layout_width="wrap_content" android:layout_height="fill_parent" class="tv.pps.mobile.framework.SlideNavibarFragment" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/changesize_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:orientation="horizontal" android:id="@id/content_fg" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/first_in_help" android:background="@drawable/area_help" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/inf_help" android:contentDescription="@string/app_name" />
+    </LinearLayout>
+    <tv.pps.mobile.framework.ViewFlow android:id="@id/flow" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

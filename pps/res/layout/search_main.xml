@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/request_focus_layout" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+            <include layout="\@layout/title_bar" />
+        </LinearLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+            <include android:id="@id/page_bottom_ad" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="\@layout/ad_item_empty" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/page_bottom_ad">
+                <LinearLayout android:gravity="center_vertical" android:background="@drawable/tab_search_up" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <EditText android:textSize="15.0sp" android:textColor="@color/black" android:textColorHint="#ffb8bab8" android:id="@id/search_edittext" android:background="@drawable/search_area" android:paddingLeft="12.0dip" android:paddingRight="@dimen/search_edittext_padding_right" android:layout_width="@dimen/search_edittext_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_edittext_margin_left" android:hint="@string/search_hint" android:singleLine="true" android:drawablePadding="@dimen/search_edittext_drawable_padding" android:layout_centerVertical="true" />
+                        <ImageView android:id="@id/search_imageview_clear" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/search_imageview_margin_right" android:src="@drawable/ic_clear_entry" android:layout_alignRight="@id/search_edittext" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <ImageButton android:id="@id/search_button" android:background="@drawable/search_btn_selector" android:layout_width="@dimen/search_button_width" android:layout_height="@dimen/search_button_height" android:layout_marginLeft="@dimen/search_button_margin_left" android:src="@drawable/ic_search_voice" style="\@style/button_search" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/search_key_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include android:layout_width="fill_parent" android:layout_height="36.0dip" layout="\@layout/search_two_middle" />
+                    <FrameLayout android:id="@id/prompt_framelayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <include layout="\@layout/loading" />
+                        <include layout="\@layout/empty" />
+                        <include layout="\@layout/error" />
+                    </FrameLayout>
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <RelativeLayout android:gravity="center" android:id="@id/search_clean_history" android:background="@drawable/vip_login_button_selector" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" android:layout_centerInParent="true">
+                            <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_clean" android:drawableLeft="@drawable/ic_search_clean" android:layout_centerInParent="true" style="\@style/button_vip" />
+                        </RelativeLayout>
+                        <GridView android:gravity="center" android:id="@id/search_gridview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/setting_item_middle_selector" android:stretchMode="columnWidth" android:numColumns="2" android:layout_above="@id/search_clean_history" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/search_result_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include android:layout_width="fill_parent" android:layout_height="36.0dip" layout="\@layout/search_three_middler" />
+                    <FrameLayout android:id="@id/prompt_framelayout1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <include layout="\@layout/loading1" />
+                        <include layout="\@layout/search_empty_view" />
+                        <include layout="\@layout/error1" />
+                    </FrameLayout>
+                    <ListView android:id="@id/search_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" style="\@style/list_style" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

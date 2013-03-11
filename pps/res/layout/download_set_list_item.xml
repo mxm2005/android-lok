@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="@dimen/download_listview_item_height">
+        <ImageView android:id="@id/set_image_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/download_listview_item_imageview_margin_left" android:layout_marginRight="@dimen/download_listview_item_imageview_margin_right" android:contentDescription="@string/app_name" />
+        <TextView android:ellipsize="end" android:id="@id/set_textview_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="\@style/textview_common" />
+    </LinearLayout>
+</LinearLayout>

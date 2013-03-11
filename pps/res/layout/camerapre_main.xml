@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/camerapre_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <TextView android:id="@id/camerapre_upload" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="视频预览" android:layout_centerInParent="true" />
+        <TextView android:layout_gravity="center" android:id="@id/camerapre_save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <VideoView android:id="@id/camerapre_sv" android:layout_width="fill_parent" android:layout_height="350.0dip" android:layout_below="@id/camerapre_top" />
+    <RelativeLayout android:id="@id/camerapre_detail" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/camerapre_sv">
+        <TextView android:id="@id/camerapre_detail_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+        <TextView android:id="@id/camerapre_detail_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/camerapre_detail">
+        <ImageButton android:id="@id/camerapre_play" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="7.0" />
+        <SeekBar android:id="@id/camerapre_seekBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:gravity="center" android:id="@id/camerapre_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="立即上传" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+            <include layout="\@layout/title_bar" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/setting_play_type_linearlayout_radiobutton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <RadioGroup android:id="@id/moreinfo_setting_highline_or_baseline_rg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@id/setting_checkBox_bp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/setting_play_type_checkbox_margin_left" android:button="@drawable/setting_checkbox_single_selector" android:text="@string/setting_bp" style="\@style/textview_common" />
+                        <RadioButton android:id="@id/setting_checkBox_hp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/setting_play_type_checkbox_margin_left" android:layout_marginTop="36.0dip" android:checked="true" android:button="@drawable/setting_checkbox_single_selector" android:text="@string/setting_hp" style="\@style/textview_common" />
+                    </RadioGroup>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="center" android:id="@id/setting_linearlayout_bp_type" android:paddingLeft="@dimen/setting_play_type_linearlayout_padding_left" android:layout_width="fill_parent" android:layout_height="@dimen/setting_play_type_linearlayout_height">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/setting_play_type_textview_dir_margin_left" android:layout_marginRight="@dimen/setting_play_type_textview_dir_margin_right" android:text="@string/setting_bp_text" style="\@style/textview_download_dir" />
+                    </LinearLayout>
+                    <ImageView android:background="@drawable/list_line_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:gravity="center" android:id="@id/setting_linearlayout_hp_type" android:paddingLeft="@dimen/setting_play_type_linearlayout_padding_left" android:layout_width="fill_parent" android:layout_height="@dimen/setting_play_type_linearlayout_height">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/setting_play_type_textview_dir_margin_left" android:layout_marginRight="@dimen/setting_play_type_textview_dir_margin_right" android:text="@string/setting_hp_text" style="\@style/textview_download_dir" />
+                    </LinearLayout>
+                    <ImageView android:background="@drawable/list_line_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

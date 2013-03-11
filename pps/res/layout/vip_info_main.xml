@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="712.0">
+        <include layout="\@layout/title_bar" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="vertical" android:background="@color/background_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="88.0">
+        <LinearLayout android:orientation="horizontal" android:id="@id/vip_info_top" android:background="@drawable/setting_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/linearlayout_info_height" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginTop="@dimen/linearlayout_margin_topAndbottom" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/imageView_avatar" android:background="@drawable/area_vip_new" android:layout_width="@dimen/imageview_avatar_width" android:layout_height="@dimen/imageview_avatar_height" android:layout_marginLeft="@dimen/imageview_avatar_margin_left" android:src="@drawable/ic_null" android:scaleType="fitXY" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/linearlayout_info_margin_left">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_login_name" style="\@style/textview_common" />
+                    <TextView android:id="@id/textView_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_info_margin_left" style="\@style/textview_vipinfo" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_level" style="\@style/textview_common" />
+                    <TextView android:id="@id/textView_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_info_margin_left" style="\@style/textview_vipinfo" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_status" style="\@style/textview_common" />
+                    <TextView android:id="@id/textView_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/textview_info_margin_left" style="\@style/textview_vipinfo" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@id/ysq_register_relativelayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/linearlayout_margin_leftAndright" android:layout_alignParentBottom="true">
+            <Button android:id="@id/ysq_register_btn" android:background="@drawable/vip_login_button_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/linearlayout_margin_leftAndright" android:layout_marginRight="@dimen/linearlayout_margin_leftAndright" android:layout_centerVertical="true" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/ysq_register_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ss_ysq" android:contentDescription="@drawable/ic_ss_ysq" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ysq_vip_register_button_txt" android:layout_toRightOf="@id/ysq_register_txt" android:layout_centerInParent="true" style="\@style/button_vip" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/ysq_register_relativelayout" android:layout_below="@id/vip_info_top">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/ysq_register_img_rotate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ysq_part1" android:layout_centerInParent="true" android:contentDescription="@drawable/ic_ysq_part1" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ysq_part2" android:layout_centerInParent="true" android:contentDescription="@drawable/ic_ysq_part2" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

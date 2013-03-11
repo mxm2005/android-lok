@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ipd_detail_movie_relativelayoout" android:background="@drawable/ipd_listview_item_selector" android:layout_width="fill_parent" android:layout_height="@dimen/ipd_listview_height">
+        <ImageView android:id="@id/ipd_detail_listview_imageview" android:background="@drawable/bkg_ipd2l_poster" android:layout_width="@dimen/ipd_imageview_details_width" android:layout_height="@dimen/ipd_imageview_details_height" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/ipd_review_play" android:background="@drawable/ic_ipd_detail_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/ipd_detail_listview_imageview" android:layout_centerVertical="true">
+            <TextView android:id="@id/ipd_detail_listview_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="165.0dip" android:maxLines="2" style="\@style/textview_common" />
+            <TextView android:id="@id/ipd_detail_listview_playtimes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/original_details_listview_textview_margin_topAndbottom" android:layout_marginBottom="@dimen/original_details_listview_textview_margin_topAndbottom" android:drawableLeft="@drawable/ic_ss_play" android:drawablePadding="@dimen/original_details_listview_textview_drawable_padding" android:layout_toRightOf="@id/ipd_detail_listview_imageview" android:layout_below="@id/ipd_detail_listview_name" style="\@style/textview_channel_type" />
+            <TextView android:id="@id/ipd_detail_listview_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/listview_textview_name_margin_left" android:layout_marginTop="@dimen/original_details_listview_textview_margin_topAndbottom" android:drawableLeft="@drawable/ic_ss_history" android:drawablePadding="@dimen/original_details_listview_textview_drawable_padding" android:layout_toRightOf="@id/ipd_detail_listview_playtimes" android:layout_below="@id/ipd_detail_listview_name" style="\@style/textview_download_listview_item_movie_state" />
+        </RelativeLayout>
+        <RelativeLayout android:visibility="gone" android:layout_width="44.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <ImageView android:id="@id/ipd_detail_listview_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:src="@drawable/ipd_detail_listview_share_button_selector" android:layout_centerHorizontal="true" />
+            <ImageView android:id="@id/ipd_detail_listview_review" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:src="@drawable/ipd_detail_listview_review_button_selector" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            <ImageView android:background="@drawable/line" android:layout_width="25.0dip" android:layout_height="1.0px" android:layout_centerInParent="true" />
+            <ImageView android:background="@drawable/line" android:layout_width="1.0px" android:layout_height="60.0dip" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ipd_detail_soon_update" android:background="@drawable/bkg_ipd_listdark" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/ipd_detail_relativelayout_soon1" android:background="@drawable/ipd_listview_item_selector" android:layout_width="fill_parent" android:layout_height="48.69998dip">
+            <ImageView android:id="@id/ipd_detail_soon_image1" android:layout_width="58.0dip" android:layout_height="42.599976dip" android:layout_marginLeft="6.0dip" android:layout_centerVertical="true" />
+            <TextView android:id="@id/ipd_detail_soon_name1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ipd_detail_soon_image1" style="\@style/textview_channel_pop_right" />
+            <TextView android:id="@id/ipd_detail_soon_content1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ipd_detail_soon_image1" android:layout_below="@id/ipd_detail_soon_name1" style="\@style/textview_channel_type" />
+        </RelativeLayout>
+        <ImageView android:id="@id/ipd_detail_soon_line" android:background="@drawable/list_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginRight="10.0dip" />
+        <RelativeLayout android:id="@id/ipd_detail_relativelayout_soon2" android:background="@drawable/ipd_listview_item_selector" android:layout_width="fill_parent" android:layout_height="48.69998dip">
+            <ImageView android:id="@id/ipd_detail_soon_image2" android:layout_width="58.0dip" android:layout_height="42.599976dip" android:layout_marginLeft="6.0dip" android:layout_centerVertical="true" />
+            <TextView android:id="@id/ipd_detail_soon_name2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ipd_detail_soon_image2" style="\@style/textview_channel_pop_right" />
+            <TextView android:id="@id/ipd_detail_soon_content2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ipd_detail_soon_image2" android:layout_below="@id/ipd_detail_soon_name2" style="\@style/textview_channel_type" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
