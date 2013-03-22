@@ -1,38 +1,35 @@
 package com.softel.poet;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.softel.poet.bean.ObjMap;
 
-import com.softel.poet.util.ToastUtil;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageSwitcher;
-import android.widget.ImageView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ViewSwitcher.ViewFactory;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
-public class MainActivity extends Activity implements OnItemSelectedListener, ViewFactory
+public class MainActivity extends Activity implements OnItemSelectedListener, OnClickListener, OnTouchListener, OnGestureListener
 {
-	private List<ObjMap> lists = new ArrayList<ObjMap>();
-//	private Integer[] mThumbIds = { R.drawable.b, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, 
-//			R.drawable.c, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, 
-//			R.drawable.d, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, R.drawable.z, 
-//			R.drawable.e, R.drawable.z, R.drawable.z, R.drawable.z,	R.drawable.z, R.drawable.z, 
-//			R.drawable.f, R.drawable.z, R.drawable.z, R.drawable.z,	R.drawable.z, R.drawable.z, 
-//			R.drawable.g, R.drawable.z, R.drawable.z, R.drawable.z,	R.drawable.z, R.drawable.z };
 	private Gallery gallery;
-	private ImageSwitcher is;
-	private ImageView imageView;
+	private ImageView iv;
+	private ImageView[] ivs;
+    private GestureDetector gd;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -40,51 +37,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		imageView = (ImageView) findViewById(R.id.imageView);
-		
-		lists.add(new ObjMap(R.drawable.b, "chapter", R.drawable.b, 1));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.b, 1));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.b, 1));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.b, 1));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.b, 1));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.b, 1));
-		
-		
-		lists.add(new ObjMap(R.drawable.c, "chapter", R.drawable.c, 2));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.c, 2));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.c, 2));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.c, 2));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.c, 2));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.c, 2));
-		
-		
-		lists.add(new ObjMap(R.drawable.d, "chapter", R.drawable.d, 3));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.d, 3));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.d, 3));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.d, 3));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.d, 3));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.d, 3));
-		
-		lists.add(new ObjMap(R.drawable.e, "chapter", R.drawable.e, 4));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.e, 4));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.e, 4));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.e, 4));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.e, 4));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.e, 4));
-		
-		lists.add(new ObjMap(R.drawable.f, "chapter", R.drawable.f, 5));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.f, 5));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.f, 5));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.f, 5));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.f, 5));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.f, 5));
-		
-		lists.add(new ObjMap(R.drawable.g, "chapter", R.drawable.g, 6));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.g, 6));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.g, 6));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.g, 6));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.g, 6));
-		lists.add(new ObjMap(R.drawable.z, "page", R.drawable.g, 6));
 		
 		gallery = (Gallery) findViewById(R.id.gallery);
 
@@ -96,16 +48,67 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 			{
-//				imageView.setVisibility(View.VISIBLE);
-//				gallery.setVisibility(View.GONE);
-//				is.setVisibility(View.GONE);
-//				imageView.setImageResource(mThumbIds[position]);
+				Log.i("", "onItemClick..");
+				Intent intent = new Intent(MainActivity.this, ReadActivity.class);
+				intent.putExtra("number", position);
+				startActivity(intent);
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 			}
 		});
+		addView();
+		addPoint();
 		
-		is = (ImageSwitcher) findViewById(R.id.switcher);
-		is.setFactory(this);
+		viewFlipper.setOnTouchListener(this);
+		viewFlipper.setLongClickable(true);//设置ViewFlipper长按有效  
+        gd = new GestureDetector(this);//手势事件的注册，一定要将滑动事件交给他处理啦，不然很麻烦
 	}
+	
+	private void addView()
+	{
+		viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
+		int count = Photo.lists.size();
+		ivs = new ImageView[count];
+		viewFlipper.removeAllViews();
+		for(int i = 0; i < count; i++)
+		{
+			if("chapter".equals(((ObjMap)Photo.lists.get(i)).getType()))
+			{
+				iv = new ImageView(MainActivity.this);
+				ivs[i] = iv;
+				ivs[i].setImageResource(Photo.lists.get(i).getDrawable());
+				viewFlipper.addView(ivs[i]);
+			}
+		}
+	}
+	
+	private ViewFlipper viewFlipper;
+	private int mViewCount;
+	private ImageView[] mImageViews;
+	private ViewGroup group;
+	private ImageView imageView;
+	private int mCurSel;
+	
+	private void addPoint() {
+        mViewCount = viewFlipper.getChildCount();
+        Log.i("", "数量：  " +  mViewCount);
+        mImageViews = new ImageView[mViewCount];
+        group = (ViewGroup) findViewById(R.id.viewGroup);
+        group.removeAllViews();
+        for (int i = 0; i < mViewCount; i++) {
+            imageView = new ImageView(MainActivity.this);
+            imageView.setLayoutParams(new LayoutParams(20, 20));
+            imageView.setPadding(20, 0, 20, 0);
+            imageView.setTag(i);
+            imageView.setFocusable(false);
+            imageView.setFocusableInTouchMode(false);
+//            imageView.setOnClickListener(this);
+            mImageViews[i] = imageView;
+            mImageViews[i].setBackgroundResource(R.drawable.guide_round);
+            group.addView(mImageViews[i]);
+        }
+        mCurSel = 0;
+        mImageViews[mCurSel].setEnabled(false);// enable=false时为黑。。。
+    }
 
 	public class ImageAdapter extends BaseAdapter
 	{
@@ -118,7 +121,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 
 		public int getCount()
 		{
-			return lists.size();
+			return Photo.lists.size();
 		}
 
 		public Object getItem(int position)
@@ -130,46 +133,69 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 		{
 			return position;
 		}
+		
 
-		public View getView(int position, View convertView, ViewGroup parent)
+		public View getView(final int position, View convertView, ViewGroup parent)
 		{
 			ImageView i = new ImageView(mContext);
 
-			i.setImageResource(lists.get(position).getDrawable());
+			i.setImageResource(Photo.lists.get(position).getDrawable());
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT,
 					LayoutParams.WRAP_CONTENT));
-			
-//			final TextView tv = new TextView(mContext);
-//			tv.setText(position + "-");
-//			tv.setTextSize(50);
-//			tv.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//			tv.setOnClickListener(new OnClickListener()
-//			{
-//				
-//				@Override
-//				public void onClick(View v)
-//				{
-//					tv.setText("我被点击了");
-////					notifyDataSetChanged();
-//				}
-//			});
-////			i.setBackgroundResource(R.drawable.e);
 			return i;
 		}
+	}
+	
+	private void setCurPoint(int pos) {
+        if (pos < 0 || pos > mViewCount - 1 || mCurSel == pos) {
+            return;
+        }
+        if (mCurSel > pos) {
+        	viewFlipper.setInAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.right_in));
+        	viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.right_out));
+        	gallery.setAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.right_in));
+            viewFlipper.showNext();
+        } else if (pos > mCurSel) {
+        	viewFlipper.setInAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.left_in));
+        	viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.left_out));
+        	gallery.setAnimation(AnimationUtils.loadAnimation(
+        			MainActivity.this, R.anim.left_in));
+            viewFlipper.showPrevious();
+        }
+        mImageViews[mCurSel].setEnabled(true);// 点击后把enable设为true，为白
+        mImageViews[pos].setEnabled(false);
+        mCurSel = pos;
+    }
+	
+	private void setPoint(int pos)
+	{
+		mImageViews[mCurSel].setEnabled(true);
+		mImageViews[pos].setEnabled(false);
+		mCurSel = pos;
 	}
 
 	int previousChapter = 0;
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
 	{
-		ObjMap oMap = lists.get(position);
+		ObjMap oMap = Photo.lists.get(position);
 		String currentType = oMap.getType();
 		int currentChapter = oMap.getChapter();
 		if("chapter".equals(currentType))
 		{
 			Log.i("", "chapter item.");
-			is.setImageResource(oMap.getDrawable());
+			viewFlipper.setInAnimation(AnimationUtils.loadAnimation(
+					MainActivity.this, R.anim.left_in));
+			viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(
+					MainActivity.this, R.anim.left_out));
+			viewFlipper.setDisplayedChild(Photo.lists.get(position).getChapter());
+			setPoint(Photo.lists.get(position).getChapter());
 		}
 		else if("page".equals(currentType))
 		{
@@ -177,7 +203,12 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 			if(previousChapter != currentChapter)
 			{
 				Log.i("", "the different page setTile");
-				is.setImageResource(oMap.getTitle());
+				viewFlipper.setInAnimation(AnimationUtils.loadAnimation(
+						MainActivity.this, R.anim.right_in));
+				viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(
+						MainActivity.this, R.anim.right_out));
+				viewFlipper.setDisplayedChild(Photo.lists.get(position).getChapter());
+				setPoint(Photo.lists.get(position).getChapter());
 			}
 			else
 			{
@@ -189,9 +220,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 			return;
 		}
 		previousChapter = currentChapter;
-//		is.setImageResource(mThumbIds[position]);
-//		Toast.makeText(getApplicationContext(), position + "-", Toast.LENGTH_SHORT).show();
-		ToastUtil.showTextToast(getApplicationContext(), String.valueOf(position + 1));
+//		ToastUtil.showTextToast(getApplicationContext(), String.valueOf(position + 1));
 	}
 
 	@Override
@@ -199,71 +228,64 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Vi
 	{
 		
 	}
+	
 
 	@Override
-	public View makeView()
+	public void onClick(View v)
 	{
-		ImageView i = new ImageView(this);
-		i.setScaleType(ImageView.ScaleType.FIT_CENTER);
-		i.setLayoutParams(new ImageSwitcher.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-		return i;
+		int pos = (Integer) (v.getTag());
+        setCurPoint(pos);
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event)
+	{
+		return gd.onTouchEvent(event);//注意这里，就是要把事件交给GestureDetector处理，这样会简单很多
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e)
+	{
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e)
+	{
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+	{
+		return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e)
+	{
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
+	{
+		Log.i("", "onFling.......................");
+		if(e1.getX() - e2.getX() > 100)
+		{
+			setCurPoint(mCurSel + 1);
+		}
+		else if(e2.getX() - e1.getX() > 100)
+		{
+			setCurPoint(mCurSel - 1);
+		}
+		gallery.setSelection(mCurSel * 6);
+		return false;
 	}
 
 }
 
-class ObjMap
-{
-	int drawable;
-	String type;
-	int title;
-	int chapter;
-	
-	ObjMap(int drawable, String type, int title, int chapter)
-	{
-		this.drawable = drawable;
-		this.type = type;
-		this.title = title;
-		this.chapter = chapter;
-	}
-
-	public int getDrawable()
-	{
-		return drawable;
-	}
-
-	public void setDrawable(int drawable)
-	{
-		this.drawable = drawable;
-	}
-
-	public String getType()
-	{
-		return type;
-	}
-
-	public void setType(String type)
-	{
-		this.type = type;
-	}
-
-	public int getTitle()
-	{
-		return title;
-	}
-
-	public void setTitle(int title)
-	{
-		this.title = title;
-	}
-
-	public int getChapter()
-	{
-		return chapter;
-	}
-
-	public void setChapter(int chapter)
-	{
-		this.chapter = chapter;
-	}
-	
-}
