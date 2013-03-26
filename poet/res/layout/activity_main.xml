@@ -1,10 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lin_all"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity" >
+    android:layout_height="match_parent" >
 
 
 
@@ -13,29 +11,28 @@
     <ViewFlipper
         android:id="@+id/viewFlipper"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3">
-        
-        
-        
+        android:layout_height="fill_parent" >
     </ViewFlipper>
-
-    <!-- 小圆点 -->
+    
+      <!-- 小圆点 -->
 
     <LinearLayout
         android:id="@+id/viewGroup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center_horizontal|bottom"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="100dp"
         android:orientation="horizontal" >
     </LinearLayout>
 
+
     <Gallery
         android:id="@+id/gallery"
+        android:clipChildren="true"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:spacing="18dp" />
 
-</LinearLayout>
+</FrameLayout>
