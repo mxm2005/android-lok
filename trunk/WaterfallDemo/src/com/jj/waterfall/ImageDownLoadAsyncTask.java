@@ -1,21 +1,12 @@
 package com.jj.waterfall;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -29,10 +20,11 @@ import android.widget.TextView;
  * @author sy
  * 
  */
-public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
+public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap>
+{
 	private String imagePath;
 	private ImageView imageView;
-	private static final String ALBUM_PATH = "/sdcard/pb";
+//	private static final String ALBUM_PATH = "/sdcard/pb";
 	private Context context;
 	private AssetManager assetManager;
 	private int Image_width;// 显示图片的宽度
@@ -47,8 +39,9 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 	 * @param imagePath
 	 * @param imageView
 	 */
-	public ImageDownLoadAsyncTask(Context context, String imagePath,
-			ImageView imageView, int Image_width) {
+	public ImageDownLoadAsyncTask(Context context, String imagePath, ImageView imageView,
+			int Image_width)
+	{
 		this.imagePath = imagePath;
 		this.imageView = imageView;
 		this.context = context;
@@ -56,22 +49,28 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 		this.Image_width = Image_width;
 	}
 
-	public void setLoadtext(TextView loadtext) {
+	public void setLoadtext(TextView loadtext)
+	{
 		this.loadtext = loadtext;
 	}
 
-	public void setProgressbar(LinearLayout progressbar) {
+	public void setProgressbar(LinearLayout progressbar)
+	{
 		this.progressbar = progressbar;
 	}
 
 	@Override
-	protected Bitmap doInBackground(Void... params) {
+	protected Bitmap doInBackground(Void... params)
+	{
 
-		try {
+		try
+		{
 			InputStream inputStream = assetManager.open(file + imagePath);
 			Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
 			return bitmap;
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 		return null;
@@ -83,10 +82,12 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 	 * @see android.os.AsyncTask#onPostExecute(java.lang.Object)
 	 */
 	@Override
-	protected void onPostExecute(Bitmap drawable) {
+	protected void onPostExecute(Bitmap drawable)
+	{
 		// TODO Auto-generated method stub
 		super.onPostExecute(drawable);
-		if (drawable != null) {
+		if(drawable != null)
+		{
 			LayoutParams layoutParams = imageView.getLayoutParams();
 			int height = drawable.getHeight();// 获取图片的高度.
 			int width = drawable.getWidth();// 获取图片的宽度
@@ -95,7 +96,8 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 			imageView.setLayoutParams(layoutParams);
 			imageView.setImageBitmap(drawable);
 		}
-		if (progressbar.isShown() || loadtext.isShown()) {
+		if(progressbar.isShown() || loadtext.isShown())
+		{
 			progressbar.setVisibility(View.GONE);
 			loadtext.setVisibility(View.GONE);
 		}
@@ -103,9 +105,11 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 	}
 
 	@Override
-	protected void onPreExecute() {
+	protected void onPreExecute()
+	{
 		super.onPreExecute();
-		if (!loadtext.isShown()) {
+		if(!loadtext.isShown())
+		{
 			loadtext.setVisibility(View.VISIBLE);
 		}
 
