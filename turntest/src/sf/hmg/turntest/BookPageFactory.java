@@ -32,7 +32,7 @@ public class BookPageFactory {
 	private int mWidth;
 	private int mHeight;
 
-	private Vector<String> m_lines = new Vector<String>();
+	public static Vector<String> m_lines = new Vector<String>();//每页的所有行的string
 
 	private int m_fontSize = 23;
 	private int m_textColor = Color.BLACK;
@@ -161,7 +161,8 @@ public class BookPageFactory {
 		}
 		return buf;
 	}
-
+	
+	
 	protected Vector<String> pageDown() {
 		String strParagraph = "";
 		Vector<String> lines = new Vector<String>();
@@ -170,9 +171,8 @@ public class BookPageFactory {
 			m_mbBufEnd += paraBuf.length;
 			try {
 				strParagraph = new String(paraBuf, m_strCharsetName);
-				Log.e("下一页", strParagraph);
+//				Log.e("下一页", strParagraph);
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			String strReturn = "";
@@ -188,8 +188,7 @@ public class BookPageFactory {
 				lines.add(strParagraph);
 			}
 			while (strParagraph.length() > 0) {
-				int nSize = mPaint.breakText(strParagraph, true, mVisibleWidth,
-						null);
+				int nSize = mPaint.breakText(strParagraph, true, mVisibleWidth, null);
 				lines.add(strParagraph.substring(0, nSize));
 				strParagraph = strParagraph.substring(nSize);
 				if (lines.size() >= mLineCount) {
@@ -198,10 +197,8 @@ public class BookPageFactory {
 			}
 			if (strParagraph.length() != 0) {
 				try {
-					m_mbBufEnd -= (strParagraph + strReturn)
-							.getBytes(m_strCharsetName).length;
+					m_mbBufEnd -= (strParagraph + strReturn).getBytes(m_strCharsetName).length;
 				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -220,9 +217,8 @@ public class BookPageFactory {
 			m_mbBufBegin -= paraBuf.length;
 			try {
 				strParagraph = new String(paraBuf, m_strCharsetName);
-				Log.e("上一页", strParagraph);
+//				Log.e("上一页", strParagraph);
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			strParagraph = strParagraph.replaceAll("\r\n", "");
@@ -244,7 +240,6 @@ public class BookPageFactory {
 				m_mbBufBegin += lines.get(0).getBytes(m_strCharsetName).length;
 				lines.remove(0);
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -252,16 +247,18 @@ public class BookPageFactory {
 		return;
 	}
 	
-	public void getPage(int page) throws IOException
+	public Vector<String> getPage()
 	{
-		if(m_mbBufBegin <= 0)
-		{
+		pageDown();
+		return m_lines;
+	}
+	
+	protected void prePage() throws IOException {
+		if (m_mbBufBegin <= 0) {
 			m_mbBufBegin = 0;
-			m_isfirstPage=true;
+			m_isfirstPage = true;
 			return;
-		}
-		else
-		{
+		} else {
 			m_isfirstPage = false;
 		}
 		m_lines.clear();
@@ -269,45 +266,39 @@ public class BookPageFactory {
 		m_lines = pageDown();
 	}
 
-	protected void prePage() throws IOException {
-		if (m_mbBufBegin <= 0) {
-			m_mbBufBegin = 0;
-			m_isfirstPage=true;
-			return;
-		}else m_isfirstPage=false;
-		m_lines.clear();
-		pageUp();
-		m_lines = pageDown();
-	}
-
 	public void nextPage() throws IOException {
 		if (m_mbBufEnd >= m_mbBufLen) {
-			m_islastPage=true;
+			m_islastPage = true;
 			return;
-		}else m_islastPage=false;
+		} else
+			m_islastPage = false;
 		m_lines.clear();
 		m_mbBufBegin = m_mbBufEnd;
 		m_lines = pageDown();
 	}
-
+	
 	public void onDraw(Canvas c) {
-		if (m_lines.size() == 0)
+		if (m_lines.size() == 0) {
+//			Log.d("", "m_lines size is zero");
 			m_lines = pageDown();
+		}
 		if (m_lines.size() > 0) {
+//			Log.d("", "m_lines size is > zero");
 			if (m_book_bg == null)
 				c.drawColor(m_backColor);
 			else
 				c.drawBitmap(m_book_bg, 0, 0, null);
 			int y = marginHeight;
 			for (String strLine : m_lines) {
-				y += m_fontSize;
+				y += (m_fontSize);
 				c.drawText(strLine, marginWidth, y, mPaint);
+//				Log.i("page..", strLine);
 			}
 		}
 		float fPercent = (float) (m_mbBufBegin * 1.0 / m_mbBufLen);
 		DecimalFormat df = new DecimalFormat("#0.0");
 		String strPercent = df.format(fPercent * 100) + "%";
-		int nPercentWidth = (int) mPaint.measureText("999.9%") + 1;
+		int nPercentWidth = (int) mPaint.measureText("999.9%") + 1;//999.9%字符串的宽度
 		c.drawText(strPercent, mWidth - nPercentWidth, mHeight - 5, mPaint);
 	}
 
