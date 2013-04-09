@@ -20,13 +20,13 @@ public class PageWidget extends View {
 
 	private static final String TAG = "hmg";
 	private int mWidth = 540;
-	private int mHeight = 960;
+	private int mHeight = 320;
 	private int mCornerX = 0; // 拖拽点对应的页脚
 	private int mCornerY = 0;
 	private Path mPath0;
 	private Path mPath1;
 	Bitmap mCurPageBitmap = null; // 当前页
-	Bitmap mNextPageBitmap = null;
+//	Bitmap mNextPageBitmap = null;
 
 	PointF mTouch = new PointF(); // 拖拽点
 	PointF mBezierStart1 = new PointF(); // 贝塞尔曲线起始点
@@ -64,6 +64,28 @@ public class PageWidget extends View {
 	Paint mPaint;
 
 	Scroller mScroller;
+	
+	public PageWidget(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+		mPath0 = new Path();
+		mPath1 = new Path();
+		createDrawable();
+
+		mPaint = new Paint();
+		mPaint.setStyle(Paint.Style.FILL);
+
+		ColorMatrix cm = new ColorMatrix();
+		float array[] = { 0.55f, 0, 0, 0, 80.0f, 0, 0.55f, 0, 0, 80.0f, 0, 0,
+				0.55f, 0, 80.0f, 0, 0, 0, 0.2f, 0 };
+		cm.set(array);
+		mColorMatrixFilter = new ColorMatrixColorFilter(cm);
+		mMatrix = new Matrix();
+		mScroller = new Scroller(getContext());
+
+		mTouch.x = 0.01f; // 不让x,y为0,否则在点计算时会有问题
+		mTouch.y = 0.01f;
+	}
 
 	public PageWidget(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -284,9 +306,9 @@ public class PageWidget extends View {
 		canvas.restore();
 	}
 
-	public void setBitmaps(Bitmap bm1, Bitmap bm2) {
+	public void setBitmaps(Bitmap bm1/*, Bitmap bm2*/) {
 		mCurPageBitmap = bm1;
-		mNextPageBitmap = bm2;
+//		mNextPageBitmap = bm2;
 	}
 
 	public void setScreen(int w, int h) {
@@ -299,7 +321,7 @@ public class PageWidget extends View {
 		canvas.drawColor(0xFFAAAAAA);
 		calcPoints();
 		drawCurrentPageArea(canvas, mCurPageBitmap, mPath0);
-		drawNextPageAreaAndShadow(canvas, mNextPageBitmap);
+//		drawNextPageAreaAndShadow(canvas, mNextPageBitmap);
 		drawCurrentPageShadow(canvas);
 		drawCurrentBackArea(canvas, mCurPageBitmap);
 	}
