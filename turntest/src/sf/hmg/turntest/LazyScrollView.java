@@ -120,19 +120,21 @@ public class LazyScrollView extends ScrollView
 
 	}
 	
+	float yD = 0;
+	float yU = 0;
 	OnTouchListener onTouchListener = new OnTouchListener()
 	{
-
 		@Override
 		public boolean onTouch(View v, MotionEvent event)
 		{
-			// TODO Auto-generated method stub
 			switch (event.getAction() & MotionEvent.ACTION_MASK)
 			{
 			case MotionEvent.ACTION_DOWN:
+				yD = event.getY();
 				break;
 			case MotionEvent.ACTION_UP:
-				if(view != null && onScrollListener != null)
+				yU = event.getY();
+				if(view != null && onScrollListener != null && yD != yU)
 				{
 					handler.sendMessageDelayed(handler.obtainMessage(), 200);
 				}
