@@ -90,9 +90,17 @@ public class LazyScrollView extends ScrollView
 						onScrollListener.onScrollUp();
 					}
 				}
+				else if(scrollY < getScrollY())
+				{
+					Log.i(TAG, "�鯱孫�。。。。。。。。。。。。。。。。。。。。");
+					if(onScrollListener != null)
+					{
+						onScrollListener.onScrollDown();
+					}
+				}
 				if(view.getMeasuredHeight() <= getScrollY() + getHeight())//久何
 				{
-					Log.i(TAG, "scrolly + height > ...");
+					Log.i(TAG, "久何。。。。。。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onBottom();
@@ -100,7 +108,7 @@ public class LazyScrollView extends ScrollView
 				}
 				else if(getScrollY() == 0)//競何
 				{
-					Log.i(TAG, "scrolly is zero");
+					Log.i(TAG, "競何。。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onTop();
@@ -109,7 +117,7 @@ public class LazyScrollView extends ScrollView
 				else//獄強 
 				{
 					scrollY = getScrollY();
-					Log.i(TAG, "else. scrollY: " + scrollY);
+					Log.i(TAG, "獄強嶄。。。。。。。。。。" + scrollY);
 					if(onScrollListener != null)
 					{
 						onScrollListener.onScroll();
@@ -184,6 +192,8 @@ public class LazyScrollView extends ScrollView
 	public interface OnScrollListener
 	{
 		void onBottom();
+		 
+		void onScrollDown();
 
 		void onTop();
 
