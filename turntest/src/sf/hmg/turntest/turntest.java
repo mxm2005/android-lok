@@ -27,8 +27,7 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 	BookPageFactory pagefactory;
 	private LinearLayout lin_all;
 	private LazyScrollView lazyScrollView;// ×Ô¶¨Òåscrollview
-	private static int page = 0;
-//	LCache lc;
+	private int page = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
-		
-//		lc = new LCache();
 		
 		lazyScrollView = (LazyScrollView) findViewById(R.id.lazyScrollView);
 		lazyScrollView.getView();
@@ -68,10 +65,9 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 //			e.printStackTrace();
 //		}
 //		lc.put("", mPageBitmap);
-		lin_all.addView(mPageWidget, page++);
+		lin_all.addView(mPageWidget, 0);
 		
-//		while (!pagefactory.islastPage()) {
-		for(int i = 0; i < 3; i++) {
+		for(int i = 1; i < 4; i++) {
 			mPageWidget = new PageWidget(getApplicationContext());
 			mPageWidget.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, 320));
 			mPageBitmap = Bitmap.createBitmap(540, 320, Bitmap.Config.ARGB_4444);
@@ -90,8 +86,7 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-//			lc.put("", mPageBitmap);
-			lin_all.addView(mPageWidget, page++);
+			lin_all.addView(mPageWidget, i);
 
 		}
 		
@@ -143,10 +138,6 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 	@Override
 	public void onBottom() {
 		Log.i("", "onBottom()...");
-		if (mPageBitmap != null && !mPageBitmap.isRecycled()) {
-//			mPageBitmap.recycle();
-//			mPageBitmap = null;
-		}
 		
 		for(int i = 0; i < 6; i++) {
 			mPageWidget = new PageWidget(getApplicationContext());
@@ -168,14 +159,10 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 //					e.printStackTrace();
 //				}
 //				lc.put("", mPageBitmap);
-				lin_all.addView(mPageWidget, page++);
+				Log.d("", "page : " + page);
+				int count = lin_all.getChildCount();
+				lin_all.addView(mPageWidget, count++);
 			}
-			int scrollY = lazyScrollView.getScrollY();
-			int pageNumber = scrollY / 320 + 2;
-			System.out.println("pageNumber: " + pageNumber + "\n" + "scrollY: " + scrollY + "\n");
-//			for(int j = 0; j < 3; j++) {
-//				lin_all.removeViewAt(pageNumber--);
-//			}
 		}
 	}
 
@@ -191,24 +178,50 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 
 	@Override
 	public void onScrollUp() {
-		int scrollY = lazyScrollView.getScrollY();
-		int page = scrollY / 320;
-		for(int i = 0; i < 3; i++) {
-			mPageWidget = new PageWidget(getApplicationContext());
-			mPageWidget.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, 320));
-			mPageBitmap = Bitmap.createBitmap(540, 320, Bitmap.Config.ARGB_4444);
-			try {
-				pagefactory.prePage();
-			} catch (IOException e2) {
-				e2.printStackTrace();
-			}
-			mCurPageCanvas = new Canvas(mPageBitmap);
-			pagefactory.onDraw(mCurPageCanvas);
-			mPageWidget.setBitmaps(mPageBitmap);
-			if(!pagefactory.isfirstPage()) {
-				lin_all.addView(mPageWidget, page--);
-			}
-		}
+//		int scrollY = lazyScrollView.getScrollY();
+//		int pageIndex = scrollY / 320;
+//		if(pageIndex >= 4) {
+//			int j = pageIndex - 4;
+//			int k = j - 3;
+//			for(; k < j; j--) {
+//				mPageWidget = new PageWidget(getApplicationContext());
+//				mPageWidget.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, 320));
+//				mPageBitmap = Bitmap.createBitmap(540, 320, Bitmap.Config.ARGB_4444);
+//				try {
+//					pagefactory.prePage();
+//				} catch (IOException e2) {
+//					e2.printStackTrace();
+//				}
+//				mCurPageCanvas = new Canvas(mPageBitmap);
+//				pagefactory.onDraw(mCurPageCanvas);
+//				mPageWidget.setBitmaps(mPageBitmap);
+//				if(!pagefactory.isfirstPage()) {
+//					Log.i("", "addView index is " + j);
+//					try {
+//						lin_all.addView(mPageWidget, 0);
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//		}
+	}
+	
+	@Override
+	public void onScrollDown() {
+//		int scrollY = lazyScrollView.getScrollY();
+//		int pageIndex = scrollY / 320;
+//		if(pageIndex >= 4) {
+//			int j = pageIndex - 4;
+//			int k = j - 3;
+//			for(; k < j; j--) {
+//				Log.e("", "removeView, index is " + j);
+//				if(j >= 0) {
+//					lin_all.removeViewAt(j);
+//				}
+////				lin_all.removeViews(k, 3);
+//			}
+//		}
 	}
 	
 	public void saveMyBitmap(Bitmap mBitmap, String bitName) throws IOException {
@@ -244,4 +257,5 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 		InputStream is = new FileInputStream("/mnt/sdcard/softel/" + file + ".png");
 		return BitmapFactory.decodeStream(is, null, opt);
 	}
+
 }

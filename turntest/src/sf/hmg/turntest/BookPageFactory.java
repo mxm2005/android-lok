@@ -32,7 +32,7 @@ public class BookPageFactory {
 	private int mWidth;
 	private int mHeight;
 
-	public static Vector<String> m_lines = new Vector<String>();//每页的所有行的string
+	public Vector<String> m_lines = new Vector<String>();//每页的所有行的string
 
 	private int m_fontSize = 23;
 	private int m_textColor = Color.BLACK;
@@ -76,7 +76,7 @@ public class BookPageFactory {
 		int i;
 		byte b0, b1;
 		if (m_strCharsetName.equals("UTF-16LE")) {
-			Log.w("", "utf-16le....");
+//			Log.w("", "utf-16le....");
 			i = nEnd - 2;
 			while (i > 0) {
 				b0 = m_mbBuf.get(i);
@@ -89,7 +89,7 @@ public class BookPageFactory {
 			}
 
 		} else if (m_strCharsetName.equals("UTF-16BE")) {
-			Log.w("", "utf-16be....");
+//			Log.w("", "utf-16be....");
 			i = nEnd - 2;
 			while (i > 0) {
 				b0 = m_mbBuf.get(i);
@@ -101,7 +101,7 @@ public class BookPageFactory {
 				i--;
 			}
 		} else {
-			Log.w("", "other....");
+//			Log.w("", "other....");
 			i = nEnd - 1;
 			while (i > 0) {
 				b0 = m_mbBuf.get(i);
