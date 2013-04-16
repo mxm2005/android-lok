@@ -1,7 +1,7 @@
 /**
  *  Author :  hmg25
  *  Description :
- */
+ *//*
 package sf.hmg.turntest;
 
 import java.io.IOException;
@@ -14,12 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-/**
+*//**
  * hmg25's android Type
  *
  *@author yjh
  *
- */
+ *//*
 public class MainActivity extends Activity {
 	private PageWidget mPageWidget;
 	Bitmap mCurPageBitmap, mNextPageBitmap;
@@ -56,3 +56,4 @@ public class MainActivity extends Activity {
 		lists.addView(mPageWidget);
 	}
 }
+*/
