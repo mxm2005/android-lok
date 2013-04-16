@@ -1,4 +1,4 @@
-package sf.hmg.turntest;
+/*package sf.hmg.turntest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,3 +69,4 @@ public class PageAdapter extends BaseAdapter {
 	}
 
 }
+*/

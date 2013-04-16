@@ -11,6 +11,8 @@ import java.io.UnsupportedEncodingException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import android.graphics.Bitmap;
@@ -32,8 +34,9 @@ public class BookPageFactory {
 	private int mWidth;
 	private int mHeight;
 
-	public Vector<String> m_lines = new Vector<String>();//每页的所有行的string
-
+	private Vector<String> m_lines = new Vector<String>();//每页的所有行的string
+//	private List<Vector<String>> all_lines = new ArrayList<Vector<String>>();
+	
 	private int m_fontSize = 23;
 	private int m_textColor = Color.BLACK;
 	private int m_backColor = 0xffff9e85; // 背景颜色
@@ -48,6 +51,14 @@ public class BookPageFactory {
 	// private int m_nLineSpaceing = 5;
 
 	private Paint mPaint;
+	
+//	public Vector<String> getM_lines() {
+//		return m_lines;
+//	}
+//
+//	public void setM_lines(Vector<String> m_lines) {
+//		this.m_lines = m_lines;
+//	}
 
 	public BookPageFactory(int w, int h) {
 		// TODO Auto-generated constructor stub	
@@ -70,7 +81,7 @@ public class BookPageFactory {
 				FileChannel.MapMode.READ_ONLY, 0, lLen);
 	}
 	
-
+	// 读取上一段落
 	protected byte[] readParagraphBack(int nFromPos) {
 		int nEnd = nFromPos;
 		int i;
@@ -124,7 +135,7 @@ public class BookPageFactory {
 	}
 
 
-	// 读取上一段落
+	// 读取下一段落
 	protected byte[] readParagraphForward(int nFromPos) {
 		int nStart = nFromPos;
 		int i = nStart;
@@ -203,6 +214,13 @@ public class BookPageFactory {
 				}
 			}
 		}
+		if (m_mbBufEnd >= m_mbBufLen) {
+			m_islastPage = true;
+		} else {
+			m_islastPage = false;
+		}
+		m_lines.clear();
+		m_mbBufBegin = m_mbBufEnd;
 		return lines;
 	}
 
@@ -247,11 +265,6 @@ public class BookPageFactory {
 		return;
 	}
 	
-	public Vector<String> getPage()
-	{
-		pageDown();
-		return m_lines;
-	}
 	
 	protected void prePage() throws IOException {
 		if (m_mbBufBegin <= 0) {
@@ -277,13 +290,11 @@ public class BookPageFactory {
 		m_lines = pageDown();
 	}
 	
-	public void onDraw(Canvas c) {
+	public void onDraw(Canvas c, int page) {
 		if (m_lines.size() == 0) {
-//			Log.d("", "m_lines size is zero");
 			m_lines = pageDown();
 		}
 		if (m_lines.size() > 0) {
-//			Log.d("", "m_lines size is > zero");
 			if (m_book_bg == null)
 				c.drawColor(m_backColor);
 			else
@@ -292,7 +303,6 @@ public class BookPageFactory {
 			for (String strLine : m_lines) {
 				y += (m_fontSize);
 				c.drawText(strLine, marginWidth, y, mPaint);
-//				Log.i("page..", strLine);
 			}
 		}
 		float fPercent = (float) (m_mbBufBegin * 1.0 / m_mbBufLen);
