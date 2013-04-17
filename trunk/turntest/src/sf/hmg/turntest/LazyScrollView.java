@@ -8,27 +8,36 @@ import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.HorizontalScrollView;
-import android.widget.ScrollView;
 
 /***
  * 自定义ScrollView
  * 
- * @author zhangjia
- * 
+ * 横向滚动自定义scrollview
  */
-public class LazyScrollView extends ScrollView 
+public class LazyScrollView extends HorizontalScrollView  implements android.widget.AdapterView.OnItemClickListener
 {
 	private static final String TAG = "LazyScrollView";
 	private Handler handler;
 	private View view;
 	private float beforeLenght;//两手指距离
+	float xD = 0;
+	float xU = 0;
+	int scrollX = 0;
 
 	private OnScrollListener onScrollListener;
+	
+	private OnItemClickListener onItemClickListener;
 
 	public void setOnScrollListener(OnScrollListener onScrollListener)
 	{
 		this.onScrollListener = onScrollListener;
+	}
+	
+	public void setOnItemClickListener(OnItemClickListener onItemClickListener)
+	{
+		this.onItemClickListener = onItemClickListener;
 	}
 
 	public LazyScrollView(Context context)
@@ -46,28 +55,6 @@ public class LazyScrollView extends ScrollView
 		super(context, attrs, defStyle);
 	}
 
-	// 这个获得总的高度
-	@Override
-	public int computeVerticalScrollRange()
-	{
-		return super.computeHorizontalScrollRange();
-	}
-
-	@Override
-	public int computeVerticalScrollOffset()
-	{
-		return super.computeVerticalScrollOffset();
-	}
-	
-	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
-	{
-		// TODO Auto-generated method stub
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-	}
-	int scrollY = 0;
-//	private boolean isTop = false;
-
 	/***
 	 * 初始化
 	 */
@@ -82,42 +69,42 @@ public class LazyScrollView extends ScrollView
 			{
 				// process incoming messages here
 				super.handleMessage(msg);
-				if(scrollY > getScrollY() && getScrollY() != 0)
+				if(scrollX > getScrollX() && getScrollX() != 0)
 				{
-					Log.i(TAG, "向上滚动。。。");
+//					Log.i(TAG, "向上滚动。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onScrollUp();
 					}
 				}
-				else if(scrollY < getScrollY())
+				else if(scrollX < getScrollX())
 				{
-					Log.i(TAG, "向下滚。。。。。。。。。。。。。。。。。。。。");
+//					Log.i(TAG, "向下滚。。。。。。。。。。。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onScrollDown();
 					}
 				}
-				if(view.getMeasuredHeight() <= getScrollY() + getHeight())//底部
+				if(view.getMeasuredWidth() <= getScrollX() + getWidth())
 				{
-					Log.i(TAG, "底部。。。。。。。。。。。。。。。");
+//					Log.i(TAG, "底部。。。。。。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onBottom();
 					}
 				}
-				else if(getScrollY() == 0)//顶部
+				else if(getScrollX() == 0)
 				{
-					Log.i(TAG, "顶部。。。。。。。。。。。");
+//					Log.i(TAG, "顶部。。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onTop();
 					}
 				}
-				else//滚动 
+				else
 				{
-					scrollY = getScrollY();
-					Log.i(TAG, "滚动中。。。。。。。。。。" + scrollY);
+					scrollX = getScrollX();
+//					Log.i(TAG, "滚动中。。。。。。。。。。");
 					if(onScrollListener != null)
 					{
 						onScrollListener.onScroll();
@@ -126,10 +113,17 @@ public class LazyScrollView extends ScrollView
 			}
 		};
 
+		
+		this.setOnItemClickListener(new OnItemClickListener() {
+			
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				view = getChildAt(position);
+			}
+		});
 	}
 	
-	float yD = 0;
-	float yU = 0;
 	OnTouchListener onTouchListener = new OnTouchListener()
 	{
 		@Override
@@ -138,11 +132,11 @@ public class LazyScrollView extends ScrollView
 			switch (event.getAction() & MotionEvent.ACTION_MASK)
 			{
 			case MotionEvent.ACTION_DOWN:
-				yD = event.getY();
+				xD = event.getX();
 				break;
 			case MotionEvent.ACTION_UP:
-				yU = event.getY();
-				if(view != null && onScrollListener != null && yD != yU)
+				xU = event.getX();
+				if(view != null && onScrollListener != null && xD != xU)
 				{
 					handler.sendMessageDelayed(handler.obtainMessage(), 200);
 				}
@@ -160,7 +154,7 @@ public class LazyScrollView extends ScrollView
 		if(event.getPointerCount() == 2)
 		{
 			beforeLenght = getDistance(event);// 获取两点的距离
-			Log.d(TAG, "two finger distance is " + beforeLenght);
+//			Log.d(TAG, "two finger distance is " + beforeLenght);
 		}
 	}
 	
@@ -200,5 +194,16 @@ public class LazyScrollView extends ScrollView
 		void onScroll();
 		
 		void onScrollUp();
+	}
+	
+	public interface OnItemClickListener
+	{
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		onItemClickListener.onItemClick(parent, view, position, id);
 	}
 }

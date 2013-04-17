@@ -37,11 +37,11 @@ public class BookPageFactory {
 	private Vector<String> m_lines = new Vector<String>();//每页的所有行的string
 //	private List<Vector<String>> all_lines = new ArrayList<Vector<String>>();
 	
-	private int m_fontSize = 23;
+	private int m_fontSize = 9;
 	private int m_textColor = Color.BLACK;
 	private int m_backColor = 0xffff9e85; // 背景颜色
 	private int marginWidth = 8; // 左右与边缘的距离
-	private int marginHeight = 30; // 上下与边缘的距离
+	private int marginHeight = 10; // 上下与边缘的距离
 
 	private int mLineCount; // 每页可以显示的行数
 	private float mVisibleHeight; // 绘制内容的高
@@ -322,4 +322,13 @@ public class BookPageFactory {
 	public boolean islastPage() {
 		return m_islastPage;
 	}
+
+	public int getM_mbBufLen() {
+		return m_mbBufLen;
+	}
+
+	public int getM_mbBufBegin() {
+		return m_mbBufBegin;
+	}
+	
 }
