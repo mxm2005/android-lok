@@ -10,13 +10,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 
 /***
  * ×Ô¶¨ÒåScrollView
  * 
  * ºáÏò¹ö¶¯×Ô¶¨Òåscrollview
  */
-public class LazyScrollView extends HorizontalScrollView  implements android.widget.AdapterView.OnItemClickListener
+public class LazyScrollView extends HorizontalScrollView
 {
 	private static final String TAG = "LazyScrollView";
 	private Handler handler;
@@ -25,6 +26,7 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 	float xD = 0;
 	float xU = 0;
 	int scrollX = 0;
+	Context c;
 
 	private OnScrollListener onScrollListener;
 	
@@ -48,6 +50,7 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 	public LazyScrollView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
+		c = context;
 	}
 
 	public LazyScrollView(Context context, AttributeSet attrs, int defStyle)
@@ -69,60 +72,67 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 			{
 				// process incoming messages here
 				super.handleMessage(msg);
-				if(scrollX > getScrollX() && getScrollX() != 0)
-				{
-//					Log.i(TAG, "ÏòÉÏ¹ö¶¯¡£¡£¡£");
-					if(onScrollListener != null)
+				switch (msg.what) {
+				case 1:
+					if(scrollX > getScrollX() && getScrollX() != 0)
 					{
-						onScrollListener.onScrollUp();
+//						Log.i(TAG, "ÏòÉÏ¹ö¶¯¡£¡£¡£");
+						if(onScrollListener != null)
+						{
+							onScrollListener.onScrollUp();
+						}
 					}
-				}
-				else if(scrollX < getScrollX())
-				{
-//					Log.i(TAG, "ÏòÏÂ¹ö¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
-					if(onScrollListener != null)
+					else if(scrollX < getScrollX())
 					{
-						onScrollListener.onScrollDown();
+//						Log.i(TAG, "ÏòÏÂ¹ö¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+						if(onScrollListener != null)
+						{
+							onScrollListener.onScrollDown();
+						}
 					}
-				}
-				if(view.getMeasuredWidth() <= getScrollX() + getWidth())
-				{
-//					Log.i(TAG, "µ×²¿¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
-					if(onScrollListener != null)
+					if(view.getMeasuredWidth() <= getScrollX() + getWidth())
 					{
-						onScrollListener.onBottom();
+//						Log.i(TAG, "µ×²¿¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+						if(onScrollListener != null)
+						{
+							onScrollListener.onBottom();
+						}
 					}
-				}
-				else if(getScrollX() == 0)
-				{
-//					Log.i(TAG, "¶¥²¿¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
-					if(onScrollListener != null)
+					else if(getScrollX() == 0)
 					{
-						onScrollListener.onTop();
+//						Log.i(TAG, "¶¥²¿¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+						if(onScrollListener != null)
+						{
+							onScrollListener.onTop();
+						}
 					}
-				}
-				else
-				{
-					scrollX = getScrollX();
-//					Log.i(TAG, "¹ö¶¯ÖÐ¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
-					if(onScrollListener != null)
+					else
 					{
-						onScrollListener.onScroll();
+						scrollX = getScrollX();
+//						Log.i(TAG, "¹ö¶¯ÖÐ¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+						if(onScrollListener != null)
+						{
+							onScrollListener.onScroll();
+						}
 					}
+					break;
+
+				case 2:
+					int position = ((int) (computeHorizontalScrollOffset() + xD)) / 240;
+					View childView = getChildAt(position);
+//					TextView childView = new TextView(c);
+//					childView.setText("ddd");
+//					if(onItemClickListener !=null && childView != null)
+						onItemClickListener.onItemClick(childView, position);
+					break;
+				default:
+					break;
 				}
 			}
 		};
 
-		
-		this.setOnItemClickListener(new OnItemClickListener() {
-			
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position,
-					long id) {
-				view = getChildAt(position);
-			}
-		});
 	}
+	
 	
 	OnTouchListener onTouchListener = new OnTouchListener()
 	{
@@ -138,7 +148,12 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 				xU = event.getX();
 				if(view != null && onScrollListener != null && xD != xU)
 				{
-					handler.sendMessageDelayed(handler.obtainMessage(), 200);
+//					handler.sendMessageDelayed(handler.obtainMessage(), 200);
+					handler.sendMessageDelayed(Message.obtain(handler, 1), 200);
+				}
+				else if(view != null && onScrollListener != null  && xD == xU)
+				{
+					handler.sendMessageDelayed(Message.obtain(handler, 2), 200);
 				}
 				break;
 			default:
@@ -163,6 +178,11 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 		float x = event.getX(0) - event.getX(1);
 		float y = event.getY(0) - event.getY(1);
 		return FloatMath.sqrt(x * x + y * y);
+	}
+	
+	@Override
+	public View getChildAt(int index) {
+		return super.getChildAt(index);
 	}
 
 	/**
@@ -198,12 +218,7 @@ public class LazyScrollView extends HorizontalScrollView  implements android.wid
 	
 	public interface OnItemClickListener
 	{
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id);
+		public void onItemClick(View view, int position);
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		onItemClickListener.onItemClick(parent, view, position, id);
-	}
 }

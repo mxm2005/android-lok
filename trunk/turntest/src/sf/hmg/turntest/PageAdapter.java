@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout.LayoutParams;
 
 public class PageAdapter extends BaseAdapter {
 	private PageWidget mPageWidget;
@@ -17,16 +19,19 @@ public class PageAdapter extends BaseAdapter {
 	Bitmap mCurPageBitmap;
 	Canvas mCanvas;
 	Context context;
-	List<Bitmap> bits = new ArrayList<Bitmap>();
+	List<Vector<String>> bits = new ArrayList<Vector<String>>();
 	
-	public PageAdapter(Context mContext, List<Bitmap> bits) {
-		this.bits = bits;
+	public PageAdapter(Context mContext) {
 		this.context = mContext;
-		pagefactory = new BookPageFactory(540, 320);
+		pagefactory = new BookPageFactory(180, 240);
 		try {
-			pagefactory.openbook("/sdcard/test.txt");
+			pagefactory.openbook("/sdcard/test (2).txt");
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		for(int i = 0; i < 140; i++)
+		{
+			bits.add(pagefactory.pageDown());
 		}
 	}
 	
@@ -47,24 +52,12 @@ public class PageAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = View.inflate(context, R.layout.main, null);
-		mPageWidget = (PageWidget) view.findViewById(R.id.pageWidget);
-		
-//		mCurPageBitmap =  Bitmap.createBitmap(540, 320, Bitmap.Config.ARGB_4444);
-//		mNextPageBitmap =  Bitmap.createBitmap(540, 320, Bitmap.Config.ARGB_4444);
+//		View view = View.inflate(context, R.layout.main, null);
+//		mPageWidget = (PageWidget) view.findViewById(R.id.pageWidget);
 
-		if(position != 0) {
-			try {
-				pagefactory.nextPage();
-			} catch (IOException e2) {
-				e2.printStackTrace();
-			}
-		}
-		mCanvas = new Canvas(bits.get(position));
-		if(position == 0) {
-			pagefactory.onDraw(mCanvas);
-		}
-		mPageWidget.setBitmaps(bits.get(position));
+		PageWidget mPageWidget = new PageWidget(context);
+		mPageWidget.setLayoutParams(new LayoutParams(240, 180));
+		mPageWidget.setM_lines(bits.get(position));
 		return mPageWidget;
 	}
 
