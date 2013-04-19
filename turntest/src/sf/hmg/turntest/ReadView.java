@@ -16,13 +16,13 @@ import android.view.View;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
-public class PageWidget extends ImageView {
+public class ReadView extends ImageView {
 
 	private Vector<String> m_lines = new Vector<String>();
 	private Paint mTextPaint;
 	private int m_mbBufBegin;
 	private static int m_mbBufLen;
-	private int textSize = 9;
+	private int textSize = 28;
 	
 	private int screen_W, screen_H;// 可见屏幕的宽高度
 
@@ -76,7 +76,7 @@ public class PageWidget extends ImageView {
 		this.m_lines = m_lines;
 	}
 
-	public PageWidget(Context context) {
+	public ReadView(Context context) {
 		super(context);
 		this.mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     	this.mTextPaint.setTextAlign(Align.LEFT);
@@ -89,7 +89,7 @@ public class PageWidget extends ImageView {
 		canvas.drawColor(0xffff9e85);
 		mTextPaint.setAntiAlias(true);
 		int y = textSize;
-		int x = 8;
+		int x = 32;
 		for (String strLine : m_lines) {
 //			System.out.println("strLine   " + strLine);
 			y += (textSize);
@@ -100,7 +100,7 @@ public class PageWidget extends ImageView {
 		DecimalFormat df = new DecimalFormat("#0.0");
 		String strPercent = df.format(fPercent * 100) + "%";
 		int nPercentWidth = (int) mTextPaint.measureText("9999.9%") + 1;//999.9%字符串的宽度
-		canvas.drawText(strPercent, 240 - nPercentWidth, 180 - 5, mTextPaint);
+		canvas.drawText(strPercent, 960 - nPercentWidth, 540 - 5, mTextPaint);
 		super.onDraw(canvas);
 	}
 	

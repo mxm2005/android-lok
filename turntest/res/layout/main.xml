@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
+<!-- 
     <sf.hmg.turntest.PageWidget
         android:id="@+id/pageWidget"
         android:layout_width="fill_parent"
@@ -20,6 +20,8 @@
         android:id="@+id/pageWidget3"
         android:layout_width="fill_parent"
         android:layout_height="320px" >
-    </sf.hmg.turntest.PageWidget>
+    </sf.hmg.turntest.PageWidget> -->
+    
+    <ListView android:id="@+id/list" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
 
 </LinearLayout>

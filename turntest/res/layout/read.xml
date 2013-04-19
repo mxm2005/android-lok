@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+
+   <!--  <sf.hmg.turntest.LazyScrollView
+        android:id="@+id/lazyScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/lin_all"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </sf.hmg.turntest.LazyScrollView>
+ -->
+ 
+ <android.support.v4.view.ViewPager
+	        android:id="@+id/guidePages"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"/>
+</RelativeLayout>

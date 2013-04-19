@@ -5,11 +5,13 @@ import java.io.IOException;
 import sf.hmg.turntest.LazyScrollView.OnItemClickListener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
@@ -32,12 +34,15 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 		lazyScrollView = (LazyScrollView) findViewById(R.id.lazyScrollView);
 		lazyScrollView.getView();
 		lazyScrollView.setOnScrollListener(this);
+		lazyScrollView.setOnItemClickListener(this);
+		lazyScrollView.setFillViewport(true);
 		
 		lin_all = (LinearLayout) findViewById(R.id.lin_all);
 		pagefactory = new BookPageFactory(240, 180);
 
 		mPageWidget = new PageWidget(getApplicationContext());
 		mPageWidget.setLayoutParams(new LayoutParams(240, 180));
+		mPageWidget.setScaleType(ScaleType.FIT_XY);
 		try {
 			pagefactory.openbook("/sdcard/test (2).txt");
 			mPageWidget.setM_lines(pagefactory.pageDown());
@@ -53,6 +58,7 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 		for(int i = 0; i < 6; i++) {
 			mPageWidget = new PageWidget(getApplicationContext());
 			mPageWidget.setLayoutParams(new LayoutParams(240, 180));
+			mPageWidget.setScaleType(ScaleType.FIT_XY);
 			mPageWidget.setM_lines(pagefactory.pageDown());
 			mPageWidget.setM_mbBufBegin(pagefactory.getM_mbBufBegin());
 			mPageWidget.setTag(page++);
@@ -70,6 +76,7 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 		for(int i = 0; i < 6; i++) {
 			mPageWidget = new PageWidget(getApplicationContext());
 			mPageWidget.setLayoutParams(new LayoutParams(240, 180));
+			mPageWidget.setScaleType(ScaleType.FIT_XY);
 			mPageWidget.setM_lines(pagefactory.pageDown());
 			mPageWidget.setM_mbBufBegin(pagefactory.getM_mbBufBegin());
 			mPageWidget.setTag(page++);
@@ -83,7 +90,6 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 				lin_all.addView(mPageWidget);
 				lin_all.bringChildToFront(mPageWidget);
 			}
-			
 		}
 	}
 
@@ -108,9 +114,12 @@ public class turntest extends Activity implements LazyScrollView.OnScrollListene
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		System.out.println(view.getTag() + " " + position);
+	public void onItemClick(View view, int position) {
+		
+		System.out.println("onItemClick............................................................." + " positoin: " + position);
+		Intent intent = new Intent(turntest.this, read.class);
+		intent.putExtra("po", position);
+		startActivity(intent);
 	}
 	
 }
