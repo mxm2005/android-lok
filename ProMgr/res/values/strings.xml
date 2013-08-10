@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ProMgrActivity!</string>
+    <string name="app_name">ProMgr</string>
+    <string name="pro_title">程序列表</string>
+    <string name="pro_lockoff">程序锁（关）</string>
+    <string name="pro_lockon">程序锁（开）</string>
+    <string name="pro_netoff">防火墙（关）</string>
+    <string name="pro_neton">防火墙（开）</string>
+    <string name="pro_lock">程序锁</string>
+    <string name="pro_net">2G/3G</string>
+    <string name="pro_wifi">WIFI</string>
+    <string name="pro_watting">正在读取程序列表，请稍等...</string>
+    <string name="packagename">包名：</string>
+    <string name="pro_refresh">刷新</string>
+    <string name="pro_sort">按名称排序</string>
+    <string name="pro_show_sys">显示系统APP</string>
+    <string name="pro_hide_sys">隐藏系统APP</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="exit">退出</string>
+    <string name=" exitinfo">定要退出吗？</string>
+    <string name="firsttime">第一次打开程序,绘制图案</string>
+    <string name="welcome">欢迎使用</string>
+    <string name="patternlimit">至少连接4个点,请重试</string>
+    <string name="pattern_start">完成后松开手指</string>
+    <string name="pattern_end">图案已经记录</string>
+    <string name="confirmpassword">请输入解锁图案</string>
+    <string name="need_to_unlock">该程序需要解锁才能打开</string>
+    <string name="input_corret">输入正确</string>
+    <string name="input_wrong">输入错误</string>
+    <string name="retry">重新输入</string>
+    <string name="forgetpassword">忘记密码</string>
+
+</resources>
